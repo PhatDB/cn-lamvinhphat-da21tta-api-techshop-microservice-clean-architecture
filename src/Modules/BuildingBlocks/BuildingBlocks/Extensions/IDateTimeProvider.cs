@@ -1,6 +1,6 @@
 ﻿namespace BuildingBlocks.Extensions
 {
-    public interface IDatieTimeProvider
+    public interface IDateTimeProvider
     {
         public DateTime UtcNow { get; }
     }

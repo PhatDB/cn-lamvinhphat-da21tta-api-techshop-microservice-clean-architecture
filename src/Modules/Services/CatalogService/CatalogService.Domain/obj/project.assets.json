@@ -204,20 +204,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mrkuj\\.nuget\\packages\\": {}
+    "/Users/phatdb/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Đồ án\\techShop\\src\\Modules\\Services\\CatalogService\\CatalogService.Domain\\CatalogService.Domain.csproj",
+      "projectUniqueName": "/Users/phatdb/Projects/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/CatalogService/CatalogService.Domain/CatalogService.Domain.csproj",
       "projectName": "CatalogService.Domain",
-      "projectPath": "D:\\Đồ án\\techShop\\src\\Modules\\Services\\CatalogService\\CatalogService.Domain\\CatalogService.Domain.csproj",
-      "packagesPath": "C:\\Users\\mrkuj\\.nuget\\packages\\",
-      "outputPath": "D:\\Đồ án\\techShop\\src\\Modules\\Services\\CatalogService\\CatalogService.Domain\\obj\\",
+      "projectPath": "/Users/phatdb/Projects/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/CatalogService/CatalogService.Domain/CatalogService.Domain.csproj",
+      "packagesPath": "/Users/phatdb/.nuget/packages/",
+      "outputPath": "/Users/phatdb/Projects/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/CatalogService/CatalogService.Domain/obj/",
       "projectStyle": "PackageReference",
-      "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
-        "C:\\Users\\mrkuj\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/phatdb/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -229,8 +228,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "D:\\Đồ án\\techShop\\src\\Modules\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
-              "projectPath": "D:\\Đồ án\\techShop\\src\\Modules\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj"
+            "/Users/phatdb/Projects/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/BuildingBlocks/BuildingBlocks/BuildingBlocks.csproj": {
+              "projectPath": "/Users/phatdb/Projects/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/BuildingBlocks/BuildingBlocks/BuildingBlocks.csproj"
             }
           }
         }
@@ -271,7 +270,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
