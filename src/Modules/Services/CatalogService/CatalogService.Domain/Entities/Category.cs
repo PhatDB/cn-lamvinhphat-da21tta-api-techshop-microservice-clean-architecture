@@ -58,13 +58,13 @@ namespace CatalogService.Domain.Entities
             UpdatedDate = DateTime.UtcNow;
         }
 
-        public Result AddCategoryItem(int productId, int categoryId)
+        public Result AddCategoryItem(int productId)
         {
-            Result<CategoryItem> result = CategoryItem.Create(productId, categoryId);
+            Result<CategoryItem> result = CategoryItem.Create(productId, Id);
             if (result.IsFailure)
                 return result;
 
-            CategoryItem? existItem = _categoryItems.FirstOrDefault(x => x.ProductId == productId && x.CategoryId == categoryId);
+            CategoryItem? existItem = _categoryItems.FirstOrDefault(x => x.ProductId == productId && x.CategoryId == Id);
             if (existItem != null)
                 return Result.Failure(CategoryItemError.ProductAllReadyExist(productId));
 

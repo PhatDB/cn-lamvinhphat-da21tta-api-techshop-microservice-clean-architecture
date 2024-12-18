@@ -14,10 +14,4 @@
         <ProjectReference Include="..\..\..\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj"/>
     </ItemGroup>
 
-    <ItemGroup>
-        <Folder Include="Abstractions\Serivces\"/>
-        <Folder Include="Events\"/>
-        <Folder Include="ValueObjects\"/>
-    </ItemGroup>
-
 </Project>

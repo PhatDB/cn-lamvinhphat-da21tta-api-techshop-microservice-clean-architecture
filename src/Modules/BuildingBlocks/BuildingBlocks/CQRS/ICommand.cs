@@ -1,12 +1,12 @@
-﻿using MediatR;
+﻿using BuildingBlocks.Results;
+using MediatR;
 
 namespace BuildingBlocks.CQRS
 {
-    public interface ICommand : ICommand<Unit>
-    {
-    }
+    public interface ICommand : IRequest<Result>, IBaseCommand;
 
-    public interface ICommand<out TResponse> : IRequest<TResponse>
-    {
-    }
+    public interface ICommand<TResponse> : IRequest<Result<TResponse>>, IBaseCommand;
+
+    public interface IBaseCommand;
+
 }
