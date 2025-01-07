@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CatalogService.Persistence.Repositories
 {
- public class CategoryRepo : ICategoryRepo
+    public class CategoryRepo : ICategoryRepo
     {
         private readonly ApplicationDbContext _context;
         private readonly DbSet<Category> _dbSet;
@@ -32,17 +32,14 @@ namespace CatalogService.Persistence.Repositories
 
         public async Task<Category> GetByIdAsync(int id, CancellationToken cancellationToken)
         {
-            var category = await _dbSet.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
-            if (category != null)
-            {
-                await _dbSet.Entry(category).Collection(c => c.CategoryItems).LoadAsync(cancellationToken);
-            }
+            Category? category = await _dbSet.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+            if (category != null) await _dbSet.Entry(category).Collection(c => c.CategoryItems).LoadAsync(cancellationToken);
             return category;
         }
 
         public async Task<List<Category>> GetAllAsync(CancellationToken cancellationToken)
         {
-            return await _dbSet.Include(c=>c.CategoryItems).ToListAsync(cancellationToken);
+            return await _dbSet.Include(c => c.CategoryItems).ToListAsync(cancellationToken);
         }
 
         public async Task<bool> IsExistAsync(int id, CancellationToken cancellationToken)

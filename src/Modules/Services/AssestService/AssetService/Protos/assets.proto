@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option csharp_namespace = "AssetService.Grpc";
+
+service AssetsService {
+  rpc UploadImage(UploadImageRequest) returns (UploadImageResponse);
+  rpc DeleteImage(DeleteImageRequest) returns (DeleteImageResponse);
+}
+
+message UploadImageRequest {
+  string content = 1;
+  int32 assetType = 2;
+}
+
+message UploadImageResponse {
+  string imageUrl = 1;
+}
+
+message DeleteImageRequest {
+  string imageUrl = 1;
+}
+
+message DeleteImageResponse {
+  bool success = 1;
+}

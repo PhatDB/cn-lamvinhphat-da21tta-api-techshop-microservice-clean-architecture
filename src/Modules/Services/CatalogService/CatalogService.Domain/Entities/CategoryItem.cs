@@ -6,6 +6,10 @@ namespace CatalogService.Domain.Entities
 {
     public class CategoryItem : Entity
     {
+        public int CategoryId { get; private set; }
+        public int ProductId { get; private set; }
+        public DateTime CreatedDate { get; private set; }
+
         private CategoryItem(int categoryId, int productId)
         {
             CategoryId = categoryId;
@@ -13,14 +17,8 @@ namespace CatalogService.Domain.Entities
             CreatedDate = DateTime.UtcNow;
         }
 
-        public int CategoryId { get; private set; }
-        public int ProductId { get; private set; }
-        public DateTime CreatedDate { get; private set; }
-
         internal static Result<CategoryItem> Create(int categoryId, int productId)
         {
-            if (categoryId <= 0)
-                return Result.Failure<CategoryItem>(CategoryItemError.CatelogryIdInvalid);
             if (productId <= 0)
                 return Result.Failure<CategoryItem>(CategoryItemError.ProductIdInvalid);
             CategoryItem categoryItem = new(categoryId, productId);

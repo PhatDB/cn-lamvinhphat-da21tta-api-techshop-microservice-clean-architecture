@@ -60,7 +60,7 @@ namespace CatalogService.Domain.Entities
 
         public Result AddCategoryItem(int productId)
         {
-            Result<CategoryItem> result = CategoryItem.Create(productId, Id);
+            Result<CategoryItem> result = CategoryItem.Create(Id, productId);
             if (result.IsFailure)
                 return result;
 

@@ -10,14 +10,16 @@ namespace CatalogService.Persistence.Configurations
         {
             builder.ToTable("Category");
             builder.Ignore(c => c.DomainEvents);
-            builder.HasKey(c=>c.Id);
+            builder.HasKey(c => c.Id);
             builder.Property(c => c.Id).HasColumnName("CategoryID");
             builder.Property(c => c.CategoryName).HasColumnName("CategoryName").HasMaxLength(100).IsRequired();
             builder.Property(c => c.Description).HasColumnName("Description").HasMaxLength(255);
             builder.Property(c => c.CreatedDate).HasColumnName("CreatedDate").IsRequired();
             builder.Property(c => c.UpdatedDate).HasColumnName("UpdatedDate");
             builder.Property(c => c.IsActive).HasColumnName("IsActive").IsRequired().HasDefaultValue(1);
-            builder.Property(c=>c.ParentCategoryId).HasColumnName("ParentCategoryID");
+            builder.Property(c => c.ParentCategoryId).HasColumnName("ParentCategoryID");
+
+            builder.HasMany(c => c.CategoryItems).WithOne().HasForeignKey(ci => ci.CategoryId).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

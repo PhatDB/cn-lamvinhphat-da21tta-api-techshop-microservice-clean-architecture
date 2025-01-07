@@ -1,9 +1,10 @@
 ﻿using Asp.Versioning.ApiExplorer;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace CatalogService.Api.OpenApi
+namespace BuildingBlocks.OpenApi
 {
     public class ConfigureSwaggerGenOptions : IConfigureNamedOptions<SwaggerGenOptions>
     {
@@ -16,10 +17,7 @@ namespace CatalogService.Api.OpenApi
 
         public void Configure(SwaggerGenOptions options)
         {
-            foreach (ApiVersionDescription description in _provider.ApiVersionDescriptions)
-            {
-                options.SwaggerDoc(description.GroupName, CreateVersionInfo(description));
-            }
+            foreach (ApiVersionDescription description in _provider.ApiVersionDescriptions) options.SwaggerDoc(description.GroupName, CreateVersionInfo(description));
         }
 
         public void Configure(string? name, SwaggerGenOptions options)
@@ -29,16 +27,9 @@ namespace CatalogService.Api.OpenApi
 
         private static OpenApiInfo CreateVersionInfo(ApiVersionDescription apiVersionDescription)
         {
-            var openApiInfo = new OpenApiInfo
-            {
-                Title = $"RunTrackr.Api v{apiVersionDescription.ApiVersion}",
-                Version = apiVersionDescription.ApiVersion.ToString()
-            };
+            OpenApiInfo openApiInfo = new() { Title = $"TechShop.Api v{apiVersionDescription.ApiVersion}", Version = apiVersionDescription.ApiVersion.ToString() };
 
-            if (apiVersionDescription.IsDeprecated)
-            {
-                openApiInfo.Description += " This API version has been deprecated.";
-            }
+            if (apiVersionDescription.IsDeprecated) openApiInfo.Description += " This API version has been deprecated.";
 
             return openApiInfo;
         }

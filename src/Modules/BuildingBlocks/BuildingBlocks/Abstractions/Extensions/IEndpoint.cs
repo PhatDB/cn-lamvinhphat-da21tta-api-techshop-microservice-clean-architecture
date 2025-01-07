@@ -1,4 +1,6 @@
-﻿namespace CatalogService.Api.Endpoint
+﻿using Microsoft.AspNetCore.Routing;
+
+namespace BuildingBlocks.Abstractions.Extensions
 {
     public interface IEndpoint
     {
