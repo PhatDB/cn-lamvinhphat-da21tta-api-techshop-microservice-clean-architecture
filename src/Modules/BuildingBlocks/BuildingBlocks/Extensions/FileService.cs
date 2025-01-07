@@ -29,7 +29,6 @@ namespace BuildingBlocks.Extensions
             try
             {
                 UploadImageRequest request = new() { Content = base64String, AssetType = (int)type };
-
                 UploadImageResponse response = await _assetsServiceClient.UploadImageAsync(request);
 
                 if (string.IsNullOrWhiteSpace(response.ImageUrl))
@@ -46,6 +45,32 @@ namespace BuildingBlocks.Extensions
             {
                 Console.WriteLine($"An error occurred: {ex.Message}");
                 throw new Exception("An error occurred while uploading the file.", ex);
+            }
+        }
+
+        public async Task<bool> DeleteFile(string filePath)
+        {
+            if (string.IsNullOrWhiteSpace(filePath))
+                throw new ArgumentException("File path cannot be null or empty.");
+
+            try
+            {
+                DeleteImageRequest request = new() { ImageUrl = filePath };
+                DeleteImageResponse response = await _assetsServiceClient.DeleteImageAsync(request);
+
+                if (response.Success) return true;
+
+                throw new Exception("Failed to delete the file on the server.");
+            }
+            catch (RpcException rpcEx)
+            {
+                Console.WriteLine($"gRPC error: Status({rpcEx.Status.StatusCode}), Detail: {rpcEx.Status.Detail}");
+                throw new Exception($"Failed to delete file via gRPC: {rpcEx.Status.Detail}", rpcEx);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                throw new Exception("An error occurred while deleting the file.", ex);
             }
         }
     }

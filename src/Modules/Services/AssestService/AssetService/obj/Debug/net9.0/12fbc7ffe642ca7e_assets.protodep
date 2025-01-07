@@ -1,0 +1,2 @@
+obj\Debug\net9.0/Assets.cs \
+obj\Debug\net9.0/AssetsGrpc.cs: Protos/assets.proto

@@ -69,5 +69,10 @@ namespace CatalogService.Persistence.Repositories
             if (string.IsNullOrWhiteSpace(sql)) throw new ArgumentException("SQL query cannot be null or empty.", nameof(sql));
             return await _context.Database.ExecuteSqlRawAsync(sql, parameters, cancellationToken);
         }
+
+        public IQueryable<Category> AsQueryable()
+        {
+            return _dbSet.AsQueryable();
+        }
     }
 }

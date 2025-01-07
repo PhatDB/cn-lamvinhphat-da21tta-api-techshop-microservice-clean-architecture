@@ -69,5 +69,25 @@ namespace ProductService.Persistence.Repositories
             if (string.IsNullOrWhiteSpace(sql)) throw new ArgumentException("SQL query cannot be null or empty.", nameof(sql));
             return await _context.Database.ExecuteSqlRawAsync(sql, parameters, cancellationToken);
         }
+
+        public async Task<List<Product>> GetAllPagedAsync(int pageNumber, int pageSize, string? sortBy, bool? isDescending, CancellationToken cancellationToken)
+        {
+            IQueryable<Product> query = _dbSet.AsQueryable();
+
+            if (!string.IsNullOrEmpty(sortBy))
+                query = isDescending ?? true ? query.OrderByDescending(x => EF.Property<object>(x, sortBy)) : query.OrderBy(x => EF.Property<object>(x, sortBy));
+
+            return await query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync(cancellationToken);
+        }
+
+        public async Task<int> GetTotalCountAsync(CancellationToken cancellationToken)
+        {
+            return await _dbSet.CountAsync(cancellationToken);
+        }
+
+        public IQueryable<Product> AsQueryable()
+        {
+            return _dbSet.AsQueryable();
+        }
     }
 }

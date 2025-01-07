@@ -10,7 +10,6 @@ namespace CatalogService.Application.Commands.Create
     public class CreateCategoryCommandHandler : ICommandHandler<CreateCategoryCommand, int>
     {
         private readonly ICategoryRepo _categoryRepo;
-
         private readonly IUnitOfWork _unitOfWork;
 
         public CreateCategoryCommandHandler(IUnitOfWork unitOfWork, ICategoryRepo categoryRepo)

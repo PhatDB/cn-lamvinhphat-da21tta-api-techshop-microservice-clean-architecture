@@ -18,6 +18,7 @@ namespace BuildingBlocks
                 config.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
                 config.AddOpenBehavior(typeof(ValidationPipelineBehavior<,>));
                 config.AddOpenBehavior(typeof(ExceptionHandlingPipelineBehavior<,>));
+                config.AddOpenBehavior(typeof(TransactionalPipelineBehavior<,>));
             });
             return services;
         }

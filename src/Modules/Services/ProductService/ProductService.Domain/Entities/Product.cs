@@ -51,23 +51,24 @@ namespace ProductService.Domain.Entities
         }
 
         public void UpdateProduct(
-            string newProductName, decimal newPrice, string? newDescription = null, decimal? newDiscountPrice = null, string? newSku = null, string? newBrand = null,
+            string? newProductName, decimal? newPrice, string? newDescription = null, decimal? newDiscountPrice = null, string? newSku = null, string? newBrand = null,
             string? newModel = null, int? newStockStatus = null)
         {
-            ProductName = newProductName;
-            Description = newDescription;
-            Price = newPrice;
-            DiscountPrice = newDiscountPrice;
-            SKU = newSku;
-            Brand = newBrand;
-            Model = newModel;
-            StockStatus = newStockStatus;
+            ProductName = newProductName ?? ProductName;
+            Description = newDescription ?? Description;
+            DiscountPrice = newDiscountPrice ?? DiscountPrice;
+            SKU = newSku ?? SKU;
+            Brand = newBrand ?? Brand;
+            Model = newModel ?? Model;
+            StockStatus = newStockStatus ?? StockStatus;
+            Price = newPrice ?? Price;
             UpdatedDate = DateTime.UtcNow;
         }
 
-        public void ToggleActivation()
+
+        public void DeleteProduct()
         {
-            IsActive = !IsActive;
+            IsActive = false;
             UpdatedDate = DateTime.UtcNow;
         }
 
@@ -77,14 +78,11 @@ namespace ProductService.Domain.Entities
             UpdatedDate = DateTime.UtcNow;
         }
 
-        public void RemoveProductImage(int imageId)
+        public void RemoveProductImages(IEnumerable<int> imageIds)
         {
-            ProductImage? image = _productImages.FirstOrDefault(x => x.Id == imageId);
-            if (image != null)
-            {
-                _productImages.Remove(image);
-                UpdatedDate = DateTime.UtcNow;
-            }
+            List<ProductImage> imagesToRemove = ProductImages.Where(img => imageIds.Contains(img.Id)).ToList();
+            foreach (ProductImage image in imagesToRemove) _productImages.Remove(image);
+            UpdatedDate = DateTime.UtcNow;
         }
     }
 }

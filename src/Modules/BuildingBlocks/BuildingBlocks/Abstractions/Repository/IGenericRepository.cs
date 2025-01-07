@@ -14,5 +14,6 @@ namespace BuildingBlocks.Abstractions.Repository
         void Update(T aggregateRoot, CancellationToken cancellationToken = default);
         void Delete(T aggregateRoot, CancellationToken cancellationToken = default);
         Task<int> ExecuteSqlAsync(string sql, CancellationToken cancellationToken = default, params object[] parameters);
+        IQueryable<T> AsQueryable();
     }
 }

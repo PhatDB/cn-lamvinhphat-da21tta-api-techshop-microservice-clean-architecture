@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F0389584-7178-4DE4-B39B-94D66ACF4E4E}|src\\Modules\\Services\\CatalogService\\CatalogService.Application\\CatalogService.Application.csproj|d:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\modules\\services\\catalogservice\\catalogservice.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0389584-7178-4DE4-B39B-94D66ACF4E4E}|src\\Modules\\Services\\CatalogService\\CatalogService.Application\\CatalogService.Application.csproj|solutionrelative:src\\modules\\services\\catalogservice\\catalogservice.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{847DCEC4-9389-4E85-9B65-4CF0E3D1B378}|src\\Modules\\Services\\CatalogService\\CatalogService.Persistence\\CatalogService.Persistence.csproj|d:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\modules\\services\\catalogservice\\catalogservice.persistence\\dependencyinjection\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{847DCEC4-9389-4E85-9B65-4CF0E3D1B378}|src\\Modules\\Services\\CatalogService\\CatalogService.Persistence\\CatalogService.Persistence.csproj|solutionrelative:src\\modules\\services\\catalogservice\\catalogservice.persistence\\dependencyinjection\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{847DCEC4-9389-4E85-9B65-4CF0E3D1B378}|src\\Modules\\Services\\CatalogService\\CatalogService.Persistence\\CatalogService.Persistence.csproj|d:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\modules\\services\\catalogservice\\catalogservice.persistence\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{847DCEC4-9389-4E85-9B65-4CF0E3D1B378}|src\\Modules\\Services\\CatalogService\\CatalogService.Persistence\\CatalogService.Persistence.csproj|solutionrelative:src\\modules\\services\\catalogservice\\catalogservice.persistence\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\CatalogService\\CatalogService.Persistence\\DependencyInjection\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Services\\CatalogService\\CatalogService.Persistence\\DependencyInjection\\DependencyInjection.cs",
+              "ToolTip": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\CatalogService\\CatalogService.Persistence\\DependencyInjection\\DependencyInjection.cs",
+              "RelativeToolTip": "src\\Modules\\Services\\CatalogService\\CatalogService.Persistence\\DependencyInjection\\DependencyInjection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:38:26.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\CatalogService\\CatalogService.Application\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Services\\CatalogService\\CatalogService.Application\\DependencyInjection.cs",
+              "ToolTip": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\CatalogService\\CatalogService.Application\\DependencyInjection.cs",
+              "RelativeToolTip": "src\\Modules\\Services\\CatalogService\\CatalogService.Application\\DependencyInjection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:38:08.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\CatalogService\\CatalogService.Persistence\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Services\\CatalogService\\CatalogService.Persistence\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\CatalogService\\CatalogService.Persistence\\ApplicationDbContext.cs",
+              "RelativeToolTip": "src\\Modules\\Services\\CatalogService\\CatalogService.Persistence\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:37:08.698Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

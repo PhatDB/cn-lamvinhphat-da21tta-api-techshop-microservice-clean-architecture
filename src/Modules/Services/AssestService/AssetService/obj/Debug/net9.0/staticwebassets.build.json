@@ -1,0 +1,125 @@
+{
+  "Version": 1,
+  "Hash": "7zBSv9G4/9Q77SPZzaiVWTfSQsBpL/PWXAsaWXJVP2E=",
+  "Source": "AssetService",
+  "BasePath": "_content/AssetService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "AssetService\\wwwroot",
+      "Source": "AssetService",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1736265288750.png",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/product/product_1736265288750#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8qn9l8jitm",
+      "Integrity": "oBo2xKuU9Dmko+ipaT4m3cbKrYl5DNdC6S5XpFGLU+g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1736265288750.png"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "assets/product/product_1736265288750.8qn9l8jitm.png",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1736265288750.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "121319"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oBo2xKuU9Dmko+ipaT4m3cbKrYl5DNdC6S5XpFGLU+g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 07 Jan 2025 15:54:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8qn9l8jitm"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/product/product_1736265288750.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oBo2xKuU9Dmko+ipaT4m3cbKrYl5DNdC6S5XpFGLU+g="
+        }
+      ]
+    },
+    {
+      "Route": "assets/product/product_1736265288750.png",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1736265288750.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "121319"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oBo2xKuU9Dmko+ipaT4m3cbKrYl5DNdC6S5XpFGLU+g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 07 Jan 2025 15:54:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oBo2xKuU9Dmko+ipaT4m3cbKrYl5DNdC6S5XpFGLU+g="
+        }
+      ]
+    }
+  ]
+}

@@ -87,7 +87,8 @@ namespace AssetService.Service
                     throw new RpcException(new Status(StatusCode.InvalidArgument, "Image URL cannot be empty"));
 
                 string fileName = Path.GetFileName(request.ImageUrl);
-                string filePath = Path.Combine(fileDirectoryPath, fileName);
+                string folderName = fileName.Substring(0, fileName.IndexOf('_'));
+                string filePath = Path.Combine(fileDirectoryPath, folderName, fileName);
 
                 if (!File.Exists(filePath))
                     return Task.FromResult(new DeleteImageResponse { Success = false });

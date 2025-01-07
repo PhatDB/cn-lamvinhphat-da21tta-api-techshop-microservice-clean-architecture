@@ -1,0 +1,16 @@
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CatalogService\CatalogService.Domain\bin\Debug\net9.0\CatalogService.Domain.deps.json
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CatalogService\CatalogService.Domain\bin\Debug\net9.0\CatalogService.Domain.dll
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CatalogService\CatalogService.Domain\bin\Debug\net9.0\CatalogService.Domain.pdb
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CatalogService\CatalogService.Domain\bin\Debug\net9.0\BuildingBlocks.dll
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CatalogService\CatalogService.Domain\bin\Debug\net9.0\BuildingBlocks.pdb
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CatalogService\CatalogService.Domain\obj\Debug\net9.0\CatalogService.Domain.csproj.AssemblyReference.cache
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CatalogService\CatalogService.Domain\obj\Debug\net9.0\CatalogService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CatalogService\CatalogService.Domain\obj\Debug\net9.0\CatalogService.Domain.AssemblyInfoInputs.cache
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CatalogService\CatalogService.Domain\obj\Debug\net9.0\CatalogService.Domain.AssemblyInfo.cs
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CatalogService\CatalogService.Domain\obj\Debug\net9.0\CatalogService.Domain.csproj.CoreCompileInputs.cache
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CatalogService\CatalogService.Domain\obj\Debug\net9.0\CatalogService.Domain.sourcelink.json
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CatalogService\CatalogService.Domain\obj\Debug\net9.0\CatalogS.0E5FAD51.Up2Date
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CatalogService\CatalogService.Domain\obj\Debug\net9.0\CatalogService.Domain.dll
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CatalogService\CatalogService.Domain\obj\Debug\net9.0\refint\CatalogService.Domain.dll
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CatalogService\CatalogService.Domain\obj\Debug\net9.0\CatalogService.Domain.pdb
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CatalogService\CatalogService.Domain\obj\Debug\net9.0\ref\CatalogService.Domain.dll

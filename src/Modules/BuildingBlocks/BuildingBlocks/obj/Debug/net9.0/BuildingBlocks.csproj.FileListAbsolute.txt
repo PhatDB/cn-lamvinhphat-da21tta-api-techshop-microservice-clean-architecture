@@ -1,0 +1,13 @@
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\BuildingBlocks\BuildingBlocks\bin\Debug\net9.0\BuildingBlocks.deps.json
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\BuildingBlocks\BuildingBlocks\bin\Debug\net9.0\BuildingBlocks.dll
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\BuildingBlocks\BuildingBlocks\bin\Debug\net9.0\BuildingBlocks.pdb
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\BuildingBlocks\BuildingBlocks\obj\Debug\net9.0\BuildingBlocks.csproj.AssemblyReference.cache
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\BuildingBlocks\BuildingBlocks\obj\Debug\net9.0\BuildingBlocks.GeneratedMSBuildEditorConfig.editorconfig
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\BuildingBlocks\BuildingBlocks\obj\Debug\net9.0\BuildingBlocks.AssemblyInfoInputs.cache
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\BuildingBlocks\BuildingBlocks\obj\Debug\net9.0\BuildingBlocks.AssemblyInfo.cs
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\BuildingBlocks\BuildingBlocks\obj\Debug\net9.0\BuildingBlocks.csproj.CoreCompileInputs.cache
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\BuildingBlocks\BuildingBlocks\obj\Debug\net9.0\BuildingBlocks.sourcelink.json
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\BuildingBlocks\BuildingBlocks\obj\Debug\net9.0\BuildingBlocks.dll
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\BuildingBlocks\BuildingBlocks\obj\Debug\net9.0\refint\BuildingBlocks.dll
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\BuildingBlocks\BuildingBlocks\obj\Debug\net9.0\BuildingBlocks.pdb
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\BuildingBlocks\BuildingBlocks\obj\Debug\net9.0\ref\BuildingBlocks.dll

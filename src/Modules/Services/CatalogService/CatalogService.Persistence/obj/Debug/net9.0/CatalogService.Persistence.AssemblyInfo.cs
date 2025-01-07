@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CatalogService.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+00a91346dd0c3cc00f508310a9071d8c651936b2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87313dfa7d76c660042305737fa547c9bf0ee59e")]
 [assembly: System.Reflection.AssemblyProductAttribute("CatalogService.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CatalogService.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
