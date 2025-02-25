@@ -14,7 +14,7 @@ namespace ProductService.Persistence.Configurations
             builder.Property(pi => pi.Id).HasColumnName("ImageID");
             builder.Property(pi => pi.ProductId).HasColumnName("ProductID").IsRequired();
             builder.Property(pi => pi.ImageUrl).HasColumnName("ImageUrl").HasMaxLength(255).IsRequired();
-            builder.Property(pi => pi.AltText).HasColumnName("AltText").HasMaxLength(255);
+            builder.Property(pi => pi.Position).HasColumnName("Position");
             builder.Property(pi => pi.CreatedDate).HasColumnName("CreatedDate").IsRequired();
             builder.Property(pi => pi.UpdatedDate).HasColumnName("UpdatedDate");
 

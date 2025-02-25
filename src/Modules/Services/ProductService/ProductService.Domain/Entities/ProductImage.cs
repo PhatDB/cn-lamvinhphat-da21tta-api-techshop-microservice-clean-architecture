@@ -6,38 +6,31 @@ namespace ProductService.Domain.Entities
 {
     public class ProductImage : Entity
     {
-        private ProductImage(int productId, string imageUrl, string? altText)
+        public int ProductId { get; private set; }
+        public string ImageUrl { get; private set; }
+        public string? Title { get; private set; }
+        public int Position { get; private set; }
+        
+        public ProductImage(int productId, string imageUrl, int position, string? title)
         {
             ProductId = productId;
             ImageUrl = imageUrl;
-            AltText = altText;
-            CreatedDate = DateTime.UtcNow;
-            UpdatedDate = DateTime.UtcNow;
+            Position = position;
+            Title = title;
         }
 
-        private ProductImage()
-        {
-        }
-
-        public int ProductId { get; private set; }
-        public string ImageUrl { get; private set; }
-        public string? AltText { get; private set; }
-        public DateTime CreatedDate { get; private set; }
-        public DateTime UpdatedDate { get; private set; }
-
-        public static Result<ProductImage> Create(int productId, string imageUrl, string? altText = null)
+        public static Result<ProductImage> Create(int productId, string imageUrl, int position,string? title)
         {
             if (string.IsNullOrWhiteSpace(imageUrl))
                 return Result.Failure<ProductImage>(ProductImageError.ProductImageInvalid);
 
-            return new ProductImage(productId, imageUrl, altText);
+            return new ProductImage(productId, imageUrl, position, title);
         }
 
-        public void UpdateImage(string newImageUrl, string? newAltText = null)
+        public void UpdateImage(string newImageUrl, int newPosition)
         {
             ImageUrl = newImageUrl;
-            AltText = newAltText;
-            UpdatedDate = DateTime.UtcNow;
+            Position = newPosition;
         }
     }
 }

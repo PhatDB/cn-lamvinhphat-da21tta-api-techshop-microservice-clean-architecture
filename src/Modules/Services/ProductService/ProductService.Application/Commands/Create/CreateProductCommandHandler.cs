@@ -26,19 +26,39 @@ namespace ProductService.Application.Commands.Create
 
         public async Task<Result<int>> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
-            Product product = Product.Create(request.ProductName, request.Price, request.Description, request.DiscountPrice, request.SKU, request.Brand, request.Model,
-                request.StockStatus);
+            var productResult = Product.Create(request.Name, request.SKU, request.Price, request.CategoryId, request.Description, request.DiscountPrice);
+            if (productResult.IsFailure)
+                return Result.Failure<int>(productResult.Error);
 
-            foreach (ProductImageDTO imageDto in request.ProductImages)
+            var product = productResult.Value;
+
+            foreach (ProductImageDTO imageDto in request.Images)
             {
                 if (!IsBase64String(imageDto.ImageContent)) return Result.Failure<int>(Error.Validation("Base64.Validation", "Invalid image content"));
 
                 string imageUrl = await _fileService.UploadFile(imageDto.ImageContent, AssetType.PRODUCT_IMAGE);
-
-                Result<ProductImage> imageResult = ProductImage.Create(product.Id, imageUrl, imageDto.AltText);
+                
+                var imageResult = ProductImage.Create(product.Id, imageUrl, imageDto.Position, imageDto.Title);
                 if (imageResult.IsFailure) return Result.Failure<int>(imageResult.Error);
 
-                product.AddProductImage(imageResult.Value);
+                var addImageResult = product.AddProductImage(imageResult.Value.ImageUrl, imageResult.Value.Position, imageResult.Value.Title);
+
+                if (addImageResult.IsFailure)
+                    return Result.Failure<int>(addImageResult.Error);
+            }
+            
+            foreach (var colorName in request.Colors)
+            {
+                var colorResult = await _productRepository.GetColorByNameAsync(colorName, cancellationToken);
+
+                if (colorResult.IsFailure)
+                {
+                    colorResult = Color.Create(colorName);
+                    if (colorResult.IsFailure)
+                        return Result.Failure<int>(colorResult.Error);
+                }
+
+                product.AddColor(colorResult.Value);
             }
 
             await _productRepository.AddAsync(product, cancellationToken);

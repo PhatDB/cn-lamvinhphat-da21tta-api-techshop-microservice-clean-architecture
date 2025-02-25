@@ -1,88 +1,105 @@
 ﻿using BuildingBlocks.Abstractions.Aggregates;
 using BuildingBlocks.Abstractions.Entities;
+using ProductService.Domain.ValueObjects;
+using BuildingBlocks.Results;
+using BuildingBlocks.Error;
 
 namespace ProductService.Domain.Entities
 {
     public class Product : Entity, IAggregateRoot
     {
         private readonly List<ProductImage> _productImages;
+        private readonly List<ProductColor> _productColors;
 
-        private Product(
-            string productName, decimal price, string? description = null, decimal? discountPrice = null, string? sku = null, string? brand = null, string? model = null,
-            int? stockStatus = null)
+        private Product(string name, SKU sku, decimal price, int categoryId, string? description = null, decimal? discountPrice = null)
         {
-            ProductName = productName;
-            Description = description;
+            Name = name;
+            Sku = sku;
             Price = price;
+            CategoryId = categoryId;
+            Description = description;
             DiscountPrice = discountPrice;
-            SKU = sku;
-            Brand = brand;
-            Model = model;
-            StockStatus = stockStatus;
-            CreatedDate = DateTime.UtcNow;
-            UpdatedDate = DateTime.UtcNow;
+            SoldQuantity = 0;
+            CreatedAt = DateTime.UtcNow;
+            UpdatedAt = DateTime.UtcNow;
             IsActive = true;
+
             _productImages = new List<ProductImage>();
+            _productColors = new List<ProductColor>();
         }
 
-        private Product()
-        {
-        }
+        private Product() { }
 
-        public string ProductName { get; private set; }
+        public string Name { get; private set; }
+        public SKU Sku { get; private set; }
         public string? Description { get; private set; }
         public decimal Price { get; private set; }
         public decimal? DiscountPrice { get; private set; }
-        public string? SKU { get; private set; }
-        public string? Brand { get; private set; }
-        public string? Model { get; private set; }
-        public int? StockStatus { get; private set; }
-        public DateTime CreatedDate { get; private set; }
-        public DateTime UpdatedDate { get; private set; }
+        public int SoldQuantity { get; private set; }
+        public DateTime CreatedAt { get; private set; }
+        public DateTime UpdatedAt { get; private set; }
         public bool IsActive { get; private set; }
+        public int CategoryId { get; private set; }
 
         public IReadOnlyCollection<ProductImage> ProductImages => _productImages.AsReadOnly();
+        public IReadOnlyCollection<ProductColor> ProductColors => _productColors.AsReadOnly();
 
-        public static Product Create(
-            string productName, decimal price, string? description = null, decimal? discountPrice = null, string? sku = null, string? brand = null, string? model = null,
-            int? stockStatus = null)
+        public static Result<Product> Create(string name, string sku, decimal price, int categoryId, string? description = null, decimal? discountPrice = null)
         {
-            return new Product(productName, price, description, discountPrice, sku, brand, model, stockStatus);
+            if (string.IsNullOrWhiteSpace(name))
+                return Result.Failure<Product>(Error.Validation("Product.EmptyName", "Product name cannot be empty."));
+
+            if (price <= 0)
+                return Result.Failure<Product>(Error.Validation("Product.InvalidPrice", "Price must be greater than zero."));
+
+            var skuResult = SKU.Create(sku);
+            if (skuResult.IsFailure)
+                return Result.Failure<Product>(skuResult.Error);
+
+            return Result.Success(new Product(name, skuResult.Value, price, categoryId, description, discountPrice));
         }
 
-        public void UpdateProduct(
-            string? newProductName, decimal? newPrice, string? newDescription = null, decimal? newDiscountPrice = null, string? newSku = null, string? newBrand = null,
-            string? newModel = null, int? newStockStatus = null)
+        public Result UpdateStock(int quantity)
         {
-            ProductName = newProductName ?? ProductName;
-            Description = newDescription ?? Description;
-            DiscountPrice = newDiscountPrice ?? DiscountPrice;
-            SKU = newSku ?? SKU;
-            Brand = newBrand ?? Brand;
-            Model = newModel ?? Model;
-            StockStatus = newStockStatus ?? StockStatus;
-            Price = newPrice ?? Price;
-            UpdatedDate = DateTime.UtcNow;
+            if (quantity < 0 && SoldQuantity + quantity < 0)
+                return Result.Failure(Error.Validation("Product.InsufficientStock", "Not enough stock available."));
+
+            SoldQuantity += quantity;
+            UpdatedAt = DateTime.UtcNow;
+            return Result.Success();
         }
 
-
-        public void DeleteProduct()
+        public Result AddProductImage(string imageUrl, int position, string? title = null)
         {
+            if (string.IsNullOrWhiteSpace(imageUrl))
+                return Result.Failure(Error.Validation("ProductImage.InvalidUrl", "Image URL cannot be empty."));
+
+            _productImages.Add(new ProductImage(Id, imageUrl, position, title));
+            UpdatedAt = DateTime.UtcNow;
+            return Result.Success();
+        }
+        
+        public Result AddColor(Color color)
+        {
+            if (color == null)
+                return Result.Failure(Error.Validation("ProductColor.NullColor", "Color cannot be null."));
+            
+            if (_productColors.Any(pc => pc.ColorId == color.Id))
+                return Result.Failure(Error.Conflict("ProductColor.Duplicate", "Color already exists for this product."));
+
+            _productColors.Add(new ProductColor(Id, color.Id));
+            UpdatedAt = DateTime.UtcNow;
+            return Result.Success();
+        }
+        
+        public Result Deactivate()
+        {
+            if (!IsActive)
+                return Result.Failure(Error.Validation("Product.AlreadyInactive", "Product is already inactive."));
+
             IsActive = false;
-            UpdatedDate = DateTime.UtcNow;
-        }
-
-        public void AddProductImage(ProductImage image)
-        {
-            _productImages.Add(image);
-            UpdatedDate = DateTime.UtcNow;
-        }
-
-        public void RemoveProductImages(IEnumerable<int> imageIds)
-        {
-            List<ProductImage> imagesToRemove = ProductImages.Where(img => imageIds.Contains(img.Id)).ToList();
-            foreach (ProductImage image in imagesToRemove) _productImages.Remove(image);
-            UpdatedDate = DateTime.UtcNow;
+            UpdatedAt = DateTime.UtcNow;
+            return Result.Success();
         }
     }
 }

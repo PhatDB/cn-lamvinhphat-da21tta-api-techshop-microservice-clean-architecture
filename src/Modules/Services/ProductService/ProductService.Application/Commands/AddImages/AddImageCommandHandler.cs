@@ -39,7 +39,7 @@ namespace ProductService.Application.Commands.AddImages
 
                 string imageUrl = await _fileService.UploadFile(imageDto.ImageContent, AssetType.PRODUCT_IMAGE);
 
-                Result<ProductImage> imageResult = ProductImage.Create(product.Id, imageUrl, imageDto.AltText);
+                Result<ProductImage> imageResult = ProductImage.Create(product.Id, imageUrl, imageDto.Position);
                 if (imageResult.IsFailure) return Result.Failure(imageResult.Error);
 
                 product.AddProductImage(imageResult.Value);
