@@ -26,9 +26,14 @@ namespace ProductService.Domain.Entities
             _productImages = new List<ProductImage>();
             _productColors = new List<ProductColor>();
         }
-
-        private Product() { }
-
+        
+        
+        private Product()
+        {
+            _productImages = new List<ProductImage>();
+            _productColors = new List<ProductColor>();
+        }
+        
         public string Name { get; private set; }
         public SKU Sku { get; private set; }
         public string? Description { get; private set; }
@@ -72,6 +77,7 @@ namespace ProductService.Domain.Entities
                 return Result.Failure(Error.Validation("ProductImage.InvalidUrl", "Image URL cannot be empty."));
 
             _productImages.Add(new ProductImage(Id, imageUrl, position, title));
+
             return Result.Success();
         }
         

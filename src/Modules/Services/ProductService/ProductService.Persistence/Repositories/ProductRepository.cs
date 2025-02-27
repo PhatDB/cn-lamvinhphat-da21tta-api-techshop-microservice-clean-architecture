@@ -50,5 +50,18 @@ namespace ProductService.Persistence.Repositories
             await _context.Colors.AddAsync(color, cancellationToken);
             return Result.Success();
         }
+
+        public async Task<Result<Product>> GetProductDetailAsync(int id, CancellationToken cancellationToken = default)
+        {
+            var product = await _context.Products
+                .Include(p => p.ProductImages)
+                .Include(p => p.ProductColors)
+                .FirstOrDefaultAsync(p => p.Id == id, cancellationToken);
+
+            return product is null
+                ? Result.Failure<Product>(Error.NotFound("Product.NotFound", $"Product with ID {id} not found."))
+                : Result.Success(product);
+        }
+
     }
 }

@@ -26,8 +26,9 @@ namespace ProductService.Application.Commands.Products.AddImages
 
         public async Task<Result> Handle(AddImageCommand request, CancellationToken cancellationToken)
         {
-            var productResult = await _productRepository.GetByIdAsync(request.ProductId, cancellationToken);
-            if (productResult.IsFailure) return Result.Failure(productResult.Error);
+            var productResult = await _productRepository.GetProductDetailAsync(request.ProductId, cancellationToken);
+            if (productResult.IsFailure)
+                return Result.Failure(Error.NotFound("Product.NotFound", $"Product with ID {request.ProductId} does not exist."));
 
             var product = productResult.Value;
             
@@ -41,7 +42,10 @@ namespace ProductService.Application.Commands.Products.AddImages
                 var imageResult = ProductImage.Create(product.Id, imageUrl, imageDto.Position, imageDto.Title);
                 if (imageResult.IsFailure) return Result.Failure(imageResult.Error);
                 
-                product.AddProductImage(imageResult.Value.ImageUrl, imageResult.Value.Position);
+                var addImageResult = product.AddProductImage(imageResult.Value.ImageUrl, imageResult.Value.Position, imageResult.Value.Title);
+
+                if (addImageResult.IsFailure)
+                    return Result.Failure<int>(addImageResult.Error);
             }
             
             await _productRepository.UpdateAsync(product, cancellationToken);

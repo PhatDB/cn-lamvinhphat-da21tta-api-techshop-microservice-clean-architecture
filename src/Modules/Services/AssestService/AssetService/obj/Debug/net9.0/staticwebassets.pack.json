@@ -9,6 +9,58 @@
       "PackagePath": "staticwebassets/assets/product/product_1740641816038.png"
     },
     {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740642130949.png",
+      "PackagePath": "staticwebassets/assets/product/product_1740642130949.png"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740642247281.png",
+      "PackagePath": "staticwebassets/assets/product/product_1740642247281.png"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740644856579.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1740644856579.webp"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740645024269.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1740645024269.webp"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740645145558.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1740645145558.webp"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740645241480.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1740645241480.webp"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740645534647.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1740645534647.webp"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740645576356.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1740645576356.webp"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740646309210.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1740646309210.webp"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740646396578.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1740646396578.webp"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740646437803.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1740646437803.webp"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740646766378.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1740646766378.webp"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740647167038.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1740647167038.webp"
+    },
+    {
       "Id": "obj/Debug/net9.0/staticwebassets/msbuild.AssetService.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

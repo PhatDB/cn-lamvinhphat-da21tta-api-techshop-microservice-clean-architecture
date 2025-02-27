@@ -10,5 +10,6 @@ namespace ProductService.Domain.Abstractions.Repositories
         Task<int> GetTotalCountAsync(CancellationToken cancellationToken);
         Task<Result<Color>> GetColorByNameAsync(string colorName, CancellationToken cancellationToken);
         Task<Result> AddColorAsync(Color color, CancellationToken cancellationToken);
+        Task<Result<Product>> GetProductDetailAsync(int id, CancellationToken cancellationToken = default);
     }
 }
