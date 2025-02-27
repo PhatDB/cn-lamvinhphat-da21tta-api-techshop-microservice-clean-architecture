@@ -58,7 +58,10 @@ namespace ProductService.Application.Commands.Create
                         return Result.Failure<int>(colorResult.Error);
                 }
 
-                product.AddColor(colorResult.Value);
+                var addColorResult = product.AddColor(colorResult.Value);
+    
+                if (addColorResult.IsFailure)
+                    return Result.Failure<int>(addColorResult.Error);
             }
 
             await _productRepository.AddAsync(product, cancellationToken);

@@ -20,16 +20,16 @@ namespace ProductService.Application.Commands.Update
 
         public async Task<Result> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
         {
-            Product product = await _productRepository.GetByIdAsync(request.ProductId, cancellationToken);
-            if (product == null)
-            {
-                Error error = new("ProductNotFound", $"Product with ID {request.ProductId} does not exist.", ErrorType.NotFound);
-                return Result.Failure(error);
-            }
+            var productResult = await _productRepository.GetByIdAsync(request.ProductId, cancellationToken);
+            
+            if (productResult.IsFailure)
+                return Result.Failure(productResult.Error);
 
-            product.UpdateProduct(request.ProductName, request.Price, request.Description, request.DiscountPrice, request.SKU, request.Brand, request.Model, request.StockStatus);
-
-            _productRepository.Update(product, cancellationToken);
+            var product = productResult.Value;
+            
+            product.UpdateProduct(request.Name, request.Sku, request.Price, request.CategoryId, request.Description, request.DiscountPrice);
+            
+            await _productRepository.UpdateAsync(product, cancellationToken);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
             return Result.Success();

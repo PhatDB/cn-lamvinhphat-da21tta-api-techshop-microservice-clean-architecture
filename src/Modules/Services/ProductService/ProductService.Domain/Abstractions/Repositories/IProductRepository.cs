@@ -1,4 +1,5 @@
 ﻿using BuildingBlocks.Abstractions.Repository;
+using BuildingBlocks.Results;
 using ProductService.Domain.Entities;
 
 namespace ProductService.Domain.Abstractions.Repositories
@@ -7,5 +8,7 @@ namespace ProductService.Domain.Abstractions.Repositories
     {
         Task<List<Product>> GetAllPagedAsync(int pageNumber, int pageSize, string? sortBy, bool? isDescending, CancellationToken cancellationToken);
         Task<int> GetTotalCountAsync(CancellationToken cancellationToken);
+        Task<Result<Color>> GetColorByNameAsync(string colorName, CancellationToken cancellationToken);
+        Task<Result> AddColorAsync(Color color, CancellationToken cancellationToken);
     }
 }

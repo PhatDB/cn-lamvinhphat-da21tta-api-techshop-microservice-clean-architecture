@@ -13,8 +13,16 @@ namespace ProductService.Api.Endpoint.Products
         {
             app.MapPost("product", async (Request request, ISender sender, CancellationToken cancellationToken) =>
             {
-                CreateProductCommand command = new(request.ProductName, request.Price, request.Description, request.DiscountPrice, request.SKU, request.Brand, request.Model,
-                    request.StockStatus, request.ProductImages);
+                var command = new CreateProductCommand(
+                    request.Name,
+                    request.Sku,
+                    request.Price,
+                    request.CategoryId,
+                    request.ProductImages ?? new List<ProductImageDTO>(),
+                    request.Colors ?? new List<string>(),
+                    request.Description,
+                    request.DiscountPrice
+                );
 
                 Result<int> result = await sender.Send(command, cancellationToken);
 
@@ -23,14 +31,14 @@ namespace ProductService.Api.Endpoint.Products
         }
 
         public sealed record Request(
-            string ProductName,
+            string Name,
+            string Sku,
             decimal Price,
-            string? Description,
-            decimal? DiscountPrice,
-            string? SKU,
-            string? Brand,
-            string? Model,
-            int? StockStatus,
-            List<ProductImageDTO>? ProductImages);
+            int CategoryId,
+            List<ProductImageDTO>? ProductImages,
+            List<string>? Colors,
+            string? Description = null,
+            decimal? DiscountPrice = null
+        );
     }
 }

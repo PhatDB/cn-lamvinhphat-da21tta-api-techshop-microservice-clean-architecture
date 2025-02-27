@@ -21,23 +21,34 @@ namespace ProductService.Application.Queries
         {
             IQueryable<Product> query = _productRepository.AsQueryable();
 
-            query = ApplySorting(query, request.PaginationOption.SortBy, request.PaginationOption.IsDescending.Value);
+            // 🔄 Kiểm tra giá trị mặc định
+            string sortBy = string.IsNullOrWhiteSpace(request.PaginationOption.SortBy) ? "CreatedAt" : request.PaginationOption.SortBy;
+            bool isDescending = request.PaginationOption.IsDescending ?? false;
+
+            query = ApplySorting(query, sortBy, isDescending);
 
             int totalCount = await query.CountAsync(cancellationToken);
 
-            List<GetAllProductDTO> pagedProducts = await query.Skip((request.PaginationOption.PageNumber.Value - 1) * request.PaginationOption.PageSize.Value)
-                .Take(request.PaginationOption.PageSize.Value).AsNoTracking().Select(p => new GetAllProductDTO
+            List<GetAllProductDTO> pagedProducts = await query
+                .Skip((request.PaginationOption.PageNumber ?? 1 - 1) * (request.PaginationOption.PageSize ?? 10))
+                .Take(request.PaginationOption.PageSize ?? 10)
+                .AsNoTracking()
+                .Select(p => new GetAllProductDTO
                 {
                     Id = p.Id,
-                    ProductName = p.ProductName,
+                    Name = p.Name,
+                    Sku = p.Sku != null ? p.Sku.Value : string.Empty,
                     Description = p.Description,
                     Price = p.Price,
                     DiscountPrice = p.DiscountPrice,
+                    SoldQuantity = p.SoldQuantity,
                     IsActive = p.IsActive,
+                    CategoryId = p.CategoryId,
                     FirstImageUrl = p.ProductImages.FirstOrDefault().ImageUrl
-                }).ToListAsync(cancellationToken);
+                })
+                .ToListAsync(cancellationToken);
 
-            PagedResult<GetAllProductDTO> pagedResult = new(pagedProducts, totalCount, request.PaginationOption.PageNumber.Value, request.PaginationOption.PageSize.Value);
+            PagedResult<GetAllProductDTO> pagedResult = new(pagedProducts, totalCount, request.PaginationOption.PageNumber ?? 1, request.PaginationOption.PageSize ?? 10);
 
             return Result.Success(pagedResult);
         }
@@ -46,17 +57,17 @@ namespace ProductService.Application.Queries
         {
             switch (sortBy.ToLower())
             {
-                case "":
-                    query = isDescending ? query.OrderByDescending(p => p.CreatedDate) : query.OrderBy(p => p.CreatedDate);
+                case "createdat":
+                    query = isDescending ? query.OrderByDescending(p => p.CreatedAt) : query.OrderBy(p => p.CreatedAt);
                     break;
                 case "price":
                     query = isDescending ? query.OrderByDescending(p => p.Price) : query.OrderBy(p => p.Price);
                     break;
-                case "productname":
-                    query = isDescending ? query.OrderByDescending(p => p.ProductName) : query.OrderBy(p => p.ProductName);
+                case "name":
+                    query = isDescending ? query.OrderByDescending(p => p.Name) : query.OrderBy(p => p.Name);
                     break;
                 default:
-                    query = query.OrderBy(p => p.ProductName);
+                    query = query.OrderBy(p => p.CreatedAt);
                     break;
             }
 

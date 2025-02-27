@@ -13,7 +13,8 @@ namespace ProductService.Persistence.DependencyInjections
         {
             string? connectionString = configuration.GetConnectionString("Database");
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
-            services.AddScoped<IProductRepository, ProductRepo>();
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             return services;
         }

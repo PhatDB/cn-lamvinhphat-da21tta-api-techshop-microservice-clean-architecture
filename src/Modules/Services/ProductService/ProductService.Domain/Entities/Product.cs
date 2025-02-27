@@ -92,12 +92,51 @@ namespace ProductService.Domain.Entities
             return Result.Success();
         }
         
-        public Result Deactivate()
+        public Result DeleteProduct()
         {
             if (!IsActive)
-                return Result.Failure(Error.Validation("Product.AlreadyInactive", "Product is already inactive."));
+                return Result.Failure(Error.Conflict("Product.AlreadyDeleted", "Product is already deleted."));
 
             IsActive = false;
+            UpdatedAt = DateTime.UtcNow;
+            return Result.Success();
+        }
+        
+        public Result UpdateProduct(string name, string sku, decimal price, int categoryId, string? description = null, decimal? discountPrice = null)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+                return Result.Failure(Error.Validation("Product.EmptyName", "Product name cannot be empty."));
+
+            if (price <= 0)
+                return Result.Failure(Error.Validation("Product.InvalidPrice", "Price must be greater than zero."));
+
+            var skuResult = SKU.Create(sku);
+            if (skuResult.IsFailure)
+                return Result.Failure(skuResult.Error);
+
+            Name = name;
+            Sku = skuResult.Value;
+            Price = price;
+            CategoryId = categoryId;
+            Description = description;
+            DiscountPrice = discountPrice;
+            UpdatedAt = DateTime.UtcNow;
+
+            return Result.Success();
+        }
+        
+        public Result RemoveProductImages(IEnumerable<int> imageIds)
+        {
+            var imagesToRemove = _productImages.Where(img => imageIds.Contains(img.Id)).ToList();
+
+            if (!imagesToRemove.Any())
+                return Result.Failure(Error.NotFound("ProductImage.NotFound", "No matching images found for deletion."));
+
+            foreach (var image in imagesToRemove)
+            {
+                _productImages.Remove(image);
+            }
+
             UpdatedAt = DateTime.UtcNow;
             return Result.Success();
         }

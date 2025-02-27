@@ -23,31 +23,32 @@ namespace ProductService.Application.Commands.DeleteImages
 
         public async Task<Result> Handle(DeleteImageCommand request, CancellationToken cancellationToken)
         {
-            Product? product = await _productRepository.GetByIdAsync(request.ProductId, cancellationToken);
-            if (product == null)
-            {
-                Error error = new("ProductNotFound", $"Product with ID {request.ProductId} does not exist.", ErrorType.NotFound);
-                return Result.Failure(error);
-            }
+            var productResult = await _productRepository.GetByIdAsync(request.ProductId, cancellationToken);
+            if (productResult.IsFailure)
+                return Result.Failure(productResult.Error);
 
-            List<string> imagesToRemove = product.ProductImages.Where(img => request.ImageIds.Contains(img.Id)).Select(img => img.ImageUrl).ToList();
+            var product = productResult.Value;
+
+            List<string> imagesToRemove = product.ProductImages
+                .Where(img => request.ImageIds.Contains(img.Id))
+                .Select(img => img.ImageUrl)
+                .ToList();
 
             foreach (string image in imagesToRemove)
             {
                 bool deleted = await _fileService.DeleteFile(image);
                 if (!deleted)
-                {
-                    Error error = new("FailToDelete", "Cant Delete Images", ErrorType.Problem);
-                    return Result.Failure(error);
-                }
+                    return Result.Failure(Error.Problem("FailToDelete", "Cannot delete images."));
             }
 
-            product.RemoveProductImages(request.ImageIds);
+            var removeResult = product.RemoveProductImages(request.ImageIds);
+            if (removeResult.IsFailure)
+                return Result.Failure(removeResult.Error);
 
-            _productRepository.Update(product, cancellationToken);
+            await _productRepository.UpdateAsync(product, cancellationToken);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-            return Result.Success(true);
+            return Result.Success();
         }
     }
 }

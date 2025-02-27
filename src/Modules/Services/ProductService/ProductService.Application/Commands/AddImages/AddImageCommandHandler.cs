@@ -26,26 +26,25 @@ namespace ProductService.Application.Commands.AddImages
 
         public async Task<Result> Handle(AddImageCommand request, CancellationToken cancellationToken)
         {
-            Product product = await _productRepository.GetByIdAsync(request.ProductId, cancellationToken);
-            if (product == null)
-            {
-                Error error = new("ProductNotFound", $"Product with ID {request.ProductId} does not exist.", ErrorType.NotFound);
-                return Result.Failure(error);
-            }
+            var productResult = await _productRepository.GetByIdAsync(request.ProductId, cancellationToken);
+            if (productResult.IsFailure) return Result.Failure(productResult.Error);
 
+            var product = productResult.Value;
+            
             foreach (ProductImageDTO imageDto in request.ProductImages)
             {
-                if (!IsBase64String(imageDto.ImageContent)) return Result.Failure(Error.Validation("Base64.Validation", "Invalid image content"));
-
+                if (!IsBase64String(imageDto.ImageContent))
+                    return Result.Failure(Error.Validation("Base64.Validation", "Invalid image content"));
+                
                 string imageUrl = await _fileService.UploadFile(imageDto.ImageContent, AssetType.PRODUCT_IMAGE);
-
-                Result<ProductImage> imageResult = ProductImage.Create(product.Id, imageUrl, imageDto.Position);
+                
+                var imageResult = ProductImage.Create(product.Id, imageUrl, imageDto.Position, imageDto.Title);
                 if (imageResult.IsFailure) return Result.Failure(imageResult.Error);
-
-                product.AddProductImage(imageResult.Value);
+                
+                product.AddProductImage(imageResult.Value.ImageUrl, imageResult.Value.Position);
             }
-
-            _productRepository.Update(product, cancellationToken);
+            
+            await _productRepository.UpdateAsync(product, cancellationToken);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
             return Result.Success();

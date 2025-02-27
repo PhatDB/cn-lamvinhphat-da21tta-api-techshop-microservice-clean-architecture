@@ -12,23 +12,29 @@ namespace ProductService.Api.Endpoint.Products
         {
             app.MapPut("product/{productId}", async (int productId, UpdateRequest request, ISender sender, CancellationToken cancellationToken) =>
             {
-                UpdateProductCommand command = new(productId, request.ProductName, request.Price, request.Description, request.DiscountPrice, request.SKU, request.Brand,
-                    request.Model, request.StockStatus);
+                var command = new UpdateProductCommand(
+                    productId,
+                    request.Name,
+                    request.Sku,
+                    request.Price,
+                    request.CategoryId,
+                    request.Description,
+                    request.DiscountPrice
+                );
 
                 Result result = await sender.Send(command, cancellationToken);
 
                 return result.Match(Results.NoContent, CustomResults.Problem);
             }).WithTags("Product");
         }
-
+        
         public sealed record UpdateRequest(
-            string? ProductName,
-            decimal? Price,
-            string? Description,
-            decimal? DiscountPrice,
-            string? SKU,
-            string? Brand,
-            string? Model,
-            int? StockStatus);
+            string Name,
+            string Sku,
+            decimal Price,
+            int CategoryId,
+            string? Description = null,
+            decimal? DiscountPrice = null
+        );
     }
 }

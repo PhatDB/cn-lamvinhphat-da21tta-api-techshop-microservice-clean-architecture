@@ -20,16 +20,17 @@ namespace ProductService.Application.Commands.Delete
 
         public async Task<Result> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
         {
-            Product? product = await _productRepository.GetByIdAsync(request.ProductId, cancellationToken);
-            if (product == null)
-            {
-                Error error = new("ProductNotFound", $"Product with ID {request.ProductId} does not exist.", ErrorType.NotFound);
-                return Result.Failure(error);
-            }
+            var productResult = await _productRepository.GetByIdAsync(request.ProductId, cancellationToken);
+            if (productResult.IsFailure)
+                return Result.Failure(productResult.Error);
+            
+            var product = productResult.Value;
+            
+            var deleteResult = product.DeleteProduct();
+            if (deleteResult.IsFailure)
+                return Result.Failure(deleteResult.Error);
 
-            product.DeleteProduct();
-
-            _productRepository.Update(product, cancellationToken);
+            await _productRepository.UpdateAsync(product, cancellationToken);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
             return Result.Success();
