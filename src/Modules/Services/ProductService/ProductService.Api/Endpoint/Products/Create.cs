@@ -2,7 +2,7 @@
 using BuildingBlocks.Extensions;
 using BuildingBlocks.Results;
 using MediatR;
-using ProductService.Application.Commands.Create;
+using ProductService.Application.Commands.Products.Create;
 using ProductService.Application.DTOs;
 
 namespace ProductService.Api.Endpoint.Products

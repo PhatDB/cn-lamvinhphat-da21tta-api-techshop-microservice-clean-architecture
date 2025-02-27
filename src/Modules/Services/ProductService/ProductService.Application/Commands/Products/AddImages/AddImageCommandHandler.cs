@@ -9,7 +9,7 @@ using ProductService.Application.DTOs;
 using ProductService.Domain.Abstractions.Repositories;
 using ProductService.Domain.Entities;
 
-namespace ProductService.Application.Commands.AddImages
+namespace ProductService.Application.Commands.Products.AddImages
 {
     public class AddImageCommandHandler : ICommandHandler<AddImageCommand>
     {

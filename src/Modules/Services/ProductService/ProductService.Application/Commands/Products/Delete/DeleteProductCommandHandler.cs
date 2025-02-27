@@ -1,11 +1,9 @@
 ﻿using BuildingBlocks.Abstractions.Repository;
 using BuildingBlocks.CQRS;
-using BuildingBlocks.Error;
 using BuildingBlocks.Results;
 using ProductService.Domain.Abstractions.Repositories;
-using ProductService.Domain.Entities;
 
-namespace ProductService.Application.Commands.Delete
+namespace ProductService.Application.Commands.Products.Delete
 {
     public class DeleteProductCommandHandler : ICommandHandler<DeleteProductCommand>
     {

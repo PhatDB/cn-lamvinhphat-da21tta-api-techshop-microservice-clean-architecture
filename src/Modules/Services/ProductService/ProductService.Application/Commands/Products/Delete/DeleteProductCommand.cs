@@ -1,6 +1,6 @@
 ﻿using BuildingBlocks.CQRS;
 
-namespace ProductService.Application.Commands.Delete
+namespace ProductService.Application.Commands.Products.Delete
 {
     public record DeleteProductCommand : ICommand
     {

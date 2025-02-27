@@ -2,7 +2,7 @@
 using BuildingBlocks.Extensions;
 using BuildingBlocks.Results;
 using MediatR;
-using ProductService.Application.Commands.AddImages;
+using ProductService.Application.Commands.Products.AddImages;
 using ProductService.Application.DTOs;
 
 namespace ProductService.Api.Endpoint.Products

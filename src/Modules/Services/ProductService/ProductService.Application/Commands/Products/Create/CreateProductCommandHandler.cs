@@ -9,7 +9,7 @@ using ProductService.Application.DTOs;
 using ProductService.Domain.Abstractions.Repositories;
 using ProductService.Domain.Entities;
 
-namespace ProductService.Application.Commands.Create
+namespace ProductService.Application.Commands.Products.Create
 {
     public class CreateProductCommandHandler : ICommandHandler<CreateProductCommand, int>
     {

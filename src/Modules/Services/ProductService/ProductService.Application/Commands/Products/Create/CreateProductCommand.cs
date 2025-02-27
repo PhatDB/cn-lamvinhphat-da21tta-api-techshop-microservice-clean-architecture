@@ -1,7 +1,7 @@
 ﻿using BuildingBlocks.CQRS;
 using ProductService.Application.DTOs;
 
-namespace ProductService.Application.Commands.Create
+namespace ProductService.Application.Commands.Products.Create
 {
     public record CreateProductCommand : ICommand<int>
     {

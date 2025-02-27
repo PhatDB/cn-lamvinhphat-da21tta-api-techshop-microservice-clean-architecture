@@ -4,9 +4,8 @@ using BuildingBlocks.CQRS;
 using BuildingBlocks.Error;
 using BuildingBlocks.Results;
 using ProductService.Domain.Abstractions.Repositories;
-using ProductService.Domain.Entities;
 
-namespace ProductService.Application.Commands.DeleteImages
+namespace ProductService.Application.Commands.Products.DeleteImages
 {
     public class DeleteImageCommandHandler : ICommandHandler<DeleteImageCommand>
     {

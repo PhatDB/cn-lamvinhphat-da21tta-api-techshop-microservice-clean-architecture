@@ -2,7 +2,7 @@
 using BuildingBlocks.Extensions;
 using BuildingBlocks.Results;
 using MediatR;
-using ProductService.Application.Commands.Update;
+using ProductService.Application.Commands.Products.Update;
 
 namespace ProductService.Api.Endpoint.Products
 {

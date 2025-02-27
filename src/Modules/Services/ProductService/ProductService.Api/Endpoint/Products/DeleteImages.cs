@@ -3,7 +3,7 @@ using BuildingBlocks.Extensions;
 using BuildingBlocks.Results;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using ProductService.Application.Commands.DeleteImages;
+using ProductService.Application.Commands.Products.DeleteImages;
 
 namespace ProductService.Api.Endpoint.Products
 {

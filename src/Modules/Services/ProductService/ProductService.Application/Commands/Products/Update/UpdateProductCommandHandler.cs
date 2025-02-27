@@ -1,11 +1,9 @@
 ﻿using BuildingBlocks.Abstractions.Repository;
 using BuildingBlocks.CQRS;
-using BuildingBlocks.Error;
 using BuildingBlocks.Results;
 using ProductService.Domain.Abstractions.Repositories;
-using ProductService.Domain.Entities;
 
-namespace ProductService.Application.Commands.Update
+namespace ProductService.Application.Commands.Products.Update
 {
     public class UpdateProductCommandHandler : ICommandHandler<UpdateProductCommand>
     {

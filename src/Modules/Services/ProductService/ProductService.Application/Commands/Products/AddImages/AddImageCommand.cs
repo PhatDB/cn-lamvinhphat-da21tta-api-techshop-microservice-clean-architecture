@@ -1,7 +1,7 @@
 ﻿using BuildingBlocks.CQRS;
 using ProductService.Application.DTOs;
 
-namespace ProductService.Application.Commands.AddImages
+namespace ProductService.Application.Commands.Products.AddImages
 {
     public record AddImageCommand(int ProductId, List<ProductImageDTO> ProductImages) : ICommand
     {

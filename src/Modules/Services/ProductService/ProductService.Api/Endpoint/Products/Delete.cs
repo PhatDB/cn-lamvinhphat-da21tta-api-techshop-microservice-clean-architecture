@@ -2,7 +2,7 @@
 using BuildingBlocks.Extensions;
 using BuildingBlocks.Results;
 using MediatR;
-using ProductService.Application.Commands.Delete;
+using ProductService.Application.Commands.Products.Delete;
 
 namespace ProductService.Api.Endpoint.Products
 {

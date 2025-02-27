@@ -1,6 +1,6 @@
 ﻿using BuildingBlocks.CQRS;
 
-namespace ProductService.Application.Commands.DeleteImages
+namespace ProductService.Application.Commands.Products.DeleteImages
 {
     public record DeleteImageCommand : ICommand
     {

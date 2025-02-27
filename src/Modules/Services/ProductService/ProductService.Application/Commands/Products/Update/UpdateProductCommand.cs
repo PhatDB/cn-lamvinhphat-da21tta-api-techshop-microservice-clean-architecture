@@ -1,6 +1,6 @@
 ﻿using BuildingBlocks.CQRS;
 
-namespace ProductService.Application.Commands.Update
+namespace ProductService.Application.Commands.Products.Update
 {
     public record UpdateProductCommand(
         int ProductId,
