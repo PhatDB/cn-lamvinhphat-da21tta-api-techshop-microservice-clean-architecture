@@ -15,7 +15,7 @@ namespace ProductService.Persistence.Configurations
             builder.Property(pi => pi.Position).HasColumnName("position");
             builder.Property(pi => pi.ImageUrl).HasColumnName("image_url").IsRequired();
             builder.Property(pi => pi.ProductId).HasColumnName("product_id").IsRequired();
-
+    
             builder.HasOne<Product>().WithMany(p => p.ProductImages).HasForeignKey(pi => pi.ProductId).OnDelete(DeleteBehavior.Cascade);
         }
     }

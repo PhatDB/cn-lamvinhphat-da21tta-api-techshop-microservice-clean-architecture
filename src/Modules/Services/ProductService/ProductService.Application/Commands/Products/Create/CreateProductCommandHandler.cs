@@ -22,7 +22,7 @@ namespace ProductService.Application.Commands.Products.Create
             _productRepository = productRepository;
             _unitOfWork = unitOfWork;
             _fileService = fileService;
-        }
+        }   
 
         public async Task<Result<int>> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {

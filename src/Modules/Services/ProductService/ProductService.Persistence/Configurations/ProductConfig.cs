@@ -29,6 +29,7 @@ namespace ProductService.Persistence.Configurations
 
             builder.HasOne<Category>().WithMany().HasForeignKey(p => p.CategoryId).OnDelete(DeleteBehavior.Cascade);
             builder.HasMany(p => p.ProductImages).WithOne().HasForeignKey(pi => pi.ProductId).OnDelete(DeleteBehavior.Cascade);
+            builder.HasMany(p => p.ProductColors).WithOne().HasForeignKey(pc => pc.ProductId).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

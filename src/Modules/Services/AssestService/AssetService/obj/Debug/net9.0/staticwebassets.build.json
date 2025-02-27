@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7zBSv9G4/9Q77SPZzaiVWTfSQsBpL/PWXAsaWXJVP2E=",
+  "Hash": "/abV/L8mt/MmJHOK3JYTM4+wEy8ehMpE/Y3D8qm6LHk=",
   "Source": "AssetService",
   "BasePath": "_content/AssetService",
   "Mode": "Default",
@@ -8,21 +8,21 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "AssetService\\wwwroot",
+      "Name": "AssetService/wwwroot",
       "Source": "AssetService",
-      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
       "BasePath": "_content/AssetService",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1736265288750.png",
+      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740641087813.png",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
       "BasePath": "_content/AssetService",
-      "RelativePath": "assets/product/product_1736265288750#[.{fingerprint}]?.png",
+      "RelativePath": "assets/product/product_1740641087813#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -31,17 +31,38 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "8qn9l8jitm",
-      "Integrity": "oBo2xKuU9Dmko+ipaT4m3cbKrYl5DNdC6S5XpFGLU+g=",
+      "Fingerprint": "7su9g09jen",
+      "Integrity": "6ZsebwhOEjm3mCYj/Kc1AhhQPYJLq8MM+BAjDaYMF34=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1736265288750.png"
+      "OriginalItemSpec": "wwwroot/assets/product/product_1740641087813.png"
+    },
+    {
+      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740641816038.png",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/product/product_1740641816038#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7su9g09jen",
+      "Integrity": "6ZsebwhOEjm3mCYj/Kc1AhhQPYJLq8MM+BAjDaYMF34=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/product/product_1740641816038.png"
     }
   ],
   "Endpoints": [
     {
-      "Route": "assets/product/product_1736265288750.8qn9l8jitm.png",
-      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1736265288750.png",
+      "Route": "assets/product/product_1740641087813.7su9g09jen.png",
+      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740641087813.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -50,7 +71,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "121319"
+          "Value": "205482"
         },
         {
           "Name": "Content-Type",
@@ -58,11 +79,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"oBo2xKuU9Dmko+ipaT4m3cbKrYl5DNdC6S5XpFGLU+g=\""
+          "Value": "\"6ZsebwhOEjm3mCYj/Kc1AhhQPYJLq8MM+BAjDaYMF34=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 07 Jan 2025 15:54:48 GMT"
+          "Value": "Thu, 27 Feb 2025 07:24:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -72,21 +93,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "8qn9l8jitm"
+          "Value": "7su9g09jen"
         },
         {
           "Name": "label",
-          "Value": "assets/product/product_1736265288750.png"
+          "Value": "assets/product/product_1740641087813.png"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-oBo2xKuU9Dmko+ipaT4m3cbKrYl5DNdC6S5XpFGLU+g="
+          "Value": "sha256-6ZsebwhOEjm3mCYj/Kc1AhhQPYJLq8MM+BAjDaYMF34="
         }
       ]
     },
     {
-      "Route": "assets/product/product_1736265288750.png",
-      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1736265288750.png",
+      "Route": "assets/product/product_1740641087813.png",
+      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740641087813.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -95,7 +116,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "121319"
+          "Value": "205482"
         },
         {
           "Name": "Content-Type",
@@ -103,11 +124,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"oBo2xKuU9Dmko+ipaT4m3cbKrYl5DNdC6S5XpFGLU+g=\""
+          "Value": "\"6ZsebwhOEjm3mCYj/Kc1AhhQPYJLq8MM+BAjDaYMF34=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 07 Jan 2025 15:54:48 GMT"
+          "Value": "Thu, 27 Feb 2025 07:24:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -117,7 +138,89 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-oBo2xKuU9Dmko+ipaT4m3cbKrYl5DNdC6S5XpFGLU+g="
+          "Value": "sha256-6ZsebwhOEjm3mCYj/Kc1AhhQPYJLq8MM+BAjDaYMF34="
+        }
+      ]
+    },
+    {
+      "Route": "assets/product/product_1740641816038.7su9g09jen.png",
+      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740641816038.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "205482"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6ZsebwhOEjm3mCYj/Kc1AhhQPYJLq8MM+BAjDaYMF34=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 07:36:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7su9g09jen"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/product/product_1740641816038.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6ZsebwhOEjm3mCYj/Kc1AhhQPYJLq8MM+BAjDaYMF34="
+        }
+      ]
+    },
+    {
+      "Route": "assets/product/product_1740641816038.png",
+      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740641816038.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "205482"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6ZsebwhOEjm3mCYj/Kc1AhhQPYJLq8MM+BAjDaYMF34=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Feb 2025 07:36:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6ZsebwhOEjm3mCYj/Kc1AhhQPYJLq8MM+BAjDaYMF34="
         }
       ]
     }

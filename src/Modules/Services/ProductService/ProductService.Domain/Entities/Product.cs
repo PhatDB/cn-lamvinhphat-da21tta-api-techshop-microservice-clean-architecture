@@ -21,7 +21,6 @@ namespace ProductService.Domain.Entities
             DiscountPrice = discountPrice;
             SoldQuantity = 0;
             CreatedAt = DateTime.UtcNow;
-            UpdatedAt = DateTime.UtcNow;
             IsActive = true;
 
             _productImages = new List<ProductImage>();
@@ -37,7 +36,6 @@ namespace ProductService.Domain.Entities
         public decimal? DiscountPrice { get; private set; }
         public int SoldQuantity { get; private set; }
         public DateTime CreatedAt { get; private set; }
-        public DateTime UpdatedAt { get; private set; }
         public bool IsActive { get; private set; }
         public int CategoryId { get; private set; }
 
@@ -65,7 +63,6 @@ namespace ProductService.Domain.Entities
                 return Result.Failure(Error.Validation("Product.InsufficientStock", "Not enough stock available."));
 
             SoldQuantity += quantity;
-            UpdatedAt = DateTime.UtcNow;
             return Result.Success();
         }
 
@@ -75,7 +72,6 @@ namespace ProductService.Domain.Entities
                 return Result.Failure(Error.Validation("ProductImage.InvalidUrl", "Image URL cannot be empty."));
 
             _productImages.Add(new ProductImage(Id, imageUrl, position, title));
-            UpdatedAt = DateTime.UtcNow;
             return Result.Success();
         }
         
@@ -88,7 +84,6 @@ namespace ProductService.Domain.Entities
                 return Result.Failure(Error.Conflict("ProductColor.Duplicate", "Color already exists for this product."));
 
             _productColors.Add(new ProductColor(Id, color.Id));
-            UpdatedAt = DateTime.UtcNow;
             return Result.Success();
         }
         
@@ -98,7 +93,6 @@ namespace ProductService.Domain.Entities
                 return Result.Failure(Error.Conflict("Product.AlreadyDeleted", "Product is already deleted."));
 
             IsActive = false;
-            UpdatedAt = DateTime.UtcNow;
             return Result.Success();
         }
         
@@ -120,7 +114,6 @@ namespace ProductService.Domain.Entities
             CategoryId = categoryId;
             Description = description;
             DiscountPrice = discountPrice;
-            UpdatedAt = DateTime.UtcNow;
 
             return Result.Success();
         }
@@ -136,8 +129,7 @@ namespace ProductService.Domain.Entities
             {
                 _productImages.Remove(image);
             }
-
-            UpdatedAt = DateTime.UtcNow;
+            
             return Result.Success();
         }
     }
