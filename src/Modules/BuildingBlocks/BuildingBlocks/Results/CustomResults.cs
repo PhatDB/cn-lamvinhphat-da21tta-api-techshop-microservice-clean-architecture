@@ -10,8 +10,11 @@ namespace BuildingBlocks.Results
         {
             if (result.IsSuccess) throw new InvalidOperationException();
 
-            return Microsoft.AspNetCore.Http.Results.Problem(title: GetTitle(result.Error), detail: GetDetail(result.Error), type: GetType(result.Error.Type),
-                statusCode: GetStatusCode(result.Error.Type), extensions: GetErrors(result));
+            return Microsoft.AspNetCore.Http.Results.Problem(
+                title: GetTitle(result.Error), detail: GetDetail(result.Error),
+                type: GetType(result.Error.Type),
+                statusCode: GetStatusCode(result.Error.Type),
+                extensions: GetErrors(result));
 
             static string GetTitle(Error.Error error)
             {
@@ -41,10 +44,14 @@ namespace BuildingBlocks.Results
             {
                 return errorType switch
                 {
-                    ErrorType.Validation => "https://tools.ietf.org/html/rfc7231#section-6.5.1",
-                    ErrorType.Problem => "https://tools.ietf.org/html/rfc7231#section-6.5.1",
-                    ErrorType.NotFound => "https://tools.ietf.org/html/rfc7231#section-6.5.4",
-                    ErrorType.Conflict => "https://tools.ietf.org/html/rfc7231#section-6.5.8",
+                    ErrorType.Validation =>
+                        "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                    ErrorType.Problem =>
+                        "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                    ErrorType.NotFound =>
+                        "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                    ErrorType.Conflict =>
+                        "https://tools.ietf.org/html/rfc7231#section-6.5.8",
                     _ => "https://tools.ietf.org/html/rfc7231#section-6.6.1"
                 };
             }
@@ -64,7 +71,10 @@ namespace BuildingBlocks.Results
             {
                 if (result.Error is not ValidationError validationError) return null;
 
-                return new Dictionary<string, object?> { { "errors", validationError.Errors } };
+                return new Dictionary<string, object?>
+                {
+                    { "errors", validationError.Errors }
+                };
             }
         }
     }

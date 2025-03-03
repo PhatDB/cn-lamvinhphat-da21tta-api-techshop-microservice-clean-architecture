@@ -14,7 +14,8 @@ namespace BuildingBlocks.Extensions
         {
             HttpClientHandler clientHandler = new();
 
-            clientHandler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
+            clientHandler.ServerCertificateCustomValidationCallback = HttpClientHandler
+                .DangerousAcceptAnyServerCertificateValidator;
 
             GrpcChannelOptions options = new() { HttpHandler = clientHandler };
 

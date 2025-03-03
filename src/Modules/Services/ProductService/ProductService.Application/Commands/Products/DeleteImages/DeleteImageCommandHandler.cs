@@ -4,6 +4,7 @@ using BuildingBlocks.CQRS;
 using BuildingBlocks.Error;
 using BuildingBlocks.Results;
 using ProductService.Domain.Abstractions.Repositories;
+using ProductService.Domain.Entities;
 
 namespace ProductService.Application.Commands.Products.DeleteImages
 {
@@ -13,34 +14,39 @@ namespace ProductService.Application.Commands.Products.DeleteImages
         private readonly IProductRepository _productRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public DeleteImageCommandHandler(IProductRepository productRepository, IUnitOfWork unitOfWork, IFileService fileService)
+        public DeleteImageCommandHandler(
+            IProductRepository productRepository, IUnitOfWork unitOfWork,
+            IFileService fileService)
         {
             _productRepository = productRepository;
             _unitOfWork = unitOfWork;
             _fileService = fileService;
         }
 
-        public async Task<Result> Handle(DeleteImageCommand request, CancellationToken cancellationToken)
+        public async Task<Result> Handle(
+            DeleteImageCommand request, CancellationToken cancellationToken)
         {
-            var productResult = await _productRepository.GetByIdAsync(request.ProductId, cancellationToken);
+            Result<Product> productResult =
+                await _productRepository.GetByIdAsync(request.ProductId,
+                    cancellationToken);
             if (productResult.IsFailure)
                 return Result.Failure(productResult.Error);
 
-            var product = productResult.Value;
+            Product product = productResult.Value;
 
             List<string> imagesToRemove = product.ProductImages
                 .Where(img => request.ImageIds.Contains(img.Id))
-                .Select(img => img.ImageUrl)
-                .ToList();
+                .Select(img => img.ImageUrl).ToList();
 
             foreach (string image in imagesToRemove)
             {
                 bool deleted = await _fileService.DeleteFile(image);
                 if (!deleted)
-                    return Result.Failure(Error.Problem("FailToDelete", "Cannot delete images."));
+                    return Result.Failure(Error.Problem("FailToDelete",
+                        "Cannot delete images."));
             }
 
-            var removeResult = product.RemoveProductImages(request.ImageIds);
+            Result removeResult = product.RemoveProductImages(request.ImageIds);
             if (removeResult.IsFailure)
                 return Result.Failure(removeResult.Error);
 

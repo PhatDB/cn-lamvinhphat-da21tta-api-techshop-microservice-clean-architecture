@@ -15,18 +15,22 @@ namespace ProductService.Persistence.Repositories
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        public async Task<int> SaveChangesAsync(
+            CancellationToken cancellationToken = default)
         {
             return await _context.SaveChangesAsync(cancellationToken);
         }
 
         public async Task<IDbTransaction> BeginTransactionAsync()
         {
-            if (_currentTransaction != null) throw new InvalidOperationException("A transaction is already in progress.");
+            if (_currentTransaction != null)
+                throw new InvalidOperationException(
+                    "A transaction is already in progress.");
 
             DbConnection dbConnection = _context.Database.GetDbConnection();
 
-            if (dbConnection.State != ConnectionState.Open) await dbConnection.OpenAsync();
+            if (dbConnection.State != ConnectionState.Open)
+                await dbConnection.OpenAsync();
 
             _currentTransaction = await dbConnection.BeginTransactionAsync();
             await _context.Database.UseTransactionAsync(_currentTransaction);

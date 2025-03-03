@@ -3,8 +3,10 @@ using ProductService.Application.DTOs;
 
 namespace ProductService.Application.Commands.Products.AddImages
 {
-    public record AddImageCommand(int ProductId, List<ProductImageDTO> ProductImages) : ICommand
+    public record AddImageCommand(int ProductId, List<ProductImageDTO> ProductImages)
+        : ICommand
     {
-        public List<ProductImageDTO> ProductImages { get; init; } = ProductImages ?? new List<ProductImageDTO>();
+        public List<ProductImageDTO> ProductImages { get; init; } =
+            ProductImages ?? new List<ProductImageDTO>();
     }
 }

@@ -17,7 +17,9 @@ namespace BuildingBlocks.OpenApi
 
         public void Configure(SwaggerGenOptions options)
         {
-            foreach (ApiVersionDescription description in _provider.ApiVersionDescriptions) options.SwaggerDoc(description.GroupName, CreateVersionInfo(description));
+            foreach (ApiVersionDescription description in
+                     _provider.ApiVersionDescriptions)
+                options.SwaggerDoc(description.GroupName, CreateVersionInfo(description));
         }
 
         public void Configure(string? name, SwaggerGenOptions options)
@@ -25,11 +27,17 @@ namespace BuildingBlocks.OpenApi
             Configure(options);
         }
 
-        private static OpenApiInfo CreateVersionInfo(ApiVersionDescription apiVersionDescription)
+        private static OpenApiInfo CreateVersionInfo(
+            ApiVersionDescription apiVersionDescription)
         {
-            OpenApiInfo openApiInfo = new() { Title = $"TechShop.Api v{apiVersionDescription.ApiVersion}", Version = apiVersionDescription.ApiVersion.ToString() };
+            OpenApiInfo openApiInfo = new()
+            {
+                Title = $"TechShop.Api v{apiVersionDescription.ApiVersion}",
+                Version = apiVersionDescription.ApiVersion.ToString()
+            };
 
-            if (apiVersionDescription.IsDeprecated) openApiInfo.Description += " This API version has been deprecated.";
+            if (apiVersionDescription.IsDeprecated)
+                openApiInfo.Description += " This API version has been deprecated.";
 
             return openApiInfo;
         }

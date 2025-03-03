@@ -5,7 +5,8 @@ namespace BuildingBlocks.Extensions
 {
     public sealed record ValidationError : Error.Error
     {
-        public ValidationError(Error.Error[] errors) : base("Validation.General", "One or more validation errors occurred", ErrorType.Validation)
+        public ValidationError(Error.Error[] errors) : base("Validation.General",
+            "One or more validation errors occurred", ErrorType.Validation)
         {
             Errors = errors;
         }
@@ -14,7 +15,8 @@ namespace BuildingBlocks.Extensions
 
         public static ValidationError FromResults(IEnumerable<Result> results)
         {
-            return new ValidationError(results.Where(r => r.IsFailure).Select(r => r.Error).ToArray());
+            return new ValidationError(results.Where(r => r.IsFailure)
+                .Select(r => r.Error).ToArray());
         }
     }
 }

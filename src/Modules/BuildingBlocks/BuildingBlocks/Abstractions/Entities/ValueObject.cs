@@ -2,6 +2,11 @@ namespace BuildingBlocks.Abstractions.Entities
 {
     public abstract class ValueObject : IEquatable<ValueObject>
     {
+        public bool Equals(ValueObject? other)
+        {
+            return Equals((object?)other);
+        }
+
         protected abstract IEnumerable<object> GetEqualityComponents();
 
         public override bool Equals(object? obj)
@@ -9,20 +14,15 @@ namespace BuildingBlocks.Abstractions.Entities
             if (obj is null || obj.GetType() != GetType())
                 return false;
 
-            var other = (ValueObject)obj;
+            ValueObject other = (ValueObject)obj;
 
             return GetEqualityComponents().SequenceEqual(other.GetEqualityComponents());
         }
 
-        public bool Equals(ValueObject? other)
-        {
-            return Equals((object?)other);
-        }
-
         public override int GetHashCode()
         {
-            return GetEqualityComponents()
-                .Aggregate(1, (current, obj) => HashCode.Combine(current, obj?.GetHashCode() ?? 0));
+            return GetEqualityComponents().Aggregate(1,
+                (current, obj) => HashCode.Combine(current, obj?.GetHashCode() ?? 0));
         }
 
         public static bool operator ==(ValueObject? left, ValueObject? right)

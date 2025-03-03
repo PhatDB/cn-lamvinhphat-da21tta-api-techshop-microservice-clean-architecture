@@ -14,9 +14,9 @@ namespace ProductService.Api.Endpoint.Products.Commands
                 int productId, UpdateRequest request, ISender sender,
                 CancellationToken cancellationToken) =>
             {
-                UpdateProductCommand command = new UpdateProductCommand(productId,
-                    request.Name, request.Sku, request.Price, request.CategoryId,
-                    request.Description, request.DiscountPrice);
+                UpdateProductCommand command = new(productId, request.Name, request.Sku,
+                    request.Price, request.CategoryId, request.Description,
+                    request.DiscountPrice);
 
                 Result result = await sender.Send(command, cancellationToken);
 

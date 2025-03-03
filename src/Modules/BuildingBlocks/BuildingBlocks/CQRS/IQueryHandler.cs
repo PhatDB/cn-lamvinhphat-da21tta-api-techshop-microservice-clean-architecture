@@ -7,4 +7,5 @@ namespace BuildingBlocks.CQRS
         where TQuery : IQuery<TResponse>
     {
     }
+    
 }

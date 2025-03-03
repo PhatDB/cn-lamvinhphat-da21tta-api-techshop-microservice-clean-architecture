@@ -6,7 +6,8 @@ namespace BuildingBlocks.Results
     {
         public Result(bool isSuccess, Error.Error error)
         {
-            if ((isSuccess && error != BuildingBlocks.Error.Error.None) || (!isSuccess && error == BuildingBlocks.Error.Error.None))
+            if ((isSuccess && error != BuildingBlocks.Error.Error.None) ||
+                (!isSuccess && error == BuildingBlocks.Error.Error.None))
                 throw new ArgumentException("Invalid error", nameof(error));
 
             IsSuccess = isSuccess;
@@ -44,17 +45,23 @@ namespace BuildingBlocks.Results
     {
         private readonly TValue? _value;
 
-        public Result(TValue? value, bool isSuccess, Error.Error error) : base(isSuccess, error)
+        public Result(TValue? value, bool isSuccess, Error.Error error) : base(isSuccess,
+            error)
         {
             _value = value;
         }
 
         [NotNull]
-        public TValue Value => IsSuccess ? _value! : throw new InvalidOperationException("The value of a failure result can't be accessed.");
+        public TValue Value => IsSuccess
+            ? _value!
+            : throw new InvalidOperationException(
+                "The value of a failure result can't be accessed.");
 
         public static implicit operator Result<TValue>(TValue? value)
         {
-            return value is not null ? Success(value) : Failure<TValue>(BuildingBlocks.Error.Error.NullValue);
+            return value is not null
+                ? Success(value)
+                : Failure<TValue>(BuildingBlocks.Error.Error.NullValue);
         }
 
         public static Result<TValue> ValidationFailure(Error.Error error)

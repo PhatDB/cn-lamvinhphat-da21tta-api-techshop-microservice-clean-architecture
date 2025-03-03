@@ -11,7 +11,8 @@ namespace BuildingBlocks.Abstractions.Entities
         public virtual int Id { get; protected set; }
 
         [JsonIgnore]
-        public IReadOnlyCollection<INotification> DomainEvents => _domainEvents?.AsReadOnly();
+        public IReadOnlyCollection<INotification> DomainEvents =>
+            _domainEvents?.AsReadOnly();
 
         public void AddDomainEvent(INotification eventItem)
         {

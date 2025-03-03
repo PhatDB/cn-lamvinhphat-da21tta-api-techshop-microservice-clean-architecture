@@ -2,6 +2,7 @@
 using BuildingBlocks.CQRS;
 using BuildingBlocks.Results;
 using ProductService.Domain.Abstractions.Repositories;
+using ProductService.Domain.Entities;
 
 namespace ProductService.Application.Commands.Products.Update
 {
@@ -10,23 +11,28 @@ namespace ProductService.Application.Commands.Products.Update
         private readonly IProductRepository _productRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public UpdateProductCommandHandler(IProductRepository productRepository, IUnitOfWork unitOfWork)
+        public UpdateProductCommandHandler(
+            IProductRepository productRepository, IUnitOfWork unitOfWork)
         {
             _productRepository = productRepository;
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<Result> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
+        public async Task<Result> Handle(
+            UpdateProductCommand request, CancellationToken cancellationToken)
         {
-            var productResult = await _productRepository.GetByIdAsync(request.ProductId, cancellationToken);
-            
+            Result<Product> productResult =
+                await _productRepository.GetByIdAsync(request.ProductId,
+                    cancellationToken);
+
             if (productResult.IsFailure)
                 return Result.Failure(productResult.Error);
 
-            var product = productResult.Value;
-            
-            product.UpdateProduct(request.Name, request.Sku, request.Price, request.CategoryId, request.Description, request.DiscountPrice);
-            
+            Product product = productResult.Value;
+
+            product.UpdateProduct(request.Name, request.Sku, request.Price,
+                request.CategoryId, request.Description, request.DiscountPrice);
+
             await _productRepository.UpdateAsync(product, cancellationToken);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 

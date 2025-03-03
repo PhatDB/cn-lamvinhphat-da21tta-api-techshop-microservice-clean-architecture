@@ -6,6 +6,7 @@ namespace ProductService.Domain.Abstractions.Repositories
 {
     public interface IColorRepository : IGenericRepository<Color>
     {
-        Task<Result<Color>> GetColorByNameAsync(string colorName, CancellationToken cancellationToken);
+        Task<Result<Color>> GetColorByNameAsync(
+            string colorName, CancellationToken cancellationToken);
     }
 }

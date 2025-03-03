@@ -5,6 +5,5 @@ namespace ProductService.Domain.Abstractions.Repositories
 {
     public interface ICategoryRepository : IGenericRepository<Category>
     {
-        
     }
 }

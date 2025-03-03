@@ -107,6 +107,7 @@ namespace ProductService.Domain.Entities
             return Result.Success();
         }
 
+
         public Result UpdateColorStock(int colorId, int newStockQuantity)
         {
             ProductColor? productColor =

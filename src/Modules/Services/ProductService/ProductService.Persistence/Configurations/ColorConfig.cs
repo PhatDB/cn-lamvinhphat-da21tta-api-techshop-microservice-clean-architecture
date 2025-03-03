@@ -11,7 +11,8 @@ namespace ProductService.Persistence.Configurations
             builder.ToTable("Color");
             builder.HasKey(c => c.Id);
             builder.Property(c => c.Id).HasColumnName("color_id");
-            builder.Property(c => c.Name).HasColumnName("name").HasMaxLength(50).IsRequired();
+            builder.Property(c => c.Name).HasColumnName("name").HasMaxLength(50)
+                .IsRequired();
         }
     }
 }

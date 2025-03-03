@@ -17,37 +17,48 @@ namespace ProductService.Application.Commands.Products.AddImages
         private readonly IProductRepository _productRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public AddImageCommandHandler(IProductRepository productRepository, IFileService fileService, IUnitOfWork unitOfWork)
+        public AddImageCommandHandler(
+            IProductRepository productRepository, IFileService fileService,
+            IUnitOfWork unitOfWork)
         {
             _productRepository = productRepository;
             _fileService = fileService;
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<Result> Handle(AddImageCommand request, CancellationToken cancellationToken)
+        public async Task<Result> Handle(
+            AddImageCommand request, CancellationToken cancellationToken)
         {
-            var productResult = await _productRepository.GetProductDetailAsync(request.ProductId, cancellationToken);
+            Result<Product> productResult =
+                await _productRepository.GetProductDetailAsync(request.ProductId,
+                    cancellationToken);
             if (productResult.IsFailure)
-                return Result.Failure(Error.NotFound("Product.NotFound", $"Product with ID {request.ProductId} does not exist."));
+                return Result.Failure(Error.NotFound("Product.NotFound",
+                    $"Product with ID {request.ProductId} does not exist."));
 
-            var product = productResult.Value;
-            
+            Product product = productResult.Value;
+
             foreach (ProductImageDTO imageDto in request.ProductImages)
             {
                 if (!IsBase64String(imageDto.ImageContent))
-                    return Result.Failure(Error.Validation("Base64.Validation", "Invalid image content"));
-                
-                string imageUrl = await _fileService.UploadFile(imageDto.ImageContent, AssetType.PRODUCT_IMAGE);
-                
-                var imageResult = ProductImage.Create(product.Id, imageUrl, imageDto.Position, imageDto.Title);
+                    return Result.Failure(Error.Validation("Base64.Validation",
+                        "Invalid image content"));
+
+                string imageUrl = await _fileService.UploadFile(imageDto.ImageContent,
+                    AssetType.PRODUCT_IMAGE);
+
+                Result<ProductImage> imageResult = ProductImage.Create(product.Id,
+                    imageUrl, imageDto.Position, imageDto.Title);
                 if (imageResult.IsFailure) return Result.Failure(imageResult.Error);
-                
-                var addImageResult = product.AddProductImage(imageResult.Value.ImageUrl, imageResult.Value.Position, imageResult.Value.Title);
+
+                Result addImageResult = product.AddProductImage(
+                    imageResult.Value.ImageUrl, imageResult.Value.Position,
+                    imageResult.Value.Title);
 
                 if (addImageResult.IsFailure)
                     return Result.Failure<int>(addImageResult.Error);
             }
-            
+
             await _productRepository.UpdateAsync(product, cancellationToken);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
@@ -58,7 +69,8 @@ namespace ProductService.Application.Commands.Products.AddImages
         {
             if (string.IsNullOrWhiteSpace(base64String)) return false;
             base64String = base64String.Trim();
-            return base64String.Length % 4 == 0 && Regex.IsMatch(base64String, @"^[a-zA-Z0-9+/]*={0,2}$", RegexOptions.None);
+            return base64String.Length % 4 == 0 && Regex.IsMatch(base64String,
+                @"^[a-zA-Z0-9+/]*={0,2}$", RegexOptions.None);
         }
     }
 }

@@ -2,6 +2,7 @@
 using BuildingBlocks.CQRS;
 using BuildingBlocks.Results;
 using ProductService.Domain.Abstractions.Repositories;
+using ProductService.Domain.Entities;
 
 namespace ProductService.Application.Commands.Products.Delete
 {
@@ -10,21 +11,25 @@ namespace ProductService.Application.Commands.Products.Delete
         private readonly IProductRepository _productRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public DeleteProductCommandHandler(IProductRepository productRepository, IUnitOfWork unitOfWork)
+        public DeleteProductCommandHandler(
+            IProductRepository productRepository, IUnitOfWork unitOfWork)
         {
             _productRepository = productRepository;
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<Result> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
+        public async Task<Result> Handle(
+            DeleteProductCommand request, CancellationToken cancellationToken)
         {
-            var productResult = await _productRepository.GetByIdAsync(request.ProductId, cancellationToken);
+            Result<Product> productResult =
+                await _productRepository.GetByIdAsync(request.ProductId,
+                    cancellationToken);
             if (productResult.IsFailure)
                 return Result.Failure(productResult.Error);
-            
-            var product = productResult.Value;
-            
-            var deleteResult = product.DeleteProduct();
+
+            Product product = productResult.Value;
+
+            Result deleteResult = product.DeleteProduct();
             if (deleteResult.IsFailure)
                 return Result.Failure(deleteResult.Error);
 
