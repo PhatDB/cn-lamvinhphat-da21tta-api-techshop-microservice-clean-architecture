@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "87oa+Xn5RG0=",
+  "dgSpecHash": "AytDxVAymmY=",
   "success": true,
   "projectFilePath": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/ProductService/ProductService.Persistence/ProductService.Persistence.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "/Users/phatdb/.nuget/packages/asp.versioning.http/8.1.0/asp.versioning.http.8.1.0.nupkg.sha512",
     "/Users/phatdb/.nuget/packages/asp.versioning.mvc/8.1.0/asp.versioning.mvc.8.1.0.nupkg.sha512",
     "/Users/phatdb/.nuget/packages/asp.versioning.mvc.apiexplorer/8.1.0/asp.versioning.mvc.apiexplorer.8.1.0.nupkg.sha512",
+    "/Users/phatdb/.nuget/packages/automapper/14.0.0/automapper.14.0.0.nupkg.sha512",
     "/Users/phatdb/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/Users/phatdb/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",
     "/Users/phatdb/.nuget/packages/fluentvalidation/11.11.0/fluentvalidation.11.11.0.nupkg.sha512",

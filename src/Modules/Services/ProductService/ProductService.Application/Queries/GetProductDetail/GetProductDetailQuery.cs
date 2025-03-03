@@ -1,9 +1,9 @@
 ﻿using BuildingBlocks.CQRS;
-using ProductService.Domain.Entities;
+using ProductService.Application.DTOs;
 
 namespace ProductService.Application.Queries
 {
-    public class GetProductDetailQuery : IQuery<Product>
+    public class GetProductDetailQuery : IQuery<ProductDetailDTO>
     {
         public GetProductDetailQuery(int productId)
         {

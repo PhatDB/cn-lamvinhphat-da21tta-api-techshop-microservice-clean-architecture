@@ -1,34 +1,41 @@
-﻿using BuildingBlocks.CQRS;
+﻿using AutoMapper;
+using BuildingBlocks.CQRS;
 using BuildingBlocks.Error;
 using BuildingBlocks.Results;
+using Microsoft.EntityFrameworkCore;
+using ProductService.Application.DTOs;
 using ProductService.Domain.Abstractions.Repositories;
 using ProductService.Domain.Entities;
 
 namespace ProductService.Application.Queries
 {
     public class
-        GetProductDetailQueryHandler : IQueryHandler<GetProductDetailQuery, Product>
+        GetProductDetailQueryHandler : IQueryHandler<GetProductDetailQuery,
+        ProductDetailDTO>
     {
+        private readonly IMapper _mapper;
         private readonly IProductRepository _productRepository;
 
-        public GetProductDetailQueryHandler(IProductRepository productRepository)
+        public GetProductDetailQueryHandler(
+            IProductRepository productRepository, IMapper mapper)
         {
             _productRepository = productRepository;
+            _mapper = mapper;
         }
 
-        public async Task<Result<Product>> Handle(
+        public async Task<Result<ProductDetailDTO>> Handle(
             GetProductDetailQuery request, CancellationToken cancellationToken)
         {
-            Result<Product> productResult =
-                await _productRepository.GetProductDetailAsync(request.ProductId);
+            Product? product = await _productRepository.AsQueryable()
+                .Include(p => p.ProductImages).Include(p => p.ProductColors)
+                .ThenInclude(pc => pc.Color)
+                .FirstOrDefaultAsync(p => p.Id == request.ProductId, cancellationToken);
 
-            if (productResult.IsFailure)
-                return Result.Failure<Product>(new Error("ProductNotFound",
-                    $"Product with ID {request.ProductId} does not exist.",
-                    ErrorType.NotFound));
+            if (product == null)
+                return Result.Failure<ProductDetailDTO>(Error.NotFound("Product.NotFound",
+                    $"Product with ID {request.ProductId} not found."));
 
-            Product product = productResult.Value;
-            return Result.Success(product);
+            return Result.Success(_mapper.Map<ProductDetailDTO>(product));
         }
     }
 }
