@@ -1,10 +1,11 @@
+using BuildingBlocks.Abstractions.Aggregates;
 using BuildingBlocks.Abstractions.Entities;
 using BuildingBlocks.Results;
 using BuildingBlocks.Error;
 
 namespace ProductService.Domain.Entities
 {
-    public class Category : Entity
+    public class Category : Entity, IAggregateRoot
     {
         public string Name { get; private set; }
         public string? Description { get; private set; }

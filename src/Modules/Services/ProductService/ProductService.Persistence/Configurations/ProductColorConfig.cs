@@ -13,9 +13,13 @@ namespace ProductService.Persistence.Configurations
             builder.Property(pc => pc.Id).HasColumnName("product_color_id");
             builder.Property(pc => pc.ProductId).HasColumnName("product_id").IsRequired();
             builder.Property(pc => pc.ColorId).HasColumnName("color_id").IsRequired();
+            builder.Property(pc => pc.StockQuantity).HasColumnName("stock_quantity")
+                .HasDefaultValue(0).IsRequired();
 
-            builder.HasOne<Product>().WithMany().HasForeignKey(pc => pc.ProductId).OnDelete(DeleteBehavior.Cascade);
-            builder.HasOne<Color>().WithMany().HasForeignKey(pc => pc.ColorId).OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne<Product>().WithMany().HasForeignKey(pc => pc.ProductId)
+                .OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne(pc => pc.Color).WithMany().HasForeignKey(pc => pc.ColorId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

@@ -8,7 +8,6 @@ namespace ProductService.Domain.Abstractions.Repositories
     {
         Task<List<Product>> GetAllPagedAsync(int pageNumber, int pageSize, string? sortBy, bool? isDescending, CancellationToken cancellationToken);
         Task<int> GetTotalCountAsync(CancellationToken cancellationToken);
-        Task<Result<Color>> GetColorByNameAsync(string colorName, CancellationToken cancellationToken);
         Task<Result> AddColorAsync(Color color, CancellationToken cancellationToken);
         Task<Result<Product>> GetProductDetailAsync(int id, CancellationToken cancellationToken = default);
     }

@@ -12,5 +12,6 @@
         public bool IsActive { get; set; }
         public int CategoryId { get; set; }
         public string? FirstImageUrl { get; set; }
+        public List<ColorDTO> Colors { get; set; } = new();
     }
 }

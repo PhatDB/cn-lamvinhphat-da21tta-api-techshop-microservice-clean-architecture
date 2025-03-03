@@ -13,53 +13,70 @@ namespace ProductService.Application.Commands.Products.Create
 {
     public class CreateProductCommandHandler : ICommandHandler<CreateProductCommand, int>
     {
+        private readonly IColorRepository _colorRepository;
         private readonly IFileService _fileService;
         private readonly IProductRepository _productRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public CreateProductCommandHandler(IProductRepository productRepository, IUnitOfWork unitOfWork, IFileService fileService)
+
+        public CreateProductCommandHandler(
+            IProductRepository productRepository, IColorRepository colorRepository,
+            IUnitOfWork unitOfWork, IFileService fileService)
         {
             _productRepository = productRepository;
             _unitOfWork = unitOfWork;
             _fileService = fileService;
-        }   
+            _colorRepository = colorRepository;
+        }
 
-        public async Task<Result<int>> Handle(CreateProductCommand request, CancellationToken cancellationToken)
+        public async Task<Result<int>> Handle(
+            CreateProductCommand request, CancellationToken cancellationToken)
         {
-            var productResult = Product.Create(request.Name, request.SKU, request.Price, request.CategoryId, request.Description, request.DiscountPrice);
+            Result<Product> productResult = Product.Create(request.Name, request.SKU,
+                request.Price, request.CategoryId, request.Description,
+                request.DiscountPrice);
             if (productResult.IsFailure)
                 return Result.Failure<int>(productResult.Error);
 
-            var product = productResult.Value;
+            Product product = productResult.Value;
 
             foreach (ProductImageDTO imageDto in request.Images)
             {
-                if (!IsBase64String(imageDto.ImageContent)) return Result.Failure<int>(Error.Validation("Base64.Validation", "Invalid image content"));
+                if (!IsBase64String(imageDto.ImageContent))
+                    return Result.Failure<int>(Error.Validation("Base64.Validation",
+                        "Invalid image content"));
 
-                string imageUrl = await _fileService.UploadFile(imageDto.ImageContent, AssetType.PRODUCT_IMAGE);
-                
-                var imageResult = ProductImage.Create(product.Id, imageUrl, imageDto.Position, imageDto.Title);
+                string imageUrl = await _fileService.UploadFile(imageDto.ImageContent,
+                    AssetType.PRODUCT_IMAGE);
+
+                Result<ProductImage> imageResult = ProductImage.Create(product.Id,
+                    imageUrl, imageDto.Position, imageDto.Title);
                 if (imageResult.IsFailure) return Result.Failure<int>(imageResult.Error);
 
-                var addImageResult = product.AddProductImage(imageResult.Value.ImageUrl, imageResult.Value.Position, imageResult.Value.Title);
+                Result addImageResult = product.AddProductImage(
+                    imageResult.Value.ImageUrl, imageResult.Value.Position,
+                    imageResult.Value.Title);
 
                 if (addImageResult.IsFailure)
                     return Result.Failure<int>(addImageResult.Error);
             }
-            
-            foreach (var colorName in request.Colors)
-            {
-                var colorResult = await _productRepository.GetColorByNameAsync(colorName, cancellationToken);
 
+            foreach (ColorDTO colorStock in request.Colors)
+            {
+                Result<Color> colorResult =
+                    await _colorRepository.GetColorByNameAsync(colorStock.ColorName,
+                        cancellationToken);
                 if (colorResult.IsFailure)
                 {
-                    colorResult = Color.Create(colorName);
+                    colorResult = Color.Create(colorStock.ColorName);
                     if (colorResult.IsFailure)
                         return Result.Failure<int>(colorResult.Error);
+                    await _colorRepository.AddAsync(colorResult.Value, cancellationToken);
+                    await _unitOfWork.SaveChangesAsync(cancellationToken);
                 }
 
-                var addColorResult = product.AddColor(colorResult.Value);
-    
+                Result addColorResult =
+                    product.AddColor(colorResult.Value, colorStock.StockQuantity);
                 if (addColorResult.IsFailure)
                     return Result.Failure<int>(addColorResult.Error);
             }
@@ -80,7 +97,8 @@ namespace ProductService.Application.Commands.Products.Create
             if (base64String.Length % 4 != 0)
                 return false;
 
-            return Regex.IsMatch(base64String, @"^[a-zA-Z0-9+/]*={0,2}$", RegexOptions.None);
+            return Regex.IsMatch(base64String, @"^[a-zA-Z0-9+/]*={0,2}$",
+                RegexOptions.None);
         }
     }
 }

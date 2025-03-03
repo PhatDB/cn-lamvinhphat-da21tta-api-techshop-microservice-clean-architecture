@@ -1,19 +1,17 @@
+using BuildingBlocks.Abstractions.Aggregates;
 using BuildingBlocks.Abstractions.Entities;
 using BuildingBlocks.Results;
 using BuildingBlocks.Error;
 
 namespace ProductService.Domain.Entities
 {
-    public class Color : Entity
+    public class Color : Entity, IAggregateRoot
     {
-        private readonly List<ProductColor> _productColors;
         public string Name { get; private set; }
-        public IReadOnlyCollection<ProductColor> ProductColors => _productColors.AsReadOnly();
 
         private Color(string name)
         {
             Name = name;
-            _productColors = new List<ProductColor>();
         }
 
         public static Result<Color> Create(string name)

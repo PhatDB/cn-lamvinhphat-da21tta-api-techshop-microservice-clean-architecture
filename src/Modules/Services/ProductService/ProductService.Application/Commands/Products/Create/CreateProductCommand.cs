@@ -6,14 +6,9 @@ namespace ProductService.Application.Commands.Products.Create
     public record CreateProductCommand : ICommand<int>
     {
         public CreateProductCommand(
-            string name,
-            string sku,
-            decimal price,
-            int categoryId,
-            List<ProductImageDTO> images,
-            List<string> colors,
-            string? description = null,
-            decimal? discountPrice = null)
+            string name, string sku, decimal price, int categoryId,
+            List<ProductImageDTO> images, List<ColorDTO> colors,
+            string? description = null, decimal? discountPrice = null)
         {
             Name = name;
             SKU = sku;
@@ -21,8 +16,8 @@ namespace ProductService.Application.Commands.Products.Create
             CategoryId = categoryId;
             Description = description;
             DiscountPrice = discountPrice;
-            Images = images ?? new();
-            Colors = colors ?? new();
+            Images = images;
+            Colors = colors;
         }
 
         public string Name { get; set; }
@@ -32,6 +27,6 @@ namespace ProductService.Application.Commands.Products.Create
         public string? Description { get; set; }
         public decimal? DiscountPrice { get; set; }
         public List<ProductImageDTO> Images { get; set; }
-        public List<string> Colors { get; set; }
+        public List<ColorDTO> Colors { get; set; }
     }
 }

@@ -61,6 +61,30 @@
       "PackagePath": "staticwebassets/assets/product/product_1740647167038.webp"
     },
     {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740705034431.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1740705034431.webp"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740707590027.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1740707590027.webp"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740707733031.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1740707733031.webp"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740967563775.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1740967563775.webp"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740967682194.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1740967682194.webp"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740967764643.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1740967764643.webp"
+    },
+    {
       "Id": "obj/Debug/net9.0/staticwebassets/msbuild.AssetService.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

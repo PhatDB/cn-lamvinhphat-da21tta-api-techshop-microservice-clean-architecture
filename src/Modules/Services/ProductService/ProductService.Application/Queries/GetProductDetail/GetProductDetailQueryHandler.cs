@@ -1,13 +1,13 @@
 ﻿using BuildingBlocks.CQRS;
 using BuildingBlocks.Error;
 using BuildingBlocks.Results;
-using Microsoft.EntityFrameworkCore;
 using ProductService.Domain.Abstractions.Repositories;
 using ProductService.Domain.Entities;
 
 namespace ProductService.Application.Queries
 {
-    public class GetProductDetailQueryHandler : IQueryHandler<GetProductDetailQuery, Product>
+    public class
+        GetProductDetailQueryHandler : IQueryHandler<GetProductDetailQuery, Product>
     {
         private readonly IProductRepository _productRepository;
 
@@ -16,12 +16,18 @@ namespace ProductService.Application.Queries
             _productRepository = productRepository;
         }
 
-        public async Task<Result<Product>> Handle(GetProductDetailQuery request, CancellationToken cancellationToken)
+        public async Task<Result<Product>> Handle(
+            GetProductDetailQuery request, CancellationToken cancellationToken)
         {
-            Product? product = await _productRepository.AsQueryable().Where(p => p.Id == request.ProductId).Include(p => p.ProductImages).FirstOrDefaultAsync(cancellationToken);
+            Result<Product> productResult =
+                await _productRepository.GetProductDetailAsync(request.ProductId);
 
-            if (product == null) return Result.Failure<Product>(new Error("ProductNotFound", $"Product with ID {request.ProductId} does not exist.", ErrorType.NotFound));
+            if (productResult.IsFailure)
+                return Result.Failure<Product>(new Error("ProductNotFound",
+                    $"Product with ID {request.ProductId} does not exist.",
+                    ErrorType.NotFound));
 
+            Product product = productResult.Value;
             return Result.Success(product);
         }
     }

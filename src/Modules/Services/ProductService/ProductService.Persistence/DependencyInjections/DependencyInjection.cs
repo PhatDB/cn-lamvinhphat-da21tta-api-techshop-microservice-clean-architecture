@@ -15,6 +15,7 @@ namespace ProductService.Persistence.DependencyInjections
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IColorRepository, ColorRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             return services;
         }

@@ -1,10 +1,11 @@
+using BuildingBlocks.Abstractions.Aggregates;
 using BuildingBlocks.Abstractions.Entities;
 using BuildingBlocks.Results;
 using BuildingBlocks.Error;
 
 namespace ProductService.Domain.Entities
 {
-    public class Inventory : Entity
+    public class Inventory : Entity, IAggregateRoot
     {
         public int ProductId { get; private set; }
         public int StockQuantity { get; private set; }

@@ -1,8 +1,6 @@
-using BuildingBlocks.Abstractions.Entities;
-
-namespace BuildingBlocks.Abstractions.Aggregates;
-
-public interface IAggregateRoot
+namespace BuildingBlocks.Abstractions.Aggregates
 {
-    
+    public interface IAggregateRoot
+    {
+    }
 }
