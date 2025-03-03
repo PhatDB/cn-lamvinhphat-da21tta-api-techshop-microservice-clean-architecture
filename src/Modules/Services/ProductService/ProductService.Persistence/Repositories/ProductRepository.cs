@@ -1,4 +1,6 @@
+using System.Linq.Expressions;
 using BuildingBlocks.Error;
+using BuildingBlocks.Extensions;
 using BuildingBlocks.Results;
 using Microsoft.EntityFrameworkCore;
 using ProductService.Domain.Abstractions.Repositories;
@@ -15,33 +17,56 @@ namespace ProductService.Persistence.Repositories
             _context = context;
         }
 
-        public async Task<List<Product>> GetAllPagedAsync(int pageNumber, int pageSize, string? sortBy, bool? isDescending, CancellationToken cancellationToken)
+        public async Task<Result<PagedResult<Product>>> GetAllPagedAsync(
+            PaginationOption paginationOption, CancellationToken cancellationToken)
         {
-            IQueryable<Product> query = _context.Products.AsQueryable();
+            IQueryable<Product> query = _context.Products.Include(p => p.ProductImages)
+                .Include(p => p.ProductColors).ThenInclude(pc => pc.Color).AsNoTracking();
 
-            if (!string.IsNullOrEmpty(sortBy))
-                query = isDescending == true ? query.OrderByDescending(p => EF.Property<object>(p, sortBy)) : query.OrderBy(p => EF.Property<object>(p, sortBy));
+            Dictionary<string, Expression<Func<Product, object>>> sortingColumns = new()
+            {
+                { "name", p => p.Name },
+                { "price", p => p.Price },
+                { "discountprice", p => p.DiscountPrice ?? 0 },
+                { "createdat", p => p.CreatedAt },
+                { "soldquantity", p => p.SoldQuantity },
+                { "categoryid", p => p.CategoryId }
+            };
 
-            return await query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync(cancellationToken);
+            string sortBy = paginationOption.SortBy?.ToLower() ?? "createdat";
+            bool isDescending = paginationOption.IsDescending ?? false;
+            int pageNumber = Math.Max(paginationOption.PageNumber ?? 1, 1);
+            int pageSize = Math.Clamp(paginationOption.PageSize ?? 10, 1, 100);
+
+            if (!sortingColumns.ContainsKey(sortBy))
+                sortBy = "createdat";
+
+            Expression<Func<Product, object>> sortExpression = sortingColumns[sortBy];
+
+            query = isDescending
+                ? query.OrderByDescending(sortExpression)
+                : query.OrderBy(sortExpression);
+
+            int totalCount = await _context.Products.CountAsync(cancellationToken);
+
+            List<Product> products = await query.Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize).ToListAsync(cancellationToken);
+
+            return Result.Success(new PagedResult<Product>(products, totalCount,
+                pageNumber, pageSize));
         }
 
-        public async Task<int> GetTotalCountAsync(CancellationToken cancellationToken)
+        public async Task<Result<Product>> GetProductDetailAsync(
+            int id, CancellationToken cancellationToken = default)
         {
-            return await _context.Products.CountAsync(cancellationToken);
-        }
-
-        public async Task<Result> AddColorAsync(Color color, CancellationToken cancellationToken)
-        {
-            await _context.Colors.AddAsync(color, cancellationToken);
-            return Result.Success();
-        }
-
-        public async Task<Result<Product>> GetProductDetailAsync(int id, CancellationToken cancellationToken = default)
-        {
-            Product? product = await _context.Products.Include(p => p.ProductImages).Include(p => p.ProductColors).ThenInclude(pc => pc.Color)
+            Product? product = await _context.Products.Include(p => p.ProductImages)
+                .Include(p => p.ProductColors).ThenInclude(pc => pc.Color)
                 .FirstOrDefaultAsync(p => p.Id == id, cancellationToken);
 
-            return product is null ? Result.Failure<Product>(Error.NotFound("Product.NotFound", $"Product with ID {id} not found.")) : Result.Success(product);
+            return product is null
+                ? Result.Failure<Product>(Error.NotFound("Product.NotFound",
+                    $"Product with ID {id} not found."))
+                : Result.Success(product);
         }
     }
 }

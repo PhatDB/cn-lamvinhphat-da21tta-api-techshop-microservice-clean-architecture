@@ -2,8 +2,8 @@
 using BuildingBlocks.Extensions;
 using BuildingBlocks.Results;
 using MediatR;
+using ProductService.Application.DTOs;
 using ProductService.Application.Queries;
-using ProductService.Domain.Entities;
 
 namespace ProductService.Api.Endpoint.Products.Queries
 {
@@ -15,7 +15,8 @@ namespace ProductService.Api.Endpoint.Products.Queries
                 int productId, ISender sender, CancellationToken cancellationToken) =>
             {
                 GetProductDetailQuery query = new(productId);
-                Result<Product> result = await sender.Send(query, cancellationToken);
+                Result<ProductDetailDTO> result =
+                    await sender.Send(query, cancellationToken);
 
                 return result.Match(success => Results.Ok(success),
                     failure => CustomResults.Problem(failure));

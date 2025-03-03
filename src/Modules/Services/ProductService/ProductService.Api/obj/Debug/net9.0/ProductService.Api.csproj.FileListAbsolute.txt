@@ -204,3 +204,4 @@ D:/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modul
 /Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/ProductService/ProductService.Api/obj/Debug/net9.0/ProductService.Api.pdb
 /Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/ProductService/ProductService.Api/obj/Debug/net9.0/ProductService.Api.genruntimeconfig.cache
 /Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/ProductService/ProductService.Api/obj/Debug/net9.0/ref/ProductService.Api.dll
+/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/ProductService/ProductService.Api/bin/Debug/net9.0/AutoMapper.dll
