@@ -3,11 +3,11 @@ using BuildingBlocks.Abstractions.Extensions;
 using BuildingBlocks.Abstractions.Repository;
 using BuildingBlocks.CQRS;
 using BuildingBlocks.Enumerations;
-using BuildingBlocks.Error;
 using BuildingBlocks.Results;
 using ProductService.Application.DTOs;
 using ProductService.Domain.Abstractions.Repositories;
 using ProductService.Domain.Entities;
+using ProductService.Domain.Errors;
 
 namespace ProductService.Application.Commands.Products.Create
 {
@@ -43,8 +43,8 @@ namespace ProductService.Application.Commands.Products.Create
             foreach (ProductImageDTO imageDto in request.Images)
             {
                 if (!IsBase64String(imageDto.ImageContent))
-                    return Result.Failure<int>(Error.Validation("Base64.Validation",
-                        "Invalid image content"));
+                    return Result.Failure<int>(
+                        ProductImageError.ProductImageBase64Invalid);
 
                 string imageUrl = await _fileService.UploadFile(imageDto.ImageContent,
                     AssetType.PRODUCT_IMAGE);

@@ -17,9 +17,9 @@ namespace ProductService.Domain.Entities
 
         public virtual Color Color { get; }
 
-        public void UpdateStock(int quantity)
+        public void UpdateStock(int? quantity)
         {
-            StockQuantity = quantity;
+            StockQuantity = quantity ?? StockQuantity;
         }
     }
 }

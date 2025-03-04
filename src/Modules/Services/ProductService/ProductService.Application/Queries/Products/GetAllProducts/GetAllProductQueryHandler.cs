@@ -6,7 +6,7 @@ using ProductService.Application.DTOs;
 using ProductService.Domain.Abstractions.Repositories;
 using ProductService.Domain.Entities;
 
-namespace ProductService.Application.Queries
+namespace ProductService.Application.Queries.Products.GetAllProducts
 {
     public class GetAllProductQueryHandler : IQueryHandler<GetAllProductQuery,
         PagedResult<GetAllProductDTO>>

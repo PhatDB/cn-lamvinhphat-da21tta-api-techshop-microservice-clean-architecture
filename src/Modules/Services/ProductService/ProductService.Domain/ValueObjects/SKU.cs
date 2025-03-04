@@ -1,7 +1,7 @@
 using System.Text.RegularExpressions;
 using BuildingBlocks.Abstractions.Entities;
-using BuildingBlocks.Error;
 using BuildingBlocks.Results;
+using ProductService.Domain.Errors;
 
 namespace ProductService.Domain.ValueObjects
 {
@@ -17,12 +17,10 @@ namespace ProductService.Domain.ValueObjects
         public static Result<SKU> Create(string value)
         {
             if (string.IsNullOrWhiteSpace(value))
-                return Result.Failure<SKU>(Error.Validation("SKU.Empty",
-                    "SKU cannot be empty."));
+                return Result.Failure<SKU>(ProductError.ProductSkuEmpty);
 
             if (!IsValidSKU(value))
-                return Result.Failure<SKU>(Error.Validation("SKU.InvalidFormat",
-                    "SKU should be alphanumeric and 5-20 characters long."));
+                return Result.Failure<SKU>(ProductError.ProductSkuInvalidFormat);
 
             return Result.Success(new SKU(value.ToUpper()));
         }

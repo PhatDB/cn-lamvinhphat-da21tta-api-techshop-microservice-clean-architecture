@@ -48,7 +48,7 @@ namespace ProductService.Persistence.Repositories
         public async Task<Result<List<T>>> GetAllAsync(
             CancellationToken cancellationToken = default)
         {
-            List<T> entities = await _dbSet.ToListAsync(cancellationToken);
+            List<T> entities = await _dbSet.AsNoTracking().ToListAsync(cancellationToken);
             return Result.Success(entities);
         }
 
@@ -64,7 +64,8 @@ namespace ProductService.Persistence.Repositories
             Expression<Func<T, bool>> predicate,
             CancellationToken cancellationToken = default)
         {
-            T? entity = await _dbSet.FirstOrDefaultAsync(predicate, cancellationToken);
+            T? entity = await _dbSet.AsNoTracking()
+                .FirstOrDefaultAsync(predicate, cancellationToken);
 
             return entity is null
                 ? Result.Failure<T>(Error.NotFound("Entity.NotFound",

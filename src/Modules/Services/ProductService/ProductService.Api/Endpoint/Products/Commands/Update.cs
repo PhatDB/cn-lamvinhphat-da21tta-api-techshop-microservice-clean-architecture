@@ -3,10 +3,11 @@ using BuildingBlocks.Extensions;
 using BuildingBlocks.Results;
 using MediatR;
 using ProductService.Application.Commands.Products.Update;
+using ProductService.Application.DTOs;
 
 namespace ProductService.Api.Endpoint.Products.Commands
 {
-    public class Update : IEndpoint
+    public sealed class Update : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
@@ -15,7 +16,8 @@ namespace ProductService.Api.Endpoint.Products.Commands
                 CancellationToken cancellationToken) =>
             {
                 UpdateProductCommand command = new(productId, request.Name, request.Sku,
-                    request.Price, request.CategoryId, request.Description,
+                    request.Price, request.CategoryId, request.SoldQuantity,
+                    request.IsActive, request.Colors, request.Description,
                     request.DiscountPrice);
 
                 Result result = await sender.Send(command, cancellationToken);
@@ -25,11 +27,14 @@ namespace ProductService.Api.Endpoint.Products.Commands
         }
 
         public sealed record UpdateRequest(
-            string Name,
-            string Sku,
-            decimal Price,
-            int CategoryId,
-            string? Description = null,
-            decimal? DiscountPrice = null);
+            string? Name,
+            string? Sku,
+            decimal? Price,
+            int? CategoryId,
+            int? SoldQuantity,
+            bool? IsActive,
+            List<ColorDTO>? Colors,
+            string? Description,
+            decimal? DiscountPrice);
     }
 }

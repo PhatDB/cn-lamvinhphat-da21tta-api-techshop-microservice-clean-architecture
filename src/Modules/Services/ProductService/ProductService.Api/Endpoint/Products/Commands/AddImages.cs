@@ -7,7 +7,7 @@ using ProductService.Application.DTOs;
 
 namespace ProductService.Api.Endpoint.Products.Commands
 {
-    public class AddImages : IEndpoint
+    public sealed class AddImages : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {

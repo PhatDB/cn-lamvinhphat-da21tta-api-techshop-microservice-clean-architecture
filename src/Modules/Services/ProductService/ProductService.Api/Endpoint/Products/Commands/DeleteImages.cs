@@ -7,7 +7,7 @@ using ProductService.Application.Commands.Products.DeleteImages;
 
 namespace ProductService.Api.Endpoint.Products.Commands
 {
-    public class DeleteImages : IEndpoint
+    public sealed class DeleteImages : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {

@@ -1,7 +1,7 @@
 ﻿using BuildingBlocks.Abstractions.Aggregates;
 using BuildingBlocks.Abstractions.Entities;
-using BuildingBlocks.Error;
 using BuildingBlocks.Results;
+using ProductService.Domain.Errors;
 using ProductService.Domain.ValueObjects;
 
 namespace ProductService.Domain.Entities
@@ -57,12 +57,10 @@ namespace ProductService.Domain.Entities
             string? description = null, decimal? discountPrice = null)
         {
             if (string.IsNullOrWhiteSpace(name))
-                return Result.Failure<Product>(Error.Validation("Product.EmptyName",
-                    "Product name cannot be empty."));
+                return Result.Failure<Product>(ProductError.ProductNameInvalid);
 
             if (price <= 0)
-                return Result.Failure<Product>(Error.Validation("Product.InvalidPrice",
-                    "Price must be greater than zero."));
+                return Result.Failure<Product>(ProductError.ProductPriceInvalid);
 
             Result<SKU> skuResult = SKU.Create(sku);
             if (skuResult.IsFailure)
@@ -75,8 +73,7 @@ namespace ProductService.Domain.Entities
         public Result UpdateStock(int quantity)
         {
             if (quantity < 0 && SoldQuantity + quantity < 0)
-                return Result.Failure(Error.Validation("Product.InsufficientStock",
-                    "Not enough stock available."));
+                return Result.Failure(ProductError.ProductInsufficientStock);
 
             SoldQuantity += quantity;
             return Result.Success();
@@ -85,8 +82,7 @@ namespace ProductService.Domain.Entities
         public Result AddProductImage(string imageUrl, int position, string? title = null)
         {
             if (string.IsNullOrWhiteSpace(imageUrl))
-                return Result.Failure(Error.Validation("ProductImage.InvalidUrl",
-                    "Image URL cannot be empty."));
+                return Result.Failure(ProductImageError.ProductImageInvalid);
 
             _productImages.Add(new ProductImage(Id, imageUrl, position, title));
 
@@ -96,25 +92,34 @@ namespace ProductService.Domain.Entities
         public Result AddColor(Color color, int stockQuantity)
         {
             if (color == null)
-                return Result.Failure(Error.Validation("ProductColor.NullColor",
-                    "Color cannot be null."));
+                return Result.Failure(ProductColorError.ProductColorNullColor);
 
             if (_productColors.Any(pc => pc.ColorId == color.Id))
-                return Result.Failure(Error.Conflict("ProductColor.Duplicate",
-                    "Color already exists for this product."));
+                return Result.Failure(ProductColorError.ProductColorDuplicate);
 
             _productColors.Add(new ProductColor(Id, color.Id, stockQuantity));
             return Result.Success();
         }
 
+        public Result AddOrUpdateColor(Color color, int stockQuantity)
+        {
+            ProductColor? existingColor =
+                _productColors.FirstOrDefault(pc => pc.ColorId == color.Id);
+
+            if (existingColor != null)
+                existingColor.UpdateStock(stockQuantity);
+            else
+                _productColors.Add(new ProductColor(Id, color.Id, stockQuantity));
+
+            return Result.Success();
+        }
 
         public Result UpdateColorStock(int colorId, int newStockQuantity)
         {
             ProductColor? productColor =
                 _productColors.FirstOrDefault(pc => pc.ColorId == colorId);
             if (productColor == null)
-                return Result.Failure(Error.NotFound("ProductColor.NotFound",
-                    "Color not found for this product."));
+                return Result.Failure(ProductColorError.ProductColorNotFound);
 
             productColor.UpdateStock(newStockQuantity);
             return Result.Success();
@@ -124,35 +129,32 @@ namespace ProductService.Domain.Entities
         public Result DeleteProduct()
         {
             if (!IsActive)
-                return Result.Failure(Error.Conflict("Product.AlreadyDeleted",
-                    "Product is already deleted."));
+                return Result.Failure(ProductError.ProductAlreadyDeleted);
 
             IsActive = false;
             return Result.Success();
         }
 
         public Result UpdateProduct(
-            string name, string sku, decimal price, int categoryId,
-            string? description = null, decimal? discountPrice = null)
+            string? name, string? sku, decimal? price, int? categoryId, int? soldQuantity,
+            bool? isActive, string? description, decimal? discountPrice)
         {
-            if (string.IsNullOrWhiteSpace(name))
-                return Result.Failure(Error.Validation("Product.EmptyName",
-                    "Product name cannot be empty."));
+            Name = name?.Trim() ?? Name;
+            Description = description?.Trim() ?? Description;
+            DiscountPrice = discountPrice ?? DiscountPrice;
+            CategoryId = categoryId ?? CategoryId;
+            SoldQuantity = soldQuantity ?? SoldQuantity;
+            IsActive = isActive ?? IsActive;
 
-            if (price <= 0)
-                return Result.Failure(Error.Validation("Product.InvalidPrice",
-                    "Price must be greater than zero."));
+            if (!string.IsNullOrWhiteSpace(sku))
+            {
+                Result<SKU> skuResult = SKU.Create(sku);
+                if (skuResult.IsFailure)
+                    return Result.Failure(skuResult.Error);
+                Sku = skuResult.Value;
+            }
 
-            Result<SKU> skuResult = SKU.Create(sku);
-            if (skuResult.IsFailure)
-                return Result.Failure(skuResult.Error);
-
-            Name = name;
-            Sku = skuResult.Value;
-            Price = price;
-            CategoryId = categoryId;
-            Description = description;
-            DiscountPrice = discountPrice;
+            Price = price ?? Price;
 
             return Result.Success();
         }
@@ -163,8 +165,7 @@ namespace ProductService.Domain.Entities
                 _productImages.Where(img => imageIds.Contains(img.Id)).ToList();
 
             if (!imagesToRemove.Any())
-                return Result.Failure(Error.NotFound("ProductImage.NotFound",
-                    "No matching images found for deletion."));
+                return Result.Failure(ProductImageError.ProductImageNotFound);
 
             foreach (ProductImage image in imagesToRemove) _productImages.Remove(image);
 

@@ -1,7 +1,7 @@
 using BuildingBlocks.Abstractions.Aggregates;
 using BuildingBlocks.Abstractions.Entities;
-using BuildingBlocks.Error;
 using BuildingBlocks.Results;
+using ProductService.Domain.Errors;
 
 namespace ProductService.Domain.Entities
 {
@@ -23,15 +23,26 @@ namespace ProductService.Domain.Entities
         public static Result<Category> Create(string name, string? description = null)
         {
             if (string.IsNullOrWhiteSpace(name))
-                return Result.Failure<Category>(Error.Validation("Category.EmptyName",
-                    "Category name cannot be empty."));
+                return Result.Failure<Category>(CategoryError.CategoryNameInvalid);
 
             return Result.Success(new Category(name, description));
         }
 
-        public void Deactivate()
+        public Result Update(string? name, string? description)
         {
+            Name = name?.Trim() ?? Name;
+            Description = description?.Trim() ?? Description;
+
+            return Result.Success();
+        }
+
+        public Result Delete()
+        {
+            if (!IsActive)
+                return Result.Failure(CategoryError.CategoryAlreadyDeleted);
+
             IsActive = false;
+            return Result.Success();
         }
     }
 }

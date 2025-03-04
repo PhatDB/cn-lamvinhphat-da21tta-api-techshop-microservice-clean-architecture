@@ -2,7 +2,7 @@
 using BuildingBlocks.Extensions;
 using ProductService.Application.DTOs;
 
-namespace ProductService.Application.Queries
+namespace ProductService.Application.Queries.Products.GetAllProducts
 {
     public record GetAllProductQuery : IQuery<PagedResult<GetAllProductDTO>>
     {

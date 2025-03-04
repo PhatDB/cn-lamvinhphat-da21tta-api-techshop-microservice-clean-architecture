@@ -3,7 +3,7 @@ using BuildingBlocks.Extensions;
 using BuildingBlocks.Results;
 using MediatR;
 using ProductService.Application.DTOs;
-using ProductService.Application.Queries;
+using ProductService.Application.Queries.Products.GetAllProducts;
 
 namespace ProductService.Api.Endpoint.Products.Queries
 {

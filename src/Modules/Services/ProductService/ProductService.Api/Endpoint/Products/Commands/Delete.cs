@@ -6,7 +6,7 @@ using ProductService.Application.Commands.Products.Delete;
 
 namespace ProductService.Api.Endpoint.Products.Commands
 {
-    public class Delete : IEndpoint
+    public sealed class Delete : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {

@@ -1,7 +1,7 @@
 using BuildingBlocks.Abstractions.Aggregates;
 using BuildingBlocks.Abstractions.Entities;
-using BuildingBlocks.Error;
 using BuildingBlocks.Results;
+using ProductService.Domain.Errors;
 
 namespace ProductService.Domain.Entities
 {
@@ -17,8 +17,7 @@ namespace ProductService.Domain.Entities
         public static Result<Color> Create(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
-                return Result.Failure<Color>(Error.Validation("Color.EmptyName",
-                    "Color name cannot be empty."));
+                return Result.Failure<Color>(ColorError.ColorInvalidName);
 
             return Result.Success(new Color(name));
         }
