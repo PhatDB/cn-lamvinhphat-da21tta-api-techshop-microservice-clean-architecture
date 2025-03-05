@@ -30,7 +30,8 @@ namespace ProductService.Application.Commands.Categories.Update
 
             Category category = categoryResult.Value;
 
-            Result updateResult = category.Update(request.Name, request.Description);
+            Result updateResult = category.Update(request.Name, request.Description,
+                request.IsActive);
             if (updateResult.IsFailure)
                 return updateResult;
 

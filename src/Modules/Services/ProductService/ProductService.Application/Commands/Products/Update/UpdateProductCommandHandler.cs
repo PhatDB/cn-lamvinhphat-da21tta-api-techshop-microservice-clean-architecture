@@ -64,7 +64,8 @@ namespace ProductService.Application.Commands.Products.Update
                         await _unitOfWork.SaveChangesAsync(cancellationToken);
                     }
 
-                    product.AddOrUpdateColor(colorResult.Value, colorDto.StockQuantity);
+                    product.AddOrUpdateColor(colorResult.Value,
+                        colorDto.StockQuantity.Value);
                 }
 
             product.UpdateProduct(request.Name, request.Sku, request.Price,

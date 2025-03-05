@@ -75,8 +75,8 @@ namespace ProductService.Application.Commands.Products.Create
                     await _unitOfWork.SaveChangesAsync(cancellationToken);
                 }
 
-                Result addColorResult =
-                    product.AddColor(colorResult.Value, colorStock.StockQuantity);
+                Result addColorResult = product.AddColor(colorResult.Value,
+                    colorStock.StockQuantity.Value);
                 if (addColorResult.IsFailure)
                     return Result.Failure<int>(addColorResult.Error);
             }

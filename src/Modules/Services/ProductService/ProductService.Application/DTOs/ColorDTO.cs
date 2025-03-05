@@ -1,4 +1,4 @@
 namespace ProductService.Application.DTOs
 {
-    public record ColorDTO(string ColorName, int StockQuantity);
+    public record ColorDTO(string? ColorName, int? StockQuantity);
 }

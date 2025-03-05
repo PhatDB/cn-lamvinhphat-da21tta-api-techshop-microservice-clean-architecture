@@ -14,8 +14,8 @@ namespace ProductService.Api.Endpoint.Categories.Commands
                 int id, UpadateCategoryRequest request, ISender sender,
                 CancellationToken cancellationToken) =>
             {
-                UpdateCategoryCommand
-                    command = new(id, request.Name, request.Description);
+                UpdateCategoryCommand command = new(id, request.Name, request.Description,
+                    request.IsActive);
                 Result result = await sender.Send(command, cancellationToken);
 
                 return result.Match(Results.NoContent, CustomResults.Problem);
@@ -24,6 +24,7 @@ namespace ProductService.Api.Endpoint.Categories.Commands
 
         public sealed record UpadateCategoryRequest(
             string? Name,
+            bool? IsActive,
             string? Description = null);
     }
 }

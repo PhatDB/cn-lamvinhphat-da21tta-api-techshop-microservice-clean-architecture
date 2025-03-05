@@ -28,10 +28,11 @@ namespace ProductService.Domain.Entities
             return Result.Success(new Category(name, description));
         }
 
-        public Result Update(string? name, string? description)
+        public Result Update(string? name, string? description, bool? isActive)
         {
             Name = name?.Trim() ?? Name;
             Description = description?.Trim() ?? Description;
+            IsActive = isActive ?? IsActive;
 
             return Result.Success();
         }
