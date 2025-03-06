@@ -8,7 +8,6 @@ namespace ProductService.Domain.Entities
 {
     public class Product : Entity, IAggregateRoot
     {
-        private readonly List<ProductColor> _productColors;
         private readonly List<ProductImage> _productImages;
 
         private Product(
@@ -25,15 +24,13 @@ namespace ProductService.Domain.Entities
             CreatedAt = DateTime.UtcNow;
             IsActive = true;
 
+            Inventory = null;
             _productImages = new List<ProductImage>();
-            _productColors = new List<ProductColor>();
         }
-
 
         private Product()
         {
             _productImages = new List<ProductImage>();
-            _productColors = new List<ProductColor>();
         }
 
         public string Name { get; private set; }
@@ -46,11 +43,10 @@ namespace ProductService.Domain.Entities
         public bool IsActive { get; private set; }
         public int CategoryId { get; private set; }
 
+        public Inventory Inventory { get; private set; }
+
         public IReadOnlyCollection<ProductImage> ProductImages =>
             _productImages.AsReadOnly();
-
-        public IReadOnlyCollection<ProductColor> ProductColors =>
-            _productColors.AsReadOnly();
 
         public static Result<Product> Create(
             string name, string sku, decimal price, int categoryId,
@@ -70,12 +66,23 @@ namespace ProductService.Domain.Entities
                 description, discountPrice));
         }
 
+        public Result CreateInventory(int stockQuantity)
+        {
+            if (Inventory != null)
+                return Result.Failure(ProductError.ProductInsufficientStock);
+
+            Inventory = Inventory.Create(Id, stockQuantity);
+            return Result.Success();
+        }
+
+
         public Result UpdateStock(int quantity)
         {
             if (quantity < 0 && SoldQuantity + quantity < 0)
                 return Result.Failure(ProductError.ProductInsufficientStock);
 
             SoldQuantity += quantity;
+            Inventory?.UpdateStock(Inventory.StockQuantity + quantity);
             return Result.Success();
         }
 
@@ -88,43 +95,6 @@ namespace ProductService.Domain.Entities
 
             return Result.Success();
         }
-
-        public Result AddColor(Color color, int stockQuantity)
-        {
-            if (color == null)
-                return Result.Failure(ProductColorError.ProductColorNullColor);
-
-            if (_productColors.Any(pc => pc.ColorId == color.Id))
-                return Result.Failure(ProductColorError.ProductColorDuplicate);
-
-            _productColors.Add(new ProductColor(Id, color.Id, stockQuantity));
-            return Result.Success();
-        }
-
-        public Result AddOrUpdateColor(Color color, int stockQuantity)
-        {
-            ProductColor? existingColor =
-                _productColors.FirstOrDefault(pc => pc.ColorId == color.Id);
-
-            if (existingColor != null)
-                existingColor.UpdateStock(stockQuantity);
-            else
-                _productColors.Add(new ProductColor(Id, color.Id, stockQuantity));
-
-            return Result.Success();
-        }
-
-        public Result UpdateColorStock(int colorId, int newStockQuantity)
-        {
-            ProductColor? productColor =
-                _productColors.FirstOrDefault(pc => pc.ColorId == colorId);
-            if (productColor == null)
-                return Result.Failure(ProductColorError.ProductColorNotFound);
-
-            productColor.UpdateStock(newStockQuantity);
-            return Result.Success();
-        }
-
 
         public Result DeleteProduct()
         {

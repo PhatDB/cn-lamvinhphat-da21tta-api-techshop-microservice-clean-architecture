@@ -7,7 +7,7 @@ namespace ProductService.Application.Commands.Products.Create
     {
         public CreateProductCommand(
             string name, string sku, decimal price, int categoryId,
-            List<ProductImageDTO> images, List<ColorDTO> colors,
+            List<ProductImageDTO> images, InventoryDTO inventory,
             string? description = null, decimal? discountPrice = null)
         {
             Name = name;
@@ -17,7 +17,7 @@ namespace ProductService.Application.Commands.Products.Create
             Description = description;
             DiscountPrice = discountPrice;
             Images = images;
-            Colors = colors;
+            Inventory = inventory;
         }
 
         public string Name { get; set; }
@@ -27,6 +27,6 @@ namespace ProductService.Application.Commands.Products.Create
         public string? Description { get; set; }
         public decimal? DiscountPrice { get; set; }
         public List<ProductImageDTO> Images { get; set; }
-        public List<ColorDTO> Colors { get; set; }
+        public InventoryDTO Inventory { get; set; }
     }
 }

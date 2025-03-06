@@ -27,8 +27,7 @@ namespace ProductService.Application.Queries
             GetProductDetailQuery request, CancellationToken cancellationToken)
         {
             Product? product = await _productRepository.AsQueryable()
-                .Include(p => p.ProductImages).Include(p => p.ProductColors)
-                .ThenInclude(pc => pc.Color)
+                .Include(p => p.ProductImages).Include(p => p.Inventory)
                 .FirstOrDefaultAsync(p => p.Id == request.ProductId, cancellationToken);
 
             if (product == null)

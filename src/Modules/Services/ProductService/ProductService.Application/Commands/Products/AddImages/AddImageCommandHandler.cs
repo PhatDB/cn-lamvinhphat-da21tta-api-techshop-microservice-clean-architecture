@@ -31,7 +31,7 @@ namespace ProductService.Application.Commands.Products.AddImages
             AddImageCommand request, CancellationToken cancellationToken)
         {
             Result<Product> productResult =
-                await _productRepository.GetProductDetailAsync(request.ProductId,
+                await _productRepository.GetByIdAsync(request.ProductId,
                     cancellationToken);
             if (productResult.IsFailure)
                 return Result.Failure(Error.NotFound("Product.NotFound",

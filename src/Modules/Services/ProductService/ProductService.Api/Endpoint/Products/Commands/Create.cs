@@ -15,10 +15,8 @@ namespace ProductService.Api.Endpoint.Products.Commands
                 Request request, ISender sender, CancellationToken cancellationToken) =>
             {
                 CreateProductCommand command = new(request.Name, request.Sku,
-                    request.Price, request.CategoryId,
-                    request.ProductImages ?? new List<ProductImageDTO>(),
-                    request.Colors ?? new List<ColorDTO>(), request.Description,
-                    request.DiscountPrice);
+                    request.Price, request.CategoryId, request.ProductImages,
+                    request.Inventory, request.Description, request.DiscountPrice);
 
                 Result<int> result = await sender.Send(command, cancellationToken);
 
@@ -33,7 +31,7 @@ namespace ProductService.Api.Endpoint.Products.Commands
             decimal Price,
             int CategoryId,
             List<ProductImageDTO> ProductImages,
-            List<ColorDTO> Colors,
+            InventoryDTO Inventory,
             string? Description = null,
             decimal? DiscountPrice = null);
     }

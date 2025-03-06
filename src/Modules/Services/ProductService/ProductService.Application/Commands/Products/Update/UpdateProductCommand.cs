@@ -11,7 +11,7 @@ namespace ProductService.Application.Commands.Products.Update
         int? CategoryId,
         int? SoldQuantity,
         bool? IsActive,
-        List<ColorDTO>? Colors,
+        InventoryDTO Inventory,
         string? Description,
         decimal? DiscountPrice) : ICommand;
 }

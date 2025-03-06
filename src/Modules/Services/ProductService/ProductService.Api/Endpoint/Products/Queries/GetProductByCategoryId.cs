@@ -11,16 +11,28 @@ namespace ProductService.Api.Endpoint.Products.Queries
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapGet("product/category/{categoryId}", async (
-                int categoryId, ISender sender, CancellationToken cancellationToken) =>
-            {
-                GetProductByCategoryIdQuery query =
-                    new GetProductByCategoryIdQuery(categoryId);
-                Result<List<GetAllProductDTO>> result =
-                    await sender.Send(query, cancellationToken);
+            app.MapGet("products/category/{categoryId}", async (
+                    int? pageNumber, int? pageSize, string? sortBy, bool? isDescending,
+                    int categoryId, ISender sender,
+                    CancellationToken cancellationToken) =>
+                {
+                    GetProductByCategoryIdQuery query = new(categoryId)
+                    {
+                        PaginationOption = new PaginationOption
+                        {
+                            PageNumber = pageNumber,
+                            PageSize = pageSize,
+                            SortBy = sortBy,
+                            IsDescending = isDescending
+                        }
+                    };
 
-                return result.Match(Results.Ok, CustomResults.Problem);
-            }).WithName("GetProductsByCategoryId").WithTags("Product");
+                    Result<PagedResult<GetAllProductDTO>> result =
+                        await sender.Send(query, cancellationToken);
+                    return result.Match(success => Results.Ok(success),
+                        failure => CustomResults.Problem(failure));
+                }).WithTags("Product").WithName("GeProductByCategoryId")
+                .Produces<PagedResult<GetAllProductDTO>>();
         }
     }
 }

@@ -13,20 +13,16 @@ namespace ProductService.Application.Mappings
                 .ForMember(dest => dest.FirstImageUrl,
                     opt => opt.MapFrom(src =>
                         src.ProductImages.FirstOrDefault().ImageUrl ?? string.Empty))
-                .ForMember(dest => dest.Colors,
-                    opt => opt.MapFrom(src =>
-                        src.ProductColors.Select(pc =>
-                            new ColorDTO(pc.Color.Name, pc.StockQuantity)).ToList()));
+                .ForMember(dest => dest.StockQuantity,
+                    opt => opt.MapFrom(src => src.Inventory.StockQuantity));
 
             CreateMap<Product, ProductDetailDTO>()
                 .ForMember(dest => dest.Sku, opt => opt.MapFrom(src => src.Sku.Value))
                 .ForMember(dest => dest.Images,
                     opt => opt.MapFrom(src =>
                         src.ProductImages.Select(img => img.ImageUrl).ToList()))
-                .ForMember(dest => dest.Colors,
-                    opt => opt.MapFrom(src =>
-                        src.ProductColors.Select(pc =>
-                            new ColorDTO(pc.Color.Name, pc.StockQuantity)).ToList()));
+                .ForMember(dest => dest.StockQuantity,
+                    opt => opt.MapFrom(src => src.Inventory.StockQuantity));
         }
     }
 }

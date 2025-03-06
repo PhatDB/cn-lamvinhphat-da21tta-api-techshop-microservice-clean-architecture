@@ -10,7 +10,8 @@ namespace ProductService.Domain.Abstractions.Repositories
         Task<Result<PagedResult<Product>>> GetAllPagedAsync(
             PaginationOption paginationOption, CancellationToken cancellationToken);
 
-        Task<Result<Product>> GetProductDetailAsync(
-            int id, CancellationToken cancellationToken = default);
+        Task<Result<PagedResult<Product>>> GetAllProductByCategoryIdPagedAsync(
+            PaginationOption paginationOption, int categoryId,
+            CancellationToken cancellationToken);
     }
 }

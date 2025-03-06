@@ -17,7 +17,7 @@ namespace ProductService.Api.Endpoint.Products.Commands
             {
                 UpdateProductCommand command = new(productId, request.Name, request.Sku,
                     request.Price, request.CategoryId, request.SoldQuantity,
-                    request.IsActive, request.Colors, request.Description,
+                    request.IsActive, request.Inventory, request.Description,
                     request.DiscountPrice);
 
                 Result result = await sender.Send(command, cancellationToken);
@@ -33,7 +33,7 @@ namespace ProductService.Api.Endpoint.Products.Commands
             int? CategoryId,
             int? SoldQuantity,
             bool? IsActive,
-            List<ColorDTO>? Colors,
+            InventoryDTO Inventory,
             string? Description,
             decimal? DiscountPrice);
     }

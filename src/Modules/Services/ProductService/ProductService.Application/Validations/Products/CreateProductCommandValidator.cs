@@ -12,7 +12,9 @@ namespace ProductService.Application.Validations.Products
                 .WithMessage("Product name must not exceed 255 characters.");
 
             RuleFor(x => x.SKU).NotEmpty().WithMessage("SKU is required.")
-                .MaximumLength(100).WithMessage("SKU must not exceed 100 characters.");
+                .MaximumLength(100).WithMessage("SKU must not exceed 100 characters.")
+                .Matches("^[a-zA-Z0-9-_]+$").WithMessage(
+                    "SKU can only contain letters, numbers, dashes, and underscores.");
 
             RuleFor(x => x.Price).GreaterThan(0)
                 .WithMessage("Price must be greater than zero.");
@@ -20,24 +22,17 @@ namespace ProductService.Application.Validations.Products
             RuleFor(x => x.CategoryId).GreaterThan(0)
                 .WithMessage("CategoryId must be a valid ID.");
 
-            RuleFor(x => x.Images).NotEmpty()
-                .WithMessage("At least one image is required.")
-                .Must(images => images.Any())
-                .WithMessage("At least one image must be provided.");
+            RuleFor(x => x.Inventory).ChildRules(inventory =>
+            {
+                inventory.RuleFor(i => i.StockQuantity).NotEmpty().GreaterThan(0)
+                    .WithMessage("Stock quantity must be greater than zero.");
+            });
 
             RuleForEach(x => x.Images).ChildRules(image =>
             {
                 image.RuleFor(i => i.ImageContent).NotEmpty()
                     .WithMessage("Image content is required.");
             });
-
-            RuleFor(x => x.Colors).NotEmpty()
-                .WithMessage("At least one color is required.")
-                .Must(colors => colors.Any())
-                .WithMessage("At least one color must be provided.");
-
-            RuleForEach(x => x.Colors).NotEmpty()
-                .WithMessage("Color name cannot be empty.");
         }
     }
 }

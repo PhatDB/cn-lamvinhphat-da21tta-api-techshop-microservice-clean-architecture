@@ -85,6 +85,34 @@
       "PackagePath": "staticwebassets/assets/product/product_1740967764643.webp"
     },
     {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740968209810.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1740968209810.webp"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740968491808.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1740968491808.webp"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1741147212887.png",
+      "PackagePath": "staticwebassets/assets/product/product_1741147212887.png"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1741222996591.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1741222996591.webp"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1741223609651.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1741223609651.webp"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1741223766715.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1741223766715.webp"
+    },
+    {
+      "Id": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1741223824123.webp",
+      "PackagePath": "staticwebassets/assets/product/product_1741223824123.webp"
+    },
+    {
       "Id": "obj/Debug/net9.0/staticwebassets/msbuild.AssetService.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

@@ -34,6 +34,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AssetService", "AssetServic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetService", "src\Modules\Services\AssestService\AssetService\AssetService.csproj", "{FAB73969-95C0-426E-BAFE-0D1FD9087154}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartService.Api", "src\Modules\Services\CartService\CartService.Api\CartService.Api.csproj", "{47C17F40-97FB-4FD3-AF93-C612AF368583}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +66,10 @@ Global
 		{FAB73969-95C0-426E-BAFE-0D1FD9087154}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAB73969-95C0-426E-BAFE-0D1FD9087154}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAB73969-95C0-426E-BAFE-0D1FD9087154}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47C17F40-97FB-4FD3-AF93-C612AF368583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47C17F40-97FB-4FD3-AF93-C612AF368583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47C17F40-97FB-4FD3-AF93-C612AF368583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47C17F40-97FB-4FD3-AF93-C612AF368583}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3E957696-AD86-4721-B531-127A4DC72625} = {C1A935B5-15BB-4EB7-AF59-AF13113270D7}
@@ -81,5 +87,6 @@ Global
 		{DC905124-4EC1-4B4E-B0D1-701D8BB2CBE7} = {33400FBE-159B-4CD0-8DFE-CD1EB4829C33}
 		{1A5E1D0C-1C79-4E84-B6BA-04EB947CE5EF} = {20612E99-2CAB-43B8-BF16-49FCFBBE8BB5}
 		{FAB73969-95C0-426E-BAFE-0D1FD9087154} = {1A5E1D0C-1C79-4E84-B6BA-04EB947CE5EF}
+		{47C17F40-97FB-4FD3-AF93-C612AF368583} = {9725A29D-E780-4E20-A876-E30F822333B7}
 	EndGlobalSection
 EndGlobal

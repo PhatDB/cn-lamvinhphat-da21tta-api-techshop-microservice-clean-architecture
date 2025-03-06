@@ -9,11 +9,11 @@ namespace ProductService.Application.DTOs
         int SoldQuantity,
         bool IsActive,
         int CategoryId,
-        List<string> Images,
-        List<ColorDTO> Colors)
+        int StockQuantity,
+        List<string> Images)
     {
         public ProductDetailDTO() : this(0, string.Empty, string.Empty, 0, null, 0, true,
-            0, new List<string>(), new List<ColorDTO>())
+            0, 0, new List<string>())
         {
         }
     }

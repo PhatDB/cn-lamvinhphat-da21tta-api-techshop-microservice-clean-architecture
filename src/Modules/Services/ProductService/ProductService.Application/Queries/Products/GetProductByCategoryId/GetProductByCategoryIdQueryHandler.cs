@@ -1,7 +1,7 @@
 using AutoMapper;
 using BuildingBlocks.CQRS;
+using BuildingBlocks.Extensions;
 using BuildingBlocks.Results;
-using Microsoft.EntityFrameworkCore;
 using ProductService.Application.DTOs;
 using ProductService.Domain.Abstractions.Repositories;
 using ProductService.Domain.Entities;
@@ -9,7 +9,7 @@ using ProductService.Domain.Entities;
 namespace ProductService.Application.Queries.Products.GetProductByCategoryId
 {
     public class GetProductByCategoryIdQueryHandler : IQueryHandler<
-        GetProductByCategoryIdQuery, List<GetAllProductDTO>>
+        GetProductByCategoryIdQuery, PagedResult<GetAllProductDTO>>
     {
         private readonly IMapper _mapper;
         private readonly IProductRepository _productRepository;
@@ -21,19 +21,27 @@ namespace ProductService.Application.Queries.Products.GetProductByCategoryId
             _mapper = mapper;
         }
 
-        public async Task<Result<List<GetAllProductDTO>>> Handle(
+        public async Task<Result<PagedResult<GetAllProductDTO>>> Handle(
             GetProductByCategoryIdQuery request, CancellationToken cancellationToken)
         {
-            List<Product> products = await _productRepository.AsQueryable()
-                .Where(p => p.CategoryId == request.CategoryId)
-                .Include(p => p.ProductImages).Include(p => p.ProductColors)
-                .ThenInclude(pc => pc.Color).AsNoTracking()
-                .ToListAsync(cancellationToken);
+            PaginationOption paginationOption = request.PaginationOption;
 
-            List<GetAllProductDTO> productDTOs =
-                _mapper.Map<List<GetAllProductDTO>>(products);
+            Result<PagedResult<Product>> pagedProductsResult =
+                await _productRepository.GetAllProductByCategoryIdPagedAsync(
+                    paginationOption, request.CategoryId, cancellationToken);
 
-            return Result.Success(productDTOs);
+            if (pagedProductsResult.IsFailure)
+                return Result.Failure<PagedResult<GetAllProductDTO>>(pagedProductsResult
+                    .Error);
+
+            PagedResult<Product> pagedProducts = pagedProductsResult.Value;
+
+            List<GetAllProductDTO>? mappedProducts =
+                _mapper.Map<List<GetAllProductDTO>>(pagedProducts.Data);
+
+            return Result.Success(new PagedResult<GetAllProductDTO>(mappedProducts,
+                pagedProducts.TotalItems, pagedProducts.PageNumber,
+                pagedProducts.PageSize));
         }
     }
 }

@@ -4,6 +4,7 @@ using BuildingBlocks.Abstractions.Repository;
 using BuildingBlocks.CQRS;
 using BuildingBlocks.Enumerations;
 using BuildingBlocks.Results;
+using Microsoft.EntityFrameworkCore;
 using ProductService.Application.DTOs;
 using ProductService.Domain.Abstractions.Repositories;
 using ProductService.Domain.Entities;
@@ -13,20 +14,18 @@ namespace ProductService.Application.Commands.Products.Create
 {
     public class CreateProductCommandHandler : ICommandHandler<CreateProductCommand, int>
     {
-        private readonly IColorRepository _colorRepository;
         private readonly IFileService _fileService;
         private readonly IProductRepository _productRepository;
         private readonly IUnitOfWork _unitOfWork;
 
 
         public CreateProductCommandHandler(
-            IProductRepository productRepository, IColorRepository colorRepository,
-            IUnitOfWork unitOfWork, IFileService fileService)
+            IProductRepository productRepository, IUnitOfWork unitOfWork,
+            IFileService fileService)
         {
             _productRepository = productRepository;
             _unitOfWork = unitOfWork;
             _fileService = fileService;
-            _colorRepository = colorRepository;
         }
 
         public async Task<Result<int>> Handle(
@@ -39,6 +38,16 @@ namespace ProductService.Application.Commands.Products.Create
                 return Result.Failure<int>(productResult.Error);
 
             Product product = productResult.Value;
+
+            bool skuExists = (await _productRepository.AsQueryable()
+                    .AsNoTracking().Select(p => new { p.Id, SkuValue = p.Sku.Value })
+                    .ToListAsync(cancellationToken))
+                .Any(p => p.SkuValue == request.SKU.ToUpper());
+
+            if (skuExists)
+                return Result.Failure<int>(ProductError.ProductSkuDuplicate);
+
+            product.CreateInventory(request.Inventory.StockQuantity);
 
             foreach (ProductImageDTO imageDto in request.Images)
             {
@@ -59,26 +68,6 @@ namespace ProductService.Application.Commands.Products.Create
 
                 if (addImageResult.IsFailure)
                     return Result.Failure<int>(addImageResult.Error);
-            }
-
-            foreach (ColorDTO colorStock in request.Colors)
-            {
-                Result<Color> colorResult =
-                    await _colorRepository.GetColorByNameAsync(colorStock.ColorName,
-                        cancellationToken);
-                if (colorResult.IsFailure)
-                {
-                    colorResult = Color.Create(colorStock.ColorName);
-                    if (colorResult.IsFailure)
-                        return Result.Failure<int>(colorResult.Error);
-                    await _colorRepository.AddAsync(colorResult.Value, cancellationToken);
-                    await _unitOfWork.SaveChangesAsync(cancellationToken);
-                }
-
-                Result addColorResult = product.AddColor(colorResult.Value,
-                    colorStock.StockQuantity.Value);
-                if (addColorResult.IsFailure)
-                    return Result.Failure<int>(addColorResult.Error);
             }
 
             await _productRepository.AddAsync(product, cancellationToken);
