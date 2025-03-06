@@ -19,8 +19,8 @@ namespace UserService.Domain.Errors
         public static readonly Error EmailInvalidFormat =
             Error.Validation("User.EmailInvalidFormat", "Email format is invalid.");
 
-        public static readonly Error EmailDuplicate =
-            Error.Validation("User.EmailDuplicate", "Email is already in use.");
+        public static readonly Error UserAlreadyExists =
+            Error.Validation("User.UserAlreadyExists", "Email is already in use.");
 
         public static readonly Error PasswordEmpty =
             Error.Validation("User.PasswordEmpty", "Password cannot be empty.");

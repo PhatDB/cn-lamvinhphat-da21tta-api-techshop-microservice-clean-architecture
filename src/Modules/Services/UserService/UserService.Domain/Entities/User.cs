@@ -10,16 +10,12 @@ namespace UserService.Domain.Entities
     {
         private readonly List<UserAddress> _userAddresses;
 
-        private User(
-            string username, string displayName, Email email, Password password,
-            string? imageUrl = null)
+        private User(string username, Email email, Password password)
         {
             Username = username;
-            DisplayName = displayName;
             Email = email;
             Password = password;
             Role = "user";
-            ImageUrl = imageUrl;
             CreatedAt = DateTime.UtcNow;
             IsActive = true;
             LastLogin = null;
@@ -32,11 +28,9 @@ namespace UserService.Domain.Entities
         }
 
         public string Username { get; private set; }
-        public string DisplayName { get; private set; }
         public Email Email { get; private set; }
         public Password Password { get; private set; }
         public string Role { get; private set; }
-        public string? ImageUrl { get; private set; }
         public DateTime CreatedAt { get; private set; }
         public DateTime? LastLogin { get; private set; }
         public bool IsActive { get; private set; }
@@ -44,9 +38,7 @@ namespace UserService.Domain.Entities
         public IReadOnlyCollection<UserAddress> UserAddresses =>
             _userAddresses.AsReadOnly();
 
-        public static Result<User> Create(
-            string username, string displayName, string email, string password,
-            string? imageUrl = null)
+        public static Result<User> Create(string username, string email, string password)
         {
             if (string.IsNullOrWhiteSpace(username))
                 return Result.Failure<User>(UserError.UsernameEmpty);
@@ -59,14 +51,14 @@ namespace UserService.Domain.Entities
             if (passwordResult.IsFailure)
                 return Result.Failure<User>(passwordResult.Error);
 
-            return Result.Success(new User(username, displayName, emailResult.Value,
-                passwordResult.Value, imageUrl));
+            return Result.Success(new User(username, emailResult.Value,
+                passwordResult.Value));
         }
 
-        public Result UpdateUser(string? displayName, string? email, string? imageUrl)
+        public Result UpdateUser(string? userName, string? email)
         {
-            if (!string.IsNullOrWhiteSpace(displayName))
-                DisplayName = displayName.Trim();
+            if (!string.IsNullOrWhiteSpace(userName))
+                userName = userName.Trim();
 
             if (!string.IsNullOrWhiteSpace(email))
             {
@@ -77,7 +69,6 @@ namespace UserService.Domain.Entities
                 Email = emailResult.Value;
             }
 
-            ImageUrl = imageUrl ?? ImageUrl;
             return Result.Success();
         }
 
