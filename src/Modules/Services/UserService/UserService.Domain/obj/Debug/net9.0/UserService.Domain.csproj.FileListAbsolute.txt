@@ -1,0 +1,16 @@
+/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Domain/bin/Debug/net9.0/UserService.Domain.deps.json
+/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Domain/bin/Debug/net9.0/UserService.Domain.dll
+/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Domain/bin/Debug/net9.0/UserService.Domain.pdb
+/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Domain/bin/Debug/net9.0/BuildingBlocks.dll
+/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Domain/bin/Debug/net9.0/BuildingBlocks.pdb
+/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Domain/obj/Debug/net9.0/UserService.Domain.csproj.AssemblyReference.cache
+/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Domain/obj/Debug/net9.0/UserService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Domain/obj/Debug/net9.0/UserService.Domain.AssemblyInfoInputs.cache
+/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Domain/obj/Debug/net9.0/UserService.Domain.AssemblyInfo.cs
+/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Domain/obj/Debug/net9.0/UserService.Domain.csproj.CoreCompileInputs.cache
+/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Domain/obj/Debug/net9.0/UserService.Domain.sourcelink.json
+/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Domain/obj/Debug/net9.0/UserServ.A0DBE7DD.Up2Date
+/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Domain/obj/Debug/net9.0/UserService.Domain.dll
+/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Domain/obj/Debug/net9.0/refint/UserService.Domain.dll
+/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Domain/obj/Debug/net9.0/UserService.Domain.pdb
+/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Domain/obj/Debug/net9.0/ref/UserService.Domain.dll

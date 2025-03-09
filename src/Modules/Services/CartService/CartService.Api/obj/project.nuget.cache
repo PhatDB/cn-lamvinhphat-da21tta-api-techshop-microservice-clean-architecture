@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "c7OnQnJvWUI=",
+  "success": true,
+  "projectFilePath": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/CartService/CartService.Api/CartService.Api.csproj",
+  "expectedPackageFiles": [
+    "/Users/phatdb/.nuget/packages/microsoft.aspnetcore.openapi/9.0.0/microsoft.aspnetcore.openapi.9.0.0.nupkg.sha512",
+    "/Users/phatdb/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
