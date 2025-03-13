@@ -7,11 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Folder Include="Commands\Users\ChangePassword\"/>
-        <Folder Include="Commands\Users\Delete\"/>
-        <Folder Include="Commands\Users\Login\"/>
-        <Folder Include="Commands\Users\Logout\"/>
-        <Folder Include="Commands\Users\Update\"/>
         <Folder Include="MappingProfiles\"/>
         <Folder Include="Queries\Users\"/>
     </ItemGroup>

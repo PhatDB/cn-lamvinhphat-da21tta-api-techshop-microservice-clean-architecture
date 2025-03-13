@@ -35,8 +35,7 @@ namespace UserService.Domain.Entities
         public DateTime? LastLogin { get; private set; }
         public bool IsActive { get; private set; }
 
-        public IReadOnlyCollection<UserAddress> UserAddresses =>
-            _userAddresses.AsReadOnly();
+        public IReadOnlyCollection<UserAddress> UserAddresses => _userAddresses.AsReadOnly();
 
         public static Result<User> Create(string username, string email, string password)
         {
@@ -51,24 +50,12 @@ namespace UserService.Domain.Entities
             if (passwordResult.IsFailure)
                 return Result.Failure<User>(passwordResult.Error);
 
-            return Result.Success(new User(username, emailResult.Value,
-                passwordResult.Value));
+            return Result.Success(new User(username, emailResult.Value, passwordResult.Value));
         }
 
-        public Result UpdateUser(string? userName, string? email)
+        public Result UpdateUser(string? userName)
         {
-            if (!string.IsNullOrWhiteSpace(userName))
-                userName = userName.Trim();
-
-            if (!string.IsNullOrWhiteSpace(email))
-            {
-                Result<Email> emailResult = Email.Create(email);
-                if (emailResult.IsFailure)
-                    return Result.Failure<User>(emailResult.Error);
-
-                Email = emailResult.Value;
-            }
-
+            Username = userName ?? Username;
             return Result.Success();
         }
 

@@ -112,3 +112,6 @@
 /Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Api/bin/Debug/net9.0/Pipelines.Sockets.Unofficial.dll
 /Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Api/bin/Debug/net9.0/StackExchange.Redis.dll
 /Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Api/bin/Debug/net9.0/System.Diagnostics.DiagnosticSource.dll
+/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Api/bin/Debug/net9.0/UserService.Infrastucture.dll
+/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Api/bin/Debug/net9.0/UserService.Infrastucture.pdb
+/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Api/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
