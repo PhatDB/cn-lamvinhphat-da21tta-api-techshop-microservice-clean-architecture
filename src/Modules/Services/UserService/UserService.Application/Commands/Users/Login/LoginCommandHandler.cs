@@ -5,7 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using UserService.Application.Abtractions;
 using UserService.Application.DTOs;
 using UserService.Domain.Abtractions.Repositories;
+using UserService.Domain.Entities;
 using UserService.Domain.Errors;
+using Email = UserService.Domain.ValueObjects.Email;
 
 namespace UserService.Application.Commands.Users.Login
 {
@@ -22,14 +24,7 @@ namespace UserService.Application.Commands.Users.Login
 
         public async Task<Result<LoginDTO>> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.AsQueryable().AsNoTracking().Select(u => new
-            {
-                u.Id,
-                u.Role,
-                u.Password,
-                u.Username,
-                Email = u.Email.Value
-            }).FirstOrDefaultAsync(cancellationToken);
+            User? user = await _userRepository.AsQueryable().AsNoTracking().Where(u => u.Email == new Email(request.Email)).FirstOrDefaultAsync(cancellationToken);
 
             if (user == null)
                 return Result.Failure<LoginDTO>(UserError.UserNotFound);
@@ -42,7 +37,7 @@ namespace UserService.Application.Commands.Users.Login
             List<Claim> claims = new()
             {
                 new Claim("sub", user.Id.ToString()),
-                new Claim("email", user.Email),
+                new Claim("email", user.Email.Value),
                 new Claim("userName", user.Username),
                 new Claim("role", user.Role),
                 new Claim("deviceId", deviceId)
@@ -57,7 +52,7 @@ namespace UserService.Application.Commands.Users.Login
             return Result.Success(new LoginDTO
             {
                 UserId = user.Id,
-                Email = user.Email,
+                Email = user.Email.Value,
                 UserName = user.Username,
                 AccessToken = accessToken,
                 AccessTokenExpires = accessTokenExpires,

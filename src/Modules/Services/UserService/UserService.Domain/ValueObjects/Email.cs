@@ -6,10 +6,9 @@ namespace UserService.Domain.ValueObjects
 {
     public class Email
     {
-        private static readonly Regex EmailRegex =
-            new(@"^[^@\s]+@[^@\s]+\.[^@\s]+$", RegexOptions.Compiled);
+        private static readonly Regex EmailRegex = new(@"^[^@\s]+@[^@\s]+\.[^@\s]+$", RegexOptions.Compiled);
 
-        private Email(string value)
+        public Email(string value)
         {
             Value = value;
         }

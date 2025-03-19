@@ -7,11 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Folder Include="MappingProfiles\"/>
-        <Folder Include="Queries\Users\"/>
-    </ItemGroup>
-
-    <ItemGroup>
         <ProjectReference Include="..\..\..\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj"/>
         <ProjectReference Include="..\UserService.Domain\UserService.Domain.csproj"/>
     </ItemGroup>

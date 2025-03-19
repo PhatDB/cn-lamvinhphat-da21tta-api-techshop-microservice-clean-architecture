@@ -28,7 +28,7 @@ namespace UserService.Domain.Entities
         }
 
         public string Username { get; private set; }
-        public Email Email { get; private set; }
+        public Email Email { get; }
         public Password Password { get; private set; }
         public string Role { get; private set; }
         public DateTime CreatedAt { get; private set; }
@@ -53,11 +53,30 @@ namespace UserService.Domain.Entities
             return Result.Success(new User(username, emailResult.Value, passwordResult.Value));
         }
 
-        public Result UpdateUser(string? userName)
+        public Result UpdateUserAndAddress(string? userName, string? addressLine, string? phoneNumber, string? province, string? district)
         {
             Username = userName ?? Username;
+
+            UserAddress? address = _userAddresses.FirstOrDefault();
+
+            if (address == null)
+            {
+                Result<UserAddress> newAddressResult = UserAddress.Create(Id, addressLine, phoneNumber, province, district);
+                if (newAddressResult.IsFailure)
+                    return Result.Failure(newAddressResult.Error);
+
+                _userAddresses.Add(newAddressResult.Value);
+            }
+            else
+            {
+                Result updateAddressResult = address.UpdateAddress(addressLine, phoneNumber, province, district);
+                if (updateAddressResult.IsFailure)
+                    return Result.Failure(updateAddressResult.Error);
+            }
+
             return Result.Success();
         }
+
 
         public Result UpdatePassword(string newPassword)
         {
@@ -69,46 +88,9 @@ namespace UserService.Domain.Entities
             return Result.Success();
         }
 
-        public Result Deactivate()
-        {
-            if (!IsActive)
-                return Result.Failure(UserError.UserInactive);
-
-            IsActive = false;
-            return Result.Success();
-        }
-
-        public Result Activate()
-        {
-            if (IsActive)
-                return Result.Failure(UserError.UserAlreadyActive);
-
-            IsActive = true;
-            return Result.Success();
-        }
-
         public void UpdateLastLogin()
         {
             LastLogin = DateTime.UtcNow;
-        }
-
-        public Result AddAddress(UserAddress address)
-        {
-            if (_userAddresses.Any(a => a.AddressLine == address.AddressLine))
-                return Result.Failure(UserError.UserAddressDuplicate);
-
-            _userAddresses.Add(address);
-            return Result.Success();
-        }
-
-        public Result RemoveAddress(int addressId)
-        {
-            UserAddress? address = _userAddresses.FirstOrDefault(a => a.Id == addressId);
-            if (address == null)
-                return Result.Failure(UserError.UserAddressNotFound);
-
-            _userAddresses.Remove(address);
-            return Result.Success();
         }
     }
 }

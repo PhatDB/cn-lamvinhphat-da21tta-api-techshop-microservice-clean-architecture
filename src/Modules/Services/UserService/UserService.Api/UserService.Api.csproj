@@ -12,10 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Endpoint\Users\Queries\"/>
-    </ItemGroup>
-
-    <ItemGroup>
         <ProjectReference Include="..\..\..\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj"/>
         <ProjectReference Include="..\UserService.Application\UserService.Application.csproj"/>
         <ProjectReference Include="..\UserService.Infrastucture\UserService.Infrastucture.csproj"/>
