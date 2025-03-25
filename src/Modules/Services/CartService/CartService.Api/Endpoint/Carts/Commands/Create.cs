@@ -10,7 +10,7 @@ namespace CartService.Api.Endpoint.Carts.Commands
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapPost("/api/carts/create", async (CreateCartCommand command, ISender sender) =>
+            app.MapPost("/cart/create", async (CreateCartCommand command, ISender sender) =>
             {
                 Result<int> result = await sender.Send(command);
 

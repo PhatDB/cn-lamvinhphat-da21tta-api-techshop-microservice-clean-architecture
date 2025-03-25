@@ -11,14 +11,11 @@ namespace ProductService.Api.Endpoint.Categories.Queries
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapGet("categories", async (
-                ISender sender, CancellationToken cancellationToken) =>
+            app.MapGet("/categories", async (ISender sender, CancellationToken cancellationToken) =>
             {
                 GetAllCategoryQuery query = new();
-                Result<List<Category>> result =
-                    await sender.Send(query, cancellationToken);
-                return result.Match(success => Results.Ok(success),
-                    failure => CustomResults.Problem(failure));
+                Result<List<Category>> result = await sender.Send(query, cancellationToken);
+                return result.Match(success => Results.Ok(success), failure => CustomResults.Problem(failure));
             }).WithTags("Category").WithName("GetAllCategory");
         }
     }

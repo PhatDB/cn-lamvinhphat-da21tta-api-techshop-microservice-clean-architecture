@@ -10,8 +10,7 @@ namespace ProductService.Api.Endpoint.Products.Commands
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapDelete("product/{productId}", async (
-                int productId, ISender sender, CancellationToken cancellationToken) =>
+            app.MapDelete("/product/{productId}", async (int productId, ISender sender, CancellationToken cancellationToken) =>
             {
                 DeleteProductCommand command = new(productId);
 

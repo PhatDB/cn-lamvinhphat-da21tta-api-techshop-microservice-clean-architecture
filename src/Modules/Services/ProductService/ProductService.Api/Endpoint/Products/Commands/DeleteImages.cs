@@ -11,9 +11,7 @@ namespace ProductService.Api.Endpoint.Products.Commands
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapDelete("product/{productId}/images", async (
-                int productId, [FromBody] DeleteImageRequest request, ISender sender,
-                CancellationToken cancellationToken) =>
+            app.MapDelete("/product/{productId}/images", async (int productId, [FromBody] DeleteImageRequest request, ISender sender, CancellationToken cancellationToken) =>
             {
                 DeleteImageCommand command = new(productId, request.ImageIds);
                 Result result = await sender.Send(command, cancellationToken);

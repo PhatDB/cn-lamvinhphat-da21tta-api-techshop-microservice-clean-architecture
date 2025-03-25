@@ -10,8 +10,7 @@ namespace ProductService.Api.Endpoint.Categories.Commands
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapDelete("category/{id}", async (
-                int id, ISender sender, CancellationToken cancellationToken) =>
+            app.MapDelete("/category/{id}", async (int id, ISender sender, CancellationToken cancellationToken) =>
             {
                 DeleteCategoryCommand command = new(id);
                 Result result = await sender.Send(command, cancellationToken);

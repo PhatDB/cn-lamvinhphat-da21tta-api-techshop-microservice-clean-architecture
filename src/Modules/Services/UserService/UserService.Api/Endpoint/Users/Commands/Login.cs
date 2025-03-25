@@ -10,7 +10,7 @@ namespace UserService.Api.Endpoint.Users.Commands
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapPost("/api/users/login", async (LoginCommand command, ISender sender) =>
+            app.MapPost("/user/login", async (LoginCommand command, ISender sender) =>
             {
                 Result<LoginDTO> result = await sender.Send(command);
 

@@ -56,6 +56,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartService.Infrastructure"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductService.Infracstructure", "src\Modules\Services\ProductService\ProductService.Infracstructure\ProductService.Infracstructure.csproj", "{80B0F446-B217-4299-B49B-E62B0B847EAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway.ReverseProxy", "src\Modules\ApiGateways\ApiGateway.ReverseProxy\ApiGateway.ReverseProxy.csproj", "{5477F9D5-BF02-4136-85A5-A74CC0B112EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -130,6 +132,10 @@ Global
 		{80B0F446-B217-4299-B49B-E62B0B847EAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80B0F446-B217-4299-B49B-E62B0B847EAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80B0F446-B217-4299-B49B-E62B0B847EAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5477F9D5-BF02-4136-85A5-A74CC0B112EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5477F9D5-BF02-4136-85A5-A74CC0B112EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5477F9D5-BF02-4136-85A5-A74CC0B112EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5477F9D5-BF02-4136-85A5-A74CC0B112EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3E957696-AD86-4721-B531-127A4DC72625} = {C1A935B5-15BB-4EB7-AF59-AF13113270D7}
@@ -158,5 +164,6 @@ Global
 		{D58A610E-6031-47C2-9922-6C8774ED5113} = {B54AFD17-DDED-4CCD-93A2-EB815A841930}
 		{1CEB9A5E-5E65-4DC0-BB85-C0F19F6B2814} = {9725A29D-E780-4E20-A876-E30F822333B7}
 		{80B0F446-B217-4299-B49B-E62B0B847EAD} = {33400FBE-159B-4CD0-8DFE-CD1EB4829C33}
+		{5477F9D5-BF02-4136-85A5-A74CC0B112EB} = {99F786B8-471A-4CF0-BCC0-49490DD08BEB}
 	EndGlobalSection
 EndGlobal

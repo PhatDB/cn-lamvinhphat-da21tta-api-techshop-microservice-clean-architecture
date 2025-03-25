@@ -10,21 +10,15 @@ namespace ProductService.Api.Endpoint.Categories.Commands
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapPut("category/{id}", async (
-                int id, UpadateCategoryRequest request, ISender sender,
-                CancellationToken cancellationToken) =>
+            app.MapPut("/category/{id}", async (int id, UpadateCategoryRequest request, ISender sender, CancellationToken cancellationToken) =>
             {
-                UpdateCategoryCommand command = new(id, request.Name, request.Description,
-                    request.IsActive);
+                UpdateCategoryCommand command = new(id, request.Name, request.Description, request.IsActive);
                 Result result = await sender.Send(command, cancellationToken);
 
                 return result.Match(Results.NoContent, CustomResults.Problem);
             }).WithTags("Category");
         }
 
-        public sealed record UpadateCategoryRequest(
-            string? Name,
-            bool? IsActive,
-            string? Description = null);
+        public sealed record UpadateCategoryRequest(string? Name, bool? IsActive, string? Description = null);
     }
 }
