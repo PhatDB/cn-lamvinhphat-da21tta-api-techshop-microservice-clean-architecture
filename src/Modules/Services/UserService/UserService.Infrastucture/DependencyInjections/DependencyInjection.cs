@@ -1,3 +1,5 @@
+using System.Reflection;
+using BuildingBlocks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StackExchange.Redis;
@@ -10,8 +12,7 @@ namespace UserService.Infrastucture.DependencyInjections
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddInfrastructure(
-            this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddSingleton<IConnectionMultiplexer>(sp =>
             {
@@ -23,7 +24,7 @@ namespace UserService.Infrastucture.DependencyInjections
             services.AddHttpContextAccessor();
             services.AddTransient<IJwtTokenService, JwtTokenService>();
             services.AddScoped<IEmailSender, EmailSender>();
-
+            services.AddRabbitMq(configuration, Assembly.GetExecutingAssembly());
             return services;
         }
     }

@@ -6,4 +6,18 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+        <Folder Include="Commands\Cart\Delete\"/>
+        <Folder Include="Commands\Cart\Update\"/>
+        <Folder Include="DTOs\"/>
+        <Folder Include="MappingProfiles\"/>
+        <Folder Include="Queries\"/>
+        <Folder Include="Validations\"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj"/>
+        <ProjectReference Include="..\CartService.Domain\CartService.Domain.csproj"/>
+    </ItemGroup>
+
 </Project>

@@ -4620,32 +4620,41 @@
     ]
   },
   "packageFolders": {
-    "/Users/phatdb/.nuget/packages/": {}
+    "C:\\Users\\mrkuj\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Infrastucture/UserService.Infrastucture.csproj",
+      "projectUniqueName": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\UserService\\UserService.Infrastucture\\UserService.Infrastucture.csproj",
       "projectName": "UserService.Infrastucture",
-      "projectPath": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Infrastucture/UserService.Infrastucture.csproj",
-      "packagesPath": "/Users/phatdb/.nuget/packages/",
-      "outputPath": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Infrastucture/obj/",
+      "projectPath": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\UserService\\UserService.Infrastucture\\UserService.Infrastucture.csproj",
+      "packagesPath": "C:\\Users\\mrkuj\\.nuget\\packages\\",
+      "outputPath": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\UserService\\UserService.Infrastucture\\obj\\",
       "projectStyle": "PackageReference",
+      "UsingMicrosoftNETSdk": false,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/phatdb/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\mrkuj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Application/UserService.Application.csproj": {
-              "projectPath": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/UserService/UserService.Application/UserService.Application.csproj"
+            "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\UserService\\UserService.Application\\UserService.Application.csproj": {
+              "projectPath": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\UserService\\UserService.Application\\UserService.Application.csproj"
             }
           }
         }
@@ -4658,7 +4667,7 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -4680,7 +4689,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

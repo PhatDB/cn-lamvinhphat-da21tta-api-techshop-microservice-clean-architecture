@@ -10,4 +10,15 @@
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0"/>
     </ItemGroup>
 
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj"/>
+        <ProjectReference Include="..\CartService.Application\CartService.Application.csproj"/>
+        <ProjectReference Include="..\CartService.Infrastructure\CartService.Infrastructure.csproj"/>
+        <ProjectReference Include="..\CartService.Persistence\CartService.Persistence.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Endpoint\Carts\Queries\"/>
+    </ItemGroup>
+
 </Project>

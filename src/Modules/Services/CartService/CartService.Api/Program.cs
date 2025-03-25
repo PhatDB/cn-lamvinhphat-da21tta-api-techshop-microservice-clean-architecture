@@ -1,38 +1,64 @@
-var builder = WebApplication.CreateBuilder(args);
+using System.Reflection;
+using Asp.Versioning;
+using Asp.Versioning.ApiExplorer;
+using Asp.Versioning.Builder;
+using BuildingBlocks;
+using BuildingBlocks.Extensions;
+using BuildingBlocks.OpenApi;
+using CartService.Application;
+using CartService.Infrastructure;
+using CartService.Persistence.DependencyInjections;
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-var app = builder.Build();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
-// Configure the HTTP request pipeline.
+builder.Services.AddBuildingBlocks().AddApplication().AddPersistence(builder.Configuration).AddInfrastructure(builder.Configuration);
+
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
+builder.Services.AddApiVersioning(options =>
+{
+    options.DefaultApiVersion = new ApiVersion(1);
+    options.ApiVersionReader = new UrlSegmentApiVersionReader();
+}).AddApiExplorer(options =>
+{
+    options.GroupNameFormat = "'v'V";
+    options.SubstituteApiVersionInUrl = true;
+});
+
+builder.Services.ConfigureOptions<ConfigureSwaggerGenOptions>();
+
+builder.Services.AddEndpoints(Assembly.GetExecutingAssembly());
+
+WebApplication app = builder.Build();
+
+ApiVersionSet apiVersionSet = app.NewApiVersionSet().HasApiVersion(new ApiVersion(1)).ReportApiVersions().Build();
+
+RouteGroupBuilder versionedGroup = app.MapGroup("api/v{version:apiVersion}").WithApiVersionSet(apiVersionSet);
+
+app.MapEndpoints(versionedGroup);
+
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI(options =>
+    {
+        IReadOnlyList<ApiVersionDescription> descriptions = app.DescribeApiVersions();
+
+        foreach (ApiVersionDescription description in descriptions)
+        {
+            string url = $"/swagger/{description.GroupName}/swagger.json";
+            string name = description.GroupName.ToUpperInvariant();
+
+            options.SwaggerEndpoint(url, name);
+        }
+    });
 }
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot",
-    "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-            new WeatherForecast(DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                Random.Shared.Next(-20, 55),
-                summaries[Random.Shared.Next(summaries.Length)]))
-        .ToArray();
-    return forecast;
-}).WithName("GetWeatherForecast");
+app.UseExceptionHandler();
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

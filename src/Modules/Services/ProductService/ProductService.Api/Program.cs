@@ -6,6 +6,7 @@ using BuildingBlocks;
 using BuildingBlocks.Extensions;
 using BuildingBlocks.OpenApi;
 using ProductService.Application;
+using ProductService.Infracstructure.DependencyInjections;
 using ProductService.Persistence.DependencyInjections;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -13,7 +14,7 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddBuildingBlocks().AddApplication().AddPersistence(builder.Configuration);
+builder.Services.AddBuildingBlocks().AddApplication().AddPersistence(builder.Configuration).AddInfrastructure(builder.Configuration);
 
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddProblemDetails();
