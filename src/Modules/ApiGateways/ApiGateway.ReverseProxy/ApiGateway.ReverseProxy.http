@@ -1,0 +1,6 @@
+@ApiGateway.ReverseProxy_HostAddress = http://localhost:5121
+
+GET {{ApiGateway.ReverseProxy_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "0pZtKnvG3jCtiY72ocR3b03xA7Gmt/QWOgNe8wZH3l8=",
+  "Source": "ApiGateway.ReverseProxy",
+  "BasePath": "_content/ApiGateway.ReverseProxy",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
