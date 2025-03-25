@@ -1,0 +1,16 @@
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CartService\CartService.Domain\bin\Debug\net9.0\CartService.Domain.deps.json
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CartService\CartService.Domain\bin\Debug\net9.0\CartService.Domain.dll
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CartService\CartService.Domain\bin\Debug\net9.0\CartService.Domain.pdb
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CartService\CartService.Domain\bin\Debug\net9.0\BuildingBlocks.dll
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CartService\CartService.Domain\bin\Debug\net9.0\BuildingBlocks.pdb
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CartService\CartService.Domain\obj\Debug\net9.0\CartService.Domain.csproj.AssemblyReference.cache
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CartService\CartService.Domain\obj\Debug\net9.0\CartService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CartService\CartService.Domain\obj\Debug\net9.0\CartService.Domain.AssemblyInfoInputs.cache
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CartService\CartService.Domain\obj\Debug\net9.0\CartService.Domain.AssemblyInfo.cs
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CartService\CartService.Domain\obj\Debug\net9.0\CartService.Domain.csproj.CoreCompileInputs.cache
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CartService\CartService.Domain\obj\Debug\net9.0\CartService.Domain.sourcelink.json
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CartService\CartService.Domain\obj\Debug\net9.0\CartServ.4C60274B.Up2Date
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CartService\CartService.Domain\obj\Debug\net9.0\CartService.Domain.dll
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CartService\CartService.Domain\obj\Debug\net9.0\refint\CartService.Domain.dll
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CartService\CartService.Domain\obj\Debug\net9.0\CartService.Domain.pdb
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CartService\CartService.Domain\obj\Debug\net9.0\ref\CartService.Domain.dll

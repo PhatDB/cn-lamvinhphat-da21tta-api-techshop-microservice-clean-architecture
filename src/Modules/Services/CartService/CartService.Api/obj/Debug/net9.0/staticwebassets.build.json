@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "O+RTO4kdEbylGgOSDxIVhbImyTJioNTgJl198828/ac=",
+  "Source": "CartService.Api",
+  "BasePath": "_content/CartService.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
