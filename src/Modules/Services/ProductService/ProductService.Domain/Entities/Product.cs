@@ -10,9 +10,7 @@ namespace ProductService.Domain.Entities
     {
         private readonly List<ProductImage> _productImages;
 
-        private Product(
-            string name, SKU sku, decimal price, int categoryId,
-            string? description = null, decimal? discountPrice = null)
+        private Product(string name, SKU sku, decimal price, int categoryId, string? description = null, decimal? discountPrice = null)
         {
             Name = name;
             Sku = sku;
@@ -45,12 +43,9 @@ namespace ProductService.Domain.Entities
 
         public Inventory Inventory { get; private set; }
 
-        public IReadOnlyCollection<ProductImage> ProductImages =>
-            _productImages.AsReadOnly();
+        public IReadOnlyCollection<ProductImage> ProductImages => _productImages.AsReadOnly();
 
-        public static Result<Product> Create(
-            string name, string sku, decimal price, int categoryId,
-            string? description = null, decimal? discountPrice = null)
+        public static Result<Product> Create(string name, string sku, decimal price, int categoryId, string? description = null, decimal? discountPrice = null)
         {
             if (string.IsNullOrWhiteSpace(name))
                 return Result.Failure<Product>(ProductError.ProductNameInvalid);
@@ -62,8 +57,7 @@ namespace ProductService.Domain.Entities
             if (skuResult.IsFailure)
                 return Result.Failure<Product>(skuResult.Error);
 
-            return Result.Success(new Product(name, skuResult.Value, price, categoryId,
-                description, discountPrice));
+            return Result.Success(new Product(name, skuResult.Value, price, categoryId, description, discountPrice));
         }
 
         public Result CreateInventory(int stockQuantity)
@@ -78,10 +72,6 @@ namespace ProductService.Domain.Entities
 
         public Result UpdateStock(int quantity)
         {
-            if (quantity < 0 && SoldQuantity + quantity < 0)
-                return Result.Failure(ProductError.ProductInsufficientStock);
-
-            SoldQuantity += quantity;
             Inventory?.UpdateStock(Inventory.StockQuantity + quantity);
             return Result.Success();
         }
@@ -105,9 +95,7 @@ namespace ProductService.Domain.Entities
             return Result.Success();
         }
 
-        public Result UpdateProduct(
-            string? name, string? sku, decimal? price, int? categoryId, int? soldQuantity,
-            bool? isActive, string? description, decimal? discountPrice)
+        public Result UpdateProduct(string? name, string? sku, decimal? price, int? categoryId, int? soldQuantity, bool? isActive, string? description, decimal? discountPrice)
         {
             Name = name?.Trim() ?? Name;
             Description = description?.Trim() ?? Description;
@@ -131,8 +119,7 @@ namespace ProductService.Domain.Entities
 
         public Result RemoveProductImages(IEnumerable<int> imageIds)
         {
-            List<ProductImage> imagesToRemove =
-                _productImages.Where(img => imageIds.Contains(img.Id)).ToList();
+            List<ProductImage> imagesToRemove = _productImages.Where(img => imageIds.Contains(img.Id)).ToList();
 
             if (!imagesToRemove.Any())
                 return Result.Failure(ProductImageError.ProductImageNotFound);

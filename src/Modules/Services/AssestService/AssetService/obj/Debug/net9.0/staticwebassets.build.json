@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iQrUhtgWLHrpRu0Ho8bss1EDr9SFf7H9tKIcaWZpwGQ=",
+  "Hash": "R3t/R/okDasKWDjXe1tmAOfoNOZp6egEvqDNYzF6AIM=",
   "Source": "AssetService",
   "BasePath": "_content/AssetService",
   "Mode": "Default",
@@ -8,19 +8,19 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "AssetService/wwwroot",
+      "Name": "AssetService\\wwwroot",
       "Source": "AssetService",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740641087813.png",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740641087813.png",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740641087813#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -35,13 +35,13 @@
       "Integrity": "6ZsebwhOEjm3mCYj/Kc1AhhQPYJLq8MM+BAjDaYMF34=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740641087813.png"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740641087813.png"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740641816038.png",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740641816038.png",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740641816038#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -56,13 +56,13 @@
       "Integrity": "6ZsebwhOEjm3mCYj/Kc1AhhQPYJLq8MM+BAjDaYMF34=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740641816038.png"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740641816038.png"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740642130949.png",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740642130949.png",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740642130949#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -77,13 +77,13 @@
       "Integrity": "6ZsebwhOEjm3mCYj/Kc1AhhQPYJLq8MM+BAjDaYMF34=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740642130949.png"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740642130949.png"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740642247281.png",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740642247281.png",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740642247281#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -98,13 +98,13 @@
       "Integrity": "6ZsebwhOEjm3mCYj/Kc1AhhQPYJLq8MM+BAjDaYMF34=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740642247281.png"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740642247281.png"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740644856579.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740644856579.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740644856579#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -119,13 +119,13 @@
       "Integrity": "KQPf5x89Mu71M18i+lVCxfEkM94ZZ4Y3TPhSXf+yZEY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740644856579.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740644856579.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740645024269.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740645024269.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740645024269#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -140,13 +140,13 @@
       "Integrity": "KQPf5x89Mu71M18i+lVCxfEkM94ZZ4Y3TPhSXf+yZEY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740645024269.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740645024269.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740645145558.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740645145558.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740645145558#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -161,13 +161,13 @@
       "Integrity": "KQPf5x89Mu71M18i+lVCxfEkM94ZZ4Y3TPhSXf+yZEY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740645145558.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740645145558.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740645241480.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740645241480.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740645241480#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -182,13 +182,13 @@
       "Integrity": "KQPf5x89Mu71M18i+lVCxfEkM94ZZ4Y3TPhSXf+yZEY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740645241480.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740645241480.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740645534647.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740645534647.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740645534647#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -203,13 +203,13 @@
       "Integrity": "KQPf5x89Mu71M18i+lVCxfEkM94ZZ4Y3TPhSXf+yZEY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740645534647.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740645534647.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740645576356.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740645576356.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740645576356#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -224,13 +224,13 @@
       "Integrity": "KQPf5x89Mu71M18i+lVCxfEkM94ZZ4Y3TPhSXf+yZEY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740645576356.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740645576356.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740646309210.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740646309210.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740646309210#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -245,13 +245,13 @@
       "Integrity": "KQPf5x89Mu71M18i+lVCxfEkM94ZZ4Y3TPhSXf+yZEY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740646309210.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740646309210.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740646396578.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740646396578.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740646396578#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -266,13 +266,13 @@
       "Integrity": "KQPf5x89Mu71M18i+lVCxfEkM94ZZ4Y3TPhSXf+yZEY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740646396578.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740646396578.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740646437803.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740646437803.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740646437803#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -287,13 +287,13 @@
       "Integrity": "KQPf5x89Mu71M18i+lVCxfEkM94ZZ4Y3TPhSXf+yZEY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740646437803.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740646437803.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740646766378.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740646766378.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740646766378#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -308,13 +308,13 @@
       "Integrity": "KQPf5x89Mu71M18i+lVCxfEkM94ZZ4Y3TPhSXf+yZEY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740646766378.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740646766378.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740647167038.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740647167038.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740647167038#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -329,13 +329,13 @@
       "Integrity": "KQPf5x89Mu71M18i+lVCxfEkM94ZZ4Y3TPhSXf+yZEY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740647167038.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740647167038.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740705034431.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740705034431.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740705034431#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -350,13 +350,13 @@
       "Integrity": "KQPf5x89Mu71M18i+lVCxfEkM94ZZ4Y3TPhSXf+yZEY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740705034431.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740705034431.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740707590027.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740707590027.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740707590027#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -371,13 +371,13 @@
       "Integrity": "KQPf5x89Mu71M18i+lVCxfEkM94ZZ4Y3TPhSXf+yZEY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740707590027.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740707590027.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740707733031.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740707733031.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740707733031#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -392,13 +392,13 @@
       "Integrity": "KQPf5x89Mu71M18i+lVCxfEkM94ZZ4Y3TPhSXf+yZEY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740707733031.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740707733031.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740967563775.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740967563775.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740967563775#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -413,13 +413,13 @@
       "Integrity": "KQPf5x89Mu71M18i+lVCxfEkM94ZZ4Y3TPhSXf+yZEY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740967563775.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740967563775.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740967682194.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740967682194.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740967682194#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -434,13 +434,13 @@
       "Integrity": "KQPf5x89Mu71M18i+lVCxfEkM94ZZ4Y3TPhSXf+yZEY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740967682194.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740967682194.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740967764643.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740967764643.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740967764643#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -455,13 +455,13 @@
       "Integrity": "KQPf5x89Mu71M18i+lVCxfEkM94ZZ4Y3TPhSXf+yZEY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740967764643.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740967764643.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740968209810.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740968209810.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740968209810#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -476,13 +476,13 @@
       "Integrity": "KQPf5x89Mu71M18i+lVCxfEkM94ZZ4Y3TPhSXf+yZEY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740968209810.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740968209810.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740968491808.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740968491808.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1740968491808#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -497,13 +497,13 @@
       "Integrity": "KQPf5x89Mu71M18i+lVCxfEkM94ZZ4Y3TPhSXf+yZEY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1740968491808.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1740968491808.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1741147212887.png",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1741147212887.png",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1741147212887#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -518,13 +518,13 @@
       "Integrity": "6ZsebwhOEjm3mCYj/Kc1AhhQPYJLq8MM+BAjDaYMF34=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1741147212887.png"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1741147212887.png"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1741222996591.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1741222996591.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1741222996591#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -539,13 +539,13 @@
       "Integrity": "4fP/m8ftC0JThN4pY/rNOyLfrahb69jv2kKGxSIlehE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1741222996591.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1741222996591.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1741223609651.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1741223609651.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1741223609651#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -560,13 +560,13 @@
       "Integrity": "4fP/m8ftC0JThN4pY/rNOyLfrahb69jv2kKGxSIlehE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1741223609651.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1741223609651.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1741223766715.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1741223766715.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1741223766715#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -581,13 +581,13 @@
       "Integrity": "4fP/m8ftC0JThN4pY/rNOyLfrahb69jv2kKGxSIlehE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1741223766715.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1741223766715.webp"
     },
     {
-      "Identity": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1741223824123.webp",
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1741223824123.webp",
       "SourceId": "AssetService",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
       "BasePath": "_content/AssetService",
       "RelativePath": "assets/product/product_1741223824123#[.{fingerprint}]?.webp",
       "AssetKind": "All",
@@ -602,13 +602,118 @@
       "Integrity": "4fP/m8ftC0JThN4pY/rNOyLfrahb69jv2kKGxSIlehE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/product/product_1741223824123.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1741223824123.webp"
+    },
+    {
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1742961579594.webp",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/product/product_1742961579594#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "oeb1m748k5",
+      "Integrity": "AH5qFip7g0vbIaTI6PYGpueoDGKcP+ordSfrp+jywIk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1742961579594.webp"
+    },
+    {
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1742961645333.webp",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/product/product_1742961645333#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "oeb1m748k5",
+      "Integrity": "AH5qFip7g0vbIaTI6PYGpueoDGKcP+ordSfrp+jywIk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1742961645333.webp"
+    },
+    {
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1742961864301.webp",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/product/product_1742961864301#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4566vqjpxp",
+      "Integrity": "mPu6Av/P8ms5F9TLaqLHgPs39/khJRaVepO503LUWpU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1742961864301.webp"
+    },
+    {
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1742961864308.webp",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/product/product_1742961864308#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kxqecsajk5",
+      "Integrity": "KKRa2HShbkH54cmHy9PQYGlskKRiqpzAlJAN57/pTVY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1742961864308.webp"
+    },
+    {
+      "Identity": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1742961864311.webp",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/product/product_1742961864311#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rw7va92956",
+      "Integrity": "y6ch5Hoqok99uid512rR3dfG35q10qcnHE5NRlmogPg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1742961864311.webp"
     }
   ],
   "Endpoints": [
     {
       "Route": "assets/product/product_1740641087813.7su9g09jen.png",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740641087813.png",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740641087813.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -629,7 +734,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 07:24:47 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -653,7 +758,7 @@
     },
     {
       "Route": "assets/product/product_1740641087813.png",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740641087813.png",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740641087813.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -674,7 +779,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 07:24:47 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -690,7 +795,7 @@
     },
     {
       "Route": "assets/product/product_1740641816038.7su9g09jen.png",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740641816038.png",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740641816038.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -711,7 +816,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 07:36:56 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -735,7 +840,7 @@
     },
     {
       "Route": "assets/product/product_1740641816038.png",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740641816038.png",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740641816038.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -756,7 +861,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 07:36:56 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -772,7 +877,7 @@
     },
     {
       "Route": "assets/product/product_1740642130949.7su9g09jen.png",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740642130949.png",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740642130949.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -793,7 +898,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 07:42:10 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -817,7 +922,7 @@
     },
     {
       "Route": "assets/product/product_1740642130949.png",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740642130949.png",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740642130949.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -838,7 +943,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 07:42:10 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -854,7 +959,7 @@
     },
     {
       "Route": "assets/product/product_1740642247281.7su9g09jen.png",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740642247281.png",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740642247281.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -875,7 +980,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 07:44:07 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -899,7 +1004,7 @@
     },
     {
       "Route": "assets/product/product_1740642247281.png",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740642247281.png",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740642247281.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -920,7 +1025,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 07:44:07 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -936,7 +1041,7 @@
     },
     {
       "Route": "assets/product/product_1740644856579.rrjfzymv6s.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740644856579.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740644856579.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -957,7 +1062,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 08:27:36 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -981,7 +1086,7 @@
     },
     {
       "Route": "assets/product/product_1740644856579.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740644856579.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740644856579.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1002,7 +1107,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 08:27:36 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1018,7 +1123,7 @@
     },
     {
       "Route": "assets/product/product_1740645024269.rrjfzymv6s.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740645024269.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740645024269.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1039,7 +1144,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 08:30:24 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1063,7 +1168,7 @@
     },
     {
       "Route": "assets/product/product_1740645024269.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740645024269.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740645024269.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1084,7 +1189,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 08:30:24 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1100,7 +1205,7 @@
     },
     {
       "Route": "assets/product/product_1740645145558.rrjfzymv6s.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740645145558.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740645145558.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1121,7 +1226,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 08:32:25 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1145,7 +1250,7 @@
     },
     {
       "Route": "assets/product/product_1740645145558.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740645145558.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740645145558.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1166,7 +1271,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 08:32:25 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1182,7 +1287,7 @@
     },
     {
       "Route": "assets/product/product_1740645241480.rrjfzymv6s.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740645241480.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740645241480.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1203,7 +1308,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 08:34:01 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1227,7 +1332,7 @@
     },
     {
       "Route": "assets/product/product_1740645241480.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740645241480.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740645241480.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1248,7 +1353,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 08:34:01 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1264,7 +1369,7 @@
     },
     {
       "Route": "assets/product/product_1740645534647.rrjfzymv6s.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740645534647.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740645534647.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1285,7 +1390,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 08:38:54 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1309,7 +1414,7 @@
     },
     {
       "Route": "assets/product/product_1740645534647.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740645534647.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740645534647.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1330,7 +1435,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 08:38:54 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1346,7 +1451,7 @@
     },
     {
       "Route": "assets/product/product_1740645576356.rrjfzymv6s.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740645576356.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740645576356.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1367,7 +1472,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 08:39:36 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1391,7 +1496,7 @@
     },
     {
       "Route": "assets/product/product_1740645576356.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740645576356.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740645576356.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1412,7 +1517,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 08:39:36 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1428,7 +1533,7 @@
     },
     {
       "Route": "assets/product/product_1740646309210.rrjfzymv6s.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740646309210.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740646309210.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1449,7 +1554,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 08:51:49 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1473,7 +1578,7 @@
     },
     {
       "Route": "assets/product/product_1740646309210.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740646309210.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740646309210.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1494,7 +1599,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 08:51:49 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1510,7 +1615,7 @@
     },
     {
       "Route": "assets/product/product_1740646396578.rrjfzymv6s.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740646396578.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740646396578.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1531,7 +1636,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 08:53:16 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1555,7 +1660,7 @@
     },
     {
       "Route": "assets/product/product_1740646396578.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740646396578.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740646396578.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1576,7 +1681,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 08:53:16 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1592,7 +1697,7 @@
     },
     {
       "Route": "assets/product/product_1740646437803.rrjfzymv6s.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740646437803.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740646437803.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1613,7 +1718,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 08:53:57 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1637,7 +1742,7 @@
     },
     {
       "Route": "assets/product/product_1740646437803.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740646437803.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740646437803.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1658,7 +1763,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 08:53:57 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1674,7 +1779,7 @@
     },
     {
       "Route": "assets/product/product_1740646766378.rrjfzymv6s.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740646766378.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740646766378.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1695,7 +1800,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 08:59:26 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1719,7 +1824,7 @@
     },
     {
       "Route": "assets/product/product_1740646766378.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740646766378.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740646766378.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1740,7 +1845,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 08:59:26 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1756,7 +1861,7 @@
     },
     {
       "Route": "assets/product/product_1740647167038.rrjfzymv6s.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740647167038.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740647167038.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1777,7 +1882,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 09:06:07 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1801,7 +1906,7 @@
     },
     {
       "Route": "assets/product/product_1740647167038.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740647167038.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740647167038.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1822,7 +1927,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 09:06:07 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1838,7 +1943,7 @@
     },
     {
       "Route": "assets/product/product_1740705034431.rrjfzymv6s.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740705034431.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740705034431.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1859,7 +1964,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 28 Feb 2025 01:10:34 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1883,7 +1988,7 @@
     },
     {
       "Route": "assets/product/product_1740705034431.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740705034431.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740705034431.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1904,7 +2009,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 28 Feb 2025 01:10:34 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1920,7 +2025,7 @@
     },
     {
       "Route": "assets/product/product_1740707590027.rrjfzymv6s.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740707590027.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740707590027.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1941,7 +2046,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 28 Feb 2025 01:53:10 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1965,7 +2070,7 @@
     },
     {
       "Route": "assets/product/product_1740707590027.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740707590027.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740707590027.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1986,7 +2091,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 28 Feb 2025 01:53:10 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2002,7 +2107,7 @@
     },
     {
       "Route": "assets/product/product_1740707733031.rrjfzymv6s.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740707733031.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740707733031.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2023,7 +2128,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 28 Feb 2025 01:55:33 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2047,7 +2152,7 @@
     },
     {
       "Route": "assets/product/product_1740707733031.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740707733031.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740707733031.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2068,7 +2173,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 28 Feb 2025 01:55:33 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2084,7 +2189,7 @@
     },
     {
       "Route": "assets/product/product_1740967563775.rrjfzymv6s.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740967563775.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740967563775.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2105,7 +2210,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 03 Mar 2025 02:06:03 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2129,7 +2234,7 @@
     },
     {
       "Route": "assets/product/product_1740967563775.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740967563775.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740967563775.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2150,7 +2255,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 03 Mar 2025 02:06:03 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2166,7 +2271,7 @@
     },
     {
       "Route": "assets/product/product_1740967682194.rrjfzymv6s.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740967682194.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740967682194.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2187,7 +2292,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 03 Mar 2025 02:08:02 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2211,7 +2316,7 @@
     },
     {
       "Route": "assets/product/product_1740967682194.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740967682194.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740967682194.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2232,7 +2337,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 03 Mar 2025 02:08:02 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2248,7 +2353,7 @@
     },
     {
       "Route": "assets/product/product_1740967764643.rrjfzymv6s.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740967764643.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740967764643.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2269,7 +2374,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 03 Mar 2025 02:09:24 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2293,7 +2398,7 @@
     },
     {
       "Route": "assets/product/product_1740967764643.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740967764643.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740967764643.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2314,7 +2419,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 03 Mar 2025 02:09:24 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2330,7 +2435,7 @@
     },
     {
       "Route": "assets/product/product_1740968209810.rrjfzymv6s.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740968209810.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740968209810.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2351,7 +2456,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 03 Mar 2025 02:16:49 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2375,7 +2480,7 @@
     },
     {
       "Route": "assets/product/product_1740968209810.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740968209810.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740968209810.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2396,7 +2501,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 03 Mar 2025 02:16:49 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2412,7 +2517,7 @@
     },
     {
       "Route": "assets/product/product_1740968491808.rrjfzymv6s.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740968491808.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740968491808.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2433,7 +2538,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 03 Mar 2025 02:21:31 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2457,7 +2562,7 @@
     },
     {
       "Route": "assets/product/product_1740968491808.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1740968491808.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1740968491808.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2478,7 +2583,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 03 Mar 2025 02:21:31 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2494,7 +2599,7 @@
     },
     {
       "Route": "assets/product/product_1741147212887.7su9g09jen.png",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1741147212887.png",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1741147212887.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2515,7 +2620,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 05 Mar 2025 04:00:12 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2539,7 +2644,7 @@
     },
     {
       "Route": "assets/product/product_1741147212887.png",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1741147212887.png",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1741147212887.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2560,7 +2665,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 05 Mar 2025 04:00:12 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2576,7 +2681,7 @@
     },
     {
       "Route": "assets/product/product_1741222996591.dpt2tprgy0.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1741222996591.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1741222996591.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2597,7 +2702,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 01:03:16 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2621,7 +2726,7 @@
     },
     {
       "Route": "assets/product/product_1741222996591.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1741222996591.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1741222996591.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2642,7 +2747,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 01:03:16 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2658,7 +2763,7 @@
     },
     {
       "Route": "assets/product/product_1741223609651.dpt2tprgy0.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1741223609651.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1741223609651.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2679,7 +2784,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 01:13:29 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2703,7 +2808,7 @@
     },
     {
       "Route": "assets/product/product_1741223609651.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1741223609651.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1741223609651.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2724,7 +2829,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 01:13:29 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2740,7 +2845,7 @@
     },
     {
       "Route": "assets/product/product_1741223766715.dpt2tprgy0.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1741223766715.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1741223766715.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2761,7 +2866,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 01:16:06 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2785,7 +2890,7 @@
     },
     {
       "Route": "assets/product/product_1741223766715.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1741223766715.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1741223766715.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2806,7 +2911,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 01:16:06 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2822,7 +2927,7 @@
     },
     {
       "Route": "assets/product/product_1741223824123.dpt2tprgy0.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1741223824123.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1741223824123.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2843,7 +2948,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 01:17:04 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2867,7 +2972,7 @@
     },
     {
       "Route": "assets/product/product_1741223824123.webp",
-      "AssetFile": "/Users/phatdb/cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture/src/Modules/Services/AssestService/AssetService/wwwroot/assets/product/product_1741223824123.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1741223824123.webp",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2888,7 +2993,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Mar 2025 01:17:04 GMT"
+          "Value": "Tue, 25 Mar 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2899,6 +3004,416 @@
         {
           "Name": "integrity",
           "Value": "sha256-4fP/m8ftC0JThN4pY/rNOyLfrahb69jv2kKGxSIlehE="
+        }
+      ]
+    },
+    {
+      "Route": "assets/product/product_1742961579594.oeb1m748k5.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1742961579594.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "76082"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AH5qFip7g0vbIaTI6PYGpueoDGKcP+ordSfrp+jywIk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 03:59:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oeb1m748k5"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/product/product_1742961579594.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AH5qFip7g0vbIaTI6PYGpueoDGKcP+ordSfrp+jywIk="
+        }
+      ]
+    },
+    {
+      "Route": "assets/product/product_1742961579594.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1742961579594.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "76082"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AH5qFip7g0vbIaTI6PYGpueoDGKcP+ordSfrp+jywIk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 03:59:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AH5qFip7g0vbIaTI6PYGpueoDGKcP+ordSfrp+jywIk="
+        }
+      ]
+    },
+    {
+      "Route": "assets/product/product_1742961645333.oeb1m748k5.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1742961645333.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "76082"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AH5qFip7g0vbIaTI6PYGpueoDGKcP+ordSfrp+jywIk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 04:00:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oeb1m748k5"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/product/product_1742961645333.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AH5qFip7g0vbIaTI6PYGpueoDGKcP+ordSfrp+jywIk="
+        }
+      ]
+    },
+    {
+      "Route": "assets/product/product_1742961645333.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1742961645333.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "76082"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AH5qFip7g0vbIaTI6PYGpueoDGKcP+ordSfrp+jywIk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 04:00:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AH5qFip7g0vbIaTI6PYGpueoDGKcP+ordSfrp+jywIk="
+        }
+      ]
+    },
+    {
+      "Route": "assets/product/product_1742961864301.4566vqjpxp.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1742961864301.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "136754"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mPu6Av/P8ms5F9TLaqLHgPs39/khJRaVepO503LUWpU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 04:04:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4566vqjpxp"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/product/product_1742961864301.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mPu6Av/P8ms5F9TLaqLHgPs39/khJRaVepO503LUWpU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/product/product_1742961864301.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1742961864301.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "136754"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mPu6Av/P8ms5F9TLaqLHgPs39/khJRaVepO503LUWpU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 04:04:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mPu6Av/P8ms5F9TLaqLHgPs39/khJRaVepO503LUWpU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/product/product_1742961864308.kxqecsajk5.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1742961864308.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9866"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KKRa2HShbkH54cmHy9PQYGlskKRiqpzAlJAN57/pTVY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 04:04:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kxqecsajk5"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/product/product_1742961864308.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-KKRa2HShbkH54cmHy9PQYGlskKRiqpzAlJAN57/pTVY="
+        }
+      ]
+    },
+    {
+      "Route": "assets/product/product_1742961864308.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1742961864308.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9866"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KKRa2HShbkH54cmHy9PQYGlskKRiqpzAlJAN57/pTVY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 04:04:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-KKRa2HShbkH54cmHy9PQYGlskKRiqpzAlJAN57/pTVY="
+        }
+      ]
+    },
+    {
+      "Route": "assets/product/product_1742961864311.rw7va92956.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1742961864311.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10306"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"y6ch5Hoqok99uid512rR3dfG35q10qcnHE5NRlmogPg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 04:04:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rw7va92956"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/product/product_1742961864311.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-y6ch5Hoqok99uid512rR3dfG35q10qcnHE5NRlmogPg="
+        }
+      ]
+    },
+    {
+      "Route": "assets/product/product_1742961864311.webp",
+      "AssetFile": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1742961864311.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10306"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"y6ch5Hoqok99uid512rR3dfG35q10qcnHE5NRlmogPg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 04:04:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-y6ch5Hoqok99uid512rR3dfG35q10qcnHE5NRlmogPg="
         }
       ]
     }

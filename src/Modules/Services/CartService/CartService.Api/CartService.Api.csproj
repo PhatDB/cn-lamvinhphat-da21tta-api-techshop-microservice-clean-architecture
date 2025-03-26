@@ -17,8 +17,4 @@
         <ProjectReference Include="..\CartService.Persistence\CartService.Persistence.csproj"/>
     </ItemGroup>
 
-    <ItemGroup>
-        <Folder Include="Endpoint\Carts\Queries\"/>
-    </ItemGroup>
-
 </Project>

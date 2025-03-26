@@ -58,6 +58,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductService.Infracstruct
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway.ReverseProxy", "src\Modules\ApiGateways\ApiGateway.ReverseProxy\ApiGateway.ReverseProxy.csproj", "{5477F9D5-BF02-4136-85A5-A74CC0B112EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Api", "src\Modules\Services\OrderService\OrderService.Api\OrderService.Api.csproj", "{C79CB6B3-86B9-401C-B156-608DAA549C91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Domain", "src\Modules\Services\OrderService\OrderService.Domain\OrderService.Domain.csproj", "{404E92D8-04DE-4C09-ACA5-04DDEC706D92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Application", "src\Modules\Services\OrderService\OrderService.Application\OrderService.Application.csproj", "{612EDAC9-6FD8-4B12-A0FD-3C4B6414FF93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Infrastructure", "src\Modules\Services\OrderService\OrderService.Infrastructure\OrderService.Infrastructure.csproj", "{D8096BE8-345B-416B-A4D3-0B9399A4B626}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Persistence", "src\Modules\Services\OrderService\OrderService.Persistence\OrderService.Persistence.csproj", "{B05226B7-325F-4F86-ABE3-C630A5B07B9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -136,6 +146,26 @@ Global
 		{5477F9D5-BF02-4136-85A5-A74CC0B112EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5477F9D5-BF02-4136-85A5-A74CC0B112EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5477F9D5-BF02-4136-85A5-A74CC0B112EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C79CB6B3-86B9-401C-B156-608DAA549C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C79CB6B3-86B9-401C-B156-608DAA549C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C79CB6B3-86B9-401C-B156-608DAA549C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C79CB6B3-86B9-401C-B156-608DAA549C91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{404E92D8-04DE-4C09-ACA5-04DDEC706D92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{404E92D8-04DE-4C09-ACA5-04DDEC706D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{404E92D8-04DE-4C09-ACA5-04DDEC706D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{404E92D8-04DE-4C09-ACA5-04DDEC706D92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{612EDAC9-6FD8-4B12-A0FD-3C4B6414FF93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{612EDAC9-6FD8-4B12-A0FD-3C4B6414FF93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{612EDAC9-6FD8-4B12-A0FD-3C4B6414FF93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{612EDAC9-6FD8-4B12-A0FD-3C4B6414FF93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8096BE8-345B-416B-A4D3-0B9399A4B626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8096BE8-345B-416B-A4D3-0B9399A4B626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8096BE8-345B-416B-A4D3-0B9399A4B626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8096BE8-345B-416B-A4D3-0B9399A4B626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B05226B7-325F-4F86-ABE3-C630A5B07B9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B05226B7-325F-4F86-ABE3-C630A5B07B9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B05226B7-325F-4F86-ABE3-C630A5B07B9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B05226B7-325F-4F86-ABE3-C630A5B07B9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3E957696-AD86-4721-B531-127A4DC72625} = {C1A935B5-15BB-4EB7-AF59-AF13113270D7}
@@ -165,5 +195,10 @@ Global
 		{1CEB9A5E-5E65-4DC0-BB85-C0F19F6B2814} = {9725A29D-E780-4E20-A876-E30F822333B7}
 		{80B0F446-B217-4299-B49B-E62B0B847EAD} = {33400FBE-159B-4CD0-8DFE-CD1EB4829C33}
 		{5477F9D5-BF02-4136-85A5-A74CC0B112EB} = {99F786B8-471A-4CF0-BCC0-49490DD08BEB}
+		{C79CB6B3-86B9-401C-B156-608DAA549C91} = {3525BFAF-C605-42F9-BD68-DEF37DEBFCC4}
+		{404E92D8-04DE-4C09-ACA5-04DDEC706D92} = {3525BFAF-C605-42F9-BD68-DEF37DEBFCC4}
+		{612EDAC9-6FD8-4B12-A0FD-3C4B6414FF93} = {3525BFAF-C605-42F9-BD68-DEF37DEBFCC4}
+		{D8096BE8-345B-416B-A4D3-0B9399A4B626} = {3525BFAF-C605-42F9-BD68-DEF37DEBFCC4}
+		{B05226B7-325F-4F86-ABE3-C630A5B07B9A} = {3525BFAF-C605-42F9-BD68-DEF37DEBFCC4}
 	EndGlobalSection
 EndGlobal
