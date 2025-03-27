@@ -14,6 +14,7 @@ namespace CartService.Persistence.Configurations
             builder.Property(x => x.Id).HasColumnName("cart_id").IsRequired();
             builder.Property(x => x.UserId).HasColumnName("user_id").IsRequired();
             builder.Property(p => p.CreatedAt).HasColumnName("created_at").HasDefaultValueSql("GETDATE()").IsRequired();
+            builder.HasMany(c => c.CartItems).WithOne().HasForeignKey(ci => ci.CartId).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

@@ -6,10 +6,12 @@ namespace CartService.Domain.Entities
 {
     public class CartItem : Entity
     {
-        private CartItem(int cartId, int productId, int quantity, decimal unitPrice)
+        private CartItem(int cartId, int productId, string productName, string imgUrl, int quantity, decimal unitPrice)
         {
             CartId = cartId;
             ProductId = productId;
+            ProductName = productName;
+            ImgUrl = imgUrl;
             Quantity = quantity;
             UnitPrice = unitPrice;
         }
@@ -20,6 +22,8 @@ namespace CartService.Domain.Entities
 
         public int CartId { get; private set; }
         public int ProductId { get; private set; }
+        public string ProductName { get; private set; }
+        public string ImgUrl { get; private set; }
         public int Quantity { get; private set; }
         public decimal UnitPrice { get; }
         public decimal TotalPrice => Quantity * UnitPrice;
@@ -34,7 +38,7 @@ namespace CartService.Domain.Entities
             Quantity = newQuantity;
         }
 
-        public static Result<CartItem> Create(int cartId, int productId, int quantity, decimal unitPrice)
+        public static Result<CartItem> Create(int cartId, int productId, string productName, string imgUrl, int quantity, decimal unitPrice)
         {
             if (quantity <= 0)
                 return Result.Failure<CartItem>(CartError.InvalidQuantity);
@@ -42,7 +46,7 @@ namespace CartService.Domain.Entities
             if (unitPrice <= 0)
                 return Result.Failure<CartItem>(CartError.InvalidUnitPrice);
 
-            return Result.Success(new CartItem(cartId, productId, quantity, unitPrice));
+            return Result.Success(new CartItem(cartId, productId, productName, imgUrl, quantity, unitPrice));
         }
     }
 }

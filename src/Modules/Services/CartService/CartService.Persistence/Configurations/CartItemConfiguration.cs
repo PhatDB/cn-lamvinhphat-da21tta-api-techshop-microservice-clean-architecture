@@ -14,7 +14,10 @@ namespace CartService.Persistence.Configurations
             builder.Property(x => x.CartId).HasColumnName("cart_id").IsRequired();
             builder.Property(x => x.ProductId).HasColumnName("product_id").IsRequired();
             builder.Property(x => x.Quantity).HasColumnName("quantity").IsRequired();
-            builder.Property(x => x.UnitPrice).HasColumnName("unit_price").HasColumnType("decimal(10,2)").IsRequired();
+            builder.Property(x => x.UnitPrice).HasColumnName("unit_price").HasColumnType("decimal(18,2)").IsRequired();
+            builder.Property(x => x.ProductName).HasColumnName("product_name").IsRequired();
+            builder.Property(x => x.ImgUrl).HasColumnName("img_url").IsRequired();
+            builder.HasOne<Cart>().WithMany(c => c.CartItems).HasForeignKey(ci => ci.CartId).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

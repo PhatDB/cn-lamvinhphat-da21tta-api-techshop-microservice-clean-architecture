@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProductService.Infracstructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2902e24571bfbcb98e111b99300767611dea110d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4b64c90ac06ee80ebbf27595f5a07b4439c2f74")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProductService.Infracstructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProductService.Infracstructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

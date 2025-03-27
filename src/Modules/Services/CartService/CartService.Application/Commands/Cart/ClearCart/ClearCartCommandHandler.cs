@@ -20,7 +20,7 @@ namespace CartService.Application.Commands.Cart.ClearCart
 
         public async Task<Result> Handle(ClearCartCommand request, CancellationToken cancellationToken)
         {
-            Domain.Entities.Cart? cart = await _cartRepository.AsQueryable().AsNoTracking().FirstOrDefaultAsync(c => c.Id == request.CartId, cancellationToken);
+            Domain.Entities.Cart? cart = await _cartRepository.AsQueryable().Include(x => x.CartItems).FirstOrDefaultAsync(c => c.Id == request.CartId, cancellationToken);
 
             if (cart == null)
                 return Result.Failure(Error.NotFound("Cart.NotFound", "Cart not found"));

@@ -17,9 +17,11 @@ namespace CartService.Persistence.Repositories
 
         public async Task<Result<Cart>> GetUserCartAsync(int userId, CancellationToken cancellationToken = default)
         {
-            Cart? result = await _context.Carts.AsQueryable().Include(c => c.CartItems).Where(p => p.UserId == userId).FirstOrDefaultAsync(cancellationToken);
+            Cart? result = await _context.Carts.AsQueryable().Include(c => c.CartItems).FirstOrDefaultAsync(c => c.UserId == userId, cancellationToken);
+
             if (result == null)
-                return Result.Failure<Cart>(Error.NotFound("Cart.NotFound", "Cart is not exists"));
+                return Result.Failure<Cart>(Error.NotFound("Cart.NotFound", "Cart not found"));
+
             return Result.Success(result);
         }
     }

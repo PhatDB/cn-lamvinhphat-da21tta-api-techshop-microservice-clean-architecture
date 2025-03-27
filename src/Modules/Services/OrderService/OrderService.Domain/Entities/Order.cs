@@ -38,7 +38,6 @@ namespace OrderService.Domain.Entities
             foreach (OrderItem item in _orderItems) TotalAmount += item.TotalPrice;
         }
 
-        // Method to change payment status
         public void UpdatePaymentStatus(int newStatus)
         {
             PaymentStatus = newStatus;

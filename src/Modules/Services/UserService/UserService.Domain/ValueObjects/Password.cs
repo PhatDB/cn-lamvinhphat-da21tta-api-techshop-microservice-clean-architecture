@@ -17,8 +17,7 @@ namespace UserService.Domain.ValueObjects
             if (string.IsNullOrWhiteSpace(password))
                 return Result.Failure<Password>(UserError.PasswordEmpty);
 
-            if (password.Length < 8 || !password.Any(char.IsDigit) ||
-                !password.Any(char.IsPunctuation))
+            if (password.Length < 8)
                 return Result.Failure<Password>(UserError.PasswordWeak);
 
             return Result.Success(new Password(password));

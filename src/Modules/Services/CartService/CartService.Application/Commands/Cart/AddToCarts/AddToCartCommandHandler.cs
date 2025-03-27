@@ -51,7 +51,7 @@ namespace CartService.Application.Commands.Cart.AddToCarts
 
                 cart = cartCreateResult.Value;
 
-                Result addResult = cart.AddItem(request.ProductId, request.Quantity, product.Price);
+                Result addResult = cart.AddItem(request.ProductId, product.Name, product.ImageUrl, request.Quantity, product.Price);
                 if (addResult.IsFailure)
                     return Result.Failure<int>(addResult.Error);
 
@@ -61,7 +61,7 @@ namespace CartService.Application.Commands.Cart.AddToCarts
             {
                 cart = cartResult.Value;
 
-                Result updateResult = cart.AddOrUpdateItem(request.ProductId, request.Quantity, product.Price);
+                Result updateResult = cart.AddOrUpdateItem(request.ProductId, product.Name, product.ImageUrl, request.Quantity, product.Price);
                 if (updateResult.IsFailure)
                     return Result.Failure<int>(updateResult.Error);
             }

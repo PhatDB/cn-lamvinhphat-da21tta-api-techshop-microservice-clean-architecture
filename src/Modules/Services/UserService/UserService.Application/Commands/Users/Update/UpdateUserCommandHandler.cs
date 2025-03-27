@@ -26,7 +26,7 @@ namespace UserService.Application.Commands.Users.Update
             if (user == null)
                 return Result.Failure(UserError.UserNotFound);
 
-            Result updateResult = user.UpdateUserAndAddress(request.Username, request.AddressLine, request.PhoneNumber, request.Province, request.District);
+            Result updateResult = user.UpdateUserAndAddress(request.Username, request.Street, request.City, request.District, request.Ward, request.ZipCode, request.PhoneNumber);
 
             if (updateResult.IsFailure)
                 return Result.Failure(updateResult.Error);

@@ -30,7 +30,7 @@ namespace CartService.Infrastructure.RequestClient
         public async Task<Result<ProductInfoResponse>> GetProductInfo(int productId)
         {
             Response<ProductInfoResponse> productResponse = await _productClient.GetResponse<ProductInfoResponse>(new GetProductInfo(productId));
-            if (productResponse.Message == null)
+            if (productResponse.Message.ProductId == 0)
                 return Result.Failure<ProductInfoResponse>(Error.NotFound("Product.NotFound", "Product is not found"));
 
             return Result.Success(productResponse.Message);

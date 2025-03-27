@@ -25,8 +25,7 @@ namespace CartService.Application.Commands.Cart.RemoveItems
 
         public async Task<Result> Handle(RemoveItemCommand request, CancellationToken cancellationToken)
         {
-            Domain.Entities.Cart? cart = await _cartRepository.AsQueryable().AsNoTracking().Include(c => c.CartItems).Where(c => c.Id == request.CartId)
-                .FirstOrDefaultAsync(cancellationToken);
+            Domain.Entities.Cart? cart = await _cartRepository.AsQueryable().Include(c => c.CartItems).Where(c => c.Id == request.CartId).FirstOrDefaultAsync(cancellationToken);
 
             if (cart == null)
                 return Result.Failure(Error.NotFound("Cart.NotFound", "Cart not found"));

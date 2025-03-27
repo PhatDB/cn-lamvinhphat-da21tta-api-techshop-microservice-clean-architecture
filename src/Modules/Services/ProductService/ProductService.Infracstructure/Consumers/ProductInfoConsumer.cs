@@ -20,8 +20,11 @@ namespace ProductService.Infracstructure.Consumers
             Product? product = await _productRepository.AsQueryable().AsNoTracking().Include(p => p.ProductImages).Include(p => p.Inventory)
                 .Where(p => p.Id == context.Message.ProductId).FirstOrDefaultAsync();
 
-            await context.RespondAsync(new ProductInfoResponse(product.Id, product.Name, product.Price, product.ProductImages.FirstOrDefault()?.ImageUrl ?? string.Empty,
-                product.Description, product.Inventory?.StockQuantity ?? 0));
+            if (product == null)
+                await context.RespondAsync(new ProductInfoResponse(0, "Product Not Found", 0, string.Empty, "No description available", 0));
+            else
+                await context.RespondAsync(new ProductInfoResponse(product.Id, product.Name, product.Price, product.ProductImages.FirstOrDefault()?.ImageUrl ?? string.Empty,
+                    product.Description, product.Inventory?.StockQuantity ?? 0));
         }
     }
 }

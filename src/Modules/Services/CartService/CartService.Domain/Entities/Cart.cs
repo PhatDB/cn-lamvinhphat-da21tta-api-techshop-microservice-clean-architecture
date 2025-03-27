@@ -33,7 +33,7 @@ namespace CartService.Domain.Entities
             return Result.Success(new Cart(userId));
         }
 
-        public Result AddItem(int productId, int quantity, decimal unitPrice)
+        public Result AddItem(int productId, string productName, string imgUrl, int quantity, decimal unitPrice)
         {
             if (quantity <= 0)
                 return Result.Failure(CartError.InvalidQuantity);
@@ -45,7 +45,7 @@ namespace CartService.Domain.Entities
                 return Result.Success();
             }
 
-            Result<CartItem> createResult = CartItem.Create(Id, productId, quantity, unitPrice);
+            Result<CartItem> createResult = CartItem.Create(Id, productId, productName, imgUrl, quantity, unitPrice);
             if (createResult.IsFailure)
                 return Result.Failure(createResult.Error);
 
@@ -53,7 +53,7 @@ namespace CartService.Domain.Entities
             return Result.Success();
         }
 
-        public Result AddOrUpdateItem(int productId, int quantity, decimal unitPrice)
+        public Result AddOrUpdateItem(int productId, string productName, string imgUrl, int quantity, decimal unitPrice)
         {
             if (quantity <= 0)
                 return Result.Failure(CartError.InvalidQuantity);
@@ -65,7 +65,7 @@ namespace CartService.Domain.Entities
                 return Result.Success();
             }
 
-            Result<CartItem> createResult = CartItem.Create(Id, productId, quantity, unitPrice);
+            Result<CartItem> createResult = CartItem.Create(Id, productId, productName, imgUrl, quantity, unitPrice);
             if (createResult.IsFailure)
                 return Result.Failure(createResult.Error);
 

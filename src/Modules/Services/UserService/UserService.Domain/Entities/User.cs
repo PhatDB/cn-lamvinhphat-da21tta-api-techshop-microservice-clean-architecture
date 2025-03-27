@@ -53,7 +53,7 @@ namespace UserService.Domain.Entities
             return Result.Success(new User(username, emailResult.Value, passwordResult.Value));
         }
 
-        public Result UpdateUserAndAddress(string? userName, string? addressLine, string? phoneNumber, string? province, string? district)
+        public Result UpdateUserAndAddress(string? userName, string? street, string? city, string? district, string? ward, string? zipCode, string? phoneNumber)
         {
             Username = userName ?? Username;
 
@@ -61,7 +61,7 @@ namespace UserService.Domain.Entities
 
             if (address == null)
             {
-                Result<UserAddress> newAddressResult = UserAddress.Create(Id, addressLine, phoneNumber, province, district);
+                Result<UserAddress> newAddressResult = UserAddress.Create(Id, street, city, district, ward, zipCode, phoneNumber);
                 if (newAddressResult.IsFailure)
                     return Result.Failure(newAddressResult.Error);
 
@@ -69,14 +69,13 @@ namespace UserService.Domain.Entities
             }
             else
             {
-                Result updateAddressResult = address.UpdateAddress(addressLine, phoneNumber, province, district);
+                Result updateAddressResult = address.UpdateAddress(street, city, district, ward, zipCode, phoneNumber);
                 if (updateAddressResult.IsFailure)
                     return Result.Failure(updateAddressResult.Error);
             }
 
             return Result.Success();
         }
-
 
         public Result UpdatePassword(string newPassword)
         {

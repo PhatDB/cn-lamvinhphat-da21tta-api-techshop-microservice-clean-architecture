@@ -6,13 +6,15 @@ namespace UserService.Domain.Entities
 {
     public class UserAddress : Entity
     {
-        private UserAddress(int userId, string addressLine, PhoneNumber phoneNumber, string province, string district)
+        private UserAddress(int userId, string street, string city, string district, string ward, string zipCode, PhoneNumber phoneNumber)
         {
             UserId = userId;
-            AddressLine = addressLine;
-            PhoneNumber = phoneNumber;
-            Province = province;
+            Street = street;
+            City = city;
             District = district;
+            Ward = ward;
+            ZipCode = zipCode;
+            PhoneNumber = phoneNumber;
         }
 
         private UserAddress()
@@ -20,23 +22,24 @@ namespace UserService.Domain.Entities
         }
 
         public int UserId { get; private set; }
-        public string AddressLine { get; private set; }
-        public PhoneNumber PhoneNumber { get; private set; }
-        public string Province { get; private set; }
+        public string Street { get; private set; }
+        public string City { get; private set; }
         public string District { get; private set; }
+        public string Ward { get; private set; }
+        public string ZipCode { get; private set; }
+        public PhoneNumber PhoneNumber { get; private set; }
 
-        public User User { get; }
 
-        public static Result<UserAddress> Create(int userId, string addressLine, string phoneNumber, string province, string district)
+        public static Result<UserAddress> Create(int userId, string street, string city, string? district, string? ward, string zipCode, string phoneNumber)
         {
             Result<PhoneNumber> phoneResult = PhoneNumber.Create(phoneNumber);
             if (phoneResult.IsFailure)
                 return Result.Failure<UserAddress>(phoneResult.Error);
 
-            return Result.Success(new UserAddress(userId, addressLine, phoneResult.Value, province, district));
+            return Result.Success(new UserAddress(userId, street, city, district, ward, zipCode, phoneResult.Value));
         }
 
-        public Result UpdateAddress(string? addressLine, string? phoneNumber, string? province, string? district)
+        public Result UpdateAddress(string? street, string? city, string? district, string? ward, string? zipCode, string? phoneNumber)
         {
             if (!string.IsNullOrWhiteSpace(phoneNumber))
             {
@@ -47,9 +50,11 @@ namespace UserService.Domain.Entities
                 PhoneNumber = phoneResult.Value;
             }
 
-            AddressLine = addressLine ?? AddressLine;
-            Province = province ?? Province;
+            Street = street ?? Street;
+            City = city ?? City;
             District = district ?? District;
+            Ward = ward ?? Ward;
+            ZipCode = zipCode ?? ZipCode;
 
             return Result.Success();
         }
