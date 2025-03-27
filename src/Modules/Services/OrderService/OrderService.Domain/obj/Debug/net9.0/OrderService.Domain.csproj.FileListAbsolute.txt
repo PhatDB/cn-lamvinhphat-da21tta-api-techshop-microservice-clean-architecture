@@ -1,0 +1,16 @@
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\OrderService\OrderService.Domain\bin\Debug\net9.0\OrderService.Domain.deps.json
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\OrderService\OrderService.Domain\bin\Debug\net9.0\OrderService.Domain.dll
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\OrderService\OrderService.Domain\bin\Debug\net9.0\OrderService.Domain.pdb
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\OrderService\OrderService.Domain\bin\Debug\net9.0\BuildingBlocks.dll
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\OrderService\OrderService.Domain\bin\Debug\net9.0\BuildingBlocks.pdb
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\OrderService\OrderService.Domain\obj\Debug\net9.0\OrderService.Domain.csproj.AssemblyReference.cache
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\OrderService\OrderService.Domain\obj\Debug\net9.0\OrderService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\OrderService\OrderService.Domain\obj\Debug\net9.0\OrderService.Domain.AssemblyInfoInputs.cache
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\OrderService\OrderService.Domain\obj\Debug\net9.0\OrderService.Domain.AssemblyInfo.cs
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\OrderService\OrderService.Domain\obj\Debug\net9.0\OrderService.Domain.csproj.CoreCompileInputs.cache
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\OrderService\OrderService.Domain\obj\Debug\net9.0\OrderService.Domain.sourcelink.json
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\OrderService\OrderService.Domain\obj\Debug\net9.0\OrderSer.691E6680.Up2Date
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\OrderService\OrderService.Domain\obj\Debug\net9.0\OrderService.Domain.dll
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\OrderService\OrderService.Domain\obj\Debug\net9.0\refint\OrderService.Domain.dll
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\OrderService\OrderService.Domain\obj\Debug\net9.0\OrderService.Domain.pdb
+D:\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\OrderService\OrderService.Domain\obj\Debug\net9.0\ref\OrderService.Domain.dll

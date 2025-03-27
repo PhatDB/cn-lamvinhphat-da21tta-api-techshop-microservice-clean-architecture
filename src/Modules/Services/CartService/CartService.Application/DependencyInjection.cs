@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using CartService.Application.MappingProfiles;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CartService.Application
@@ -9,6 +10,7 @@ namespace CartService.Application
         {
             services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly));
             services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly, includeInternalTypes: true);
+            services.AddAutoMapper(typeof(CartMappingProfile));
             return services;
         }
     }

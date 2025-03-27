@@ -8,11 +8,11 @@
 
     <ItemGroup>
         <Folder Include="Consumer\"/>
-        <Folder Include="RequestClient\"/>
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\..\..\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj"/>
+        <ProjectReference Include="..\OrderService.Application\OrderService.Application.csproj"/>
     </ItemGroup>
 
 </Project>

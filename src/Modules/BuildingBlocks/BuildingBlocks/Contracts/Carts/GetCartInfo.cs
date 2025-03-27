@@ -1,4 +1,4 @@
 ﻿namespace BuildingBlocks.Contracts.Carts
 {
-    public record GetCartInfo(int CartId);
+    public record GetCartInfo(int UserId);
 }

@@ -1,4 +1,5 @@
 ﻿using BuildingBlocks.Abstractions.Extensions;
+using BuildingBlocks.Extensions;
 using BuildingBlocks.Results;
 using CartService.Application.Commands.Cart.RemoveItems;
 using MediatR;
@@ -12,7 +13,7 @@ namespace CartService.Api.Endpoint.Carts.Commands
             app.MapPost("/cart/remove-item", async (RemoveItemCommand command, ISender sender) =>
             {
                 Result result = await sender.Send(command);
-                return result.IsSuccess ? Results.Ok(result) : Results.BadRequest(result.Error);
+                return result.Match(Results.NoContent, CustomResults.Problem);
             }).WithName("RemoveItem").WithTags("Cart");
         }
     }

@@ -7,11 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Folder Include="MappingProfiles\"/>
-        <Folder Include="Validations\"/>
-    </ItemGroup>
-
-    <ItemGroup>
         <ProjectReference Include="..\..\..\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj"/>
         <ProjectReference Include="..\CartService.Domain\CartService.Domain.csproj"/>
     </ItemGroup>

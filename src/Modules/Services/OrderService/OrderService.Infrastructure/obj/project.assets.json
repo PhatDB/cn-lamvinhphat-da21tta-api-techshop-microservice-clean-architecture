@@ -1668,6 +1668,33 @@
         "runtime": {
           "bin/placeholder/BuildingBlocks.dll": {}
         }
+      },
+      "OrderService.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "BuildingBlocks": "1.0.0",
+          "OrderService.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OrderService.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OrderService.Application.dll": {}
+        }
+      },
+      "OrderService.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "BuildingBlocks": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OrderService.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OrderService.Domain.dll": {}
+        }
       }
     }
   },
@@ -4530,11 +4557,22 @@
       "type": "project",
       "path": "../../../BuildingBlocks/BuildingBlocks/BuildingBlocks.csproj",
       "msbuildProject": "../../../BuildingBlocks/BuildingBlocks/BuildingBlocks.csproj"
+    },
+    "OrderService.Application/1.0.0": {
+      "type": "project",
+      "path": "../OrderService.Application/OrderService.Application.csproj",
+      "msbuildProject": "../OrderService.Application/OrderService.Application.csproj"
+    },
+    "OrderService.Domain/1.0.0": {
+      "type": "project",
+      "path": "../OrderService.Domain/OrderService.Domain.csproj",
+      "msbuildProject": "../OrderService.Domain/OrderService.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "BuildingBlocks >= 1.0.0"
+      "BuildingBlocks >= 1.0.0",
+      "OrderService.Application >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4572,6 +4610,9 @@
           "projectReferences": {
             "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
               "projectPath": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj"
+            },
+            "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\OrderService\\OrderService.Application\\OrderService.Application.csproj": {
+              "projectPath": "D:\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\OrderService\\OrderService.Application\\OrderService.Application.csproj"
             }
           }
         }

@@ -1,4 +1,5 @@
 ﻿using BuildingBlocks.Abstractions.Extensions;
+using BuildingBlocks.Extensions;
 using BuildingBlocks.Results;
 using CartService.Application.Commands.Cart.AddToCarts;
 using MediatR;
@@ -13,10 +14,7 @@ namespace CartService.Api.Endpoint.Carts.Commands
             {
                 Result<int> result = await sender.Send(command);
 
-                if (result.IsSuccess)
-                    return Results.Ok(new { CartId = result.Value });
-
-                return Results.BadRequest(result.Error);
+                return result.Match(success => Results.Ok(new { Id = result.Value }), failure => CustomResults.Problem(failure));
             }).WithName("CreateCart").WithTags("Cart");
         }
     }

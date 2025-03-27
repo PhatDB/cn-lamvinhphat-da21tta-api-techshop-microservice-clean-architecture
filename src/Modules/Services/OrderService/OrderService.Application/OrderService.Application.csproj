@@ -12,6 +12,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\..\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj"/>
+        <ProjectReference Include="..\OrderService.Domain\OrderService.Domain.csproj"/>
     </ItemGroup>
 
 </Project>

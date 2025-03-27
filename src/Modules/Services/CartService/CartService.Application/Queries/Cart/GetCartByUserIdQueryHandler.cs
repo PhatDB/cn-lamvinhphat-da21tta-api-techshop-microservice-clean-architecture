@@ -1,4 +1,5 @@
-﻿using BuildingBlocks.Contracts.Products;
+﻿using AutoMapper;
+using BuildingBlocks.Contracts.Products;
 using BuildingBlocks.CQRS;
 using BuildingBlocks.Error;
 using BuildingBlocks.Results;
@@ -13,19 +14,20 @@ namespace CartService.Application.Queries.Cart
     {
         private readonly ICartRepository _cartRepository;
         private readonly ICartService _cartService;
+        private readonly IMapper _mapper;
 
-        public GetCartByUserIdQueryHandler(ICartRepository cartRepository, ICartService cartService)
+        public GetCartByUserIdQueryHandler(ICartRepository cartRepository, ICartService cartService, IMapper mapper)
         {
             _cartRepository = cartRepository;
             _cartService = cartService;
+            _mapper = mapper;
         }
 
         public async Task<Result<CartDTO>> Handle(GetCartByUserIdQuery request, CancellationToken cancellationToken)
         {
             Domain.Entities.Cart? cart = await _cartRepository.AsQueryable().Include(c => c.CartItems).FirstOrDefaultAsync(c => c.UserId == request.UserId, cancellationToken);
 
-            if (cart == null)
-                return Result.Failure<CartDTO>(Error.NotFound("Cart.NotFound", "Cart not found"));
+            if (cart == null) return Result.Failure<CartDTO>(Error.NotFound("Cart.NotFound", "Cart not found"));
 
             CartDTO cartDTO = new() { CartId = cart.Id, UserId = cart.UserId, CartItems = new List<ProductDTO>() };
 
@@ -33,27 +35,23 @@ namespace CartService.Application.Queries.Cart
             {
                 Result<ProductInfoResponse> productResult = await _cartService.GetProductInfo(item.ProductId);
                 if (productResult.IsSuccess)
-                    return new ProductDTO
-                    {
-                        ProductId = productResult.Value.ProductId,
-                        Name = productResult.Value.Name,
-                        Description = productResult.Value.Description,
-                        Price = productResult.Value.Price,
-                        Quantity = item.Quantity,
-                        ImageUrl = productResult.Value.ImageUrl
-                    };
+                {
+                    ProductDTO? productDTO = _mapper.Map<ProductDTO>(productResult.Value);
+                    productDTO.Quantity = item.Quantity;
+                    return productDTO;
+                }
 
                 return null;
             });
 
-            ProductDTO?[] products = await Task.WhenAll(productRequests);
+            ProductDTO[] products = await Task.WhenAll(productRequests);
 
-            cartDTO.CartItems.AddRange(products.Where(p => p != null));
+            List<ProductDTO> validProducts = products.Where(p => p != null).ToList();
+            cartDTO.CartItems.AddRange(validProducts);
 
-            if (!cartDTO.CartItems.Any())
-                return Result.Failure<CartDTO>(Error.NotFound("Product.NotFound", "No products found in the cart"));
+            if (!cartDTO.CartItems.Any()) return Result.Failure<CartDTO>(Error.NotFound("Product.NotFound", "No products found in the cart"));
 
-            cartDTO.TotalPrice = products.Sum(p => p.Price) * products.Sum(p => p.Quantity);
+            cartDTO.TotalPrice = cartDTO.CartItems.Sum(p => p.Price * p.Quantity);
 
             return Result.Success(cartDTO);
         }

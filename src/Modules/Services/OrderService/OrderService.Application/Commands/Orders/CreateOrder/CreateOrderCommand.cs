@@ -1,12 +1,6 @@
 ﻿using BuildingBlocks.CQRS;
-using OrderService.Application.DTOs;
 
 namespace OrderService.Application.Commands.Orders.CreateOrder
 {
-    public class CreateOrderCommand : ICommand<int>
-    {
-        public int UserId { get; set; }
-        public List<OrderItemDTO> OrderItems { get; set; }
-        public string PaymentStatus { get; set; }
-    }
+    public record CreateOrderCommand(int UserId, int CartId, string Street, string City, string District, string Ward, string? ZipCode, string PhoneNumber) : ICommand<int>;
 }

@@ -5,6 +5,7 @@ using BuildingBlocks.Error;
 using BuildingBlocks.Results;
 using CartService.Application.Abstractions;
 using CartService.Domain.Abstractions.Repositories;
+using CartService.Domain.Entities;
 using MassTransit;
 
 namespace CartService.Application.Commands.Cart.AddToCarts
@@ -40,37 +41,41 @@ namespace CartService.Application.Commands.Cart.AddToCarts
                 return Result.Failure<int>(Error.Validation("Product.OutOfStock", "Product is out of stock."));
 
             Result<Domain.Entities.Cart> cartResult = await _cartRepository.GetUserCartAsync(request.UserId, cancellationToken);
+            Domain.Entities.Cart cart = cartResult.IsFailure ? (await CreateNewCart(request.UserId, product, request.Quantity, cancellationToken)).Value : cartResult.Value;
 
-            Domain.Entities.Cart cart;
+            int stockQuantityChange = CalculateStockChange(cart, request.ProductId, request.Quantity);
 
-            if (cartResult.IsFailure)
-            {
-                Result<Domain.Entities.Cart> cartCreateResult = Domain.Entities.Cart.Create(request.UserId);
-                if (cartCreateResult.IsFailure)
-                    return Result.Failure<int>(cartCreateResult.Error);
+            Result updateResult = cart.AddOrUpdateItem(request.ProductId, product.Name, product.ImageUrl, request.Quantity, product.Price);
+            if (updateResult.IsFailure)
+                return Result.Failure<int>(updateResult.Error);
 
-                cart = cartCreateResult.Value;
-
-                Result addResult = cart.AddItem(request.ProductId, product.Name, product.ImageUrl, request.Quantity, product.Price);
-                if (addResult.IsFailure)
-                    return Result.Failure<int>(addResult.Error);
-
-                await _cartRepository.AddAsync(cart, cancellationToken);
-            }
-            else
-            {
-                cart = cartResult.Value;
-
-                Result updateResult = cart.AddOrUpdateItem(request.ProductId, product.Name, product.ImageUrl, request.Quantity, product.Price);
-                if (updateResult.IsFailure)
-                    return Result.Failure<int>(updateResult.Error);
-            }
-
+            await _publishEndpoint.Publish(new UpdateProductStock(product.ProductId, stockQuantityChange), cancellationToken);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-            await _publishEndpoint.Publish(new UpdateProductStock(product.ProductId, -request.Quantity), cancellationToken);
-
             return Result.Success(cart.Id);
+        }
+
+        private async Task<Result<Domain.Entities.Cart>> CreateNewCart(int userId, ProductInfoResponse product, int quantity, CancellationToken cancellationToken)
+        {
+            Result<Domain.Entities.Cart> cartCreateResult = Domain.Entities.Cart.Create(userId);
+            if (cartCreateResult.IsFailure)
+                return cartCreateResult;
+
+            Domain.Entities.Cart cart = cartCreateResult.Value;
+            Result addResult = cart.AddItem(product.ProductId, product.Name, product.ImageUrl, quantity, product.Price);
+            if (addResult.IsFailure)
+                return Result.Failure<Domain.Entities.Cart>(addResult.Error);
+
+            await _cartRepository.AddAsync(cart, cancellationToken);
+            return Result.Success(cart);
+        }
+
+        private int CalculateStockChange(Domain.Entities.Cart cart, int productId, int quantity)
+        {
+            CartItem? existingItem = cart.CartItems.FirstOrDefault(i => i.ProductId == productId);
+            if (existingItem != null)
+                return quantity - existingItem.Quantity;
+            return -quantity;
         }
     }
 }
