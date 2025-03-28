@@ -74,7 +74,7 @@ namespace CartService.Application.Commands.Cart.AddToCarts
         {
             CartItem? existingItem = cart.CartItems.FirstOrDefault(i => i.ProductId == productId);
             if (existingItem != null)
-                return quantity - existingItem.Quantity;
+                return existingItem.Quantity - quantity;
             return -quantity;
         }
     }

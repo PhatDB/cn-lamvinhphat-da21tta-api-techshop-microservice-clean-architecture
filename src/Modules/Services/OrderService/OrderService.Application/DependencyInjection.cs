@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
+using OrderService.Application.MappingProfile;
 
 namespace OrderService.Application
 {
@@ -9,6 +10,7 @@ namespace OrderService.Application
         {
             services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly));
             services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly, includeInternalTypes: true);
+            services.AddAutoMapper(typeof(OrderMappingProfile));
             return services;
         }
     }

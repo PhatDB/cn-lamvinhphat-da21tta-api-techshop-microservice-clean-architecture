@@ -1,5 +1,6 @@
 ﻿using BuildingBlocks.Abstractions.Repository;
 using BuildingBlocks.Contracts.Carts;
+using BuildingBlocks.Contracts.Orders;
 using BuildingBlocks.CQRS;
 using BuildingBlocks.Results;
 using MassTransit;
@@ -38,15 +39,17 @@ namespace OrderService.Application.Commands.Orders.CreateOrder
             if (userResult.IsFailure)
                 return Result.Failure<int>(userResult.Error);
 
-            Order order = new(request.UserId, request.Street, request.City, request.District, request.Ward, request.ZipCode, request.PhoneNumber);
+            Order order = new(request.UserId, request.Street, request.City, request.District, request.Ward, request.ZipCode, request.PhoneNumber, request.BuyerName);
 
             foreach (CartItemDTO cartItem in cart.CartItems)
 
-                order.AddItem(cartItem.ProductId, cartItem.Quantity, cartItem.UnitPrice);
+                order.AddItem(cartItem.ProductId, cartItem.Quantity, cartItem.ProductName, cartItem.UnitPrice);
 
             await _orderRepository.AddAsync(order, cancellationToken);
 
             await _unitOfWork.SaveChangesAsync(cancellationToken);
+
+            await _publishEndpoint.Publish(new OrderSummit(request.UserId), cancellationToken);
 
             return Result.Success(order.Id);
         }
