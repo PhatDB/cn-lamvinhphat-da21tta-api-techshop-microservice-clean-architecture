@@ -7,7 +7,10 @@ using UserService.Application.Commands.Users.ChangePassword;
 using UserService.Application.Commands.Users.Login;
 using UserService.Application.Commands.Users.Logout;
 using UserService.Application.Commands.Users.Register;
+using UserService.Application.Commands.Users.ResetPassword;
+using UserService.Application.Commands.Users.SendOTP;
 using UserService.Application.Commands.Users.Update;
+using UserService.Application.Commands.Users.VertifyOTP;
 using UserService.Application.DTOs;
 using UserService.Application.Queries.Users.GetUserInfomation;
 
@@ -44,6 +47,27 @@ namespace UserService.Api.Endpoint.Users
 
                 return result.Match(success => Results.Ok(new { Id = result.Value }), failure => CustomResults.Problem(failure));
             }).WithName("RegisterUser").WithTags("User");
+
+            app.MapPost("/user/reset-password", async (ResetPasswordCommand command, ISender sender) =>
+            {
+                Result result = await sender.Send(command);
+
+                return result.Match(Results.NoContent, CustomResults.Problem);
+            }).WithName("ResetPassword").WithTags("User");
+
+            app.MapPost("/user/send-otp", async (SendOTPCommand command, ISender sender) =>
+            {
+                Result result = await sender.Send(command);
+
+                return result.Match(Results.NoContent, CustomResults.Problem);
+            }).WithName("SendOTP").WithTags("User");
+
+            app.MapPost("/user/vertify-otp", async (VertifyOTPCommand command, ISender sender) =>
+            {
+                Result result = await sender.Send(command);
+
+                return result.Match(Results.NoContent, CustomResults.Problem);
+            }).WithName("Vertify").WithTags("User");
 
             app.MapPut("/user/update", async (UpdateUserCommand command, ISender sender) =>
             {

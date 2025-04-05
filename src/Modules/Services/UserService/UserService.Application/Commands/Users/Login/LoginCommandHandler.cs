@@ -26,7 +26,7 @@ namespace UserService.Application.Commands.Users.Login
         {
             User? user = await _userRepository.AsQueryable().AsNoTracking().Where(u => u.Email == new Email(request.Email)).FirstOrDefaultAsync(cancellationToken);
 
-            if (user == null)
+            if (user == null || user.IsActive == false)
                 return Result.Failure<LoginDTO>(UserError.UserNotFound);
 
             if (!BCrypt.Net.BCrypt.Verify(request.Password, user.Password.Value))

@@ -28,6 +28,9 @@ namespace UserService.Persistence.Configurations
 
             builder.Property(u => u.IsActive).HasColumnName("is_active").IsRequired();
 
+            builder.Property(u => u.OTP).HasColumnName("otp").IsRequired();
+            builder.Property(u => u.OTPExpiration).HasColumnName("otp_expiration").IsRequired();
+
             builder.HasMany(u => u.UserAddresses).WithOne().HasForeignKey(ua => ua.UserId).OnDelete(DeleteBehavior.Cascade);
 
             builder.ToTable("User");
