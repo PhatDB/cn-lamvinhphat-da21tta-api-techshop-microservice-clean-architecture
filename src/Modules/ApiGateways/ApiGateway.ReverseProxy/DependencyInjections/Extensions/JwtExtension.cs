@@ -37,7 +37,12 @@ namespace ApiGateway.ReverseProxy.DependencyInjections.Extensions
                 };
             });
 
-            services.AddAuthorization();
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Authenticated", policy => { policy.RequireAuthenticatedUser(); });
+
+                options.AddPolicy("AdminOnly", policy => { policy.RequireRole("Admin"); });
+            });
         }
     }
 }

@@ -1,5 +1,7 @@
 using ApiGateway.ReverseProxy.DependencyInjections.Extensions;
 using ApiGateway.ReverseProxy.DependencyInjections.Options;
+using ApiGateway.ReverseProxy.Middleware;
+using ApiGateway.ReverseProxy.Options;
 using Asp.Versioning;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -7,7 +9,7 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.Services.AddJwtAuthentication(builder.Configuration);
 builder.Services.AddReverseProxy().LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 builder.Services.AddCors(options => { options.AddPolicy("CorsPolicy", policy => { policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader(); }); });
-
+builder.Services.Configure<PublicEndpointOptions>(builder.Configuration.GetSection("PublicEndpoints"));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddApiVersioning(options =>
@@ -38,7 +40,7 @@ app.UseCors("CorsPolicy");
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
-
+app.UseMiddleware<ScopedAuthenticationMiddleware>();
 app.MapReverseProxy();
 
 app.Run();
