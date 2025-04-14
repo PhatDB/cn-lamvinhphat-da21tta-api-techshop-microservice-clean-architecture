@@ -12,18 +12,15 @@ namespace ProductService.Application.Commands.Categories.Delete
         private readonly ICategoryRepository _categoryRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public DeleteCategoryCommandHandler(
-            ICategoryRepository categoryRepository, IUnitOfWork unitOfWork)
+        public DeleteCategoryCommandHandler(ICategoryRepository categoryRepository, IUnitOfWork unitOfWork)
         {
             _categoryRepository = categoryRepository;
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<Result> Handle(
-            DeleteCategoryCommand request, CancellationToken cancellationToken)
+        public async Task<Result> Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
         {
-            Result<Category> categoryResult =
-                await _categoryRepository.GetByIdAsync(request.Id, cancellationToken);
+            Result<Category> categoryResult = await _categoryRepository.GetByIdAsync(request.Id, cancellationToken);
 
             if (categoryResult.IsFailure)
                 return Result.Failure(CategoryError.CategoryNotFound);
@@ -31,6 +28,7 @@ namespace ProductService.Application.Commands.Categories.Delete
             Category category = categoryResult.Value;
 
             Result deleteResult = category.Delete();
+
             if (deleteResult.IsFailure)
                 return deleteResult;
 

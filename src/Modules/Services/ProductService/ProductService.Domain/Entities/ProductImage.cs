@@ -6,33 +6,29 @@ namespace ProductService.Domain.Entities
 {
     public class ProductImage : Entity
     {
-        public ProductImage(int productId, string imageUrl, int position, string? title)
+        public ProductImage(int productId, string imageUrl, bool? isMain, int? sortOrder)
         {
             ProductId = productId;
             ImageUrl = imageUrl;
-            Position = position;
-            Title = title;
+            IsMain = isMain ?? false;
+            SortOrder = sortOrder ?? 0;
+        }
+
+        private ProductImage()
+        {
         }
 
         public int ProductId { get; private set; }
         public string ImageUrl { get; private set; }
-        public string? Title { get; private set; }
-        public int Position { get; private set; }
+        public bool? IsMain { get; private set; }
+        public int? SortOrder { get; private set; }
 
-        public static Result<ProductImage> Create(
-            int productId, string imageUrl, int position, string? title)
+        public static Result<ProductImage> Create(int productId, string imageUrl, bool isMain, int sortOrder)
         {
             if (string.IsNullOrWhiteSpace(imageUrl))
-                return Result.Failure<ProductImage>(ProductImageError
-                    .ProductImageInvalid);
+                return Result.Failure<ProductImage>(ProductImageError.ProductImageInvalid);
 
-            return new ProductImage(productId, imageUrl, position, title);
-        }
-
-        public void UpdateImage(string newImageUrl, int newPosition)
-        {
-            ImageUrl = newImageUrl;
-            Position = newPosition;
+            return new ProductImage(productId, imageUrl, isMain, sortOrder);
         }
     }
 }

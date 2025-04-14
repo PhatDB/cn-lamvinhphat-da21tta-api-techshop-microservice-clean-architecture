@@ -7,36 +7,40 @@ namespace ProductService.Domain.Entities
 {
     public class Category : Entity, IAggregateRoot
     {
-        private Category(string name, string? description)
+        private Category(string categoryName, string? description = null, string? imageUrl = null)
         {
-            Name = name;
+            CategoryName = categoryName;
             Description = description;
-            CreatedAt = DateTime.UtcNow;
+            ImageUrl = imageUrl;
             IsActive = true;
         }
 
-        public string Name { get; private set; }
+        public string CategoryName { get; private set; }
         public string? Description { get; private set; }
-        public DateTime CreatedAt { get; private set; }
+        public string? ImageUrl { get; private set; }
         public bool IsActive { get; private set; }
 
-        public static Result<Category> Create(string name, string? description = null)
+        // Create Category
+        public static Result<Category> Create(string categoryName, string? description = null, string? imageUrl = null)
         {
-            if (string.IsNullOrWhiteSpace(name))
+            if (string.IsNullOrWhiteSpace(categoryName))
                 return Result.Failure<Category>(CategoryError.CategoryNameInvalid);
 
-            return Result.Success(new Category(name, description));
+            return Result.Success(new Category(categoryName, description, imageUrl));
         }
 
-        public Result Update(string? name, string? description, bool? isActive)
+        // Update Category
+        public Result UpdateCategory(string? categoryName, string? description, string? imageUrl, bool? isActive)
         {
-            Name = name?.Trim() ?? Name;
+            CategoryName = categoryName?.Trim() ?? CategoryName;
             Description = description?.Trim() ?? Description;
+            ImageUrl = imageUrl?.Trim() ?? ImageUrl;
             IsActive = isActive ?? IsActive;
 
             return Result.Success();
         }
 
+        // Soft Delete Category
         public Result Delete()
         {
             if (!IsActive)

@@ -15,8 +15,7 @@ namespace BuildingBlocks.Extensions
         {
             string? url = configuration["GrpcServiceAddress:AssetServer"];
             if (string.IsNullOrEmpty(url))
-                throw new InvalidOperationException(
-                    "The AssetServer gRPC address is not configured.");
+                throw new InvalidOperationException("The AssetServer gRPC address is not configured.");
 
             GrpcChannel channel = grpcService.CreateInsecureGrpcChannel(url);
             _assetsServiceClient = new AssetsService.AssetsServiceClient(channel);
@@ -29,10 +28,8 @@ namespace BuildingBlocks.Extensions
 
             try
             {
-                UploadImageRequest request =
-                    new() { Content = base64String, AssetType = (int)type };
-                UploadImageResponse response =
-                    await _assetsServiceClient.UploadImageAsync(request);
+                UploadImageRequest request = new() { Content = base64String, AssetType = (int)type };
+                UploadImageResponse response = await _assetsServiceClient.UploadImageAsync(request);
 
                 if (string.IsNullOrWhiteSpace(response.ImageUrl))
                     throw new Exception("The gRPC server returned an empty ImageUrl.");
@@ -41,10 +38,8 @@ namespace BuildingBlocks.Extensions
             }
             catch (RpcException rpcEx)
             {
-                Console.WriteLine(
-                    $"gRPC error: Status({rpcEx.Status.StatusCode}), Detail: {rpcEx.Status.Detail}");
-                throw new Exception(
-                    $"Failed to upload file via gRPC: {rpcEx.Status.Detail}", rpcEx);
+                Console.WriteLine($"gRPC error: Status({rpcEx.Status.StatusCode}), Detail: {rpcEx.Status.Detail}");
+                throw new Exception($"Failed to upload file via gRPC: {rpcEx.Status.Detail}", rpcEx);
             }
             catch (Exception ex)
             {
@@ -61,8 +56,7 @@ namespace BuildingBlocks.Extensions
             try
             {
                 DeleteImageRequest request = new() { ImageUrl = filePath };
-                DeleteImageResponse response =
-                    await _assetsServiceClient.DeleteImageAsync(request);
+                DeleteImageResponse response = await _assetsServiceClient.DeleteImageAsync(request);
 
                 if (response.Success) return true;
 
@@ -70,10 +64,8 @@ namespace BuildingBlocks.Extensions
             }
             catch (RpcException rpcEx)
             {
-                Console.WriteLine(
-                    $"gRPC error: Status({rpcEx.Status.StatusCode}), Detail: {rpcEx.Status.Detail}");
-                throw new Exception(
-                    $"Failed to delete file via gRPC: {rpcEx.Status.Detail}", rpcEx);
+                Console.WriteLine($"gRPC error: Status({rpcEx.Status.StatusCode}), Detail: {rpcEx.Status.Detail}");
+                throw new Exception($"Failed to delete file via gRPC: {rpcEx.Status.Detail}", rpcEx);
             }
             catch (Exception ex)
             {

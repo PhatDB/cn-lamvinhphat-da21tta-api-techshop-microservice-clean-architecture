@@ -1,4 +1,4 @@
-﻿using BuildingBlocks.Contracts.Products;
+﻿/*using BuildingBlocks.Contracts.Products;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using ProductService.Domain.Abstractions.Repositories;
@@ -27,4 +27,5 @@ namespace ProductService.Infracstructure.Consumers
                     product.Description, product.Inventory?.StockQuantity ?? 0));
         }
     }
-}
+}*/
+

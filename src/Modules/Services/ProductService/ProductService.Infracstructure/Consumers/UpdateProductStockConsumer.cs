@@ -1,4 +1,4 @@
-﻿using BuildingBlocks.Abstractions.Repository;
+﻿/*using BuildingBlocks.Abstractions.Repository;
 using BuildingBlocks.Contracts.Products;
 using BuildingBlocks.Results;
 using MassTransit;
@@ -40,4 +40,5 @@ namespace ProductService.Infracstructure.Consumers
             await _unitOfWork.SaveChangesAsync();
         }
     }
-}
+}*/
+

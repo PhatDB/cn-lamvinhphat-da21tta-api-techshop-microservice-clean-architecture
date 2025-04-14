@@ -1,7 +1,11 @@
-﻿using BuildingBlocks.Abstractions.Repository;
+﻿using BuildingBlocks.Abstractions.Extensions;
+using BuildingBlocks.Abstractions.Repository;
 using BuildingBlocks.CQRS;
+using BuildingBlocks.Enumerations;
+using BuildingBlocks.Error;
 using BuildingBlocks.Results;
 using Microsoft.EntityFrameworkCore;
+using ProductService.Application.DTOs;
 using ProductService.Domain.Abstractions.Repositories;
 using ProductService.Domain.Entities;
 using ProductService.Domain.Errors;
@@ -10,42 +14,71 @@ namespace ProductService.Application.Commands.Products.Update
 {
     public class UpdateProductCommandHandler : ICommandHandler<UpdateProductCommand>
     {
+        private readonly IFileService _fileService;
         private readonly IProductRepository _productRepository;
         private readonly IUnitOfWork _unitOfWork;
 
         public UpdateProductCommandHandler(
-            IProductRepository productRepository, IUnitOfWork unitOfWork)
+            IProductRepository productRepository, IUnitOfWork unitOfWork, IFileService fileService)
         {
             _productRepository = productRepository;
             _unitOfWork = unitOfWork;
+            _fileService = fileService;
         }
 
-        public async Task<Result> Handle(
-            UpdateProductCommand request, CancellationToken cancellationToken)
+        public async Task<Result> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
         {
-            Product? productResult = await _productRepository.AsQueryable()
-                .Include(p => p.Inventory).Where(p => p.Id == request.ProductId)
-                .FirstOrDefaultAsync(cancellationToken);
+            Product? product = await _productRepository.AsQueryable().Include(p => p.ProductImages)
+                .FirstOrDefaultAsync(p => p.Id == request.ProductId, cancellationToken);
 
-            if (productResult == null)
+            if (product is null)
                 return Result.Failure(ProductError.ProductNotFound);
 
-            Product product = productResult;
+            Result updateResult = product.UpdateProduct(request.ProductName, request.CategoryId, request.BrandId,
+                request.Price, request.Discount, request.Stock, request.Description, request.Specs,
+                request.SoldQuantity, request.IsActive, request.IsFeatured);
 
-            if (!string.IsNullOrWhiteSpace(request.Sku))
+            if (updateResult.IsFailure)
+                return updateResult;
+
+            if (request.ImageIdsToRemove is { Count: > 0 })
             {
-                bool isSkuDuplicate = (await _productRepository.AsQueryable()
-                    .Select(p => new { p.Id, SkuValue = p.Sku.Value })
-                    .ToListAsync(cancellationToken)).Any(p =>
-                    p.SkuValue == request.Sku.ToUpper() && p.Id != request.ProductId);
+                List<string> imageUrlsToDelete = product.ProductImages
+                    .Where(img => request.ImageIdsToRemove.Contains(img.Id)).Select(img => img.ImageUrl).ToList();
 
-                if (isSkuDuplicate)
-                    return Result.Failure(ProductError.ProductSkuDuplicate);
+                foreach (string imageUrl in imageUrlsToDelete)
+                {
+                    bool deleted = await _fileService.DeleteFile(imageUrl);
+                    if (!deleted)
+                        return Result.Failure(Error.Problem("FailToDelete", "Cannot delete images."));
+                }
+
+                Result removeResult = product.DeleteProductImages(request.ImageIdsToRemove);
+                if (removeResult.IsFailure)
+                    return removeResult;
             }
 
-            product.UpdateProduct(request.Name, request.Sku, request.Price,
-                request.CategoryId, request.SoldQuantity, request.IsActive,
-                request.Description, request.DiscountPrice);
+            if (request.NewImages is { Count: > 0 })
+            {
+                List<ProductImage> productImages = new();
+
+                foreach (ProductImageDto imageDto in request.NewImages)
+                {
+                    string imageUrl = await _fileService.UploadFile(imageDto.ImageContent, AssetType.PRODUCT_IMAGE);
+
+                    Result<ProductImage> imageResult = ProductImage.Create(
+                        product.Id, imageUrl, imageDto.IsMain, imageDto.SortOrder);
+
+                    if (imageResult.IsFailure)
+                        return Result.Failure(imageResult.Error);
+
+                    productImages.Add(imageResult.Value);
+                }
+
+                Result imageAddResult = product.CreateProductImages(productImages);
+                if (imageAddResult.IsFailure)
+                    return imageAddResult;
+            }
 
             await _productRepository.UpdateAsync(product, cancellationToken);
             await _unitOfWork.SaveChangesAsync(cancellationToken);

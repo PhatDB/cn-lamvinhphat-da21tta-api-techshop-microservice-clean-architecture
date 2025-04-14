@@ -13,19 +13,19 @@ namespace OrderService.Application.Commands.Orders.CreateOrder
     public class CreateOrderCommandHandler : ICommandHandler<CreateOrderCommand, int>
     {
         private readonly IOrderRepository _orderRepository;
-
         private readonly IOrderService _orderService;
         private readonly IPublishEndpoint _publishEndpoint;
         private readonly IUnitOfWork _unitOfWork;
 
-        public CreateOrderCommandHandler(IOrderService orderService, IOrderRepository orderRepository, IPublishEndpoint publishEndpoint, IUnitOfWork unitOfWork)
+        public CreateOrderCommandHandler(
+            IOrderService orderService, IOrderRepository orderRepository, IPublishEndpoint publishEndpoint,
+            IUnitOfWork unitOfWork)
         {
             _orderService = orderService;
             _orderRepository = orderRepository;
             _publishEndpoint = publishEndpoint;
             _unitOfWork = unitOfWork;
         }
-
 
         public async Task<Result<int>> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
         {
@@ -39,7 +39,8 @@ namespace OrderService.Application.Commands.Orders.CreateOrder
             if (userResult.IsFailure)
                 return Result.Failure<int>(userResult.Error);
 
-            Order order = new(request.UserId, request.Street, request.City, request.District, request.Ward, request.ZipCode, request.PhoneNumber, request.BuyerName);
+            Order order = new(request.UserId, request.Street, request.City, request.District, request.Ward,
+                request.ZipCode, request.PhoneNumber, request.BuyerName);
 
             foreach (CartItemDTO cartItem in cart.CartItems)
 

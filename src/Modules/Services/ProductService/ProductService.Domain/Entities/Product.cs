@@ -2,7 +2,7 @@
 using BuildingBlocks.Abstractions.Entities;
 using BuildingBlocks.Results;
 using ProductService.Domain.Errors;
-using ProductService.Domain.ValueObjects;
+using ProductService.Domain.Events;
 
 namespace ProductService.Domain.Entities
 {
@@ -10,82 +10,89 @@ namespace ProductService.Domain.Entities
     {
         private readonly List<ProductImage> _productImages;
 
-        private Product(string name, SKU sku, decimal price, int categoryId, string? description = null, decimal? discountPrice = null)
+        private Product(
+            string productName, int categoryId, int brandId, decimal price, decimal? discount, int stock,
+            string? description = null, string? specs = null)
         {
-            Name = name;
-            Sku = sku;
-            Price = price;
+            ProductName = productName;
             CategoryId = categoryId;
-            Description = description;
-            DiscountPrice = discountPrice;
+            BrandId = brandId;
+            Price = price;
+            Discount = discount ?? 0;
+            Stock = stock;
+            Description = description ?? string.Empty;
+            Specs = specs ?? string.Empty;
+            IsActive = true;
+            IsFeatured = false;
             SoldQuantity = 0;
             CreatedAt = DateTime.UtcNow;
-            IsActive = true;
-
-            Inventory = null;
             _productImages = new List<ProductImage>();
         }
 
         private Product()
         {
-            _productImages = new List<ProductImage>();
         }
 
-        public string Name { get; private set; }
-        public SKU Sku { get; private set; }
-        public string? Description { get; private set; }
+        public string ProductName { get; private set; }
+        public int CategoryId { get; private set; }
+        public int BrandId { get; private set; }
         public decimal Price { get; private set; }
-        public decimal? DiscountPrice { get; private set; }
+        public decimal? Discount { get; private set; }
+        public int Stock { get; private set; }
+        public string? Description { get; private set; }
+        public string? Specs { get; private set; }
+        public bool IsActive { get; private set; }
+        public bool IsFeatured { get; private set; }
         public int SoldQuantity { get; private set; }
         public DateTime CreatedAt { get; private set; }
-        public bool IsActive { get; private set; }
-        public int CategoryId { get; private set; }
-
-        public Inventory Inventory { get; private set; }
-
         public IReadOnlyCollection<ProductImage> ProductImages => _productImages.AsReadOnly();
 
-        public static Result<Product> Create(string name, string sku, decimal price, int categoryId, string? description = null, decimal? discountPrice = null)
+        // Create Product
+        public static Result<Product> Create(
+            string productName, int categoryId, int brandId, decimal price, decimal? discount, int stock,
+            string? description, string? specs)
         {
-            if (string.IsNullOrWhiteSpace(name))
+            if (string.IsNullOrWhiteSpace(productName))
                 return Result.Failure<Product>(ProductError.ProductNameInvalid);
 
             if (price <= 0)
                 return Result.Failure<Product>(ProductError.ProductPriceInvalid);
 
-            Result<SKU> skuResult = SKU.Create(sku);
-            if (skuResult.IsFailure)
-                return Result.Failure<Product>(skuResult.Error);
+            Product product = new(productName, categoryId, brandId, price, discount, stock, description, specs);
 
-            return Result.Success(new Product(name, skuResult.Value, price, categoryId, description, discountPrice));
+            product.AddDomainEvent(new ProductCreatedDomainEvent(product.Id, product.ProductName, product.Price));
+
+            return Result.Success(product);
         }
 
-        public Result CreateInventory(int stockQuantity)
-        {
-            if (Inventory != null)
-                return Result.Failure(ProductError.ProductInsufficientStock);
-
-            Inventory = Inventory.Create(Id, stockQuantity);
-            return Result.Success();
-        }
-
-
+        // Update Stock
         public Result UpdateStock(int quantity)
         {
-            Inventory?.UpdateStock(Inventory.StockQuantity + quantity);
+            Stock += quantity;
             return Result.Success();
         }
 
-        public Result AddProductImage(string imageUrl, int position, string? title = null)
+        // Update Product
+        public Result UpdateProduct(
+            string? productName, int? categoryId, int? brandId, decimal? price, decimal? discount, int? stock,
+            string? description, string? specs, int? soldQuantity, bool? isActive, bool? isFeatured)
         {
-            if (string.IsNullOrWhiteSpace(imageUrl))
-                return Result.Failure(ProductImageError.ProductImageInvalid);
-
-            _productImages.Add(new ProductImage(Id, imageUrl, position, title));
+            ProductName = productName?.Trim() ?? ProductName;
+            CategoryId = categoryId ?? CategoryId;
+            BrandId = brandId ?? BrandId;
+            Price = price ?? Price;
+            Discount = discount ?? Discount;
+            Stock = stock ?? Stock;
+            Description = description?.Trim() ?? Description;
+            Specs = specs?.Trim() ?? Specs;
+            SoldQuantity = soldQuantity ?? SoldQuantity;
+            IsActive = isActive ?? IsActive;
+            IsFeatured = isFeatured ?? IsFeatured;
 
             return Result.Success();
         }
 
+        // Soft Delete Product
         public Result DeleteProduct()
         {
             if (!IsActive)
@@ -95,29 +102,25 @@ namespace ProductService.Domain.Entities
             return Result.Success();
         }
 
-        public Result UpdateProduct(string? name, string? sku, decimal? price, int? categoryId, int? soldQuantity, bool? isActive, string? description, decimal? discountPrice)
+        // Create Product Images
+        public Result CreateProductImages(List<ProductImage> productImages)
         {
-            Name = name?.Trim() ?? Name;
-            Description = description?.Trim() ?? Description;
-            DiscountPrice = discountPrice ?? DiscountPrice;
-            CategoryId = categoryId ?? CategoryId;
-            SoldQuantity = soldQuantity ?? SoldQuantity;
-            IsActive = isActive ?? IsActive;
+            if (!productImages.Any())
+                return Result.Failure(ProductImageError.ProductImageInvalid);
 
-            if (!string.IsNullOrWhiteSpace(sku))
+            foreach (ProductImage image in productImages)
             {
-                Result<SKU> skuResult = SKU.Create(sku);
-                if (skuResult.IsFailure)
-                    return Result.Failure(skuResult.Error);
-                Sku = skuResult.Value;
-            }
+                if (string.IsNullOrWhiteSpace(image.ImageUrl))
+                    return Result.Failure(ProductImageError.ProductImageInvalid);
 
-            Price = price ?? Price;
+                _productImages.Add(image);
+            }
 
             return Result.Success();
         }
 
-        public Result RemoveProductImages(IEnumerable<int> imageIds)
+        // Delete Product Image
+        public Result DeleteProductImages(IEnumerable<int> imageIds)
         {
             List<ProductImage> imagesToRemove = _productImages.Where(img => imageIds.Contains(img.Id)).ToList();
 

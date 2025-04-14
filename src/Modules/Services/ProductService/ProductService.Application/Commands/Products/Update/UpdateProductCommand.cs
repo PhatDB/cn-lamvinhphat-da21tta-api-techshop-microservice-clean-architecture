@@ -5,13 +5,17 @@ namespace ProductService.Application.Commands.Products.Update
 {
     public record UpdateProductCommand(
         int ProductId,
-        string? Name,
-        string? Sku,
+        string? ProductName,
         decimal? Price,
+        int? Stock,
         int? CategoryId,
+        int? BrandId,
+        decimal? Discount,
         int? SoldQuantity,
         bool? IsActive,
-        InventoryDTO Inventory,
+        bool? IsFeatured,
         string? Description,
-        decimal? DiscountPrice) : ICommand;
+        string? Specs,
+        List<ProductImageDto>? NewImages = null,
+        List<int>? ImageIdsToRemove = null) : ICommand;
 }

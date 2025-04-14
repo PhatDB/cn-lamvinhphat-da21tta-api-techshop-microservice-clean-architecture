@@ -1,4 +1,4 @@
-﻿using BuildingBlocks.Abstractions.Repository;
+﻿/*using BuildingBlocks.Abstractions.Repository;
 using BuildingBlocks.Contracts.Orders;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
@@ -34,4 +34,5 @@ public class OrderCancelConsumer : IConsumer<OrderCancel>
 
         await _unitOfWork.SaveChangesAsync();
     }
-}
+}*/
+

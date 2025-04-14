@@ -3,8 +3,7 @@
     public class PaginationOption
     {
         public PaginationOption(
-            string? sortBy = null, bool? isDescending = null, int? pageNumber = null,
-            int? pageSize = null)
+            string? sortBy = null, bool? isDescending = null, int? pageNumber = null, int? pageSize = null)
         {
             SortBy = sortBy ?? string.Empty;
             IsDescending = isDescending ?? false;

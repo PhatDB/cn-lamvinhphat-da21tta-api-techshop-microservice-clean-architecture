@@ -2,6 +2,7 @@
 {
     public enum AssetType
     {
-        PRODUCT_IMAGE = 1
+        PRODUCT_IMAGE = 1,
+        CATEGORY_IMAGE = 2
     }
 }

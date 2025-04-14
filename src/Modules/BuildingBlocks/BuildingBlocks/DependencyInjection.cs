@@ -11,8 +11,7 @@ namespace BuildingBlocks
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddBuildingBlocks(
-            this IServiceCollection services)
+        public static IServiceCollection AddBuildingBlocks(this IServiceCollection services)
         {
             services.AddMediatR(config =>
             {
@@ -20,14 +19,14 @@ namespace BuildingBlocks
                 config.AddOpenBehavior(typeof(ValidationPipelineBehavior<,>));
                 config.AddOpenBehavior(typeof(ExceptionHandlingPipelineBehavior<,>));
                 config.AddOpenBehavior(typeof(TransactionalPipelineBehavior<,>));
+                config.AddOpenBehavior(typeof(LoggingPipelineBehavior<,>));
             });
 
             return services;
         }
 
         public static IServiceCollection AddRabbitMq(
-            this IServiceCollection services, IConfiguration configuration,
-            Assembly? consumersAssembly = null)
+            this IServiceCollection services, IConfiguration configuration, Assembly? consumersAssembly = null)
         {
             RabbitMqOptions rabbitMqOptions = new();
             configuration.GetSection("MessageBroker").Bind(rabbitMqOptions);
@@ -49,8 +48,7 @@ namespace BuildingBlocks
                     });
 
                     configurator.ConfigureEndpoints(context);
-                    configurator.UseMessageRetry(r =>
-                        r.Interval(3, TimeSpan.FromSeconds(15)));
+                    configurator.UseMessageRetry(r => r.Interval(3, TimeSpan.FromSeconds(15)));
                 });
             });
 

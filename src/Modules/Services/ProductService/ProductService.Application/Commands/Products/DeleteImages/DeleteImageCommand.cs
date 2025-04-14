@@ -2,15 +2,5 @@
 
 namespace ProductService.Application.Commands.Products.DeleteImages
 {
-    public record DeleteImageCommand : ICommand
-    {
-        public DeleteImageCommand(int productId, IEnumerable<int> imageIds)
-        {
-            ProductId = productId;
-            ImageIds = imageIds;
-        }
-
-        public int ProductId { get; init; }
-        public IEnumerable<int> ImageIds { get; init; }
-    }
+    public record DeleteImageCommand(int ProductId, List<int> ImageIds) : ICommand;
 }

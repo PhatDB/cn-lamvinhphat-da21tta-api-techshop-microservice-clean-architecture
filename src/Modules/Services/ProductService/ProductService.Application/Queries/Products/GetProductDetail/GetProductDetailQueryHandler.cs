@@ -9,15 +9,12 @@ using ProductService.Domain.Entities;
 
 namespace ProductService.Application.Queries
 {
-    public class
-        GetProductDetailQueryHandler : IQueryHandler<GetProductDetailQuery,
-        ProductDetailDTO>
+    public class GetProductDetailQueryHandler : IQueryHandler<GetProductDetailQuery, ProductDetailDTO>
     {
         private readonly IMapper _mapper;
         private readonly IProductRepository _productRepository;
 
-        public GetProductDetailQueryHandler(
-            IProductRepository productRepository, IMapper mapper)
+        public GetProductDetailQueryHandler(IProductRepository productRepository, IMapper mapper)
         {
             _productRepository = productRepository;
             _mapper = mapper;
@@ -26,8 +23,7 @@ namespace ProductService.Application.Queries
         public async Task<Result<ProductDetailDTO>> Handle(
             GetProductDetailQuery request, CancellationToken cancellationToken)
         {
-            Product? product = await _productRepository.AsQueryable()
-                .Include(p => p.ProductImages).Include(p => p.Inventory)
+            Product? product = await _productRepository.AsQueryable().Include(p => p.ProductImages)
                 .FirstOrDefaultAsync(p => p.Id == request.ProductId, cancellationToken);
 
             if (product == null)

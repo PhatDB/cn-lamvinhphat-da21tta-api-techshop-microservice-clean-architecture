@@ -1,4 +1,4 @@
-using BuildingBlocks.Abstractions.Extensions;
+/*using BuildingBlocks.Abstractions.Extensions;
 using BuildingBlocks.Extensions;
 using BuildingBlocks.Results;
 using MediatR;
@@ -50,4 +50,5 @@ namespace ProductService.Api.Endpoint.Categories
 
         public sealed record UpadateCategoryRequest(string? Name, bool? IsActive, string? Description = null);
     }
-}
+}*/
+

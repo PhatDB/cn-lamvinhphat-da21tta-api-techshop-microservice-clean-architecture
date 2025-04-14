@@ -5,12 +5,10 @@ using Microsoft.Extensions.Logging;
 
 namespace BuildingBlocks.Extensions
 {
-    public sealed class GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger)
-        : IExceptionHandler
+    public sealed class GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger) : IExceptionHandler
     {
         public async ValueTask<bool> TryHandleAsync(
-            HttpContext httpContext, Exception exception,
-            CancellationToken cancellationToken)
+            HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
         {
             logger.LogError(exception, "Unhandled exception occurred");
 
@@ -23,8 +21,7 @@ namespace BuildingBlocks.Extensions
 
             httpContext.Response.StatusCode = problemDetails.Status.Value;
 
-            await httpContext.Response.WriteAsJsonAsync(problemDetails,
-                cancellationToken);
+            await httpContext.Response.WriteAsJsonAsync(problemDetails, cancellationToken);
 
             return true;
         }

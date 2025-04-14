@@ -4,7 +4,8 @@ namespace ProductService.Application.Commands.Categories.Update
 {
     public record UpdateCategoryCommand(
         int Id,
-        string Name,
+        string? CategoryName,
         string? Description,
+        string? ImageContent,
         bool? IsActive) : ICommand;
 }

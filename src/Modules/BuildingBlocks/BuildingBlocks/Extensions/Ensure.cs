@@ -6,30 +6,26 @@ namespace BuildingBlocks.Extensions
     public static class Ensure
     {
         public static void NotNullOrEmpty(
-            [NotNull] string? value,
-            [CallerArgumentExpression("value")] string? paramName = default)
+            [NotNull] string? value, [CallerArgumentExpression("value")] string? paramName = default)
         {
             if (string.IsNullOrEmpty(value)) throw new ArgumentNullException(paramName);
         }
 
         public static void NotNullOrWhiteSpace(
-            [NotNull] string? value,
-            [CallerArgumentExpression("value")] string? paramName = default)
+            [NotNull] string? value, [CallerArgumentExpression("value")] string? paramName = default)
         {
             if (string.IsNullOrWhiteSpace(value))
                 throw new ArgumentNullException(paramName);
         }
 
         public static void NotNull(
-            [NotNull] object? value,
-            [CallerArgumentExpression("value")] string? paramName = default)
+            [NotNull] object? value, [CallerArgumentExpression("value")] string? paramName = default)
         {
             if (value is null) throw new ArgumentNullException(paramName);
         }
 
         public static void GreaterThanZero(
-            decimal value,
-            [CallerArgumentExpression("value")] string? paramName = default)
+            decimal value, [CallerArgumentExpression("value")] string? paramName = default)
         {
             if (value <= 0) throw new ArgumentOutOfRangeException(paramName);
         }

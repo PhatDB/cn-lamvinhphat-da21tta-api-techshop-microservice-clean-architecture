@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiGateway.ReverseProxy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d6e36258955985d01f6849aaa25508e7bb6eb18")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3dcd4b2ed2e2e82c7cebb7ab5a68a70aa4a3087a")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiGateway.ReverseProxy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiGateway.ReverseProxy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
