@@ -1,5 +1,5 @@
 using AutoMapper;
-using ProductService.Application.Commands.Products.Create;
+using ProductService.Application.DTOs;
 using ProductService.Domain.Entities;
 
 namespace ProductService.Application.MappingProfiles
@@ -8,17 +8,16 @@ namespace ProductService.Application.MappingProfiles
     {
         public ProductMappingProfile()
         {
-            CreateMap<CreateProductCommand, Product>()
-                .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.ProductName))
-                .ForMember(dest => dest.CategoryId, opt => opt.MapFrom(src => src.CategoryId))
-                .ForMember(dest => dest.BrandId, opt => opt.MapFrom(src => src.BrandId))
-                .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Price))
-                .ForMember(dest => dest.Discount, opt => opt.MapFrom(src => src.Discount ?? 0))
-                .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description))
-                .ForMember(dest => dest.Specs, opt => opt.MapFrom(src => src.Specs))
-                .ForMember(dest => dest.IsActive, opt => opt.MapFrom(_ => true))
-                .ForMember(dest => dest.CreatedAt, opt => opt.Ignore())
-                .ForMember(dest => dest.ProductImages, opt => opt.Ignore());
+            CreateMap<Product, GetAllProductDTO>().ForMember(dest => dest.ImageUrl,
+                opt => opt.MapFrom(src =>
+                    src.ProductImages.FirstOrDefault(i => i.IsMain == true)!.ImageUrl ?? string.Empty));
+
+            CreateMap<Product, ProductDetailDTO>()
+                .ForMember(dest => dest.Images, opt => opt.MapFrom(src => src.ProductImages))
+                .ForMember(dest => dest.ProductId, opt => opt.MapFrom(src => src.Id));
+
+
+            CreateMap<ProductImage, ImageDto>().ForMember(dest => dest.ImageId, opt => opt.MapFrom(src => src.Id));
         }
     }
 }

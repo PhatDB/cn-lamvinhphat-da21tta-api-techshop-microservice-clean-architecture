@@ -1,21 +1,16 @@
 ﻿namespace ProductService.Application.DTOs
 {
-    public record GetAllProductDTO(
-        int Id,
-        string Name,
-        string Sku,
-        string? Description,
-        decimal Price,
-        decimal? DiscountPrice,
-        int SoldQuantity,
-        bool IsActive,
-        int CategoryId,
-        int StockQuantity,
-        string? FirstImageUrl)
+    public record GetAllProductDTO
     {
-        public GetAllProductDTO() : this(0, string.Empty, string.Empty, null, 0, null, 0,
-            true, 0, 0, null)
-        {
-        }
+        public int Id { get; init; }
+        public string ProductName { get; init; }
+        public decimal Price { get; init; }
+        public decimal? Discount { get; init; }
+        public bool IsActive { get; init; }
+        public bool IsFeatured { get; init; }
+        public int Stock { get; init; }
+        public int SoldQuantity { get; init; }
+        public string ImageUrl { get; init; }
+        public string Specs { get; init; }
     }
 }

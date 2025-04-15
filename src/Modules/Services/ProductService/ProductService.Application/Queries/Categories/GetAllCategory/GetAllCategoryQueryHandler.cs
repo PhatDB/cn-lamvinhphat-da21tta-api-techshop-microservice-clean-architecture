@@ -5,8 +5,7 @@ using ProductService.Domain.Entities;
 
 namespace ProductService.Application.Queries.Categories.GetAllCategory
 {
-    public class
-        GetAllCategoryQueryHandler : IQueryHandler<GetAllCategoryQuery, List<Category>>
+    public class GetAllCategoryQueryHandler : IQueryHandler<GetAllCategoryQuery, List<Category>>
     {
         private readonly ICategoryRepository _categoryRepository;
 
@@ -18,8 +17,7 @@ namespace ProductService.Application.Queries.Categories.GetAllCategory
         public async Task<Result<List<Category>>> Handle(
             GetAllCategoryQuery request, CancellationToken cancellationToken)
         {
-            Result<List<Category>> categories =
-                await _categoryRepository.GetAllAsync(cancellationToken);
+            Result<List<Category>> categories = await _categoryRepository.GetAllAsync(cancellationToken);
 
             return Result.Success(categories.Value);
         }
