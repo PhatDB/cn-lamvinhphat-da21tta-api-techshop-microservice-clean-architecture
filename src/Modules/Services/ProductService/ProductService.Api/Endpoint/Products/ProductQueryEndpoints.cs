@@ -3,6 +3,7 @@ using BuildingBlocks.Extensions;
 using BuildingBlocks.Results;
 using MediatR;
 using ProductService.Application.DTOs;
+using ProductService.Application.Queries.Products.GetActiveProductByBrandId;
 using ProductService.Application.Queries.Products.GetActiveProductByCategoryId;
 using ProductService.Application.Queries.Products.GetActiveProductByName;
 using ProductService.Application.Queries.Products.GetActiveProductDetail;
@@ -77,6 +78,19 @@ namespace ProductService.Api.Endpoint.Products
                 Result<PagedResult<GetAllProductDTO>> result = await sender.Send(query, cancellationToken);
                 return result.Match(success => Results.Ok(success), failure => CustomResults.Problem(failure));
             }).WithTags("Product").WithName("GeProductByCategoryId").Produces<PagedResult<GetAllProductDTO>>();
+
+            // Get Product By BrandId
+            app.MapGet("products/brands/{brandId:int}", async (
+                int? pageNumber, int? pageSize, string? sortBy, bool? isDescending, int brandId, ISender sender,
+                CancellationToken cancellationToken) =>
+            {
+                PaginationOption paginationOption = new(sortBy, isDescending, pageNumber, pageSize);
+
+                GetActiveProductByBrandIdQuery query = new(brandId, paginationOption);
+
+                Result<PagedResult<GetAllProductDTO>> result = await sender.Send(query, cancellationToken);
+                return result.Match(success => Results.Ok(success), failure => CustomResults.Problem(failure));
+            }).WithTags("Product").WithName("GeProductByBrandId").Produces<PagedResult<GetAllProductDTO>>();
         }
     }
 }
