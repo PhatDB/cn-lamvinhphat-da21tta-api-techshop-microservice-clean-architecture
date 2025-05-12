@@ -7,5 +7,6 @@ namespace ProductService.Application.Commands.Categories.Update
         string? CategoryName,
         string? Description,
         string? ImageContent,
+        int? ParentId,
         bool? IsActive) : ICommand;
 }

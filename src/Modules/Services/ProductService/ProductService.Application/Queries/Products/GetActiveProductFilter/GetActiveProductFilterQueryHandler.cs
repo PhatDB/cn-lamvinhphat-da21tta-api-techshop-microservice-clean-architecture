@@ -14,14 +14,19 @@ namespace ProductService.Application.Queries.Products.GetActiveProductFilter
     public class
         GetActiveProductFilterQueryHandler : IQueryHandler<GetActiveProductFilterQuery, PagedResult<GetAllProductDTO>>
     {
+        private readonly ICategoryRepository _categoryRepository;
+
         private readonly IMapper _mapper;
         private readonly IProductRepository _productRepository;
 
-        public GetActiveProductFilterQueryHandler(IProductRepository productRepository, IMapper mapper)
+        public GetActiveProductFilterQueryHandler(
+            IMapper mapper, IProductRepository productRepository, ICategoryRepository categoryRepository)
         {
-            _productRepository = productRepository;
             _mapper = mapper;
+            _productRepository = productRepository;
+            _categoryRepository = categoryRepository;
         }
+
 
         public async Task<Result<PagedResult<GetAllProductDTO>>> Handle(
             GetActiveProductFilterQuery request, CancellationToken cancellationToken)
@@ -32,17 +37,26 @@ namespace ProductService.Application.Queries.Products.GetActiveProductFilter
                 .Where(p => p.IsActive).AsNoTracking();
 
             if (!string.IsNullOrWhiteSpace(keyword))
-                query = query.Where(p => p.ProductName.ToLower().Contains(keyword));
+                query = query.Where(p => p.ProductName.ToLower().Contains(keyword) && p.IsActive);
 
-            if (request.CategoryId.HasValue) query = query.Where(p => p.CategoryId == request.CategoryId.Value);
+            if (request.CategoryId.HasValue)
+            {
+                List<int> relativeCategoryId = await _categoryRepository.AsQueryable().AsNoTracking()
+                    .Where(c => c.ParentId == request.CategoryId).Select(c => c.Id).ToListAsync(cancellationToken);
 
-            if (request.BrandId.HasValue) query = query.Where(p => p.BrandId == request.BrandId.Value);
+                relativeCategoryId.Add(request.CategoryId.Value);
 
-            if (request.MinPrice.HasValue) query = query.Where(p => p.Price >= request.MinPrice.Value);
+                query = query.Where(p => relativeCategoryId.Contains(p.CategoryId) && p.IsActive);
+            }
 
-            if (request.MaxPrice.HasValue) query = query.Where(p => p.Price <= request.MaxPrice.Value);
+            if (request.BrandId.HasValue) query = query.Where(p => p.BrandId == request.BrandId.Value && p.IsActive);
 
-            if (request.IsFeatured.HasValue) query = query.Where(p => p.IsFeatured == request.IsFeatured.Value);
+            if (request.MinPrice.HasValue) query = query.Where(p => p.Price >= request.MinPrice.Value && p.IsActive);
+
+            if (request.MaxPrice.HasValue) query = query.Where(p => p.Price <= request.MaxPrice.Value && p.IsActive);
+
+            if (request.IsFeatured.HasValue)
+                query = query.Where(p => p.IsFeatured == request.IsFeatured.Value && p.IsActive);
 
             int totalCount = await query.CountAsync(cancellationToken);
 

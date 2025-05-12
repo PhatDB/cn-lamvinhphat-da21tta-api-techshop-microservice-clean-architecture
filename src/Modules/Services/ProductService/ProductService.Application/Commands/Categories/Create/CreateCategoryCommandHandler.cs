@@ -26,7 +26,8 @@ namespace ProductService.Application.Commands.Categories.Create
         {
             string imageUrl = await _fileService.UploadFile(request.ImageContent, AssetType.CATEGORY_IMAGE);
 
-            Result<Category> categoryResult = Category.Create(request.Name, request.Description, imageUrl);
+            Result<Category> categoryResult =
+                Category.Create(request.Name, request.Description, imageUrl, request.ParentId);
 
             if (categoryResult.IsFailure)
                 return Result.Failure<int>(categoryResult.Error);

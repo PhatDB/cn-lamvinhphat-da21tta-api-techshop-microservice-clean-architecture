@@ -47,8 +47,8 @@ namespace ProductService.Application.Commands.Categories.Update
                 imageUrl = await _fileService.UploadFile(request.ImageContent, AssetType.CATEGORY_IMAGE);
             }
 
-            Result updateResult =
-                category.UpdateCategory(request.CategoryName, request.Description, imageUrl, request.IsActive);
+            Result updateResult = category.UpdateCategory(request.CategoryName, request.Description, imageUrl,
+                request.ParentId, request.IsActive);
 
             if (updateResult.IsFailure)
                 return updateResult;

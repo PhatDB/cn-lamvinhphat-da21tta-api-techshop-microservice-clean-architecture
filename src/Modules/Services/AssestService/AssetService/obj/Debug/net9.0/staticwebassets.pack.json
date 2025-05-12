@@ -1,6 +1,58 @@
 {
   "Files": [
     {
+      "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\case.jpg",
+      "PackagePath": "staticwebassets\\assets\\category\\case.jpg"
+    },
+    {
+      "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\cpu.webp",
+      "PackagePath": "staticwebassets\\assets\\category\\cpu.webp"
+    },
+    {
+      "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\headphone.jpg",
+      "PackagePath": "staticwebassets\\assets\\category\\headphone.jpg"
+    },
+    {
+      "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\keyboard.jpg",
+      "PackagePath": "staticwebassets\\assets\\category\\keyboard.jpg"
+    },
+    {
+      "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\laptop.png",
+      "PackagePath": "staticwebassets\\assets\\category\\laptop.png"
+    },
+    {
+      "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\mainboard.webp",
+      "PackagePath": "staticwebassets\\assets\\category\\mainboard.webp"
+    },
+    {
+      "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\monitor.jpg",
+      "PackagePath": "staticwebassets\\assets\\category\\monitor.jpg"
+    },
+    {
+      "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\mouse.jpg",
+      "PackagePath": "staticwebassets\\assets\\category\\mouse.jpg"
+    },
+    {
+      "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\pc.jpg",
+      "PackagePath": "staticwebassets\\assets\\category\\pc.jpg"
+    },
+    {
+      "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\psu.jpg",
+      "PackagePath": "staticwebassets\\assets\\category\\psu.jpg"
+    },
+    {
+      "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\ram.webp",
+      "PackagePath": "staticwebassets\\assets\\category\\ram.webp"
+    },
+    {
+      "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\ssd.jpg",
+      "PackagePath": "staticwebassets\\assets\\category\\ssd.jpg"
+    },
+    {
+      "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\vga.jpg",
+      "PackagePath": "staticwebassets\\assets\\category\\vga.jpg"
+    },
+    {
       "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1744627520758.jpg",
       "PackagePath": "staticwebassets\\assets\\product\\product_1744627520758.jpg"
     },

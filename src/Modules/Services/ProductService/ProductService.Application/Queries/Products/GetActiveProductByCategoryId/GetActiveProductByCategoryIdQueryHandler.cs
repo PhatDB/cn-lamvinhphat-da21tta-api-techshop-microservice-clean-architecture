@@ -15,20 +15,30 @@ namespace ProductService.Application.Queries.Products.GetActiveProductByCategory
         GetActiveProductByCategoryIdQueryHandler : IQueryHandler<GetActiveProductByCategoryIdQuery,
         PagedResult<GetAllProductDTO>>
     {
+        private readonly ICategoryRepository _categoryRepository;
+
         private readonly IMapper _mapper;
         private readonly IProductRepository _productRepository;
 
-        public GetActiveProductByCategoryIdQueryHandler(IProductRepository productRepository, IMapper mapper)
+        public GetActiveProductByCategoryIdQueryHandler(
+            IMapper mapper, IProductRepository productRepository, ICategoryRepository categoryRepository)
         {
-            _productRepository = productRepository;
             _mapper = mapper;
+            _productRepository = productRepository;
+            _categoryRepository = categoryRepository;
         }
+
 
         public async Task<Result<PagedResult<GetAllProductDTO>>> Handle(
             GetActiveProductByCategoryIdQuery request, CancellationToken cancellationToken)
         {
+            List<int> relativeCategoryId = await _categoryRepository.AsQueryable().AsNoTracking()
+                .Where(c => c.ParentId == request.CategoryId).Select(c => c.Id).ToListAsync(cancellationToken);
+
+            relativeCategoryId.Add(request.CategoryId);
+
             IQueryable<Product> query = _productRepository.AsQueryable().Include(p => p.ProductImages)
-                .Where(p => p.CategoryId == request.CategoryId && p.IsActive).AsNoTracking();
+                .Where(p => relativeCategoryId.Contains(p.CategoryId) && p.IsActive).AsNoTracking();
 
             int totalCount = await query.CountAsync(cancellationToken);
 

@@ -20,6 +20,10 @@ namespace ProductService.Persistence.Configurations
             builder.Property(c => c.ImageUrl).HasColumnName("image_url").HasMaxLength(300);
 
             builder.Property(c => c.IsActive).HasColumnName("is_active").HasDefaultValue(true).IsRequired();
+
+            builder.Property(c => c.ParentId).HasColumnName("parent_id");
+
+            builder.HasMany(c => c.Subcategories).WithOne().HasForeignKey(c => c.ParentId);
         }
     }
 }

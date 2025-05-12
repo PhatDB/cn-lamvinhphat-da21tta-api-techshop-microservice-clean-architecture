@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qzc3xLhULUry1TwuxOeAWqPU2jIjgQ9hKMLWjeMmJpo=",
+  "Hash": "DpXo2WYNddrng26gbXLmlpssXekuaYende8Lne9Hs/Q=",
   "Source": "AssetService",
   "BasePath": "_content/AssetService",
   "Mode": "Default",
@@ -16,6 +16,279 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\case.jpg",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/category/case#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "nexahywxzd",
+      "Integrity": "YX/rWFPQZSm6TuORh56xZyPAce3yIjWk8xwg401Ru9A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\category\\case.jpg"
+    },
+    {
+      "Identity": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\cpu.webp",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/category/cpu#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0kr4g46qlu",
+      "Integrity": "gOSB49qMQ6RJQUbdbhhqGTIFIVgu/0SUeYANwwXk/z8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\category\\cpu.webp"
+    },
+    {
+      "Identity": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\headphone.jpg",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/category/headphone#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "a0o2fpwqe6",
+      "Integrity": "9iZpPpfeBmqNCwETaqCEgyIS9tiy7ViYqyQc4M45sJU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\category\\headphone.jpg"
+    },
+    {
+      "Identity": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\keyboard.jpg",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/category/keyboard#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "so4ke4er6g",
+      "Integrity": "vFJ5f549J4tA4gORRi5aqpqHGQJMnvLDMVCJvkvNkog=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\category\\keyboard.jpg"
+    },
+    {
+      "Identity": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\laptop.png",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/category/laptop#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8wjyrhnqlr",
+      "Integrity": "yJdgkz9Wj+/UFyBrFt+Vh10dv7FNp0Stag49YSoUjy0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\category\\laptop.png"
+    },
+    {
+      "Identity": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\mainboard.webp",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/category/mainboard#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ozlrrh7bwh",
+      "Integrity": "7EgZyEINMpKfoJOB3HZxlvVaNAer7go0dwhmr2659GA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\category\\mainboard.webp"
+    },
+    {
+      "Identity": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\monitor.jpg",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/category/monitor#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xsgv92gfh5",
+      "Integrity": "0Reu0jpwTftTprr/oGlrKE0eWXkq+wdjNeHqdzyn0Vk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\category\\monitor.jpg"
+    },
+    {
+      "Identity": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\mouse.jpg",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/category/mouse#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1fvr2hn75r",
+      "Integrity": "M9KkoWaO2/HbQi+HhkGc/c1urkC5QX1kUhAgGZxODKk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\category\\mouse.jpg"
+    },
+    {
+      "Identity": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\pc.jpg",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/category/pc#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3iqkkrmwts",
+      "Integrity": "1fxQAXFoPBrNrqxHuLIj4FrzINs36tncAcR2TnhZywE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\category\\pc.jpg"
+    },
+    {
+      "Identity": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\psu.jpg",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/category/psu#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kkph5h5czz",
+      "Integrity": "tPQm0/+Xnv9D2556QQ5T9sdCVVphcFBpPCHL4muu+40=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\category\\psu.jpg"
+    },
+    {
+      "Identity": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\ram.webp",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/category/ram#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rjo9ynau22",
+      "Integrity": "hyJPUWencYc1MKXJ65yWVFtklGZhoAdciluRmVSvwng=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\category\\ram.webp"
+    },
+    {
+      "Identity": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\ssd.jpg",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/category/ssd#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yrtwzguqfx",
+      "Integrity": "Qv4juZcjT7iykxCatBtl9Bi/4OpHhTnpn0O3NwvY/Xw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\category\\ssd.jpg"
+    },
+    {
+      "Identity": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\vga.jpg",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/category/vga#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yzkfda4k0m",
+      "Integrity": "Du2TJByrnfYDZ6wtYu1I4dDf+VR4ES6eCCupgKCU0FU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\category\\vga.jpg"
+    },
     {
       "Identity": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1744627520758.jpg",
       "SourceId": "AssetService",
@@ -60,6 +333,1072 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "assets/category/case.jpg",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\case.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "95354"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YX/rWFPQZSm6TuORh56xZyPAce3yIjWk8xwg401Ru9A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:26:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YX/rWFPQZSm6TuORh56xZyPAce3yIjWk8xwg401Ru9A="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/case.nexahywxzd.jpg",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\case.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "95354"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YX/rWFPQZSm6TuORh56xZyPAce3yIjWk8xwg401Ru9A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:26:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nexahywxzd"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/category/case.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YX/rWFPQZSm6TuORh56xZyPAce3yIjWk8xwg401Ru9A="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/cpu.0kr4g46qlu.webp",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\cpu.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "90840"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gOSB49qMQ6RJQUbdbhhqGTIFIVgu/0SUeYANwwXk/z8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:22:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0kr4g46qlu"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/category/cpu.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gOSB49qMQ6RJQUbdbhhqGTIFIVgu/0SUeYANwwXk/z8="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/cpu.webp",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\cpu.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "90840"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gOSB49qMQ6RJQUbdbhhqGTIFIVgu/0SUeYANwwXk/z8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:22:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gOSB49qMQ6RJQUbdbhhqGTIFIVgu/0SUeYANwwXk/z8="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/headphone.a0o2fpwqe6.jpg",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\headphone.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "459598"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9iZpPpfeBmqNCwETaqCEgyIS9tiy7ViYqyQc4M45sJU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:28:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "a0o2fpwqe6"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/category/headphone.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9iZpPpfeBmqNCwETaqCEgyIS9tiy7ViYqyQc4M45sJU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/headphone.jpg",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\headphone.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "459598"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9iZpPpfeBmqNCwETaqCEgyIS9tiy7ViYqyQc4M45sJU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:28:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9iZpPpfeBmqNCwETaqCEgyIS9tiy7ViYqyQc4M45sJU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/keyboard.jpg",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\keyboard.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7155"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vFJ5f549J4tA4gORRi5aqpqHGQJMnvLDMVCJvkvNkog=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:27:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vFJ5f549J4tA4gORRi5aqpqHGQJMnvLDMVCJvkvNkog="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/keyboard.so4ke4er6g.jpg",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\keyboard.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7155"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vFJ5f549J4tA4gORRi5aqpqHGQJMnvLDMVCJvkvNkog=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:27:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "so4ke4er6g"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/category/keyboard.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vFJ5f549J4tA4gORRi5aqpqHGQJMnvLDMVCJvkvNkog="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/laptop.8wjyrhnqlr.png",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\laptop.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5798880"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yJdgkz9Wj+/UFyBrFt+Vh10dv7FNp0Stag49YSoUjy0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:24:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8wjyrhnqlr"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/category/laptop.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yJdgkz9Wj+/UFyBrFt+Vh10dv7FNp0Stag49YSoUjy0="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/laptop.png",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\laptop.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5798880"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yJdgkz9Wj+/UFyBrFt+Vh10dv7FNp0Stag49YSoUjy0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:24:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yJdgkz9Wj+/UFyBrFt+Vh10dv7FNp0Stag49YSoUjy0="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/mainboard.ozlrrh7bwh.webp",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\mainboard.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "187118"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7EgZyEINMpKfoJOB3HZxlvVaNAer7go0dwhmr2659GA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:20:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ozlrrh7bwh"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/category/mainboard.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-7EgZyEINMpKfoJOB3HZxlvVaNAer7go0dwhmr2659GA="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/mainboard.webp",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\mainboard.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "187118"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7EgZyEINMpKfoJOB3HZxlvVaNAer7go0dwhmr2659GA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:20:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-7EgZyEINMpKfoJOB3HZxlvVaNAer7go0dwhmr2659GA="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/monitor.jpg",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\monitor.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "39992"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0Reu0jpwTftTprr/oGlrKE0eWXkq+wdjNeHqdzyn0Vk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:25:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0Reu0jpwTftTprr/oGlrKE0eWXkq+wdjNeHqdzyn0Vk="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/monitor.xsgv92gfh5.jpg",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\monitor.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "39992"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0Reu0jpwTftTprr/oGlrKE0eWXkq+wdjNeHqdzyn0Vk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:25:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xsgv92gfh5"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/category/monitor.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0Reu0jpwTftTprr/oGlrKE0eWXkq+wdjNeHqdzyn0Vk="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/mouse.1fvr2hn75r.jpg",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\mouse.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "110155"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"M9KkoWaO2/HbQi+HhkGc/c1urkC5QX1kUhAgGZxODKk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:28:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1fvr2hn75r"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/category/mouse.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-M9KkoWaO2/HbQi+HhkGc/c1urkC5QX1kUhAgGZxODKk="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/mouse.jpg",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\mouse.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "110155"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"M9KkoWaO2/HbQi+HhkGc/c1urkC5QX1kUhAgGZxODKk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:28:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-M9KkoWaO2/HbQi+HhkGc/c1urkC5QX1kUhAgGZxODKk="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/pc.3iqkkrmwts.jpg",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\pc.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "396028"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1fxQAXFoPBrNrqxHuLIj4FrzINs36tncAcR2TnhZywE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:24:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3iqkkrmwts"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/category/pc.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1fxQAXFoPBrNrqxHuLIj4FrzINs36tncAcR2TnhZywE="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/pc.jpg",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\pc.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "396028"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1fxQAXFoPBrNrqxHuLIj4FrzINs36tncAcR2TnhZywE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:24:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-1fxQAXFoPBrNrqxHuLIj4FrzINs36tncAcR2TnhZywE="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/psu.jpg",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\psu.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30041"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tPQm0/+Xnv9D2556QQ5T9sdCVVphcFBpPCHL4muu+40=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:27:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tPQm0/+Xnv9D2556QQ5T9sdCVVphcFBpPCHL4muu+40="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/psu.kkph5h5czz.jpg",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\psu.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30041"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tPQm0/+Xnv9D2556QQ5T9sdCVVphcFBpPCHL4muu+40=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:27:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kkph5h5czz"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/category/psu.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tPQm0/+Xnv9D2556QQ5T9sdCVVphcFBpPCHL4muu+40="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/ram.rjo9ynau22.webp",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\ram.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "44706"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hyJPUWencYc1MKXJ65yWVFtklGZhoAdciluRmVSvwng=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:22:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rjo9ynau22"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/category/ram.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hyJPUWencYc1MKXJ65yWVFtklGZhoAdciluRmVSvwng="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/ram.webp",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\ram.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "44706"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hyJPUWencYc1MKXJ65yWVFtklGZhoAdciluRmVSvwng=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:22:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hyJPUWencYc1MKXJ65yWVFtklGZhoAdciluRmVSvwng="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/ssd.jpg",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\ssd.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "406550"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Qv4juZcjT7iykxCatBtl9Bi/4OpHhTnpn0O3NwvY/Xw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:26:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Qv4juZcjT7iykxCatBtl9Bi/4OpHhTnpn0O3NwvY/Xw="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/ssd.yrtwzguqfx.jpg",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\ssd.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "406550"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Qv4juZcjT7iykxCatBtl9Bi/4OpHhTnpn0O3NwvY/Xw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:26:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yrtwzguqfx"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/category/ssd.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Qv4juZcjT7iykxCatBtl9Bi/4OpHhTnpn0O3NwvY/Xw="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/vga.jpg",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\vga.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "97305"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Du2TJByrnfYDZ6wtYu1I4dDf+VR4ES6eCCupgKCU0FU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:19:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Du2TJByrnfYDZ6wtYu1I4dDf+VR4ES6eCCupgKCU0FU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/category/vga.yzkfda4k0m.jpg",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\category\\vga.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "97305"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Du2TJByrnfYDZ6wtYu1I4dDf+VR4ES6eCCupgKCU0FU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 09:19:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yzkfda4k0m"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/category/vga.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Du2TJByrnfYDZ6wtYu1I4dDf+VR4ES6eCCupgKCU0FU="
+        }
+      ]
+    },
     {
       "Route": "assets/product/product_1744627520758.7c42zb1o98.jpg",
       "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1744627520758.jpg",

@@ -36,13 +36,18 @@ namespace ProductService.Api.Endpoint.Categories
                 int id, UpdateCategory request, ISender sender, CancellationToken cancellationToken) =>
             {
                 UpdateCategoryCommand command = new(id, request.CategoryName, request.Description, request.ImageContent,
-                    request.IsActive);
+                    request.ParentId, request.IsActive);
                 Result result = await sender.Send(command, cancellationToken);
 
                 return result.Match(Results.NoContent, CustomResults.Problem);
             }).WithTags("Category").WithName("UpdateCategory");
         }
 
-        private record UpdateCategory(string? CategoryName, string? Description, string? ImageContent, bool? IsActive);
+        private record UpdateCategory(
+            string? CategoryName,
+            string? Description,
+            string? ImageContent,
+            int? ParentId,
+            bool? IsActive);
     }
 }
