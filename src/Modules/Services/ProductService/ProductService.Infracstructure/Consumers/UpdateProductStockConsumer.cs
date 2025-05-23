@@ -1,4 +1,4 @@
-﻿/*using BuildingBlocks.Abstractions.Repository;
+﻿using BuildingBlocks.Abstractions.Repository;
 using BuildingBlocks.Contracts.Products;
 using BuildingBlocks.Results;
 using MassTransit;
@@ -24,8 +24,8 @@ namespace ProductService.Infracstructure.Consumers
         {
             UpdateProductStock message = context.Message;
 
-            Result<Product> productResult =
-                await _productRepository.AsQueryable().AsNoTracking().Include(p => p.Inventory).Where(p => p.Id == message.ProductId).FirstOrDefaultAsync();
+            Result<Product> productResult = await _productRepository.AsQueryable().AsNoTracking()
+                .Where(p => p.Id == message.ProductId).FirstOrDefaultAsync();
 
             if (productResult.IsFailure)
                 return;
@@ -40,5 +40,4 @@ namespace ProductService.Infracstructure.Consumers
             await _unitOfWork.SaveChangesAsync();
         }
     }
-}*/
-
+}

@@ -10,101 +10,105 @@ namespace OrderService.Domain.Entities
     {
         private readonly List<OrderItem> _orderItems;
 
-        public Order(int? userId, string street, string city, string district, string ward, string? zipCode, string phoneNumber, string buyerName)
+        private Order(int customerId, OrderStatus status, decimal totalAmount)
         {
-            UserId = userId;
-            Street = street;
-            City = city;
-            District = district;
-            Ward = ward;
-            ZipCode = zipCode;
-            PhoneNumber = phoneNumber;
-            OrderStatus = OrderStatus.Submitted;
+            CustomerId = customerId;
+            Status = OrderStatus.Submitted;
             CreatedAt = DateTime.UtcNow;
-            TotalAmount = 0;
-            BuyerName = buyerName;
+            TotalAmount = totalAmount;
             _orderItems = new List<OrderItem>();
         }
 
-        public int? UserId { get; private set; }
-        public string Street { get; private set; }
-        public string City { get; private set; }
-        public string District { get; private set; }
-        public string Ward { get; private set; }
-        public string? ZipCode { get; private set; }
-        public string PhoneNumber { get; private set; }
+        public int CustomerId { get; private set; }
+        public OrderStatus Status { get; private set; }
         public decimal TotalAmount { get; private set; }
-        public string BuyerName { get; private set; }
-        public OrderStatus OrderStatus { get; private set; }
         public DateTime CreatedAt { get; private set; }
 
         public IReadOnlyCollection<OrderItem> OrderItems => _orderItems.AsReadOnly();
 
-        public void AddItem(int productId, int quantity, string productName, decimal unitPrice)
+        public static Result<Order> Create(int customerId, OrderStatus status, decimal totalAmount)
         {
-            OrderItem orderItem = new(productId, quantity, productName, unitPrice);
-            _orderItems.Add(orderItem);
-            UpdateTotalAmount();
+            if (customerId <= 0)
+                return Result.Failure<Order>(Error.Validation("Order.InvalidCustomerId",
+                    "CustomerId must be greater than 0."));
+
+            if (totalAmount < 0)
+                return Result.Failure<Order>(Error.Validation("Order.InvalidTotal",
+                    "Total amount cannot be negative."));
+
+            Order order = new(customerId, status, totalAmount);
+
+            return Result.Success(order);
+        }
+
+
+        public void AddItem(int productId, int quantity, decimal price)
+        {
+            OrderItem item = OrderItem.Create(Id, productId, quantity, price);
+            _orderItems.Add(item);
         }
 
         public void UpdateTotalAmount()
         {
-            TotalAmount = 0;
-            foreach (OrderItem item in _orderItems)
-                TotalAmount += item.TotalPrice;
+            TotalAmount = _orderItems.Sum(i => i.TotalPrice);
         }
 
         public void SetAwaitingValidationStatus()
         {
-            if (OrderStatus == OrderStatus.Submitted) OrderStatus = OrderStatus.AwaitingValidation;
+            if (Status == OrderStatus.Submitted)
+                Status = OrderStatus.AwaitingValidation;
         }
 
         public void SetStockConfirmedStatus()
         {
-            if (OrderStatus == OrderStatus.AwaitingValidation) OrderStatus = OrderStatus.StockConfirmed;
+            if (Status == OrderStatus.AwaitingValidation)
+                Status = OrderStatus.StockConfirmed;
         }
 
         public Result SetPaidStatus()
         {
-            if (OrderStatus != OrderStatus.Submitted)
+            if (Status != OrderStatus.Submitted)
                 return StatusChangeException(OrderStatus.Paid);
 
-            OrderStatus = OrderStatus.Paid;
+            Status = OrderStatus.Paid;
             return Result.Success();
         }
 
         public Result SetShippedStatus()
         {
-            if (OrderStatus != OrderStatus.Paid) StatusChangeException(OrderStatus.Shipped);
+            if (Status != OrderStatus.Paid)
+                return StatusChangeException(OrderStatus.Shipped);
 
-            OrderStatus = OrderStatus.Shipped;
+            Status = OrderStatus.Shipped;
             return Result.Success();
         }
 
         public Result SetCancelledStatus()
         {
-            if (OrderStatus == OrderStatus.Paid || OrderStatus == OrderStatus.Shipped)
-                StatusChangeException(OrderStatus.Cancelled);
+            if (Status == OrderStatus.Paid || Status == OrderStatus.Shipped)
+                return StatusChangeException(OrderStatus.Cancelled);
 
-            OrderStatus = OrderStatus.Cancelled;
+            Status = OrderStatus.Cancelled;
             return Result.Success();
         }
 
-        public void SetCancelledStatusWhenStockIsRejected(IEnumerable<int> orderStockRejectedItems)
+        public void SetCancelledStatusWhenStockIsRejected(IEnumerable<int> rejectedProductIds)
         {
-            if (OrderStatus == OrderStatus.AwaitingValidation)
+            if (Status == OrderStatus.AwaitingValidation)
             {
-                OrderStatus = OrderStatus.Cancelled;
+                Status = OrderStatus.Cancelled;
 
-                IEnumerable<int> itemsStockRejectedProductNames = OrderItems.Where(c => orderStockRejectedItems.Contains(c.ProductId)).Select(c => c.ProductId);
+                IEnumerable<int> rejectedItems = OrderItems.Where(i => rejectedProductIds.Contains(i.ProductId))
+                    .Select(i => i.ProductId);
 
-                string itemsStockRejectedDescription = string.Join(", ", itemsStockRejectedProductNames);
+                string description = string.Join(", ", rejectedItems);
             }
         }
 
-        private Result StatusChangeException(OrderStatus orderStatusToChange)
+        private Result StatusChangeException(OrderStatus toStatus)
         {
-            return Result.Failure(Error.Problem("Order.Status", "$\"Is not possible to change the order status from {OrderStatus} to {orderStatusToChange}.\""));
+            return Result.Failure(Error.Problem("Order.Status",
+                $"Cannot change order status from {Status} to {toStatus}."));
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace ProductService.Application.DTOs
+﻿using ProductService.Domain.Entities;
+
+namespace ProductService.Application.DTOs
 {
     public record GetAllProductDTO
     {
@@ -10,7 +12,9 @@
         public bool IsFeatured { get; init; }
         public int Stock { get; init; }
         public int SoldQuantity { get; init; }
-        public string ImageUrl { get; init; }
         public string Specs { get; init; }
+        public string ImageUrl { get; init; }
+        public byte Rating { get; set; }
+        public List<ProductSpec> ProductSpecs { get; init; }
     }
 }

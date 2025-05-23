@@ -7,7 +7,7 @@ namespace CartService.Application.Validations.Cart
     {
         public AddToCartCommandValidator()
         {
-            RuleFor(command => command.UserId).GreaterThan(0).WithMessage("UserId must be greater than 0");
+            RuleFor(command => command.CustomerId).GreaterThan(0).WithMessage("UserId must be greater than 0");
 
             RuleFor(command => command.ProductId).GreaterThan(0).WithMessage("ProductId must be greater than 0");
 

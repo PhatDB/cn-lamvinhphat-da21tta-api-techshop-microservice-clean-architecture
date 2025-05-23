@@ -19,9 +19,6 @@ namespace ProductService.Persistence.Configurations
             builder.Property(b => b.Description).HasColumnName("description").HasColumnType("NVARCHAR(MAX)");
 
             builder.Property(b => b.IsActive).HasColumnName("is_active").HasDefaultValue(true).IsRequired();
-
-            builder.HasMany(b => b.CategoryBrands).WithOne().HasForeignKey(cb => cb.BrandId)
-                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

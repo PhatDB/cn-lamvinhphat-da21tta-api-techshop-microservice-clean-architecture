@@ -1156,6 +1156,7 @@
       "ProductService.Infracstructure/1.0.0": {
         "dependencies": {
           "BuildingBlocks": "1.0.0",
+          "ProductService.Application": "1.0.0",
           "ProductService.Domain": "1.0.0"
         },
         "runtime": {

@@ -15,8 +15,7 @@ namespace ProductService.Persistence.Configurations
             builder.Property(p => p.ProductName).HasColumnName("product_name").HasMaxLength(200).IsRequired();
 
             builder.Property(p => p.Description).HasColumnName("description").HasColumnType("NVARCHAR(MAX)");
-
-            builder.Property(p => p.Specs).HasColumnName("specs").HasColumnType("NVARCHAR(MAX)");
+            builder.Property(p => p.Specs).HasColumnName("specs").HasMaxLength(255);
 
             builder.Property(p => p.Price).HasColumnName("price").HasColumnType("decimal(18,2)").IsRequired();
 

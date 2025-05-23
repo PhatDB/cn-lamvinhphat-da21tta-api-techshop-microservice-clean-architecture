@@ -18,12 +18,13 @@ namespace CartService.Api.Endpoint.Carts
             {
                 Result<int> result = await sender.Send(command);
 
-                return result.Match(success => Results.Ok(new { Id = result.Value }), failure => CustomResults.Problem(failure));
+                return result.Match(success => Results.Ok(new { Id = result.Value }),
+                    failure => CustomResults.Problem(failure));
             }).WithName("CreateCart").WithTags("Cart");
 
             app.MapGet("/cart/{userId:int}", async (int userId, ISender sender, CancellationToken cancellationToken) =>
             {
-                GetCartByUserIdQuery query = new(userId);
+                GetCartByCustomerIdQuery query = new(userId);
 
                 Result<CartDTO> result = await sender.Send(query, cancellationToken);
 

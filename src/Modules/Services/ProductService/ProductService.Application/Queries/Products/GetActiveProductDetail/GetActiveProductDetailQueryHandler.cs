@@ -1,11 +1,12 @@
 ﻿using AutoMapper;
+using BuildingBlocks.Contracts.Customers;
 using BuildingBlocks.CQRS;
 using BuildingBlocks.Results;
 using Microsoft.EntityFrameworkCore;
+using ProductService.Application.Abtractions;
 using ProductService.Application.DTOs;
 using ProductService.Domain.Abstractions.Repositories;
 using ProductService.Domain.Entities;
-using ProductService.Domain.Errors;
 
 namespace ProductService.Application.Queries.Products.GetActiveProductDetail
 {
@@ -13,23 +14,36 @@ namespace ProductService.Application.Queries.Products.GetActiveProductDetail
     {
         private readonly IMapper _mapper;
         private readonly IProductRepository _productRepository;
+        private readonly IProductService _productService;
 
-        public GetActiveProductDetailQueryHandler(IProductRepository productRepository, IMapper mapper)
+        public GetActiveProductDetailQueryHandler(
+            IMapper mapper, IProductRepository productRepository, IProductService productService)
         {
-            _productRepository = productRepository;
             _mapper = mapper;
+            _productRepository = productRepository;
+            _productService = productService;
         }
+
 
         public async Task<Result<ProductDetailDTO>> Handle(
             GetActiveProductDetailQuery request, CancellationToken cancellationToken)
         {
             Product? product = await _productRepository.AsQueryable().Include(p => p.ProductImages)
-                .Where(p => p.IsActive).AsNoTracking()
+                .Include(p => p.ProductSpecs).Where(p => p.IsActive).AsNoTracking()
                 .SingleOrDefaultAsync(p => p.Id == request.ProductId, cancellationToken);
 
-            return product != null
-                ? _mapper.Map<ProductDetailDTO>(product)
-                : Result.Failure<ProductDetailDTO>(ProductError.ProductNotFound);
+
+            Result<GetProductReviewsRespone> productReviews =
+                await _productService.GetProductReviews(request.ProductId);
+
+            ProductDetailDTO? productDto = _mapper.Map<ProductDetailDTO>(product);
+
+            if (productReviews.IsSuccess)
+                productDto.ProductReviews = productReviews.Value.ProductReviews;
+            else
+                productDto.ProductReviews = new List<ProductReviewDto>();
+
+            return Result.Success(productDto);
         }
     }
 }

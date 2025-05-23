@@ -26,6 +26,7 @@ namespace ProductService.Application.Queries.Products.GetActiveProductByName
             GetProductByNameQuery request, CancellationToken cancellationToken)
         {
             IQueryable<Product> query = _productRepository.AsQueryable().Include(p => p.ProductImages)
+                .Include(p => p.ProductSpecs)
                 .Where(p => p.ProductName.ToLower().Contains(request.ProductName.ToLower()) && p.IsActive)
                 .AsNoTracking();
 

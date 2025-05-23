@@ -213,6 +213,26 @@
       "PackagePath": "staticwebassets\\assets\\product\\product_1747055164018.webp"
     },
     {
+      "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1747114502097.webp",
+      "PackagePath": "staticwebassets\\assets\\product\\product_1747114502097.webp"
+    },
+    {
+      "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1747114717435.webp",
+      "PackagePath": "staticwebassets\\assets\\product\\product_1747114717435.webp"
+    },
+    {
+      "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1747114831723.webp",
+      "PackagePath": "staticwebassets\\assets\\product\\product_1747114831723.webp"
+    },
+    {
+      "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1747114959034.webp",
+      "PackagePath": "staticwebassets\\assets\\product\\product_1747114959034.webp"
+    },
+    {
+      "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1747650230305.webp",
+      "PackagePath": "staticwebassets\\assets\\product\\product_1747650230305.webp"
+    },
+    {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.AssetService.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

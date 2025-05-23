@@ -33,9 +33,6 @@ namespace ProductService.Application.Validations.Products
             RuleFor(x => x.Description).MaximumLength(1000).WithMessage("Description must not exceed 1000 characters.")
                 .When(x => !string.IsNullOrWhiteSpace(x.Description));
 
-            RuleFor(x => x.Specs).MaximumLength(2000).WithMessage("Specs must not exceed 2000 characters.")
-                .When(x => !string.IsNullOrWhiteSpace(x.Specs));
-
             RuleForEach(x => x.NewImages).ChildRules(images =>
             {
                 images.RuleFor(i => i.ImageContent).NotEmpty().WithMessage("Image content must not be empty.");

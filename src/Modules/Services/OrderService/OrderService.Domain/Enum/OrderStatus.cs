@@ -1,12 +1,12 @@
 ﻿namespace OrderService.Domain.Enum
 {
-    public enum OrderStatus
+    public enum OrderStatus : byte
     {
-        Submitted = 1,
-        AwaitingValidation = 2,
-        StockConfirmed = 3,
-        Paid = 4,
-        Shipped = 5,
-        Cancelled = 6
+        Submitted = 0,
+        AwaitingValidation = 1,
+        StockConfirmed = 2,
+        Paid = 3,
+        Shipped = 4,
+        Cancelled = 5
     }
 }

@@ -27,7 +27,7 @@ namespace ProductService.Application.Queries.Products.GetAllActiveProducts
             GetAllActiveProductQuery request, CancellationToken cancellationToken)
         {
             IQueryable<Product> query = _productRepository.AsQueryable().Include(p => p.ProductImages)
-                .Where(p => p.IsActive).AsNoTracking();
+                .Include(p => p.ProductSpecs).Where(p => p.IsActive).AsNoTracking();
 
             int totalCount = await query.CountAsync(cancellationToken);
 

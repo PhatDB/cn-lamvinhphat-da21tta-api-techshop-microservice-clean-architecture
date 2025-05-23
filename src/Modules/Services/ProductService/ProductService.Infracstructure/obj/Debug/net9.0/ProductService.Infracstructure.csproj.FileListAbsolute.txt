@@ -34,3 +34,5 @@ D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src
 D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\ProductService\ProductService.Infracstructure\obj\Debug\net9.0\refint\ProductService.Infracstructure.dll
 D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\ProductService\ProductService.Infracstructure\obj\Debug\net9.0\ProductService.Infracstructure.pdb
 D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\ProductService\ProductService.Infracstructure\obj\Debug\net9.0\ref\ProductService.Infracstructure.dll
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\ProductService\ProductService.Infracstructure\bin\Debug\net9.0\ProductService.Application.dll
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\ProductService\ProductService.Infracstructure\bin\Debug\net9.0\ProductService.Application.pdb

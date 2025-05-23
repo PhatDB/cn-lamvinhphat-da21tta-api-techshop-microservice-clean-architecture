@@ -5,7 +5,7 @@ namespace CartService.Application.Abstractions
 {
     public interface ICartService
     {
-        Task<Result> IsUserExist(int userId);
-        Task<Result<ProductInfoResponse>> GetProductInfo(int userId);
+        Task<Result> IsCustomerExist(int customerId);
+        Task<Result<ProductInfoResponse>> GetProductInfo(int customerId);
     }
 }

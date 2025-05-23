@@ -7,23 +7,29 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CartService.Infrastructure.Consumers
 {
-    public class OrderSummitConsumer : IConsumer<OrderSummit>
+    public class OrderCreatedConsumer : IConsumer<OrderCreated>
     {
         private readonly ICartRepository _cartRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public OrderSummitConsumer(ICartRepository cartRepository, IUnitOfWork unitOfWork)
+        public OrderCreatedConsumer(ICartRepository cartRepository, IUnitOfWork unitOfWork)
         {
             _cartRepository = cartRepository;
             _unitOfWork = unitOfWork;
         }
 
-        public async Task Consume(ConsumeContext<OrderSummit> context)
+        public async Task Consume(ConsumeContext<OrderCreated> context)
         {
-            Cart? cartResult = await _cartRepository.AsQueryable().Include(c => c.CartItems).Where(c => c.UserId == context.Message.UserId).FirstOrDefaultAsync();
+            int cartId = context.Message.CartId;
 
-            await _cartRepository.DeleteAsync(cartResult);
-            await _unitOfWork.SaveChangesAsync();
+            Cart? cart = await _cartRepository.AsQueryable().Include(c => c.CartItems)
+                .FirstOrDefaultAsync(c => c.Id == cartId);
+
+            if (cart != null)
+            {
+                await _cartRepository.DeleteAsync(cart);
+                await _unitOfWork.SaveChangesAsync();
+            }
         }
     }
 }

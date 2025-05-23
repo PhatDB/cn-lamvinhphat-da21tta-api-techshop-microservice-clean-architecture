@@ -28,7 +28,7 @@ namespace ProductService.Application.Queries.Products.GetActiveProductByBrandId
             GetActiveProductByBrandIdQuery request, CancellationToken cancellationToken)
         {
             IQueryable<Product> query = _productRepository.AsQueryable().Include(p => p.ProductImages)
-                .Where(p => p.BrandId == request.BrandId && p.IsActive).AsNoTracking();
+                .Include(p => p.ProductSpecs).Where(p => p.BrandId == request.BrandId && p.IsActive).AsNoTracking();
 
             int totalCount = await query.CountAsync(cancellationToken);
 

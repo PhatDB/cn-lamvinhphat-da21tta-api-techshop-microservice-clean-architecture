@@ -9,6 +9,7 @@
       "ProductService.Infracstructure/1.0.0": {
         "dependencies": {
           "BuildingBlocks": "1.0.0",
+          "ProductService.Application": "1.0.0",
           "ProductService.Domain": "1.0.0"
         },
         "runtime": {
@@ -1129,6 +1130,17 @@
           }
         }
       },
+      "ProductService.Application/1.0.0": {
+        "dependencies": {
+          "ProductService.Domain": "1.0.0"
+        },
+        "runtime": {
+          "ProductService.Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "ProductService.Domain/1.0.0": {
         "dependencies": {
           "BuildingBlocks": "1.0.0"
@@ -1940,6 +1952,11 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "BuildingBlocks/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ProductService.Application/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

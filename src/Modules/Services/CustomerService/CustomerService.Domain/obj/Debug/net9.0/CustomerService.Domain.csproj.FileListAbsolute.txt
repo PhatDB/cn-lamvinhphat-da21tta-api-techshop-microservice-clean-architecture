@@ -1,0 +1,16 @@
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CustomerService\CustomerService.Domain\bin\Debug\net9.0\CustomerService.Domain.deps.json
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CustomerService\CustomerService.Domain\bin\Debug\net9.0\CustomerService.Domain.dll
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CustomerService\CustomerService.Domain\bin\Debug\net9.0\CustomerService.Domain.pdb
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CustomerService\CustomerService.Domain\bin\Debug\net9.0\BuildingBlocks.dll
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CustomerService\CustomerService.Domain\bin\Debug\net9.0\BuildingBlocks.pdb
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CustomerService\CustomerService.Domain\obj\Debug\net9.0\CustomerService.Domain.csproj.AssemblyReference.cache
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CustomerService\CustomerService.Domain\obj\Debug\net9.0\CustomerService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CustomerService\CustomerService.Domain\obj\Debug\net9.0\CustomerService.Domain.AssemblyInfoInputs.cache
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CustomerService\CustomerService.Domain\obj\Debug\net9.0\CustomerService.Domain.AssemblyInfo.cs
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CustomerService\CustomerService.Domain\obj\Debug\net9.0\CustomerService.Domain.csproj.CoreCompileInputs.cache
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CustomerService\CustomerService.Domain\obj\Debug\net9.0\CustomerService.Domain.sourcelink.json
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CustomerService\CustomerService.Domain\obj\Debug\net9.0\Customer.323AF2CD.Up2Date
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CustomerService\CustomerService.Domain\obj\Debug\net9.0\CustomerService.Domain.dll
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CustomerService\CustomerService.Domain\obj\Debug\net9.0\refint\CustomerService.Domain.dll
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CustomerService\CustomerService.Domain\obj\Debug\net9.0\CustomerService.Domain.pdb
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CustomerService\CustomerService.Domain\obj\Debug\net9.0\ref\CustomerService.Domain.dll

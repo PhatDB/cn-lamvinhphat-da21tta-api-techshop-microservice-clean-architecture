@@ -26,8 +26,8 @@ namespace ProductService.Api.Endpoint.Products
                 {
                     UpdateProductCommand command = new(productId, request.ProductName, request.Price, request.Stock,
                         request.CategoryId, request.BrandId, request.Discount, request.SoldQuantity, request.IsActive,
-                        request.IsFeatured, request.Description, request.Specs, request.NewImages,
-                        request.ImageIdsToRemove);
+                        request.IsFeatured, request.Description, request.Specs, request.ProductSpecs, request.NewImages,
+                        request.SpecIdsToRemove, request.ImageIdsToRemove);
 
                     Result result = await sender.Send(command);
                     return result.Match(Results.NoContent, CustomResults.Problem);
@@ -55,7 +55,9 @@ namespace ProductService.Api.Endpoint.Products
             bool? IsFeatured,
             string? Description,
             string? Specs,
-            List<ProductImageDto>? NewImages = null,
-            List<int>? ImageIdsToRemove = null);
+            List<ProductSpecDto>? ProductSpecs,
+            List<ProductImageDto>? NewImages,
+            List<int>? SpecIdsToRemove,
+            List<int>? ImageIdsToRemove);
     }
 }

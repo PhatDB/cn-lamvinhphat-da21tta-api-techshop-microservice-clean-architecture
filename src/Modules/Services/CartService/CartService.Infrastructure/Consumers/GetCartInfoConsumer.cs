@@ -16,24 +16,24 @@ namespace CartService.Infrastructure.Consumers
 
         public async Task Consume(ConsumeContext<GetCartInfo> context)
         {
-            var cartInfo = await _cartRepository.AsQueryable().Where(c => c.UserId == context.Message.UserId).Select(c => new
-            {
-                c.Id,
-                c.UserId,
-                CartItems = c.CartItems.Select(item => new CartItemDTO
+            var cartInfo = await _cartRepository.AsQueryable().Include(c => c.CartItems)
+                .Where(c => c.Id == context.Message.CartId).Select(c => new
                 {
-                    ProductId = item.ProductId,
-                    Quantity = item.Quantity,
-                    UnitPrice = item.UnitPrice,
-                    ProductName = item.ProductName,
-                    ImgUrl = item.ImgUrl
-                }).ToList()
-            }).FirstOrDefaultAsync();
+                    c.Id,
+                    c.CustomerId,
+                    CartItems = c.CartItems.Select(item => new CartItemDTO
+                    {
+                        ProductId = item.ProductId, Quantity = item.Quantity, Price = item.Price
+                    }).ToList()
+                }).FirstOrDefaultAsync();
 
             if (cartInfo == null)
+            {
                 await context.RespondAsync(new GetCartInfoResponse(0, 0, new List<CartItemDTO>()));
-            else
-                await context.RespondAsync(new GetCartInfoResponse(cartInfo.Id, cartInfo.UserId, cartInfo.CartItems));
+                return;
+            }
+
+            await context.RespondAsync(new GetCartInfoResponse(cartInfo.Id, cartInfo.CustomerId, cartInfo.CartItems));
         }
     }
 }

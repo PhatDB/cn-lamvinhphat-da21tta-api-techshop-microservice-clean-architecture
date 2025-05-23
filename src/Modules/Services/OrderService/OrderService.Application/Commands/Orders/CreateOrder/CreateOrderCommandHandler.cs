@@ -2,11 +2,13 @@
 using BuildingBlocks.Contracts.Carts;
 using BuildingBlocks.Contracts.Orders;
 using BuildingBlocks.CQRS;
+using BuildingBlocks.Error;
 using BuildingBlocks.Results;
 using MassTransit;
 using OrderService.Application.Abstractions;
 using OrderService.Domain.Abstractions.Repositories;
-using Order = OrderService.Domain.Entities.Order;
+using OrderService.Domain.Entities;
+using OrderService.Domain.Enum;
 
 namespace OrderService.Application.Commands.Orders.CreateOrder
 {
@@ -29,28 +31,32 @@ namespace OrderService.Application.Commands.Orders.CreateOrder
 
         public async Task<Result<int>> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
         {
-            Result<GetCartInfoResponse> cartResult = await _orderService.GetCartInfo(request.UserId);
+            Result<GetCartInfoResponse> cartResult = await _orderService.GetCartInfo(request.CartId);
             if (cartResult.IsFailure)
                 return Result.Failure<int>(cartResult.Error);
 
-            GetCartInfoResponse cart = cartResult.Value;
+            GetCartInfoResponse cart = cartResult.Value!;
+            if (!cart.CartItems.Any())
+                return Result.Failure<int>(Error.Validation("Cart.Empty", "Cart does not contain any items."));
 
-            Result userResult = await _orderService.IsUserExist(request.UserId);
-            if (userResult.IsFailure)
-                return Result.Failure<int>(userResult.Error);
+            decimal totalAmount = cart.CartItems.Sum(ci => ci.Price * ci.Quantity);
 
-            Order order = new(request.UserId, request.Street, request.City, request.District, request.Ward,
-                request.ZipCode, request.PhoneNumber, request.BuyerName);
+            Result<Order> orderResult = Order.Create(cart.CustomerId, (byte)OrderStatus.Submitted, totalAmount);
+            if (orderResult.IsFailure)
+                return Result.Failure<int>(orderResult.Error);
 
-            foreach (CartItemDTO cartItem in cart.CartItems)
+            Order order = orderResult.Value;
 
-                order.AddItem(cartItem.ProductId, cartItem.Quantity, cartItem.ProductName, cartItem.UnitPrice);
+            foreach (CartItemDTO item in cart.CartItems)
+                order.AddItem(item.ProductId, item.Quantity, item.Price);
 
             await _orderRepository.AddAsync(order, cancellationToken);
-
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-            await _publishEndpoint.Publish(new OrderSummit(request.UserId), cancellationToken);
+            OrderCreated orderCreated = new(order.Id, order.CustomerId, request.CartId,
+                cart.CartItems.Select(ci => new OrderItemInfo(ci.ProductId, ci.Quantity, ci.Price)).ToList());
+
+            await _publishEndpoint.Publish(orderCreated, cancellationToken);
 
             return Result.Success(order.Id);
         }

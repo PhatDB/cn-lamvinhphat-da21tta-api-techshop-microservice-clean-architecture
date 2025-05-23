@@ -38,7 +38,8 @@ namespace ProductService.Application.Queries.Products.GetActiveProductByCategory
             relativeCategoryId.Add(request.CategoryId);
 
             IQueryable<Product> query = _productRepository.AsQueryable().Include(p => p.ProductImages)
-                .Where(p => relativeCategoryId.Contains(p.CategoryId) && p.IsActive).AsNoTracking();
+                .Include(p => p.ProductSpecs).Where(p => relativeCategoryId.Contains(p.CategoryId) && p.IsActive)
+                .AsNoTracking();
 
             int totalCount = await query.CountAsync(cancellationToken);
 

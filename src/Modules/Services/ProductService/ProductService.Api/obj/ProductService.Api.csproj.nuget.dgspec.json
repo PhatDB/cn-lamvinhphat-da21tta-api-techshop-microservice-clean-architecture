@@ -394,6 +394,9 @@
               "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
                 "projectPath": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj"
               },
+              "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\ProductService\\ProductService.Application\\ProductService.Application.csproj": {
+                "projectPath": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\ProductService\\ProductService.Application\\ProductService.Application.csproj"
+              },
               "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\ProductService\\ProductService.Domain\\ProductService.Domain.csproj": {
                 "projectPath": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\ProductService\\ProductService.Domain\\ProductService.Domain.csproj"
               }

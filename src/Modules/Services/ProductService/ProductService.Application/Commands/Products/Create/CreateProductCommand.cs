@@ -12,5 +12,6 @@ namespace ProductService.Application.Commands.Products.Create
         int Stock,
         string? Description,
         string? Specs,
+        List<ProductSpecDto> ProductSpecs,
         List<ProductImageDto> Images) : ICommand<int>;
 }

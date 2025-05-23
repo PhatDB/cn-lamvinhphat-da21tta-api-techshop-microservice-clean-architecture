@@ -35,6 +35,8 @@ namespace ProductService.Application.Commands.Products.Create
 
             List<ProductImage> productImages = new();
 
+            List<ProductSpec> productSpecs = new();
+
             foreach (ProductImageDto imageDto in request.Images)
             {
                 string imageUrl = await _fileService.UploadFile(imageDto.ImageContent, AssetType.PRODUCT_IMAGE);
@@ -46,10 +48,23 @@ namespace ProductService.Application.Commands.Products.Create
                 productImages.Add(imageResult.Value);
             }
 
+            foreach (ProductSpecDto productSpec in request.ProductSpecs)
+            {
+                Result<ProductSpec> productSpecResult =
+                    ProductSpec.Create(product.Id, productSpec.SpecName, productSpec.SpecValue);
+
+                if (productSpecResult.IsFailure) return Result.Failure<int>(productSpecResult.Error);
+                productSpecs.Add(productSpecResult.Value);
+            }
+
             Result addImageResult = product.CreateProductImages(productImages);
+            Result addProductSpecResult = product.CreateProductSpecs(productSpecs);
 
             if (addImageResult.IsFailure)
                 return Result.Failure<int>(addImageResult.Error);
+
+            if (addProductSpecResult.IsFailure)
+                return Result.Failure<int>(addProductSpecResult.Error);
 
             await _productRepository.AddAsync(product, cancellationToken);
             await _unitOfWork.SaveChangesAsync(cancellationToken);

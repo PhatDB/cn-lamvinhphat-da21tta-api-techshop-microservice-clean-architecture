@@ -4,20 +4,24 @@ namespace OrderService.Domain.Entities
 {
     public class OrderItem : Entity
     {
-        public OrderItem(int productId, int quantity, string productName, decimal unitPrice)
+        private OrderItem(int orderId, int productId, int quantity, decimal price)
         {
+            OrderId = orderId;
             ProductId = productId;
             Quantity = quantity;
-            ProductName = productName;
-            UnitPrice = unitPrice;
-            TotalPrice = quantity * unitPrice;
+            Price = price;
         }
 
         public int OrderId { get; private set; }
         public int ProductId { get; private set; }
-        public int Quantity { get; private set; }
-        public string ProductName { get; private set; }
-        public decimal UnitPrice { get; private set; }
-        public decimal TotalPrice { get; private set; }
+        public int Quantity { get; }
+        public decimal Price { get; }
+
+        public decimal TotalPrice => Price * Quantity;
+
+        public static OrderItem Create(int orderId, int productId, int quantity, decimal price)
+        {
+            return new OrderItem(orderId, productId, quantity, price);
+        }
     }
 }

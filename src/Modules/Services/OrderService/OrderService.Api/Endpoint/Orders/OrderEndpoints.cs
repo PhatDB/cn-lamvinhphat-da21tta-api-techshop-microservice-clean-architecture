@@ -25,7 +25,8 @@ namespace OrderService.Api.Endpoint.Orders
             {
                 Result<int> result = await sender.Send(command);
 
-                return result.Match(success => Results.Ok(new { OrderId = success }), failure => Results.BadRequest(new { failure.Error }));
+                return result.Match(success => Results.Ok(new { OrderId = success }),
+                    failure => Results.BadRequest(new { failure.Error }));
             }).WithName("CreateOrder").WithTags("Orders");
 
             app.MapPost("/order/paid", async (SetPaidOrderCommand command, ISender sender) =>
@@ -42,7 +43,7 @@ namespace OrderService.Api.Endpoint.Orders
 
             app.MapGet("/orders/{userId}", async (int userId, ISender sender, CancellationToken cancellationToken) =>
             {
-                GetOrderByUserIdQuery query = new(userId);
+                GetOrderByCustomerIdQuery query = new(userId);
                 Result<OrderDTO> result = await sender.Send(query, cancellationToken);
 
                 return result.Match(success => Results.Ok(success), failure => CustomResults.Problem(failure));

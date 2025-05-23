@@ -9,31 +9,27 @@ namespace CartService.Domain.Entities
     {
         private readonly List<CartItem> _cartItems;
 
-        private Cart()
+        public Cart(int customerId)
         {
+            CustomerId = customerId;
+            CreatedAt = DateTime.UtcNow;
             _cartItems = new List<CartItem>();
         }
 
-        public Cart(int userId) : this()
-        {
-            UserId = userId;
-            CreatedAt = DateTime.UtcNow;
-        }
-
-        public int UserId { get; private set; }
+        public int CustomerId { get; private set; }
         public DateTime CreatedAt { get; private set; }
 
         public IReadOnlyCollection<CartItem> CartItems => _cartItems.AsReadOnly();
 
-        public static Result<Cart> Create(int userId)
+        public static Result<Cart> Create(int customerId)
         {
-            if (userId <= 0)
+            if (customerId <= 0)
                 return Result.Failure<Cart>(CartError.UserIdIsInvalid);
 
-            return Result.Success(new Cart(userId));
+            return Result.Success(new Cart(customerId));
         }
 
-        public Result AddItem(int productId, string productName, string imgUrl, int quantity, decimal unitPrice)
+        public Result AddItem(int productId, int quantity, decimal price)
         {
             if (quantity <= 0)
                 return Result.Failure(CartError.InvalidQuantity);
@@ -45,7 +41,7 @@ namespace CartService.Domain.Entities
                 return Result.Success();
             }
 
-            Result<CartItem> createResult = CartItem.Create(Id, productId, productName, imgUrl, quantity, unitPrice);
+            Result<CartItem> createResult = CartItem.Create(Id, productId, quantity, price);
             if (createResult.IsFailure)
                 return Result.Failure(createResult.Error);
 
@@ -53,7 +49,7 @@ namespace CartService.Domain.Entities
             return Result.Success();
         }
 
-        public Result AddOrUpdateItem(int productId, string productName, string imgUrl, int quantity, decimal unitPrice)
+        public Result AddOrUpdateItem(int productId, int quantity, decimal price)
         {
             if (quantity <= 0)
                 return Result.Failure(CartError.InvalidQuantity);
@@ -65,7 +61,7 @@ namespace CartService.Domain.Entities
                 return Result.Success();
             }
 
-            Result<CartItem> createResult = CartItem.Create(Id, productId, productName, imgUrl, quantity, unitPrice);
+            Result<CartItem> createResult = CartItem.Create(Id, productId, quantity, price);
             if (createResult.IsFailure)
                 return Result.Failure(createResult.Error);
 

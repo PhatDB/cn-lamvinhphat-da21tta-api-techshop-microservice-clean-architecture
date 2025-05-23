@@ -1,4 +1,4 @@
-﻿/*using BuildingBlocks.Contracts.Products;
+﻿using BuildingBlocks.Contracts.Products;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using ProductService.Domain.Abstractions.Repositories;
@@ -6,7 +6,7 @@ using ProductService.Domain.Entities;
 
 namespace ProductService.Infracstructure.Consumers
 {
-    public class ProductInfoConsumer : IConsumer<GetProductInfo>
+    public class ProductInfoConsumer : IConsumer<GetProductInfoRequest>
     {
         private readonly IProductRepository _productRepository;
 
@@ -15,17 +15,27 @@ namespace ProductService.Infracstructure.Consumers
             _productRepository = productRepository;
         }
 
-        public async Task Consume(ConsumeContext<GetProductInfo> context)
+        public async Task Consume(ConsumeContext<GetProductInfoRequest> context)
         {
-            Product? product = await _productRepository.AsQueryable().AsNoTracking().Include(p => p.ProductImages).Include(p => p.Inventory)
-                .Where(p => p.Id == context.Message.ProductId).FirstOrDefaultAsync();
+            int productId = context.Message.ProductId;
 
-            if (product == null)
-                await context.RespondAsync(new ProductInfoResponse(0, "Product Not Found", 0, string.Empty, "No description available", 0));
-            else
-                await context.RespondAsync(new ProductInfoResponse(product.Id, product.Name, product.Price, product.ProductImages.FirstOrDefault()?.ImageUrl ?? string.Empty,
-                    product.Description, product.Inventory?.StockQuantity ?? 0));
+            Product? product = await _productRepository.AsQueryable().AsNoTracking().Include(p => p.ProductImages)
+                .FirstOrDefaultAsync(p => p.Id == productId);
+
+            if (product is null)
+            {
+                ProductInfoResponse notFoundResponse = new(0, string.Empty, null, 0, 0, 0);
+                await context.RespondAsync(notFoundResponse);
+                return;
+            }
+
+            string? mainImageUrl = product.ProductImages.FirstOrDefault(img => img.IsMain.HasValue && img.IsMain.Value)
+                ?.ImageUrl;
+
+            ProductInfoResponse response = new(product.Id, product.ProductName, mainImageUrl, product.Price,
+                product.Discount ?? 0, product.Stock);
+
+            await context.RespondAsync(response);
         }
     }
-}*/
-
+}

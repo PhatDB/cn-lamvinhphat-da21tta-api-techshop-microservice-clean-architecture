@@ -1,4 +1,4 @@
 ﻿namespace BuildingBlocks.Contracts.Users
 {
-    public record UserExistRequest(int UserId);
+    public record IsCustomerExistRequest(int CustomerId);
 }

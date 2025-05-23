@@ -8,13 +8,14 @@ namespace CartService.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Cart> builder)
         {
-            builder.ToTable("Cart");
+            builder.ToTable("cart");
 
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).HasColumnName("cart_id").IsRequired();
-            builder.Property(x => x.UserId).HasColumnName("user_id").IsRequired();
-            builder.Property(p => p.CreatedAt).HasColumnName("created_at").HasDefaultValueSql("GETDATE()").IsRequired();
-            builder.HasMany(c => c.CartItems).WithOne().HasForeignKey(ci => ci.CartId).OnDelete(DeleteBehavior.Cascade);
+
+            builder.Property(x => x.CustomerId).HasColumnName("customer_id").IsRequired();
+
+            builder.Property(p => p.CreatedAt).HasColumnName("created_at").IsRequired();
         }
     }
 }

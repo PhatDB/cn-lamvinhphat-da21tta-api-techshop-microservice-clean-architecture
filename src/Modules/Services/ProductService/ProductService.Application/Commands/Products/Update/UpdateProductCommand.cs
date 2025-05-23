@@ -16,6 +16,8 @@ namespace ProductService.Application.Commands.Products.Update
         bool? IsFeatured,
         string? Description,
         string? Specs,
-        List<ProductImageDto>? NewImages = null,
-        List<int>? ImageIdsToRemove = null) : ICommand;
+        List<ProductSpecDto>? ProductSpecs,
+        List<ProductImageDto>? NewImages,
+        List<int>? SpecIdsToRemove,
+        List<int>? ImageIdsToRemove) : ICommand;
 }

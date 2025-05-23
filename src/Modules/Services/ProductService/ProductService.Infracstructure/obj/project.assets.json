@@ -1980,6 +1980,19 @@
           "bin/placeholder/BuildingBlocks.dll": {}
         }
       },
+      "ProductService.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "ProductService.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ProductService.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProductService.Application.dll": {}
+        }
+      },
       "ProductService.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -5284,6 +5297,11 @@
       "path": "../../../BuildingBlocks/BuildingBlocks/BuildingBlocks.csproj",
       "msbuildProject": "../../../BuildingBlocks/BuildingBlocks/BuildingBlocks.csproj"
     },
+    "ProductService.Application/1.0.0": {
+      "type": "project",
+      "path": "../ProductService.Application/ProductService.Application.csproj",
+      "msbuildProject": "../ProductService.Application/ProductService.Application.csproj"
+    },
     "ProductService.Domain/1.0.0": {
       "type": "project",
       "path": "../ProductService.Domain/ProductService.Domain.csproj",
@@ -5293,6 +5311,7 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "BuildingBlocks >= 1.0.0",
+      "ProductService.Application >= 1.0.0",
       "ProductService.Domain >= 1.0.0"
     ]
   },
@@ -5331,6 +5350,9 @@
           "projectReferences": {
             "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
               "projectPath": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj"
+            },
+            "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\ProductService\\ProductService.Application\\ProductService.Application.csproj": {
+              "projectPath": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\ProductService\\ProductService.Application\\ProductService.Application.csproj"
             },
             "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\ProductService\\ProductService.Domain\\ProductService.Domain.csproj": {
               "projectPath": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\ProductService\\ProductService.Domain\\ProductService.Domain.csproj"

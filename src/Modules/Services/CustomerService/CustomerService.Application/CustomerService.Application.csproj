@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Folder Include="Commands\Customers\ResetPassword\"/>
+        <Folder Include="Commands\Customers\SendOTP\"/>
+        <Folder Include="Commands\Customers\UpdateCustomer\"/>
+        <Folder Include="MappingProfiles\"/>
+        <Folder Include="Queries\"/>
+        <Folder Include="Validations\"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="BCrypt.Net-Next" Version="4.0.3"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.0-preview.1.25080.5"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\CustomerService.Domain\CustomerService.Domain.csproj"/>
+    </ItemGroup>
+
+</Project>

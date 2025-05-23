@@ -9,6 +9,7 @@ namespace ProductService.Domain.Entities
     public class Product : Entity, IAggregateRoot
     {
         private readonly List<ProductImage> _productImages;
+        private readonly List<ProductSpec> _productSpecs;
 
         private Product(
             string productName, int categoryId, int brandId, decimal price, decimal? discount, int stock,
@@ -27,6 +28,7 @@ namespace ProductService.Domain.Entities
             SoldQuantity = 0;
             CreatedAt = DateTime.UtcNow;
             _productImages = new List<ProductImage>();
+            _productSpecs = new List<ProductSpec>();
         }
 
         private Product()
@@ -46,6 +48,7 @@ namespace ProductService.Domain.Entities
         public int SoldQuantity { get; private set; }
         public DateTime CreatedAt { get; private set; }
         public IReadOnlyCollection<ProductImage> ProductImages => _productImages.AsReadOnly();
+        public IReadOnlyCollection<ProductSpec> ProductSpecs => _productSpecs.AsReadOnly();
 
         // Create Product
         public static Result<Product> Create(
@@ -84,7 +87,7 @@ namespace ProductService.Domain.Entities
             Discount = discount ?? Discount;
             Stock = stock ?? Stock;
             Description = description?.Trim() ?? Description;
-            Specs = specs?.Trim() ?? Specs;
+            Specs = specs?.Trim() ?? string.Empty;
             SoldQuantity = soldQuantity ?? SoldQuantity;
             IsActive = isActive ?? IsActive;
             IsFeatured = isFeatured ?? IsFeatured;
@@ -119,6 +122,17 @@ namespace ProductService.Domain.Entities
             return Result.Success();
         }
 
+        // Create Product Specs
+        public Result CreateProductSpecs(List<ProductSpec> productSpecs)
+        {
+            if (!productSpecs.Any())
+                return Result.Failure(ProductSpecError.ProductSpecsNull);
+
+            foreach (ProductSpec productSpec in productSpecs) _productSpecs.Add(productSpec);
+
+            return Result.Success();
+        }
+
         // Delete Product Image
         public Result DeleteProductImages(IEnumerable<int> imageIds)
         {
@@ -130,6 +144,24 @@ namespace ProductService.Domain.Entities
             foreach (ProductImage image in imagesToRemove) _productImages.Remove(image);
 
             return Result.Success();
+        }
+
+        public Result DeleteProductSpec(IEnumerable<int> productSpecIds)
+        {
+            List<ProductSpec> productSpecToRemove =
+                _productSpecs.Where(spec => productSpecIds.Contains(spec.Id)).ToList();
+
+            if (!productSpecToRemove.Any())
+                return Result.Failure(ProductSpecError.ProductSpecsNotFound);
+
+            foreach (ProductSpec spec in productSpecToRemove) _productSpecs.Remove(spec);
+
+            return Result.Success();
+        }
+
+        public void UpdateSoldQuantity(int quantity)
+        {
+            SoldQuantity += quantity;
         }
     }
 }

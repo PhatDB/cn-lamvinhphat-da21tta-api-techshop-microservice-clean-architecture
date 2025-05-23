@@ -14,7 +14,6 @@ namespace ProductService.Persistence
         public DbSet<Category> Categories { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<Brand> Brands { get; set; }
-        public DbSet<CategoryBrand> CategoryBrands { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

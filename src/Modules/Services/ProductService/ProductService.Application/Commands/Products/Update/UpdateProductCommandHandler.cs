@@ -29,7 +29,7 @@ namespace ProductService.Application.Commands.Products.Update
         public async Task<Result> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
         {
             Product? product = await _productRepository.AsQueryable().Include(p => p.ProductImages)
-                .FirstOrDefaultAsync(p => p.Id == request.ProductId, cancellationToken);
+                .Include(p => p.ProductSpecs).FirstOrDefaultAsync(p => p.Id == request.ProductId, cancellationToken);
 
             if (product is null)
                 return Result.Failure(ProductError.ProductNotFound);
@@ -78,6 +78,23 @@ namespace ProductService.Application.Commands.Products.Update
                 Result imageAddResult = product.CreateProductImages(productImages);
                 if (imageAddResult.IsFailure)
                     return imageAddResult;
+            }
+
+            if (request.ProductSpecs is { Count: > 0 })
+            {
+                List<ProductSpec> newSpecs = request.ProductSpecs.Select(spec =>
+                    ProductSpec.Create(product.Id, spec.SpecName, spec.SpecValue).Value).ToList();
+
+                Result specResult = product.CreateProductSpecs(newSpecs);
+                if (specResult.IsFailure)
+                    return specResult;
+            }
+
+            if (request.SpecIdsToRemove is { Count: > 0 })
+            {
+                Result removeResult = product.DeleteProductSpec(request.SpecIdsToRemove);
+                if (removeResult.IsFailure)
+                    return removeResult;
             }
 
             await _productRepository.UpdateAsync(product, cancellationToken);
