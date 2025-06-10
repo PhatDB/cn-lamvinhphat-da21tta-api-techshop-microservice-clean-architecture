@@ -6,6 +6,7 @@ namespace CartService.Domain.Abstractions.Repositories
 {
     public interface ICartRepository : IGenericRepository<Cart>
     {
-        Task<Result<Cart>> GetUserCartAsync(int userId, CancellationToken cancellationToken = default);
+        Task<Result<Cart>> GetCartAsync(
+            int? customerId, string? sessionId, CancellationToken cancellationToken = default);
     }
 }

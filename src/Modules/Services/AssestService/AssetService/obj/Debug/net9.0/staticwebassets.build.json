@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BWiz8co1ilQgBm4gsr039zoRPE9N97pXDvu0fDAkcRE=",
+  "Hash": "uin4dApTxWMhO8kKpu3ZeqStxAeZEV5yjodj6rCc1/4=",
   "Source": "AssetService",
   "BasePath": "_content/AssetService",
   "Mode": "Default",
@@ -1233,6 +1233,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\product\\product_1747650230305.webp"
+    },
+    {
+      "Identity": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1749390976908.webp",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/product/product_1749390976908#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "y3eu4809mw",
+      "Integrity": "EnnYe7yh6Y73rPSErqata7eY1QL7T7i+ctW2tY2pCc0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1749390976908.webp"
+    },
+    {
+      "Identity": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1749446223442.webp",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/product/product_1749446223442#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "g45s99i6mj",
+      "Integrity": "EOq+9vu+3xnOgmiMCSG+ApzTLiGac/n+pIi4Qacvets=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\product\\product_1749446223442.webp"
     }
   ],
   "Endpoints": [
@@ -5989,6 +6031,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-5KTOpgdo/7eoVcieaJY5+EdGFAIXpzHSUQCcsdfTlz4="
+        }
+      ]
+    },
+    {
+      "Route": "assets/product/product_1749390976908.webp",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1749390976908.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "144490"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EnnYe7yh6Y73rPSErqata7eY1QL7T7i+ctW2tY2pCc0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 08 Jun 2025 13:56:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-EnnYe7yh6Y73rPSErqata7eY1QL7T7i+ctW2tY2pCc0="
+        }
+      ]
+    },
+    {
+      "Route": "assets/product/product_1749390976908.y3eu4809mw.webp",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1749390976908.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "144490"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EnnYe7yh6Y73rPSErqata7eY1QL7T7i+ctW2tY2pCc0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 08 Jun 2025 13:56:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "y3eu4809mw"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/product/product_1749390976908.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-EnnYe7yh6Y73rPSErqata7eY1QL7T7i+ctW2tY2pCc0="
+        }
+      ]
+    },
+    {
+      "Route": "assets/product/product_1749446223442.g45s99i6mj.webp",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1749446223442.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17962"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EOq+9vu+3xnOgmiMCSG+ApzTLiGac/n+pIi4Qacvets=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 09 Jun 2025 05:17:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "g45s99i6mj"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/product/product_1749446223442.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-EOq+9vu+3xnOgmiMCSG+ApzTLiGac/n+pIi4Qacvets="
+        }
+      ]
+    },
+    {
+      "Route": "assets/product/product_1749446223442.webp",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1749446223442.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17962"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EOq+9vu+3xnOgmiMCSG+ApzTLiGac/n+pIi4Qacvets=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 09 Jun 2025 05:17:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-EOq+9vu+3xnOgmiMCSG+ApzTLiGac/n+pIi4Qacvets="
         }
       ]
     }

@@ -18,6 +18,5 @@ namespace ProductService.Application.Commands.Products.Update
         string? Specs,
         List<ProductSpecDto>? ProductSpecs,
         List<ProductImageDto>? NewImages,
-        List<int>? SpecIdsToRemove,
         List<int>? ImageIdsToRemove) : ICommand;
 }

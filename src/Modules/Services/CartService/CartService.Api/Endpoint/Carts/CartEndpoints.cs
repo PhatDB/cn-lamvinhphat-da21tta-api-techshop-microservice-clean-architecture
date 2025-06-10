@@ -42,6 +42,15 @@ namespace CartService.Api.Endpoint.Carts
                 Result result = await sender.Send(command);
                 return result.Match(Results.NoContent, CustomResults.Problem);
             }).WithName("ClearCart").WithTags("Cart");
+
+            app.MapGet("/cart/session/{sessionId}", async (
+                string sessionId, ISender sender, CancellationToken cancellationToken) =>
+            {
+                GetCartBySessionIdQuery query = new(sessionId);
+                Result<CartDTO> result = await sender.Send(query, cancellationToken);
+
+                return result.Match(success => Results.Ok(success), failure => Results.NotFound(failure.Error));
+            }).WithName("GetCartBySessionId").WithTags("Cart");
         }
     }
 }

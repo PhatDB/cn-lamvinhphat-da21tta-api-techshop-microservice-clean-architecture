@@ -33,7 +33,8 @@ namespace CartService.Infrastructure.Consumers
                 return;
             }
 
-            await context.RespondAsync(new GetCartInfoResponse(cartInfo.Id, cartInfo.CustomerId, cartInfo.CartItems));
+            await context.RespondAsync(new GetCartInfoResponse(cartInfo.Id, cartInfo.CustomerId.Value,
+                cartInfo.CartItems));
         }
     }
 }

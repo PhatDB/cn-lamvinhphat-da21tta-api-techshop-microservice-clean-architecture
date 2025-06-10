@@ -58,7 +58,8 @@ namespace ProductService.Application.Commands.Products.Update
                     return removeResult;
             }
 
-            if (request.NewImages is { Count: > 0 })
+            if (request.NewImages is { Count: > 0 } &&
+                !request.NewImages.Any(x => string.IsNullOrWhiteSpace(x.ImageContent)))
             {
                 List<ProductImage> productImages = new();
 
@@ -82,19 +83,21 @@ namespace ProductService.Application.Commands.Products.Update
 
             if (request.ProductSpecs is { Count: > 0 })
             {
-                List<ProductSpec> newSpecs = request.ProductSpecs.Select(spec =>
-                    ProductSpec.Create(product.Id, spec.SpecName, spec.SpecValue).Value).ToList();
+                List<ProductSpec> newSpecs = new();
 
-                Result specResult = product.CreateProductSpecs(newSpecs);
-                if (specResult.IsFailure)
-                    return specResult;
-            }
+                foreach (ProductSpecDto specDto in request.ProductSpecs)
+                {
+                    Result<ProductSpec> specResult =
+                        ProductSpec.Create(product.Id, specDto.SpecName, specDto.SpecValue);
+                    if (specResult.IsFailure)
+                        return Result.Failure(specResult.Error);
 
-            if (request.SpecIdsToRemove is { Count: > 0 })
-            {
-                Result removeResult = product.DeleteProductSpec(request.SpecIdsToRemove);
-                if (removeResult.IsFailure)
-                    return removeResult;
+                    newSpecs.Add(specResult.Value);
+                }
+
+                Result replaceSpecResult = product.ReplaceProductSpecs(newSpecs);
+                if (replaceSpecResult.IsFailure)
+                    return replaceSpecResult;
             }
 
             await _productRepository.UpdateAsync(product, cancellationToken);

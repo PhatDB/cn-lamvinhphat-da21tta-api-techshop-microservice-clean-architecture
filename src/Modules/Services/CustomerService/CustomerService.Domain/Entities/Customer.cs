@@ -143,6 +143,11 @@ namespace CustomerService.Domain.Entities
             return Result.Success();
         }
 
+        public void ActivateCustomer()
+        {
+            Status = true;
+        }
+
         public void UpdateOTP()
         {
             Otp = GenerateOTP();

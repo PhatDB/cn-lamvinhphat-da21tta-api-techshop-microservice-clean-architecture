@@ -9,6 +9,7 @@ using ProductService.Application.Queries.Products.GetActiveProductByName;
 using ProductService.Application.Queries.Products.GetActiveProductDetail;
 using ProductService.Application.Queries.Products.GetActiveProductFilter;
 using ProductService.Application.Queries.Products.GetAllActiveProducts;
+using ProductService.Application.Queries.Products.GetAllProducts;
 
 namespace ProductService.Api.Endpoint.Products
 {
@@ -16,7 +17,6 @@ namespace ProductService.Api.Endpoint.Products
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            // Get All Products With PaginationOption
             app.MapGet("/products", async (
                 int? pageNumber, int? pageSize, string? sortBy, bool? isDescending, ISender sender,
                 CancellationToken cancellationToken) =>
@@ -27,7 +27,15 @@ namespace ProductService.Api.Endpoint.Products
 
                 Result<PagedResult<GetAllProductDTO>> result = await sender.Send(query, cancellationToken);
                 return result.Match(success => Results.Ok(success), failure => CustomResults.Problem(failure));
-            }).WithTags("Product").WithName("GetAllProducts").Produces<PagedResult<GetAllProductDTO>>();
+            }).WithTags("Product").WithName("GetAllActiveProducts").Produces<PagedResult<GetAllProductDTO>>();
+
+            // Get All Products
+            app.MapGet("/products/admin", async (ISender sender, CancellationToken cancellationToken) =>
+            {
+                Result<List<GetAllProductDTO>> result = await sender.Send(new GetAllProductQuery(), cancellationToken);
+
+                return result.Match(success => Results.Ok(success), failure => CustomResults.Problem(failure));
+            }).WithTags("Product").WithName("GetAllProduct").Produces<GetAllProductDTO>();
 
             // Get Products By Name
             app.MapGet("/products/{name}", async (
@@ -64,7 +72,8 @@ namespace ProductService.Api.Endpoint.Products
                     Result<ProductDetailDTO> result = await sender.Send(query, cancellationToken);
 
                     return result.Match(success => Results.Ok(success), failure => CustomResults.Problem(failure));
-                }).WithTags("Product").WithName("GetProductDetail");
+                }).WithTags("Product").WithName("GetProductDetail").Produces<ProductDetailDTO>();
+            ;
 
             // Get Product By CategoryId
             app.MapGet("products/category/{categoryId:int}", async (

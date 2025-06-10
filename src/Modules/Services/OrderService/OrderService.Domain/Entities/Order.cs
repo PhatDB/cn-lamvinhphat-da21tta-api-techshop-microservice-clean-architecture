@@ -10,37 +10,54 @@ namespace OrderService.Domain.Entities
     {
         private readonly List<OrderItem> _orderItems;
 
-        private Order(int customerId, OrderStatus status, decimal totalAmount)
+        private Order(
+            int? customerId, OrderStatus status, decimal totalAmount, string receiverName, string receiverPhone,
+            string receiverAddress, string? note, string? sessionId, PaymentMethod paymentMethod)
         {
             CustomerId = customerId;
-            Status = OrderStatus.Submitted;
-            CreatedAt = DateTime.UtcNow;
+            Status = status;
             TotalAmount = totalAmount;
+            CreatedAt = DateTime.UtcNow;
+            ReceiverName = receiverName;
+            ReceiverPhone = receiverPhone;
+            ReceiverAddress = receiverAddress;
+            Note = note;
+            SessionId = sessionId;
+            PaymentMethod = paymentMethod;
             _orderItems = new List<OrderItem>();
         }
 
-        public int CustomerId { get; private set; }
+        public int? CustomerId { get; private set; }
         public OrderStatus Status { get; private set; }
         public decimal TotalAmount { get; private set; }
         public DateTime CreatedAt { get; private set; }
 
+        public string ReceiverName { get; private set; }
+        public string ReceiverPhone { get; private set; }
+        public string ReceiverAddress { get; private set; }
+        public string? Note { get; private set; }
+        public string? SessionId { get; private set; }
+        public PaymentMethod PaymentMethod { get; }
+
         public IReadOnlyCollection<OrderItem> OrderItems => _orderItems.AsReadOnly();
 
-        public static Result<Order> Create(int customerId, OrderStatus status, decimal totalAmount)
+        public static Result<Order> Create(
+            int? customerId, OrderStatus status, decimal totalAmount, string receiverName, string receiverPhone,
+            string receiverAddress, string? note, string? sessionId, PaymentMethod paymentMethod)
         {
-            if (customerId <= 0)
-                return Result.Failure<Order>(Error.Validation("Order.InvalidCustomerId",
-                    "CustomerId must be greater than 0."));
-
             if (totalAmount < 0)
                 return Result.Failure<Order>(Error.Validation("Order.InvalidTotal",
                     "Total amount cannot be negative."));
 
-            Order order = new(customerId, status, totalAmount);
+            if (string.IsNullOrWhiteSpace(receiverName))
+                return Result.Failure<Order>(
+                    Error.Validation("Order.MissingReceiverName", "Receiver name is required."));
+
+            Order order = new(customerId, status, totalAmount, receiverName, receiverPhone, receiverAddress, note,
+                sessionId, paymentMethod);
 
             return Result.Success(order);
         }
-
 
         public void AddItem(int productId, int quantity, decimal price)
         {
@@ -53,56 +70,56 @@ namespace OrderService.Domain.Entities
             TotalAmount = _orderItems.Sum(i => i.TotalPrice);
         }
 
-        public void SetAwaitingValidationStatus()
+        public Result SetConfirmedStatus()
         {
-            if (Status == OrderStatus.Submitted)
-                Status = OrderStatus.AwaitingValidation;
-        }
+            if (Status != OrderStatus.AwaitingValidation)
+                return StatusChangeException(OrderStatus.Confirmed);
 
-        public void SetStockConfirmedStatus()
-        {
-            if (Status == OrderStatus.AwaitingValidation)
-                Status = OrderStatus.StockConfirmed;
+            Status = OrderStatus.Confirmed;
+            return Result.Success();
         }
 
         public Result SetPaidStatus()
         {
-            if (Status != OrderStatus.Submitted)
+            if (PaymentMethod != PaymentMethod.BankTransfer)
+                return Result.Failure(Error.Validation("Order.InvalidPaymentMethod",
+                    "Chỉ đơn hàng thanh toán chuyển khoản mới được đánh dấu là đã thanh toán."));
+
+            if (Status != OrderStatus.Confirmed)
                 return StatusChangeException(OrderStatus.Paid);
 
             Status = OrderStatus.Paid;
             return Result.Success();
         }
 
-        public Result SetShippedStatus()
+        public Result SetShippingStatus()
         {
-            if (Status != OrderStatus.Paid)
-                return StatusChangeException(OrderStatus.Shipped);
+            if (PaymentMethod == PaymentMethod.BankTransfer && Status != OrderStatus.Paid)
+                return StatusChangeException(OrderStatus.Shipping);
 
-            Status = OrderStatus.Shipped;
+            if (PaymentMethod == PaymentMethod.COD && Status != OrderStatus.Confirmed)
+                return StatusChangeException(OrderStatus.Shipping);
+
+            Status = OrderStatus.Shipping;
+            return Result.Success();
+        }
+
+        public Result SetDeliveredStatus()
+        {
+            if (Status != OrderStatus.Shipping)
+                return StatusChangeException(OrderStatus.Delivered);
+
+            Status = OrderStatus.Delivered;
             return Result.Success();
         }
 
         public Result SetCancelledStatus()
         {
-            if (Status == OrderStatus.Paid || Status == OrderStatus.Shipped)
+            if (Status == OrderStatus.Shipping || Status == OrderStatus.Delivered)
                 return StatusChangeException(OrderStatus.Cancelled);
 
             Status = OrderStatus.Cancelled;
             return Result.Success();
-        }
-
-        public void SetCancelledStatusWhenStockIsRejected(IEnumerable<int> rejectedProductIds)
-        {
-            if (Status == OrderStatus.AwaitingValidation)
-            {
-                Status = OrderStatus.Cancelled;
-
-                IEnumerable<int> rejectedItems = OrderItems.Where(i => rejectedProductIds.Contains(i.ProductId))
-                    .Select(i => i.ProductId);
-
-                string description = string.Join(", ", rejectedItems);
-            }
         }
 
         private Result StatusChangeException(OrderStatus toStatus)

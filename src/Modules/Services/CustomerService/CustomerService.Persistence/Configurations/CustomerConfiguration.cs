@@ -15,7 +15,6 @@ namespace CustomerService.Persistence.Configurations
             builder.Property(c => c.Id).HasColumnName("customer_id").IsRequired();
 
             builder.Property(c => c.CustomerName).HasColumnName("customer_name").HasMaxLength(100);
-            ;
 
             builder.Property(c => c.Email).HasColumnName("email")
                 .HasConversion(email => email.Value, value => Email.Create(value).Value).HasMaxLength(100);
@@ -26,11 +25,11 @@ namespace CustomerService.Persistence.Configurations
             builder.Property(c => c.Phone).HasColumnName("phone")
                 .HasConversion(phone => phone.Value, value => PhoneNumber.Create(value).Value).HasMaxLength(20);
 
-            builder.Property(u => u.Status).HasColumnName("status");
+            builder.Property(c => c.Status).HasColumnName("status");
 
-            builder.Property(u => u.Otp).HasColumnName("otp");
+            builder.Property(c => c.Otp).HasColumnName("otp");
 
-            builder.Property(u => u.OtpExpired).HasColumnName("otp_expired");
+            builder.Property(c => c.OtpExpired).HasColumnName("otp_expired");
         }
     }
 }

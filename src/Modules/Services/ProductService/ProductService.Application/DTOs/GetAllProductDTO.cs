@@ -15,6 +15,7 @@ namespace ProductService.Application.DTOs
         public string Specs { get; init; }
         public string ImageUrl { get; init; }
         public byte Rating { get; set; }
+        public DateTime CreatedAt { get; init; }
         public List<ProductSpec> ProductSpecs { get; init; }
     }
 }

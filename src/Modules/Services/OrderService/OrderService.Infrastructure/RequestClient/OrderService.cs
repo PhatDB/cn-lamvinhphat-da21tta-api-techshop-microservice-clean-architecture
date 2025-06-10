@@ -1,7 +1,6 @@
 ﻿using BuildingBlocks.Contracts.Carts;
+using BuildingBlocks.Contracts.Orders;
 using BuildingBlocks.Contracts.Products;
-using BuildingBlocks.Contracts.Users;
-using BuildingBlocks.Error;
 using BuildingBlocks.Results;
 using MassTransit;
 using OrderService.Application.Abstractions;
@@ -11,17 +10,18 @@ namespace OrderService.Infrastructure.RequestClient
     public class OrderService : IOrderService
     {
         private readonly IRequestClient<GetCartInfo> _cartClient;
-        private readonly IRequestClient<GetProductInfoRequest> _productClient;
-        private readonly IRequestClient<IsCustomerExistRequest> _userClient;
+        private readonly IRequestClient<GetCustomerInfoRequest> _customerClient;
+        private readonly IRequestClient<GetListProductInfoRequest> _productClient;
 
         public OrderService(
-            IRequestClient<GetCartInfo> cartClient, IRequestClient<IsCustomerExistRequest> userClient,
-            IRequestClient<GetProductInfoRequest> productClient)
+            IRequestClient<GetCartInfo> cartClient, IRequestClient<GetListProductInfoRequest> productClient,
+            IRequestClient<GetCustomerInfoRequest> customerClient)
         {
             _cartClient = cartClient;
-            _userClient = userClient;
             _productClient = productClient;
+            _customerClient = customerClient;
         }
+
 
         public async Task<Result<GetCartInfoResponse>> GetCartInfo(int cartId)
         {
@@ -31,21 +31,18 @@ namespace OrderService.Infrastructure.RequestClient
             return Result.Success(cartResponse.Message);
         }
 
-        public async Task<Result<GetListProductInfoRespone>> GetListProductInfo(List<int> productIds)
+        public async Task<Result<GetListProductInfoResponse>> GetListProductInfo(List<int> productIds)
         {
-            Response<GetListProductInfoRespone> productInfoResponse =
-                await _productClient.GetResponse<GetListProductInfoRespone>(new GetListProductInfoRequest(productIds));
+            Response<GetListProductInfoResponse> productInfoResponse =
+                await _productClient.GetResponse<GetListProductInfoResponse>(new GetListProductInfoRequest(productIds));
             return Result.Success(productInfoResponse.Message);
         }
 
-        public async Task<Result> IsCustomerExist(int customerId)
+        public async Task<Result<GetCustomerInfoResponse>> GetCustomerInfo(int customerId)
         {
-            Response<IsCustomerExistResponse> userResponse =
-                await _userClient.GetResponse<IsCustomerExistResponse>(new IsCustomerExistRequest(customerId));
-            if (!userResponse.Message.Exists)
-                return Result.Failure(Error.NotFound("User.NotFound", "User is not found"));
-
-            return Result.Success();
+            Response<GetCustomerInfoResponse> customerInfoResponse =
+                await _customerClient.GetResponse<GetCustomerInfoResponse>(new GetCustomerInfoRequest(customerId));
+            return Result.Success(customerInfoResponse.Message);
         }
     }
 }

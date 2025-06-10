@@ -31,10 +31,6 @@ namespace ProductService.Domain.Entities
             _productSpecs = new List<ProductSpec>();
         }
 
-        private Product()
-        {
-        }
-
         public string ProductName { get; private set; }
         public int CategoryId { get; private set; }
         public int BrandId { get; private set; }
@@ -146,15 +142,17 @@ namespace ProductService.Domain.Entities
             return Result.Success();
         }
 
-        public Result DeleteProductSpec(IEnumerable<int> productSpecIds)
+        public Result ReplaceProductSpecs(IEnumerable<ProductSpec> newSpecs)
         {
-            List<ProductSpec> productSpecToRemove =
-                _productSpecs.Where(spec => productSpecIds.Contains(spec.Id)).ToList();
+            foreach (ProductSpec spec in _productSpecs.ToList()) _productSpecs.Remove(spec);
 
-            if (!productSpecToRemove.Any())
-                return Result.Failure(ProductSpecError.ProductSpecsNotFound);
+            foreach (ProductSpec spec in newSpecs)
+            {
+                if (string.IsNullOrWhiteSpace(spec.SpecName) || string.IsNullOrWhiteSpace(spec.SpecValue))
+                    return Result.Failure(ProductSpecError.ProductSpecsNull);
 
-            foreach (ProductSpec spec in productSpecToRemove) _productSpecs.Remove(spec);
+                _productSpecs.Add(spec);
+            }
 
             return Result.Success();
         }

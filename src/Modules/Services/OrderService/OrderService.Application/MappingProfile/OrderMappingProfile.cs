@@ -8,7 +8,8 @@ namespace OrderService.Application.MappingProfile
     {
         public OrderMappingProfile()
         {
-            CreateMap<Order, OrderDTO>().ForMember(dest => dest.OrderItems, opt => opt.MapFrom(src => src.OrderItems));
+            CreateMap<Order, OrderDTO>().ForMember(dest => dest.OrderItems, opt => opt.MapFrom(src => src.OrderItems))
+                .ForMember(dest => dest.OrderId, opt => opt.MapFrom(src => src.Id));
 
             CreateMap<OrderItem, OrderItemDTO>();
         }

@@ -28,59 +28,119 @@ namespace CartService.Application.Commands.Cart.AddToCarts
 
         public async Task<Result<int>> Handle(AddToCartCommand request, CancellationToken cancellationToken)
         {
-            Result customerCheck = await _cartService.IsCustomerExist(request.CustomerId);
-            if (customerCheck.IsFailure)
-                return Result.Failure<int>(customerCheck.Error);
-
-            Result<ProductInfoResponse> productResult = await _cartService.GetProductInfo(request.ProductId);
-            if (productResult.IsFailure)
-                return Result.Failure<int>(productResult.Error);
-
-            ProductInfoResponse product = productResult.Value;
-            decimal finalPrice = product.Price - product.Price * product.Discount / 100;
-
-            if (request.Quantity > product.Stock)
-                return Result.Failure<int>(Error.Validation("Product.OutOfStock", "Product is out of stock."));
-
-            Result<Domain.Entities.Cart> cartResult =
-                await _cartRepository.GetUserCartAsync(request.CustomerId, cancellationToken);
-
             Domain.Entities.Cart cart;
-            if (cartResult.IsFailure)
+
+            if (request.CustomerId.HasValue)
             {
-                Result<Domain.Entities.Cart> cartCreateResult = Domain.Entities.Cart.Create(request.CustomerId);
-                if (cartCreateResult.IsFailure)
-                    return Result.Failure<int>(cartCreateResult.Error);
+                Result customerCheck = await _cartService.IsCustomerExist(request.CustomerId.Value);
+                if (customerCheck.IsFailure)
+                    return Result.Failure<int>(customerCheck.Error);
 
-                cart = cartCreateResult.Value;
-                Result addResult = cart.AddItem(request.ProductId, request.Quantity, finalPrice);
-                if (addResult.IsFailure)
-                    return Result.Failure<int>(addResult.Error);
+                Result<ProductInfoResponse> productResult = await _cartService.GetProductInfo(request.ProductId);
+                if (productResult.IsFailure)
+                    return Result.Failure<int>(productResult.Error);
 
-                await _cartRepository.AddAsync(cart, cancellationToken);
+                ProductInfoResponse product = productResult.Value;
+                decimal finalPrice = product.Price - product.Price * product.Discount / 100;
 
-                await _publishEndpoint.Publish(new UpdateProductStock(request.ProductId, -request.Quantity),
-                    cancellationToken);
+                if (request.Quantity > product.Stock)
+                    return Result.Failure<int>(Error.Validation("Product.OutOfStock", "Product is out of stock."));
+
+                Result<Domain.Entities.Cart> cartResult =
+                    await _cartRepository.GetCartAsync(request.CustomerId.Value, request.SessionId, cancellationToken);
+
+                if (cartResult.IsFailure)
+                {
+                    Result<Domain.Entities.Cart> cartCreateResult =
+                        Domain.Entities.Cart.Create(request.CustomerId.Value, request.SessionId);
+                    if (cartCreateResult.IsFailure)
+                        return Result.Failure<int>(cartCreateResult.Error);
+
+                    cart = cartCreateResult.Value;
+                    Result addResult = cart.AddItem(request.ProductId, request.Quantity, finalPrice);
+                    if (addResult.IsFailure)
+                        return Result.Failure<int>(addResult.Error);
+
+                    await _cartRepository.AddAsync(cart, cancellationToken);
+
+                    await _publishEndpoint.Publish(new UpdateProductStock(request.ProductId, -request.Quantity),
+                        cancellationToken);
+                    await _unitOfWork.SaveChangesAsync(cancellationToken);
+                    return Result.Success(cart.Id);
+                }
+
+                cart = cartResult.Value;
+
+                int oldQuantity = cart.CartItems.FirstOrDefault(i => i.ProductId == request.ProductId)?.Quantity ?? 0;
+                int newQuantity = request.Quantity;
+                int stockQuantityChange = oldQuantity - newQuantity;
+
+                Result updateResult = cart.AddOrUpdateItem(request.ProductId, newQuantity, finalPrice);
+                if (updateResult.IsFailure)
+                    return Result.Failure<int>(updateResult.Error);
+
+                if (stockQuantityChange != 0)
+                    await _publishEndpoint.Publish(new UpdateProductStock(request.ProductId, stockQuantityChange),
+                        cancellationToken);
+
                 await _unitOfWork.SaveChangesAsync(cancellationToken);
                 return Result.Success(cart.Id);
             }
 
-            cart = cartResult.Value;
+            if (!string.IsNullOrEmpty(request.SessionId))
+            {
+                Result<ProductInfoResponse> productResult = await _cartService.GetProductInfo(request.ProductId);
+                if (productResult.IsFailure)
+                    return Result.Failure<int>(productResult.Error);
 
-            int oldQuantity = cart.CartItems.FirstOrDefault(i => i.ProductId == request.ProductId)?.Quantity ?? 0;
-            int newQuantity = request.Quantity;
-            int stockQuantityChange = oldQuantity - newQuantity;
+                ProductInfoResponse product = productResult.Value;
+                decimal finalPrice = product.Price - product.Price * product.Discount / 100;
 
-            Result updateResult = cart.AddOrUpdateItem(request.ProductId, newQuantity, finalPrice);
-            if (updateResult.IsFailure)
-                return Result.Failure<int>(updateResult.Error);
+                if (request.Quantity > product.Stock)
+                    return Result.Failure<int>(Error.Validation("Product.OutOfStock", "Product is out of stock."));
 
-            if (stockQuantityChange != 0)
-                await _publishEndpoint.Publish(new UpdateProductStock(request.ProductId, stockQuantityChange),
-                    cancellationToken);
+                Result<Domain.Entities.Cart> cartResult =
+                    await _cartRepository.GetCartAsync(request.CustomerId, request.SessionId, cancellationToken);
 
-            await _unitOfWork.SaveChangesAsync(cancellationToken);
-            return Result.Success(cart.Id);
+                if (cartResult.IsFailure)
+                {
+                    Result<Domain.Entities.Cart> cartCreateResult =
+                        Domain.Entities.Cart.Create(null, request.SessionId);
+                    if (cartCreateResult.IsFailure)
+                        return Result.Failure<int>(cartCreateResult.Error);
+
+                    cart = cartCreateResult.Value;
+                    Result addResult = cart.AddItem(request.ProductId, request.Quantity, finalPrice);
+                    if (addResult.IsFailure)
+                        return Result.Failure<int>(addResult.Error);
+
+                    await _cartRepository.AddAsync(cart, cancellationToken);
+
+                    await _publishEndpoint.Publish(new UpdateProductStock(request.ProductId, -request.Quantity),
+                        cancellationToken);
+                    await _unitOfWork.SaveChangesAsync(cancellationToken);
+                    return Result.Success(cart.Id);
+                }
+
+                cart = cartResult.Value;
+
+                int oldQuantity = cart.CartItems.FirstOrDefault(i => i.ProductId == request.ProductId)?.Quantity ?? 0;
+                int newQuantity = request.Quantity;
+                int stockQuantityChange = oldQuantity - newQuantity;
+
+                Result updateResult = cart.AddOrUpdateItem(request.ProductId, newQuantity, finalPrice);
+                if (updateResult.IsFailure)
+                    return Result.Failure<int>(updateResult.Error);
+
+                if (stockQuantityChange != 0)
+                    await _publishEndpoint.Publish(new UpdateProductStock(request.ProductId, stockQuantityChange),
+                        cancellationToken);
+
+                await _unitOfWork.SaveChangesAsync(cancellationToken);
+                return Result.Success(cart.Id);
+            }
+
+            return Result.Failure<int>(Error.Validation("InvalidRequest", "CustomerId or SessionId must be provided."));
         }
     }
 }

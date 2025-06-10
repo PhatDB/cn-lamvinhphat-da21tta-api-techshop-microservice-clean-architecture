@@ -13,6 +13,10 @@ namespace ProductService.Domain.Entities
             SpecValue = specValue ?? string.Empty;
         }
 
+        private ProductSpec()
+        {
+        }
+
         public int ProductId { get; private set; }
         public string SpecName { get; private set; }
         public string? SpecValue { get; private set; }

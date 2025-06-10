@@ -18,18 +18,18 @@ namespace ProductService.Infracstructure.RequestClient
             _ratingClient = ratingClient;
         }
 
-        public async Task<Result<GetProductsRatingRespone>> GetProductsRating(List<int> productIds)
+        public async Task<Result<GetProductsRatingResponse>> GetProductsRating(List<int> productIds)
         {
-            Response<GetProductsRatingRespone> ratingRespone =
-                await _ratingClient.GetResponse<GetProductsRatingRespone>(new GetProductsRatingRequest(productIds));
+            Response<GetProductsRatingResponse> ratingRespone =
+                await _ratingClient.GetResponse<GetProductsRatingResponse>(new GetProductsRatingRequest(productIds));
 
             return Result.Success(ratingRespone.Message);
         }
 
-        public async Task<Result<GetProductReviewsRespone>> GetProductReviews(int productId)
+        public async Task<Result<GetProductReviewsResponse>> GetProductReviews(int productId)
         {
-            Response<GetProductReviewsRespone> reviewRespone =
-                await _customerClient.GetResponse<GetProductReviewsRespone>(new GetProductReviewsRequest(productId));
+            Response<GetProductReviewsResponse> reviewRespone =
+                await _customerClient.GetResponse<GetProductReviewsResponse>(new GetProductReviewsRequest(productId));
 
             return Result.Success(reviewRespone.Message);
         }

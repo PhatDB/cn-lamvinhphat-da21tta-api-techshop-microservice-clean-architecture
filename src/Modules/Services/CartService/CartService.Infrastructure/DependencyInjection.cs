@@ -8,7 +8,8 @@ namespace CartService.Infrastructure
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddInfrastructure(
+            this IServiceCollection services, IConfiguration configuration)
         {
             services.AddRabbitMq(configuration, Assembly.GetExecutingAssembly());
             services.AddScoped<ICartService, RequestClient.CartService>();

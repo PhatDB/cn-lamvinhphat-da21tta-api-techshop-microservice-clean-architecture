@@ -35,6 +35,9 @@ namespace CustomerService.Application.Commands.Customers.Register
             if (userExists)
                 return Result.Failure<int>(CustomerError.CustomerAlreadyExists);
 
+            if (request.Password.Length < 8)
+                return Result.Failure<int>(CustomerError.PasswordWeak);
+
             string hashedPassword = BCrypt.Net.BCrypt.HashPassword(request.Password);
 
             Result<Customer> customerResult =

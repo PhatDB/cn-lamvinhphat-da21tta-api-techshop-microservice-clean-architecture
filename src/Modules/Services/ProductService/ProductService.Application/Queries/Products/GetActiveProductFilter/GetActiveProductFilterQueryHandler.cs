@@ -73,7 +73,7 @@ namespace ProductService.Application.Queries.Products.GetActiveProductFilter
                 .ProjectTo<GetAllProductDTO>(_mapper.ConfigurationProvider).ToListAsync(cancellationToken);
 
             List<int> productIds = items.Select(p => p.Id).ToList();
-            Result<GetProductsRatingRespone> ratingResult = await _productService.GetProductsRating(productIds);
+            Result<GetProductsRatingResponse> ratingResult = await _productService.GetProductsRating(productIds);
 
             if (ratingResult.IsSuccess)
             {

@@ -11,12 +11,12 @@
         <Folder Include="Commands\Customers\SendOTP\"/>
         <Folder Include="Commands\Customers\UpdateCustomer\"/>
         <Folder Include="MappingProfiles\"/>
-        <Folder Include="Queries\"/>
         <Folder Include="Validations\"/>
     </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="BCrypt.Net-Next" Version="4.0.3"/>
+        <PackageReference Include="Google.Apis.Auth" Version="1.69.0"/>
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.0-preview.1.25080.5"/>
     </ItemGroup>
 

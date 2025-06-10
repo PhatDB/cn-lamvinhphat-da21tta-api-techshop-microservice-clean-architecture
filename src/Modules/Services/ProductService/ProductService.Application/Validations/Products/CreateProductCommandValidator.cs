@@ -21,8 +21,6 @@ namespace ProductService.Application.Validations.Products
 
             RuleFor(x => x.Stock).GreaterThanOrEqualTo(0).WithMessage("Stock must be >= 0.");
 
-            RuleFor(x => x.Description).MaximumLength(1000).WithMessage("Description must not exceed 1000 characters.");
-
             RuleFor(x => x.Images).NotNull().WithMessage("Images are required.").Must(x => x.Any())
                 .WithMessage("At least one image is required.");
 

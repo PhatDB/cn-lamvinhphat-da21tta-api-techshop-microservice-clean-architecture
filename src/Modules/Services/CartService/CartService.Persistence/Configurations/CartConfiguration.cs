@@ -10,12 +10,14 @@ namespace CartService.Persistence.Configurations
         {
             builder.ToTable("cart");
 
-            builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).HasColumnName("cart_id").IsRequired();
+            builder.HasKey(c => c.Id);
+            builder.Property(c => c.Id).HasColumnName("cart_id").IsRequired();
 
-            builder.Property(x => x.CustomerId).HasColumnName("customer_id").IsRequired();
+            builder.Property(c => c.CustomerId).HasColumnName("customer_id");
 
-            builder.Property(p => p.CreatedAt).HasColumnName("created_at").IsRequired();
+            builder.Property(c => c.CreatedAt).HasColumnName("created_at");
+
+            builder.Property(c => c.SessionId).HasColumnName("session_id");
         }
     }
 }

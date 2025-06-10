@@ -27,7 +27,7 @@ namespace CustomerService.Application.Commands.Customers.AddCustomerAddress
             if (customer == null)
                 return Result.Failure<int>(CustomerError.CustomerNotFound);
 
-            Result addAddressResult = customer.AddAddress(request.Street, request.Hemlet, request.Ward,
+            Result addAddressResult = customer.AddAddress(request.Street, request.Hamlet, request.Ward,
                 request.District, request.City);
 
             if (addAddressResult.IsFailure)

@@ -233,6 +233,14 @@
       "PackagePath": "staticwebassets\\assets\\product\\product_1747650230305.webp"
     },
     {
+      "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1749390976908.webp",
+      "PackagePath": "staticwebassets\\assets\\product\\product_1749390976908.webp"
+    },
+    {
+      "Id": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1749446223442.webp",
+      "PackagePath": "staticwebassets\\assets\\product\\product_1749446223442.webp"
+    },
+    {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.AssetService.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

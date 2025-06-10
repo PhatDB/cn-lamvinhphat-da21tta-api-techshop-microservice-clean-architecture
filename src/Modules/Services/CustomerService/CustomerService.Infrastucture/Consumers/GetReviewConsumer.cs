@@ -37,7 +37,7 @@ namespace CustomerService.Infrastucture.Consumers
                     }).ToList()
             }).ToList();
 
-            await context.RespondAsync(new GetProductReviewsRespone(productReviews));
+            await context.RespondAsync(new GetProductReviewsResponse(productReviews));
         }
     }
 }

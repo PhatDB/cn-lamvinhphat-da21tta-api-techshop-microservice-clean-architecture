@@ -53,7 +53,7 @@ namespace CartService.Application.Queries.Cart
             CartDTO cartDTO = new()
             {
                 CartId = cart.Id,
-                CustomerId = cart.CustomerId,
+                CustomerId = cart.CustomerId.Value,
                 CartItems = validProducts,
                 TotalPrice = validProducts.Sum(p => p.DiscountPrice * p.Quantity)
             };

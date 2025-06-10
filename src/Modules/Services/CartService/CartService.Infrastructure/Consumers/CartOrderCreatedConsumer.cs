@@ -7,12 +7,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CartService.Infrastructure.Consumers
 {
-    public class OrderCreatedConsumer : IConsumer<OrderCreated>
+    public class CartOrderCreatedConsumer : IConsumer<OrderCreated>
     {
         private readonly ICartRepository _cartRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public OrderCreatedConsumer(ICartRepository cartRepository, IUnitOfWork unitOfWork)
+        public CartOrderCreatedConsumer(ICartRepository cartRepository, IUnitOfWork unitOfWork)
         {
             _cartRepository = cartRepository;
             _unitOfWork = unitOfWork;

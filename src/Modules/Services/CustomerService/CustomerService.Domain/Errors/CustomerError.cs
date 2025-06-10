@@ -15,7 +15,7 @@ namespace CustomerService.Domain.Errors
             Error.Validation("Customer.EmailInvalidFormat", "Email format is invalid.");
 
         public static readonly Error CustomerAlreadyExists =
-            Error.Validation("Customer.UserAlreadyExists", "Email is already in use.");
+            Error.Validation("Customer.CustomerAlreadyExists", "Email is already in use.");
 
         public static readonly Error PasswordEmpty =
             Error.Validation("Customer.PasswordEmpty", "Password cannot be empty.");
@@ -48,5 +48,9 @@ namespace CustomerService.Domain.Errors
 
         public static readonly Error AddressNotFound =
             Error.Validation("Customer.AddressNotFound", "Address not found.");
+
+        public static readonly Error NotPaid = Error.Validation("Customer.NotPaid", "Not paid.");
+
+        public static readonly Error AllReadyReview = Error.Validation("Customer.AllReadyReview", "All ready review.");
     }
 }

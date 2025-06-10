@@ -1,4 +1,5 @@
 ﻿using BuildingBlocks.Contracts.Carts;
+using BuildingBlocks.Contracts.Orders;
 using BuildingBlocks.Contracts.Products;
 using BuildingBlocks.Results;
 
@@ -8,6 +9,8 @@ namespace OrderService.Application.Abstractions
     {
         Task<Result<GetCartInfoResponse>> GetCartInfo(int cartId);
 
-        Task<Result<GetListProductInfoRespone>> GetListProductInfo(List<int> productIds);
+        Task<Result<GetListProductInfoResponse>> GetListProductInfo(List<int> productIds);
+
+        Task<Result<GetCustomerInfoResponse>> GetCustomerInfo(int customerId);
     }
 }

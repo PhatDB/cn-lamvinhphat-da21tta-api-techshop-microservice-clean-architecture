@@ -16,7 +16,7 @@ namespace ProductService.Api.Endpoint.Categories
                 GetAllCategoryQuery query = new();
                 Result<List<Category>> result = await sender.Send(query, cancellationToken);
                 return result.Match(success => Results.Ok(success), failure => CustomResults.Problem(failure));
-            }).WithTags("Category").WithName("GetAllCategory");
+            }).WithTags("Category").WithName("GetAllCategory").Produces<List<Brand>>();
         }
     }
 }

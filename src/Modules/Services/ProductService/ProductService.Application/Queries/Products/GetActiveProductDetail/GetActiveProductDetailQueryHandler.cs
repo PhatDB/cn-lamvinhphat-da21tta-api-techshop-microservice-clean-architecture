@@ -29,11 +29,11 @@ namespace ProductService.Application.Queries.Products.GetActiveProductDetail
             GetActiveProductDetailQuery request, CancellationToken cancellationToken)
         {
             Product? product = await _productRepository.AsQueryable().Include(p => p.ProductImages)
-                .Include(p => p.ProductSpecs).Where(p => p.IsActive).AsNoTracking()
+                .Include(p => p.ProductSpecs).AsNoTracking()
                 .SingleOrDefaultAsync(p => p.Id == request.ProductId, cancellationToken);
 
 
-            Result<GetProductReviewsRespone> productReviews =
+            Result<GetProductReviewsResponse> productReviews =
                 await _productService.GetProductReviews(request.ProductId);
 
             ProductDetailDTO? productDto = _mapper.Map<ProductDetailDTO>(product);

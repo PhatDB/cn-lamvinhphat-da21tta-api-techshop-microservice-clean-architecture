@@ -23,7 +23,7 @@ namespace ProductService.Infracstructure.Consumers
                     p.ProductImages.FirstOrDefault(img => img.IsMain.Value).ImageUrl, p.Price, p.Discount.Value,
                     p.Stock)).ToListAsync();
 
-            await context.RespondAsync(new GetListProductInfoRespone(products));
+            await context.RespondAsync(new GetListProductInfoResponse(products));
         }
     }
 }

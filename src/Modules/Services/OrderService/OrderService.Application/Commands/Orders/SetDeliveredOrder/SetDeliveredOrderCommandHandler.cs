@@ -5,20 +5,20 @@ using BuildingBlocks.Results;
 using OrderService.Domain.Abstractions.Repositories;
 using OrderService.Domain.Entities;
 
-namespace OrderService.Application.Commands.Orders.SetShippedOrder
+namespace OrderService.Application.Commands.Orders.SetDeliveredOrder
 {
-    public class SetShippedOrderCommandHandler : ICommandHandler<SetShippedOrderCommand>
+    public class SetDeliveredOrderCommandHandler : ICommandHandler<SetDeliveredOrderCommand>
     {
         private readonly IOrderRepository _orderRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public SetShippedOrderCommandHandler(IOrderRepository orderRepository, IUnitOfWork unitOfWork)
+        public SetDeliveredOrderCommandHandler(IOrderRepository orderRepository, IUnitOfWork unitOfWork)
         {
             _orderRepository = orderRepository;
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<Result> Handle(SetShippedOrderCommand request, CancellationToken cancellationToken)
+        public async Task<Result> Handle(SetDeliveredOrderCommand request, CancellationToken cancellationToken)
         {
             Result<Order> orderResult = await _orderRepository.GetByIdAsync(request.OrderId, cancellationToken);
 
@@ -27,8 +27,8 @@ namespace OrderService.Application.Commands.Orders.SetShippedOrder
 
             Order order = orderResult.Value;
 
-            if (order.SetShippedStatus().IsFailure)
-                return Result.Failure(order.SetShippedStatus().Error);
+            if (order.SetPaidStatus().IsFailure)
+                return Result.Failure(order.SetDeliveredStatus().Error);
 
             await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Result.Success();

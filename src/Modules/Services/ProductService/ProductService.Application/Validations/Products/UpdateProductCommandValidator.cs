@@ -30,16 +30,6 @@ namespace ProductService.Application.Validations.Products
             RuleFor(x => x.SoldQuantity).GreaterThanOrEqualTo(0).WithMessage("Sold quantity must be >= 0.")
                 .When(x => x.SoldQuantity.HasValue);
 
-            RuleFor(x => x.Description).MaximumLength(1000).WithMessage("Description must not exceed 1000 characters.")
-                .When(x => !string.IsNullOrWhiteSpace(x.Description));
-
-            RuleForEach(x => x.NewImages).ChildRules(images =>
-            {
-                images.RuleFor(i => i.ImageContent).NotEmpty().WithMessage("Image content must not be empty.");
-
-                images.RuleFor(i => i.SortOrder).GreaterThanOrEqualTo(0).WithMessage("Sort order must be >= 0.");
-            }).When(x => x.NewImages is not null && x.NewImages.Any());
-
             RuleFor(x => x.NewImages.Count(i => i.IsMain)).LessThanOrEqualTo(1)
                 .WithMessage("Only one image can be marked as main.")
                 .When(x => x.NewImages is not null && x.NewImages.Any());

@@ -696,5 +696,29 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-5KTOpgdo/7eoVcieaJY5\u002BEdGFAIXpzHSUQCcsdfTlz4="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"7094"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u00225KTOpgdo/7eoVcieaJY5\u002BEdGFAIXpzHSUQCcsdfTlz4=\u0022"},{"Name":"Last-Modified","Value":"Mon, 19 May 2025 10:23:50 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AssetService/assets/product/product_1749390976908.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\product\product_1749390976908.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-EnnYe7yh6Y73rPSErqata7eY1QL7T7i\u002BctW2tY2pCc0="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"144490"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022EnnYe7yh6Y73rPSErqata7eY1QL7T7i\u002BctW2tY2pCc0=\u0022"},{"Name":"Last-Modified","Value":"Sun, 08 Jun 2025 13:56:16 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AssetService/assets/product/product_1749390976908.y3eu4809mw.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\product\product_1749390976908.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"y3eu4809mw"},{"Name":"integrity","Value":"sha256-EnnYe7yh6Y73rPSErqata7eY1QL7T7i\u002BctW2tY2pCc0="},{"Name":"label","Value":"_content/AssetService/assets/product/product_1749390976908.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"144490"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022EnnYe7yh6Y73rPSErqata7eY1QL7T7i\u002BctW2tY2pCc0=\u0022"},{"Name":"Last-Modified","Value":"Sun, 08 Jun 2025 13:56:16 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AssetService/assets/product/product_1749446223442.g45s99i6mj.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\product\product_1749446223442.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"g45s99i6mj"},{"Name":"integrity","Value":"sha256-EOq\u002B9vu\u002B3xnOgmiMCSG\u002BApzTLiGac/n\u002BpIi4Qacvets="},{"Name":"label","Value":"_content/AssetService/assets/product/product_1749446223442.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"17962"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022EOq\u002B9vu\u002B3xnOgmiMCSG\u002BApzTLiGac/n\u002BpIi4Qacvets=\u0022"},{"Name":"Last-Modified","Value":"Mon, 09 Jun 2025 05:17:03 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AssetService/assets/product/product_1749446223442.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\product\product_1749446223442.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-EOq\u002B9vu\u002B3xnOgmiMCSG\u002BApzTLiGac/n\u002BpIi4Qacvets="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"17962"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022EOq\u002B9vu\u002B3xnOgmiMCSG\u002BApzTLiGac/n\u002BpIi4Qacvets=\u0022"},{"Name":"Last-Modified","Value":"Mon, 09 Jun 2025 05:17:03 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
   </ItemGroup>
 </Project>

@@ -11,7 +11,7 @@ using OrderService.Domain.Entities;
 
 namespace OrderService.Application.Queries.Orders
 {
-    public class GetOrderByCustomerIdQueryHandler : IQueryHandler<GetOrderByCustomerIdQuery, OrderDTO>
+    public class GetOrderByCustomerIdQueryHandler : IQueryHandler<GetOrderByCustomerIdQuery, List<OrderDTO>>
     {
         private readonly IMapper _mapper;
         private readonly IOrderRepository _orderRepository;
@@ -25,32 +25,34 @@ namespace OrderService.Application.Queries.Orders
             _orderService = orderService;
         }
 
-        public async Task<Result<OrderDTO>> Handle(
+        public async Task<Result<List<OrderDTO>>> Handle(
             GetOrderByCustomerIdQuery request, CancellationToken cancellationToken)
         {
-            Order? order = await _orderRepository.AsQueryable().Where(o => o.CustomerId == request.CustomerId)
-                .OrderByDescending(o => o.CreatedAt).FirstOrDefaultAsync(cancellationToken);
+            List<Order> orders = await _orderRepository.AsQueryable().Include(o => o.OrderItems)
+                .Where(o => o.CustomerId == request.CustomerId).OrderByDescending(o => o.CreatedAt)
+                .ToListAsync(cancellationToken);
 
-            if (order is null)
-                return Result.Failure<OrderDTO>(Error.NotFound("Order.NotFound", "No order found for this customer."));
+            if (!orders.Any())
+                return Result.Failure<List<OrderDTO>>(Error.NotFound("Order.NotFound",
+                    "No order found for this customer."));
 
-            List<int> productIds = order.OrderItems.Select(i => i.ProductId).Distinct().ToList();
+            List<int> productIds = orders.SelectMany(o => o.OrderItems).Select(i => i.ProductId).Distinct().ToList();
 
-            Result<GetListProductInfoRespone> productInfoResult = await _orderService.GetListProductInfo(productIds);
+            Result<GetListProductInfoResponse> productInfoResult = await _orderService.GetListProductInfo(productIds);
             if (productInfoResult.IsFailure)
-                return Result.Failure<OrderDTO>(productInfoResult.Error);
+                return Result.Failure<List<OrderDTO>>(productInfoResult.Error);
 
             Dictionary<int, string> productMap =
                 productInfoResult.Value.ProductInfos.ToDictionary(p => p.ProductId, p => p.ProductName);
 
+            List<OrderDTO> dtoList = _mapper.Map<List<OrderDTO>>(orders);
 
-            OrderDTO dto = _mapper.Map<OrderDTO>(order);
-
-            foreach (OrderItemDTO item in dto.OrderItems)
+            foreach (OrderDTO orderDto in dtoList)
+            foreach (OrderItemDTO item in orderDto.OrderItems)
                 if (productMap.TryGetValue(item.ProductId, out string? name))
                     item.ProductName = name;
 
-            return Result.Success(dto);
+            return Result.Success(dtoList);
         }
     }
 }

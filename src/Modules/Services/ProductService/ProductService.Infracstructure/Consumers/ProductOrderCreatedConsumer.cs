@@ -7,12 +7,12 @@ using ProductService.Domain.Entities;
 
 namespace ProductService.Infracstructure.Consumers
 {
-    public class OrderCreatedConsumer : IConsumer<OrderCreated>
+    public class ProductOrderCreatedConsumer : IConsumer<OrderCreated>
     {
         private readonly IProductRepository _productRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public OrderCreatedConsumer(IProductRepository productRepository, IUnitOfWork unitOfWork)
+        public ProductOrderCreatedConsumer(IProductRepository productRepository, IUnitOfWork unitOfWork)
         {
             _productRepository = productRepository;
             _unitOfWork = unitOfWork;

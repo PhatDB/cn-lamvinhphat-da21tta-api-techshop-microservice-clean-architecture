@@ -17,7 +17,8 @@ namespace ProductService.Api.Endpoint.Brands
                 GetAllActiveBrandQuery query = new();
                 Result<List<Brand>> result = await sender.Send(query, cancellationToken);
                 return result.Match(success => Results.Ok(success), failure => CustomResults.Problem(failure));
-            }).WithTags("Brand").WithName("GetAllActiveBrands");
+            }).WithTags("Brand").WithName("GetAllActiveBrands").Produces<List<Brand>>();
+            ;
         }
     }
 }

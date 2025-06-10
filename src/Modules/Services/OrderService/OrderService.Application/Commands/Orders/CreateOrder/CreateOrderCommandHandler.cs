@@ -41,7 +41,10 @@ namespace OrderService.Application.Commands.Orders.CreateOrder
 
             decimal totalAmount = cart.CartItems.Sum(ci => ci.Price * ci.Quantity);
 
-            Result<Order> orderResult = Order.Create(cart.CustomerId, (byte)OrderStatus.Submitted, totalAmount);
+            Result<Order> orderResult = Order.Create(cart.CustomerId, OrderStatus.AwaitingValidation, totalAmount,
+                request.ReceiverName, request.ReceiverPhone, request.ReceiverAddress, request.Note, request.SessionId,
+                request.PaymentMethod);
+
             if (orderResult.IsFailure)
                 return Result.Failure<int>(orderResult.Error);
 

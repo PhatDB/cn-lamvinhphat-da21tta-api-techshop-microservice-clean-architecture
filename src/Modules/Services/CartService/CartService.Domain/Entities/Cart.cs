@@ -9,24 +9,26 @@ namespace CartService.Domain.Entities
     {
         private readonly List<CartItem> _cartItems;
 
-        public Cart(int customerId)
+        public Cart(int? customerId, string? sessionId)
         {
             CustomerId = customerId;
+            SessionId = sessionId;
             CreatedAt = DateTime.UtcNow;
             _cartItems = new List<CartItem>();
         }
 
-        public int CustomerId { get; private set; }
+        public int? CustomerId { get; private set; }
+        public string? SessionId { get; private set; }
         public DateTime CreatedAt { get; private set; }
 
         public IReadOnlyCollection<CartItem> CartItems => _cartItems.AsReadOnly();
 
-        public static Result<Cart> Create(int customerId)
+        public static Result<Cart> Create(int? customerId, string? sessionId)
         {
             if (customerId <= 0)
                 return Result.Failure<Cart>(CartError.UserIdIsInvalid);
 
-            return Result.Success(new Cart(customerId));
+            return Result.Success(new Cart(customerId, sessionId));
         }
 
         public Result AddItem(int productId, int quantity, decimal price)

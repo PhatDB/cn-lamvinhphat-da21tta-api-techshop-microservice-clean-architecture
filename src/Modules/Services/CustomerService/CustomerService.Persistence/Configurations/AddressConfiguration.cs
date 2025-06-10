@@ -28,7 +28,8 @@ namespace CustomerService.Persistence.Configurations
 
             builder.Property(a => a.CreatedAt).HasColumnName("created_at").IsRequired();
 
-            builder.HasOne<Customer>().WithMany().HasForeignKey(ua => ua.CustomerId).OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne<Customer>().WithMany(c => c.Addresses).HasForeignKey(a => a.CustomerId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

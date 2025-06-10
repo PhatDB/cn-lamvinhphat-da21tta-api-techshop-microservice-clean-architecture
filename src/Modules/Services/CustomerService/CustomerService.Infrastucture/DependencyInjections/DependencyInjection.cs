@@ -25,6 +25,7 @@ namespace CustomerService.Infrastucture.DependencyInjections
             services.AddHttpContextAccessor();
             services.AddTransient<IJwtTokenService, JwtTokenService>();
             services.AddScoped<IEmailSender, EmailSender>();
+            services.AddScoped<ICustomerService, RequestClient.CustomerService>();
             services.AddRabbitMq(configuration, Assembly.GetExecutingAssembly());
             return services;
         }

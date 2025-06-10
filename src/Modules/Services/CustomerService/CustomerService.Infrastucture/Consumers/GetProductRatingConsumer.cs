@@ -23,7 +23,7 @@ namespace CustomerService.Infrastucture.Consumers
                 .GroupBy(r => r.ProductId)
                 .Select(g => new RatingRespone(g.Key, (byte)Math.Round(g.Average(r => r.Rating.Value)))).ToListAsync();
 
-            await context.RespondAsync(new GetProductsRatingRespone(ratings));
+            await context.RespondAsync(new GetProductsRatingResponse(ratings));
         }
     }
 }
