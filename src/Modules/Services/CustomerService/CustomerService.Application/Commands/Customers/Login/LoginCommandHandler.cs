@@ -42,7 +42,8 @@ namespace CustomerService.Application.Commands.Customers.Login
                 new Claim("sub", customer.Id.ToString()),
                 new Claim("email", customer.Email.Value),
                 new Claim("userName", customer.CustomerName),
-                new Claim("deviceId", deviceId)
+                new Claim("deviceId", deviceId),
+                new Claim("role", customer.Role)
             };
 
             string accessToken = _jwtTokenService.GenerateAccessToken(claims).Value;
@@ -58,7 +59,8 @@ namespace CustomerService.Application.Commands.Customers.Login
                 CustomerName = customer.CustomerName,
                 AccessToken = accessToken,
                 AccessTokenExpires = accessTokenExpires,
-                RefreshToken = refreshToken
+                RefreshToken = refreshToken,
+                Role = customer.Role
             });
         }
     }

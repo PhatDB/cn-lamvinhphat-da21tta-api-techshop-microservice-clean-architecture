@@ -9,7 +9,10 @@ using OrderService.Application.Commands.Orders.SetDeliveredOrder;
 using OrderService.Application.Commands.Orders.SetPaidOrder;
 using OrderService.Application.Commands.Orders.SetShippingOrder;
 using OrderService.Application.DTOs;
+using OrderService.Application.Queries.Dashboard;
 using OrderService.Application.Queries.Orders;
+using OrderService.Application.Queries.Orders.GetAllOrder;
+using OrderService.Application.Queries.Orders.GetOrderDetail;
 
 namespace OrderService.Api.Endpoint.Orders
 {
@@ -79,6 +82,14 @@ namespace OrderService.Api.Endpoint.Orders
 
                 return result.Match(success => Results.Ok(success), failure => CustomResults.Problem(failure));
             }).WithTags("Orders").WithName("GetOrderDetail");
+
+            app.MapGet("/orders/dashboard", async (ISender sender, CancellationToken cancellationToken) =>
+            {
+                GetDashboardStatsQuery query = new();
+                Result<DashboardStatsDto> result = await sender.Send(query, cancellationToken);
+
+                return result.Match(success => Results.Ok(success), failure => CustomResults.Problem(failure));
+            }).WithTags("Orders").WithName("GetDashboardStats");
         }
     }
 }

@@ -8,7 +8,6 @@
 
     <ItemGroup>
         <Folder Include="Commands\Products\"/>
-        <Folder Include="Queries\Products\GetTotalProducts\" />
     </ItemGroup>
 
     <ItemGroup>

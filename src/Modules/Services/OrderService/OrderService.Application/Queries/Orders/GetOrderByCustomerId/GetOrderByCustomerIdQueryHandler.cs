@@ -9,7 +9,7 @@ using OrderService.Application.DTOs;
 using OrderService.Domain.Abstractions.Repositories;
 using OrderService.Domain.Entities;
 
-namespace OrderService.Application.Queries.Orders
+namespace OrderService.Application.Queries.Orders.GetOrderByCustomerId
 {
     public class GetOrderByCustomerIdQueryHandler : IQueryHandler<GetOrderByCustomerIdQuery, List<OrderDTO>>
     {

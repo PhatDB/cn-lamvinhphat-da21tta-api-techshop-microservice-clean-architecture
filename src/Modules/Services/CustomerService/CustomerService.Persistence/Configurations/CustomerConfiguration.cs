@@ -29,6 +29,8 @@ namespace CustomerService.Persistence.Configurations
 
             builder.Property(c => c.Otp).HasColumnName("otp");
 
+            builder.Property(c => c.Role).HasColumnName("role");
+
             builder.Property(c => c.OtpExpired).HasColumnName("otp_expired");
         }
     }

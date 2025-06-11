@@ -1,4 +1,5 @@
-﻿using BuildingBlocks.CQRS;
+﻿using AutoMapper;
+using BuildingBlocks.CQRS;
 using BuildingBlocks.Results;
 using CustomerService.Application.DTOs;
 using CustomerService.Domain.Abtractions.Repositories;
@@ -11,38 +12,25 @@ namespace CustomerService.Application.Queries.Customers
     public class GetCustomerInfoQueryHandler : IQueryHandler<GetCustomerInfoQuery, CustomerDto>
     {
         private readonly ICustomerRepository _customerRepository;
+        private readonly IMapper _mapper;
 
-        public GetCustomerInfoQueryHandler(ICustomerRepository customerRepository)
+        public GetCustomerInfoQueryHandler(ICustomerRepository customerRepository, IMapper mapper)
         {
             _customerRepository = customerRepository;
+            _mapper = mapper;
         }
+
 
         public async Task<Result<CustomerDto>> Handle(GetCustomerInfoQuery request, CancellationToken cancellationToken)
         {
-            Customer? customer = await _customerRepository.AsQueryable().Include(c => c.Addresses)
-                .Where(c => c.Id == request.CustomerId).FirstOrDefaultAsync(cancellationToken);
+            Customer? customer = await _customerRepository.AsQueryable().AsNoTracking().Include(c => c.Addresses)
+                .FirstOrDefaultAsync(c => c.Id == request.CustomerId, cancellationToken);
 
             if (customer == null)
                 return Result.Failure<CustomerDto>(CustomerError.CustomerNotFound);
 
-            CustomerDto customerDto = new()
-            {
-                CustomerId = customer.Id,
-                CustomerName = customer.CustomerName,
-                Email = customer.Email.Value,
-                Phone = customer.Phone?.Value,
-                Address = customer.Addresses?.Select(a => new AddressDto
-                {
-                    AddressId = a.Id,
-                    Street = a.Street,
-                    Hamlet = a.Hamlet,
-                    Ward = a.Ward,
-                    District = a.District,
-                    City = a.City
-                }).ToList()
-            };
-
-            return Result.Success(customerDto);
+            CustomerDto? dto = _mapper.Map<CustomerDto>(customer);
+            return Result.Success(dto);
         }
     }
 }

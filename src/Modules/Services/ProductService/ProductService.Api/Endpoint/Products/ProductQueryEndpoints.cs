@@ -10,6 +10,7 @@ using ProductService.Application.Queries.Products.GetActiveProductDetail;
 using ProductService.Application.Queries.Products.GetActiveProductFilter;
 using ProductService.Application.Queries.Products.GetAllActiveProducts;
 using ProductService.Application.Queries.Products.GetAllProducts;
+using ProductService.Application.Queries.Products.GetTotalProducts;
 
 namespace ProductService.Api.Endpoint.Products
 {
@@ -100,6 +101,14 @@ namespace ProductService.Api.Endpoint.Products
                 Result<PagedResult<GetAllProductDTO>> result = await sender.Send(query, cancellationToken);
                 return result.Match(success => Results.Ok(success), failure => CustomResults.Problem(failure));
             }).WithTags("Product").WithName("GeProductByBrandId").Produces<PagedResult<GetAllProductDTO>>();
+
+            // Get Total Product
+            app.MapGet("products/total", async (ISender sender) =>
+            {
+                GetTotalProductsQuery query = new();
+                Result<TotalProductDto> result = await sender.Send(query);
+                return result.Match(success => Results.Ok(success), failure => CustomResults.Problem(failure));
+            }).WithTags("Product").WithName("GetTotalProducts");
         }
     }
 }

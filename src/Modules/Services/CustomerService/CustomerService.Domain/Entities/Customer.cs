@@ -19,6 +19,7 @@ namespace CustomerService.Domain.Entities
             Phone = phone;
             Password = password;
             Status = false;
+            Role = "Customer";
             Otp = GenerateOTP();
             OtpExpired = DateTime.UtcNow.AddMinutes(5);
             _addresses = new List<Address>();
@@ -31,6 +32,7 @@ namespace CustomerService.Domain.Entities
         public Password? Password { get; private set; }
         public bool? Status { get; private set; }
         public string? Otp { get; private set; }
+        public string Role { get; private set; }
         public DateTime? OtpExpired { get; private set; }
         public IReadOnlyCollection<Address> Addresses => _addresses.AsReadOnly();
         public IReadOnlyCollection<Review> Reviews => _reviews.AsReadOnly();

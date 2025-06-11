@@ -24,9 +24,10 @@ namespace CustomerService.Api.Endpoint.Customers
                     failure => CustomResults.Problem(failure));
             }).WithName("Register").WithTags("Customer");
 
-            app.MapPost("/customer/login", async (LoginCommand command, ISender sender) =>
+            app.MapPost("/customer/login", async (LoginCommand command, ISender sender, HttpResponse response) =>
             {
                 Result<LoginDto> result = await sender.Send(command);
+
                 return result.Match(success => Results.Ok(result.Value), failure => CustomResults.Problem(failure));
             }).WithName("Login").WithTags("Customer");
 

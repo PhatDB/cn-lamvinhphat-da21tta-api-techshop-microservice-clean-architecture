@@ -8,7 +8,7 @@ using OrderService.Application.DTOs;
 using OrderService.Domain.Abstractions.Repositories;
 using OrderService.Domain.Entities;
 
-namespace OrderService.Application.Queries.Orders
+namespace OrderService.Application.Queries.Orders.GetOrderDetail
 {
     public class GetOrderDetailQueryHandler : IQueryHandler<GetOrderDetailQuery, OrderDTO>
     {

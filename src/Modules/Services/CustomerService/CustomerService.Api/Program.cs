@@ -27,10 +27,21 @@ builder.Services.AddApiVersioning(options =>
 
 builder.Services.AddEndpoints(Assembly.GetExecutingAssembly());
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod().AllowCredentials();
+        });
+});
+
+
 WebApplication app = builder.Build();
 ApiVersionSet apiVersionSet = app.NewApiVersionSet().HasApiVersion(new ApiVersion(1)).ReportApiVersions().Build();
 RouteGroupBuilder versionedGroup = app.MapGroup("api/v{version:apiVersion}").WithApiVersionSet(apiVersionSet);
 
+app.UseCors("AllowFrontend");
 app.MapEndpoints(versionedGroup);
 
 if (app.Environment.IsDevelopment())
@@ -39,7 +50,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
 app.UseHttpsRedirection();
 app.UseExceptionHandler();
+
 
 app.Run();
