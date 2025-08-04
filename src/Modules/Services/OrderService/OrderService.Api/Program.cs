@@ -4,7 +4,7 @@ using Asp.Versioning.Builder;
 using BuildingBlocks;
 using BuildingBlocks.Extensions;
 using OrderService.Application;
-using OrderService.Infrastructure;
+using OrderService.Infrastructure.DependencyInjections;
 using OrderService.Persistence.DependencyInjections;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -12,7 +12,8 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddBuildingBlocks().AddApplication().AddPersistence(builder.Configuration).AddInfrastructure(builder.Configuration);
+builder.Services.AddBuildingBlocks().AddApplication().AddPersistence(builder.Configuration)
+    .AddInfrastructure(builder.Configuration);
 
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddProblemDetails();

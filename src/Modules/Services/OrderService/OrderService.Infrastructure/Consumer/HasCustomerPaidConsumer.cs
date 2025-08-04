@@ -19,8 +19,10 @@ namespace OrderService.Infrastructure.Consumer
         {
             int customerId = context.Message.CustomerId;
 
-            bool hasCustomerPaid = await _orderRepository.AsQueryable().AsNoTracking()
-                .AnyAsync(o => o.CustomerId == customerId && o.Status == OrderStatus.Paid);
+            bool hasCustomerPaid = await _orderRepository.AsQueryable().AsNoTracking().Include(o => o.OrderItems)
+                .AnyAsync(o =>
+                    o.CustomerId == customerId && o.Status == OrderStatus.Delivered &&
+                    o.OrderItems.Any(oi => oi.ProductId == context.Message.ProductId));
 
             await context.RespondAsync(new HasCustomerPaidResponse(hasCustomerPaid));
         }

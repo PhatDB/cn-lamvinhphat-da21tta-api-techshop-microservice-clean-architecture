@@ -1,10 +1,13 @@
-﻿using BuildingBlocks.Abstractions.Extensions;
+﻿using System.Text;
+using System.Text.Json;
+using BuildingBlocks.Abstractions.Extensions;
 using BuildingBlocks.Extensions;
 using BuildingBlocks.Results;
 using MediatR;
 using OrderService.Application.Commands.Orders.CancelOrder;
 using OrderService.Application.Commands.Orders.CreateOrder;
-using OrderService.Application.Commands.Orders.SetComfirmedOrder;
+using OrderService.Application.Commands.Orders.PayOS;
+using OrderService.Application.Commands.Orders.SetConfirmedOrder;
 using OrderService.Application.Commands.Orders.SetDeliveredOrder;
 using OrderService.Application.Commands.Orders.SetPaidOrder;
 using OrderService.Application.Commands.Orders.SetShippingOrder;
@@ -25,6 +28,38 @@ namespace OrderService.Api.Endpoint.Orders
                 Result result = await sender.Send(command);
                 return result.Match(Results.NoContent, CustomResults.Problem);
             }).WithName("CancelOrder").WithTags("Orders");
+
+            app.MapPost("/order/payos/create-link", async (CreateLinkCommand command, ISender sender) =>
+            {
+                Result<string> result = await sender.Send(command);
+
+                return result.Match(checkoutUrl => Results.Ok(new { checkoutUrl }),
+                    error => CustomResults.Problem(error));
+            }).WithName("CreatePayOsLink").WithTags("Payments");
+
+            app.MapPost("/order/payos/webhook", async (HttpRequest req, ISender sender) =>
+            {
+                req.EnableBuffering();
+                string rawBody;
+                using (StreamReader reader = new(req.Body, Encoding.UTF8, leaveOpen: true))
+                {
+                    rawBody = await reader.ReadToEndAsync();
+                    req.Body.Position = 0;
+                }
+
+                // 2) Parse JSON, tách data và signature
+                using JsonDocument doc = JsonDocument.Parse(rawBody);
+                JsonElement root = doc.RootElement;
+                JsonElement dataEl = root.GetProperty("data");
+                string signature = root.GetProperty("signature").GetString() ?? "";
+
+                // 3) Dispatch CQRS command
+                WebHookCommand cmd = new(dataEl, signature);
+                Result result = await sender.Send(cmd);
+
+                return result.IsSuccess ? Results.Ok() : Results.Problem(result.Error.ToString());
+            }).AllowAnonymous().WithName("PayOsWebhook").WithTags("Payments");
+
 
             app.MapPost("/order/create", async (CreateOrderCommand command, ISender sender) =>
             {

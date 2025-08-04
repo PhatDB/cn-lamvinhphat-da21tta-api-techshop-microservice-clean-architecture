@@ -24,7 +24,8 @@ namespace OrderService.Application.Queries.Dashboard
             DateTime startOfMonth = new(today.Year, today.Month, 1);
 
             List<Order> monthlyOrders = await _orderRepository.AsQueryable().AsNoTracking()
-                .Where(o => o.CreatedAt >= startOfMonth && o.Status == OrderStatus.Paid).ToListAsync(cancellationToken);
+                .Where(o => o.CreatedAt >= startOfMonth && o.Status == OrderStatus.Paid || o.Status == OrderStatus.Delivered)
+                .ToListAsync(cancellationToken);
 
             double monthlyRevenue = monthlyOrders.Sum(o => (double)o.TotalAmount);
 

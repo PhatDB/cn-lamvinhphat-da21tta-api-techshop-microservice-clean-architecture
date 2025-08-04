@@ -27,7 +27,7 @@ namespace OrderService.Application.Commands.Orders.SetDeliveredOrder
 
             Order order = orderResult.Value;
 
-            if (order.SetPaidStatus().IsFailure)
+            if (order.SetDeliveredStatus().IsFailure)
                 return Result.Failure(order.SetDeliveredStatus().Error);
 
             await _unitOfWork.SaveChangesAsync(cancellationToken);

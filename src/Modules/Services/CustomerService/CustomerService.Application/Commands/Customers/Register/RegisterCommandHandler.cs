@@ -59,12 +59,20 @@ namespace CustomerService.Application.Commands.Customers.Register
             EmailDto email = new()
             {
                 ToEmail = entity.Email.Value,
-                Subject = "Verification",
-                Body = $"<h2>OTP Verification</h2>\n" + $"<p>Dear {entity.CustomerName},</p>\n" +
-                       $"<p>Thank you for registering with us. To complete your registration, please use the following OTP:</p>\n" +
-                       $"<h3>{entity.Otp}</h3>\n" +
-                       $"<p>If you did not request this, please ignore this email.</p>\n" +
-                       $"<p>Best regards,<br>TechShop.com</p>"
+                Subject = "[TechShop] Mã xác thực OTP của bạn",
+                Body = $@"
+            <!DOCTYPE html>
+            <html lang=""vi"">
+                <head><meta charset=""utf-8""></head>
+                <body style=""font-family:Arial,Helvetica,sans-serif;color:#333;line-height:1.5;"">
+                <h2 style=""margin:0 0 12px;"">Xác thực tài khoản</h2>
+                <p>Xin chào <strong>{entity.CustomerName}</strong>,</p>
+                <p>Cảm ơn bạn đã đăng ký tại <strong>TechShop.com</strong>. Để hoàn tất quá trình, vui lòng sử dụng mã OTP dưới đây:</p>
+                <h3 style=""font-size:24px;margin:16px 0;color:#0f172a;"">{entity.Otp}</h3>
+                <p>Mã OTP có hiệu lực trong 5 phút. Nếu bạn không thực hiện yêu cầu này, vui lòng bỏ qua email.</p>
+                <p>Trân trọng,<br><strong>TechShop.com</strong></p>
+            </body>
+            </html>"
             };
             await _emailSender.SendEmailAsync(email);
         }

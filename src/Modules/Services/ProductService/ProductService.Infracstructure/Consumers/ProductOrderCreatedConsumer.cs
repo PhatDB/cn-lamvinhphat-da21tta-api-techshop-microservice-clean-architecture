@@ -26,7 +26,11 @@ namespace ProductService.Infracstructure.Consumers
 
                 Product? product = productResult.Value;
 
-                if (product != null) product.UpdateSoldQuantity(item.Quantity);
+                if (product != null)
+                {
+                    product.UpdateSoldQuantity(item.Quantity);
+                    product.UpdateStock(-item.Quantity);
+                }
             }
 
             await _unitOfWork.SaveChangesAsync();

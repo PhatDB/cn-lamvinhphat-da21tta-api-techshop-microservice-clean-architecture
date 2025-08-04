@@ -94,14 +94,14 @@ namespace OrderService.Domain.Entities
 
         public Result SetShippingStatus()
         {
-            if (PaymentMethod == PaymentMethod.BankTransfer && Status != OrderStatus.Paid)
-                return StatusChangeException(OrderStatus.Shipping);
+            if ((PaymentMethod == PaymentMethod.BankTransfer && Status == OrderStatus.Paid) ||
+                (PaymentMethod == PaymentMethod.COD && Status == OrderStatus.Confirmed))
+            {
+                Status = OrderStatus.Shipping;
+                return Result.Success();
+            }
 
-            if (PaymentMethod == PaymentMethod.COD && Status != OrderStatus.Confirmed)
-                return StatusChangeException(OrderStatus.Shipping);
-
-            Status = OrderStatus.Shipping;
-            return Result.Success();
+            return StatusChangeException(OrderStatus.Shipping);
         }
 
         public Result SetDeliveredStatus()
@@ -120,6 +120,11 @@ namespace OrderService.Domain.Entities
 
             Status = OrderStatus.Cancelled;
             return Result.Success();
+        }
+
+        public void SetStatus(OrderStatus status)
+        {
+            Status = status;
         }
 
         private Result StatusChangeException(OrderStatus toStatus)

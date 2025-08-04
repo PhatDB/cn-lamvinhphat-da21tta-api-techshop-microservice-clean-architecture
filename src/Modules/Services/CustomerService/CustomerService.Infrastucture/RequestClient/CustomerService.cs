@@ -20,10 +20,11 @@ namespace CustomerService.Infrastucture.RequestClient
             _productRequestClient = productRequestClient;
         }
 
-        public async Task<Result<HasCustomerPaidResponse>> HasCustomerPaid(int customerId)
+        public async Task<Result<HasCustomerPaidResponse>> HasCustomerPaid(int customerId, int productId)
         {
             Response<HasCustomerPaidResponse> result =
-                await _requestClient.GetResponse<HasCustomerPaidResponse>(new HasCustomerPaidRequest(customerId));
+                await _requestClient.GetResponse<HasCustomerPaidResponse>(
+                    new HasCustomerPaidRequest(customerId, productId));
 
             return Result.Success(result.Message);
         }

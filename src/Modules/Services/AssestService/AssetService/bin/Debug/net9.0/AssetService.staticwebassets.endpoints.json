@@ -1069,6 +1069,88 @@
       ]
     },
     {
+      "Route": "assets/default/unknown_1753805196020.9uj4xddl0m.jpg",
+      "AssetFile": "assets/default/unknown_1753805196020.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "175961"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j52dzade3vz1U+x8zzmpEdIedxshRQisRljAbYKDuhk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Jul 2025 16:06:36 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9uj4xddl0m"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-j52dzade3vz1U+x8zzmpEdIedxshRQisRljAbYKDuhk="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/default/unknown_1753805196020.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "assets/default/unknown_1753805196020.jpg",
+      "AssetFile": "assets/default/unknown_1753805196020.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "175961"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j52dzade3vz1U+x8zzmpEdIedxshRQisRljAbYKDuhk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Jul 2025 16:06:36 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-j52dzade3vz1U+x8zzmpEdIedxshRQisRljAbYKDuhk="
+        }
+      ]
+    },
+    {
       "Route": "assets/product/product_1747044369769.3vycipq3bk.jpg",
       "AssetFile": "assets/product/product_1747044369769.jpg",
       "Selectors": [],

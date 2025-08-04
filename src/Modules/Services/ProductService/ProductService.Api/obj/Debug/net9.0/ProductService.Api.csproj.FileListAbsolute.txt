@@ -128,3 +128,5 @@ D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src
 D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\ProductService\ProductService.Api\obj\Debug\net9.0\ProductService.Api.pdb
 D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\ProductService\ProductService.Api\obj\Debug\net9.0\ProductService.Api.genruntimeconfig.cache
 D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\ProductService\ProductService.Api\obj\Debug\net9.0\ref\ProductService.Api.dll
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\ProductService\ProductService.Api\bin\Debug\net9.0\Newtonsoft.Json.dll
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\ProductService\ProductService.Api\bin\Debug\net9.0\payos-lib-backend-dotnet.dll

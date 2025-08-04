@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uin4dApTxWMhO8kKpu3ZeqStxAeZEV5yjodj6rCc1/4=",
+  "Hash": "m6e4yIiN88GK1AxlF5Y1UdgziZ4wdr7UOA9EjDiGWDk=",
   "Source": "AssetService",
   "BasePath": "_content/AssetService",
   "Mode": "Default",
@@ -288,6 +288,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\category\\vga.jpg"
+    },
+    {
+      "Identity": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\default\\unknown_1753805196020.jpg",
+      "SourceId": "AssetService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\",
+      "BasePath": "_content/AssetService",
+      "RelativePath": "assets/default/unknown_1753805196020#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9uj4xddl0m",
+      "Integrity": "j52dzade3vz1U+x8zzmpEdIedxshRQisRljAbYKDuhk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\default\\unknown_1753805196020.jpg"
     },
     {
       "Identity": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\product\\product_1747044369769.jpg",
@@ -2341,6 +2362,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-Du2TJByrnfYDZ6wtYu1I4dDf+VR4ES6eCCupgKCU0FU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/default/unknown_1753805196020.9uj4xddl0m.jpg",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\default\\unknown_1753805196020.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "175961"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j52dzade3vz1U+x8zzmpEdIedxshRQisRljAbYKDuhk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Jul 2025 16:06:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9uj4xddl0m"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/default/unknown_1753805196020.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-j52dzade3vz1U+x8zzmpEdIedxshRQisRljAbYKDuhk="
+        }
+      ]
+    },
+    {
+      "Route": "assets/default/unknown_1753805196020.jpg",
+      "AssetFile": "D:\\Do-an\\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\\src\\Modules\\Services\\AssestService\\AssetService\\wwwroot\\assets\\default\\unknown_1753805196020.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "175961"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j52dzade3vz1U+x8zzmpEdIedxshRQisRljAbYKDuhk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Jul 2025 16:06:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-j52dzade3vz1U+x8zzmpEdIedxshRQisRljAbYKDuhk="
         }
       ]
     },

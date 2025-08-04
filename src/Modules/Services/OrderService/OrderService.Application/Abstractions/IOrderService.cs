@@ -11,6 +11,8 @@ namespace OrderService.Application.Abstractions
 
         Task<Result<GetListProductInfoResponse>> GetListProductInfo(List<int> productIds);
 
+        Task<Result<CheckStockResponse>> CheckStockAsync(List<CheckStockRequest> items);
+
         Task<Result<GetCustomerInfoResponse>> GetCustomerInfo(int customerId);
     }
 }

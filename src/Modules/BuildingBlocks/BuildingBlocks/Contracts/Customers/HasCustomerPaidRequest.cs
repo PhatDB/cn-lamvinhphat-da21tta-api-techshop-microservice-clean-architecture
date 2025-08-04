@@ -1,4 +1,4 @@
 ﻿namespace BuildingBlocks.Contracts.Customers
 {
-    public record HasCustomerPaidRequest(int CustomerId);
+    public record HasCustomerPaidRequest(int CustomerId, int ProductId);
 }

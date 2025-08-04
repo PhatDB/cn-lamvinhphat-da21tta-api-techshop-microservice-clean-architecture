@@ -233,3 +233,5 @@ D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src
 D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\ApiGateways\ApiGateway.ReverseProxy\obj\Debug\net9.0\ApiGateway.ReverseProxy.pdb
 D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\ApiGateways\ApiGateway.ReverseProxy\obj\Debug\net9.0\ApiGateway.ReverseProxy.genruntimeconfig.cache
 D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\ApiGateways\ApiGateway.ReverseProxy\obj\Debug\net9.0\ref\ApiGateway.ReverseProxy.dll
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\ApiGateways\ApiGateway.ReverseProxy\bin\Debug\net9.0\Newtonsoft.Json.dll
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\ApiGateways\ApiGateway.ReverseProxy\bin\Debug\net9.0\payos-lib-backend-dotnet.dll

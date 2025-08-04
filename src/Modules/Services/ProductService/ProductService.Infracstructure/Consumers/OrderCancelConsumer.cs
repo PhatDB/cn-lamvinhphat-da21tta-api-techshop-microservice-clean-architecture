@@ -1,4 +1,4 @@
-﻿/*using BuildingBlocks.Abstractions.Repository;
+﻿using BuildingBlocks.Abstractions.Repository;
 using BuildingBlocks.Contracts.Orders;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
@@ -20,19 +20,20 @@ public class OrderCancelConsumer : IConsumer<OrderCancel>
     {
         OrderCancel orderCancel = context.Message;
 
-        List<int> productIds = orderCancel.OrderItems.Select(item => item.ProductId).ToList();
+        List<int> productIds = orderCancel.OrderItems.Select(item => item.ProductId).Distinct().ToList();
 
-        List<Product> products = await _productRepository.AsQueryable().Include(p => p.Inventory).Where(p => productIds.Contains(p.Id)).ToListAsync();
+        List<Product> products = await _productRepository.AsQueryable().Where(p => productIds.Contains(p.Id))
+            .ToListAsync(context.CancellationToken);
 
-        List<Product> updatedProducts = orderCancel.OrderItems.Select(item =>
+        foreach (OrderItemDTO item in orderCancel.OrderItems)
         {
             Product? product = products.FirstOrDefault(p => p.Id == item.ProductId);
-            if (product != null && product.Inventory != null) product.UpdateStock(item.Quantity);
+            if (product is null)
+                continue;
 
-            return product;
-        }).Where(p => p != null).ToList();
+            product.UpdateStock(item.Quantity);
+        }
 
-        await _unitOfWork.SaveChangesAsync();
+        await _unitOfWork.SaveChangesAsync(context.CancellationToken);
     }
-}*/
-
+}

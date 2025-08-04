@@ -5,7 +5,7 @@ using BuildingBlocks.Results;
 using OrderService.Domain.Abstractions.Repositories;
 using OrderService.Domain.Entities;
 
-namespace OrderService.Application.Commands.Orders.SetComfirmedOrder
+namespace OrderService.Application.Commands.Orders.SetConfirmedOrder
 {
     public class SetConfirmedOrderCommandHandler : ICommandHandler<SetConfirmedOrderCommand>
     {

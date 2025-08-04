@@ -136,3 +136,4 @@ D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src
 D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CustomerService\CustomerService.Api\bin\Debug\net9.0\System.CodeDom.dll
 D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CustomerService\CustomerService.Api\bin\Debug\net9.0\System.Management.dll
 D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CustomerService\CustomerService.Api\bin\Debug\net9.0\runtimes\win\lib\net7.0\System.Management.dll
+D:\Do-an\cn-lamvinhphat-da21tta-api-techshop-microservice-clean-architecture\src\Modules\Services\CustomerService\CustomerService.Api\bin\Debug\net9.0\payos-lib-backend-dotnet.dll

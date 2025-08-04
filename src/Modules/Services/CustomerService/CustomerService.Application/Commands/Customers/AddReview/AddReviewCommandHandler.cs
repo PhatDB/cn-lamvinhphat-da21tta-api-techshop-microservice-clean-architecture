@@ -27,7 +27,7 @@ namespace CustomerService.Application.Commands.Customers.AddReview
         public async Task<Result> Handle(AddReviewCommand request, CancellationToken cancellationToken)
         {
             Result<HasCustomerPaidResponse> hasCustomerPaidResult =
-                await _customerService.HasCustomerPaid(request.CustomerId);
+                await _customerService.HasCustomerPaid(request.CustomerId, request.ProductId);
 
             if (!hasCustomerPaidResult.Value.HasCustomerPaid)
                 return Result.Failure(CustomerError.NotPaid);
@@ -38,7 +38,7 @@ namespace CustomerService.Application.Commands.Customers.AddReview
             if (customer == null)
                 return Result.Failure(CustomerError.CustomerNotFound);
 
-            if (customer.Reviews.Count != 0)
+            if (customer.Reviews.Count != 0 && customer.Reviews.Any(r => r.ProductId == request.ProductId))
                 return Result.Failure(CustomerError.AllReadyReview);
 
             Result<Review> review = Review.Create(request.ProductId, customer.Id, request.Rating, request.Comment);
